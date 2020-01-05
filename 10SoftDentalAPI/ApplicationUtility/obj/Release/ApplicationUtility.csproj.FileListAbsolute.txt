@@ -1,0 +1,6 @@
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\bin\Release\ApplicationUtility.dll
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\bin\Release\ApplicationUtility.pdb
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\obj\Release\ApplicationUtility.csproj.CoreCompileInputs.cache
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\obj\Release\ApplicationUtility.dll
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\obj\Release\ApplicationUtility.pdb
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\obj\Release\ApplicationUtility.csprojResolveAssemblyReference.cache

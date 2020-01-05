@@ -1,0 +1,11 @@
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\bin\Debug\ApplicationUtility.dll
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\bin\Debug\ApplicationUtility.pdb
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.csproj.CoreCompileInputs.cache
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.dll
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.pdb
+D:\Transportal\Trans-Portal Code Repo\Trans-Portal\Trans-Portal-Dev\API\TransPortalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.csprojResolveAssemblyReference.cache
+C:\E Drive\10SoftDentalAPI\ApplicationUtility\bin\Debug\ApplicationUtility.dll
+C:\E Drive\10SoftDentalAPI\ApplicationUtility\bin\Debug\ApplicationUtility.pdb
+C:\E Drive\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.csproj.CoreCompileInputs.cache
+C:\E Drive\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.dll
+C:\E Drive\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.pdb
