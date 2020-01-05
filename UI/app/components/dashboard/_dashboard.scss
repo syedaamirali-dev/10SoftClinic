@@ -1,0 +1,24 @@
+#dashboard {
+  // height: calc( 100vh - 142px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .card-statistics {
+    @include respond(tab-land) {
+      margin-top: 10px;
+    }
+
+    .float-right{
+      width: 70%;
+    }
+  }
+
+  .skeleton-container {
+    .rect {
+      @include respond(tab-land) {
+        height: 80px;
+        margin-top: 10px;
+      }
+    }
+  }
+}

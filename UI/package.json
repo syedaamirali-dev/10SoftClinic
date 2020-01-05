@@ -1,0 +1,36 @@
+{
+  "name": "10softdental",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.24",
+    "angular": "^1.7.9",
+    "angular-sanitize": "^1.7.9",
+    "izitoast": "^1.4.0",
+    "lodash": "^4.17.15",
+    "secure-ls": "^1.2.6",
+    "ui-bootstrap4": "^3.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "dom-parser": "^0.1.6",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-append-prepend": "^1.0.8",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file": "^0.4.0",
+    "gulp-ng-annotate": "^2.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-tap": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0"
+  }
+}

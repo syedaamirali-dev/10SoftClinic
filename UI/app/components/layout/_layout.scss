@@ -1,0 +1,118 @@
+.section-header {
+  // border-bottom: 1px solid #e7e7e7;
+  // padding-bottom: 0.5rem;
+  // margin-bottom: 1rem;
+}
+// $sidebar-width: 230px;
+.navbar {
+  .navbar-brand-wrapper {
+    // width: $sidebar-width !important;
+
+
+    .brand-logo-mini{
+      img{
+        width: 100% !important;
+      }
+    }
+  }
+  .navbar-menu-wrapper {
+    // width: calc(100% - #{$sidebar-width}) !important;
+
+    .mdi-spin {
+      color: #fff;
+      transform: scale(1.3);
+    }
+  }
+}
+.content-wrapper {
+  padding: 1rem !important;
+  // background-color: #dde5e7 !important;
+  @include respond(tab-port) {
+    // width <900?
+    padding: 8px !important;
+  }
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    // margin-bottom: 5px;
+  }
+}
+.initial-loader {
+  @include absCenter;
+
+  img {
+    width: 175px;
+  }
+}
+.user-wrapper {
+  align-items: center;
+  .profile-name {
+    margin-bottom: 4px !important;
+  }
+  .designation {
+    text-transform: capitalize;
+  }
+}
+.page-body-wrapper {
+  .sidebar {
+    background-color: $color-primary;
+    // width: $sidebar-width;
+
+    .nav-profile {
+      .nav-link {
+        // @include respond(tab-port) {
+        flex-direction: row !important;
+        align-items: end !important;
+        justify-content: space-between;
+        // }
+      }
+    }
+
+    .menu-loader {
+      opacity: 0.2;
+    }
+    .nav {
+      .nav-item {
+        .nav-link {
+          padding: 15px;
+          .menu {
+            &-icon {
+              color: #fff;
+            }
+            &-title {
+              color: #fff;
+            }
+          }
+          &.active {
+            background-color: $color-secondary;
+            * {
+              color: #fff !important;
+            }
+          }
+          img {
+            filter: invert(1);
+          }
+        }
+        &:not(:first-child):hover {
+          .nav-link {
+            background-color: $color-secondary-light !important;
+          }
+        }
+        &:first-child {
+          .nav-link {
+            color: #fff;
+          }
+          :hover {
+            .nav-link {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .main-panel {
+    // width: calc(100% - #{$sidebar-width});
+  }
+}

@@ -1,0 +1,19 @@
+footer {
+  color: #333;
+  background: $color-grey-light-2;
+  padding: 10px !important;
+  a {
+    color: #333;
+    padding: 0 5px;
+  }
+  .container div {
+    margin-top: 10px;
+  }
+
+  .designer-info {
+    a {
+      color: $color-primary;
+      font-weight: bold;
+    }
+  }
+}
