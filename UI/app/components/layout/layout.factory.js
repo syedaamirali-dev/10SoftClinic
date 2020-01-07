@@ -12,11 +12,11 @@
         };
 
         function getMenu() {
-            let defer = $q.defer();
-            $http.get(apiCollection.user.getMenus($rootScope.userDetails.id)).then(function (response) {
-                defer.resolve(response.data);
-            });
-            return defer.promise;
+            // let defer = $q.defer();
+            // $http.get(apiCollection.user.getMenus($rootScope.userDetails.id)).then(function (response) {
+            //     defer.resolve(response.data);
+            // });
+            // return defer.promise;
         }
 
         return service;

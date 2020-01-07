@@ -7,6 +7,8 @@
 
     /** @ngInject */
     function periodontalChartCtrl($scope, periodontalChartService){
+        console.log("Salam");
+        
         activate();
 
         function activate(){

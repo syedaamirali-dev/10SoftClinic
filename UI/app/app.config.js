@@ -16,7 +16,7 @@
     function runConfig($transitions, $state, $rootScope) {
         let ls = new SecureLS();
 
-        $rootScope.userDetails = ls.get('elearningUserDetails');
+        $rootScope.userDetails = ls.get('softDentalUserDetails');
 
         iziToast.settings({
             timeout: 8000,

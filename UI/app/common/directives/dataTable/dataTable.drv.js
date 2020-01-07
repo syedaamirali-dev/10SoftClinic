@@ -25,21 +25,6 @@
         function link(scope, element) {
             scope.pageLength = 10;
 
-            // scope.resolution = $window.innerHeight;
-
-            // if (scope.resolution <= 1080) {
-            //     scope.pageLength = 20;
-            // }
-            // else if (scope.resolution <= 1440) {
-            //     scope.pageLength = 25;
-            // }
-
-            // angular.element($window).bind('resize', function () {
-            //     // Get heigh of .page-body
-
-            //     console.log("Resized ", $window.innerHeight);
-            // });
-
             scope.$watch('loaded', () => {
                 console.log(scope.loaded)
                 if (!scope.loaded)

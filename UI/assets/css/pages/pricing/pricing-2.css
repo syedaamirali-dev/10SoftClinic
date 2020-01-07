@@ -37,11 +37,13 @@
           position: relative;
           margin-top: 6.8rem;
           left: 50%;
+          -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%); }
           .kt-pricing-2 .kt-pricing-2__content .kt-pricing-2__container .kt-pricing-2__items .kt-pricing-2__item .kt-pricing-2__visual .kt-pricing-2__hexagon {
             height: 0;
             background: #F4FCFF;
             left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
             position: absolute; }
             .kt-pricing-2 .kt-pricing-2__content .kt-pricing-2__container .kt-pricing-2__items .kt-pricing-2__item .kt-pricing-2__visual .kt-pricing-2__hexagon:before {
@@ -54,6 +56,7 @@
               border-right: 3.35rem solid transparent;
               border-bottom: 5.71rem solid #F4FCFF;
               left: 50%;
+              -webkit-transform: translateX(-50%) translateY(-50%);
               transform: translateX(-50%) translateY(-50%); }
             .kt-pricing-2 .kt-pricing-2__content .kt-pricing-2__container .kt-pricing-2__items .kt-pricing-2__item .kt-pricing-2__visual .kt-pricing-2__hexagon:after {
               content: "";
@@ -65,10 +68,12 @@
               border-right: 3.35rem solid transparent;
               border-top: 5.71rem solid #F4FCFF;
               left: 50%;
+              -webkit-transform: translateX(-50%) translateY(-50%);
               transform: translateX(-50%) translateY(-50%); }
           .kt-pricing-2 .kt-pricing-2__content .kt-pricing-2__container .kt-pricing-2__items .kt-pricing-2__item .kt-pricing-2__visual .kt-pricing-2__icon {
             margin-top: 0.8rem;
             left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
             position: absolute; }
             .kt-pricing-2 .kt-pricing-2__content .kt-pricing-2__container .kt-pricing-2__items .kt-pricing-2__item .kt-pricing-2__visual .kt-pricing-2__icon > i {
@@ -152,4 +157,3 @@
         margin-bottom: 0; }
       .kt-pricing-2 .kt-pricing-2__content .kt-pricing-2__container .kt-pricing-2__items .kt-pricing-2__item .kt-pricing-2__btn {
         margin: 1.43rem auto 3.6rem auto; } }
-
