@@ -56,7 +56,7 @@ gulp.task('gen-page', function () {
         }));
 
     // update style.scss
-    gulp.src('./assets/sass/style.scss')
+    gulp.src('./assets/sass/app.scss')
         .pipe(gap.appendText(mainSassContent(componentName)))
         .pipe(gulp.dest('./assets/sass'))
 
@@ -265,15 +265,15 @@ function getStyles(type) {
 }
 
 gulp.task('prod-app-js', function () {
-    return gulp.src(getScripts("app/"))
+    return gulp.src(getScripts("app/"), { allowEmpty: true })
         .pipe(concat('app.js'))
         .pipe(babel({
-            presets: ['@babel/preset-env']
+            // presets: ['@babel/preset-env']
         }))
         .pipe(ngAnnotate({
             add: true
         }))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('public'));
 })
 
@@ -282,19 +282,19 @@ gulp.task('prod-node-modules-js', function () {
     // // Create new directory
     // .pipe(gulp.dest(componentPath))
 
-    gulp.src([
-        "./node_modules/ckeditor/adapters/**/*.*",
-        "./node_modules/ckeditor/lang/en.js",
-        "./node_modules/ckeditor/plugins/scayt/**/*.*",
-        "./node_modules/ckeditor/plugins/tableselection/**/*.*",
-        "./node_modules/ckeditor/plugins/wsc/**/*.*",
-        "./node_modules/ckeditor/skins/moono-lisa/**/*.*",
-        "./node_modules/ckeditor/ckeditor.js",
-        "./node_modules/ckeditor/config.js",
-        "./node_modules/ckeditor/contents.css",
-        "./node_modules/ckeditor/styles.js",
-    ], { base: './' })
-        .pipe(gulp.dest('public'))
+    // gulp.src([
+    //     "./node_modules/ckeditor/adapters/**/*.*",
+    //     "./node_modules/ckeditor/lang/en.js",
+    //     "./node_modules/ckeditor/plugins/scayt/**/*.*",
+    //     "./node_modules/ckeditor/plugins/tableselection/**/*.*",
+    //     "./node_modules/ckeditor/plugins/wsc/**/*.*",
+    //     "./node_modules/ckeditor/skins/moono-lisa/**/*.*",
+    //     "./node_modules/ckeditor/ckeditor.js",
+    //     "./node_modules/ckeditor/config.js",
+    //     "./node_modules/ckeditor/contents.css",
+    //     "./node_modules/ckeditor/styles.js",
+    // ], { base: './' })
+    //     .pipe(gulp.dest('public'))
 
     return gulp.src(getScripts("node_modules").filter(x => !x.includes("ckeditor")))
         .pipe(concat('index.js'))
@@ -302,11 +302,14 @@ gulp.task('prod-node-modules-js', function () {
         .pipe(gulp.dest('public/node_modules'))
 })
 
-gulp.task('prod-assets-js', function () {
-    return gulp.src(getScripts("assets/"))
-        .pipe(concat('script.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('public/assets/js'))
+gulp.task('prod-bundle', function () {
+    // return gulp.src(getScripts("assets/"))
+    //     .pipe(concat('script.js'))
+    //     .pipe(uglify())
+    //     .pipe(gulp.dest('public/assets/js'))
+
+    return gulp.src(['**/*.bundle.*'])
+        .pipe(gulp.dest('public/'))
 })
 
 var uglifycss = require('gulp-uglifycss');
@@ -339,7 +342,7 @@ gulp.task('images', function () {
         .pipe(gulp.dest('public/assets/images/'));
 });
 
-gulp.task('templates', function () {
+gulp.task('app-templates', function () {
     let randomString = new Date().getTime();
 
     gulp.src(['confetti.html'])
@@ -349,29 +352,114 @@ gulp.task('templates', function () {
         .pipe(gulp.dest('public/app/'))
         .pipe(tap(function (file) {
             return newfile('index.html', `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Islamic eLearning</title>
-    <link rel="stylesheet" href="assets/css/style.css?${randomString}">
-    <link rel="stylesheet" href="node_modules/style/index.css?${randomString}">
-    <link rel="stylesheet" href="assets/css/portal.css?${randomString}">
-</head>
-<body ng-app="10softdental">
-    <div ng-show="$root.initialLoading" class="initial-loader">
-        <img src="/assets/images/logo-blue.png" alt="">
-    </div>
-    <ui-view></ui-view>
-    <script src="node_modules/index.js?${randomString}"></script>
-    <script src="node_modules/ckeditor/ckeditor.js?${randomString}"></script>
-    <script src="node_modules/ckeditor/adapters/jquery.js?${randomString}"></script>
-    <script src="assets/js/script.js?${randomString}"></script>
-    <script src="app.js?${randomString}"></script>
-</body>
-</html>
+            <!DOCTYPE html>
+
+            <html lang="en">
+            
+            <!-- begin::Head -->
+            
+            <head>
+                <base href="">
+                <meta charset="utf-8" />
+                <title>Metronic | Dashboard</title>
+                <meta name="description" content="Updates and statistics">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            
+                <!--begin::Fonts -->
+                <link rel="stylesheet"
+                    href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+            
+                <!--end::Fonts -->
+            
+                <!--begin::Page Vendors Styles(used by this page) -->
+                <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+            
+                <!--end::Page Vendors Styles -->
+            
+                <!--begin::Global Theme Styles(used by all pages) -->
+                <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+                <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+            
+                <!--end::Global Theme Styles -->
+            
+                <!--begin::Layout Skins(used by all pages) -->
+                <link href="assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css" />
+                <link href="assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
+                <link href="assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />
+                <link href="assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
+            
+                <!--end::Layout Skins -->
+                <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+            </head>
+            
+            <!-- end::Head -->
+            
+            <!-- begin::Body -->
+            
+            <body ng-app="10softdental"
+                class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+            
+                <ui-view></ui-view>
+                <!-- begin::Global Config(global config for global JS sciprts) -->
+                <script>
+                    var KTAppOptions = {
+                        "colors": {
+                            "state": {
+                                "brand": "#5d78ff",
+                                "dark": "#282a3c",
+                                "light": "#ffffff",
+                                "primary": "#5867dd",
+                                "success": "#34bfa3",
+                                "info": "#36a3f7",
+                                "warning": "#ffb822",
+                                "danger": "#fd3995"
+                            },
+                            "base": {
+                                "label": [
+                                    "#c5cbe3",
+                                    "#a1a8c3",
+                                    "#3d4465",
+                                    "#3e4466"
+                                ],
+                                "shape": [
+                                    "#f0f3ff",
+                                    "#d9dffa",
+                                    "#afb4d4",
+                                    "#646c9a"
+                                ]
+                            }
+                        }
+                    };
+                </script>
+            
+                <!-- end::Global Config -->
+            
+                <!--begin::Global Theme Bundle(used by all pages) -->
+                <script src="assets/plugins/global/plugins.bundle.min.js" type="text/javascript"></script>
+                <script src="assets/js/scripts.bundle.min.js" type="text/javascript"></script>
+            
+                <!--end::Global Theme Bundle -->
+            
+                <!--begin::Page Vendors(used by this page) -->
+                <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.min.js" type="text/javascript"></script>
+                <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM"
+                    type="text/javascript"></script>
+                <script src="assets/plugins/custom/gmaps/gmaps.js" type="text/javascript"></script>
+            
+                <!--end::Page Vendors -->
+            
+                <!--begin::Page Scripts(used by this page) -->
+                <script src="assets/js/pages/dashboard.js" type="text/javascript"></script>
+            
+                <!--end::Page Scripts -->
+            
+                <script src="node_modules/index.js"></script>
+                <script src="app.js"></script>
+            </body>
+            
+            <!-- end::Body -->
+            
+            </html>
             `)
                 .pipe(gulp.dest('public'));
         }));
@@ -381,11 +469,11 @@ gulp.task('templates', function () {
 gulp.task('prod', gulp.series(
     "prod-app-js",
     "prod-node-modules-js",
-    "prod-assets-js",
+    "prod-bundle",
     "prod-node-modules-css",
     "prod-app-css",
     "images",
-    "templates"
+    "app-templates"
 ));
 
 

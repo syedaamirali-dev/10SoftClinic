@@ -8,11 +8,41 @@
     /** @ngInject */
     function dashboardService(apiCollection, $http, $q) {
         var service = {
-            getDashboardData
+            getDashboardData,
+            getDtOptions
         };
 
+        function getDtOptions(data, functions) {
+            return {
+                data,
+                columns: [
+                    { title: 'id', data: 'id' },
+                    { title: 'first_name', data: 'first_name' },
+                    { title: 'last_name', data: 'last_name' },
+                    { title: 'email', data: 'email' },
+                    { title: 'gender', data: 'gender' },
+                    { title: 'ip_address', data: 'ip_address' },
+                    { title: 'Actions', data: 'id' },
+                ],
+                columnDefs: [
+                    {
+                        targets: 6,
+                        render: (data, type, row) => {
+                            return `
+                            <button class="btn btn-sm btn-primary">Action</button>
+                            `;
+                        },
+                        fnCreatedCell: (nTd, cellData, rowData, row, col) => {
+                            $(nTd).find(".btn").on("click", () => {
+                                functions.onClick(cellData)
+                            });
+                        }
+                    }
+                ]
+            }
+        }
         function getDashboardData() {
-            return httpGet(apiCollection.user.getDashboardData());
+            return httpGet("http://www.mocky.io/v2/5e16275034000084ea406a12");
         }
 
         function httpPost(url, data) {

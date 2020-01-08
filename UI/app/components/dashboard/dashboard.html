@@ -664,10 +664,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="kt-portlet__body kt-portlet__body--fit">
+                <div class="kt-portlet__body">
 
                     <!--begin: Datatable -->
-                    <div class="kt-datatable" id="kt_datatable_latest_orders"></div>
+                    <!-- <div class="kt-datatable" id="kt_datatable_latest_orders"></div> -->
+                    <div custom-data-table tid="dashboardTable" options="dtOptions" loaded="dashboardDataLoaded">
+                        <div class="page-header d-flex">
+                            <h3 class="section-header mr-2">Heading here</h3>
+                            <button class="btn btn-sm btn-secondary">Add +</button>
+                        </div>
+                    </div>
 
                     <!--end: Datatable -->
                 </div>

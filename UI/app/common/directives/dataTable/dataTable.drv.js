@@ -37,15 +37,16 @@
                         return;
                     }
                     let tableOptions = {
-                        data: scope.options.data,
-                        columns: scope.options.columns,
-                        columnDefs: scope.options.columnDefs,
-                        reponsive: true,
-                        drawCallback: function () {
-                            if (typeof (scope.options.drawCallback) == "function") {
-                                scope.options.drawCallback();
-                            }
-                        },
+                        dom: 't<"d-flex justify-content-between" <"" i><"d-flex" lp>>',
+                        // data: scope.options.data,
+                        // columns: scope.options.columns,
+                        // columnDefs: scope.options.columnDefs,
+                        // reponsive: true,
+                        // drawCallback: function () {
+                        //     if (typeof (scope.options.drawCallback) == "function") {
+                        //         scope.options.drawCallback();
+                        //     }
+                        // },
                         // rowReorder: scope.options.rowReorder
                     };
                     if (scope.options.printButton) {
@@ -63,7 +64,7 @@
                             ]
                         })
                     }
-                    let table = $('#' + scope.tid).DataTable(tableOptions);
+                    let table = $('#' + scope.tid).DataTable($.extend(true, tableOptions, scope.options));
                     table.on('draw', function () {
                         $('[data-toggle="popover"]').popover();
                         // console.log($('[data-toggle="popover"]'));
