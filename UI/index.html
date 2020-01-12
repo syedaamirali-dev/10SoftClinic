@@ -137,6 +137,9 @@ License: You must have a valid license purchased only from themeforest(the above
     class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
 
     <ui-view></ui-view>
+    <div class="main-loader-wrapper" ng-show="$root.pageLoading">
+        <div class="lds lds-hourglass"></div>
+    </div>
     <!--ENd:: Chat-->
 
     <!-- begin::Global Config(global config for global JS sciprts) -->
@@ -200,7 +203,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="./assets/plugins/general/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
     <script src="./assets/plugins/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js"
         type="text/javascript"></script>
-    <script src="./assets/plugins/general/bootstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript"></script>
+    <script src="./assets/plugins/general/bootstrap-maxlength/src/bootstrap-maxlength.js"
+        type="text/javascript"></script>
     <script src="./assets/plugins/general/plugins/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js"
         type="text/javascript"></script>
     <script src="./assets/plugins/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
@@ -221,7 +225,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="./assets/plugins/general/autosize/dist/autosize.js" type="text/javascript"></script>
     <script src="./assets/plugins/general/clipboard/dist/clipboard.min.js" type="text/javascript"></script>
     <script src="./assets/plugins/general/dropzone/dist/dropzone.js" type="text/javascript"></script>
-    <script src="./assets/plugins/general/js/global/integration/plugins/dropzone.init.js" type="text/javascript"></script>
+    <script src="./assets/plugins/general/js/global/integration/plugins/dropzone.init.js"
+        type="text/javascript"></script>
     <script src="./assets/plugins/general/quill/dist/quill.js" type="text/javascript"></script>
     <script src="./assets/plugins/general/@yaireo/tagify/dist/tagify.polyfills.min.js" type="text/javascript"></script>
     <script src="./assets/plugins/general/@yaireo/tagify/dist/tagify.min.js" type="text/javascript"></script>
@@ -276,7 +281,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="./assets/plugins/custom/flot/source/jquery.flot.crosshair.js" type="text/javascript"></script>
     <script src="./assets/plugins/custom/flot/source/jquery.flot.axislabels.js" type="text/javascript"></script>
     <script src="./assets/plugins/custom/datatables.net/js/jquery.dataTables.js" type="text/javascript"></script>
-    <script src="./assets/plugins/custom/datatables.net-bs4/js/dataTables.bootstrap4.js" type="text/javascript"></script>
+    <script src="./assets/plugins/custom/datatables.net-bs4/js/dataTables.bootstrap4.js"
+        type="text/javascript"></script>
     <script src="./assets/plugins/custom/js/global/integration/plugins/datatables.init.js"
         type="text/javascript"></script>
     <script src="./assets/plugins/custom/datatables.net-autofill/js/dataTables.autoFill.min.js"
