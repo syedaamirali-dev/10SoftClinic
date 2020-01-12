@@ -56,7 +56,7 @@ gulp.task('gen-page', function () {
         }));
 
     // update style.scss
-    gulp.src('./assets/sass/app.scss')
+    gulp.src('./assets/sass/_app.scss')
         .pipe(gap.appendText(mainSassContent(componentName)))
         .pipe(gulp.dest('./assets/sass'))
 
@@ -196,7 +196,8 @@ indexReplaceContent = function (componentName) {
 
 viewContent = function (componentName) {
     return `
-    <div id="${componentName}" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+<div id="${componentName}" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+${componentName} is working!!!
 </div>`;
 }
 
