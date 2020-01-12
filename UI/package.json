@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile-sass": "node-sass assets/sass/app.scss assets/css/app.style.bundle.css -w"
+    "compile-sass": "node-sass assets/sass/style.scss assets/css/style.bundle.css -w"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "@uirouter/angularjs": "^1.0.24",
     "angular": "^1.7.9",
     "angular-sanitize": "^1.7.9",
+    "bootstrap": "^4.4.1",
     "izitoast": "^1.4.0",
     "lodash": "^4.17.15",
     "secure-ls": "^1.2.6",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.8.0",
     "dom-parser": "^0.1.6",
     "fs": "0.0.1-security",
     "gulp": "^4.0.2",

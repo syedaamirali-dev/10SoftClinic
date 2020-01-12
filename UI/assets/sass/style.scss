@@ -14,7 +14,7 @@
 
 // 2: Bootstrap framework includes
 @import "global/integration/frameworks/bootstrap/variables";
-@import "../../../tools/node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 @import "global/integration/frameworks/bootstrap/bootstrap.scss";
 
 // 3: Components include
@@ -46,3 +46,6 @@
 // 6:  User defined custom styles includes
 @import "custom/example-1";
 @import "custom/example-2";
+
+
+@import "app";

@@ -42,7 +42,7 @@
             }
         }
         function getDashboardData() {
-            return httpGet("http://www.mocky.io/v2/5e16275034000084ea406a12");
+            return httpGet("http://www.mocky.io/v2/5e16275034000084ea406a12?mocky-delay=5000ms");
         }
 
         function httpPost(url, data) {

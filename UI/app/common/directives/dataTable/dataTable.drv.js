@@ -25,52 +25,52 @@
         function link(scope, element) {
             scope.pageLength = 10;
 
-            scope.$watch('loaded', () => {
-                console.log(scope.loaded)
-                if (!scope.loaded)
-                    return
-                $timeout(function () {
-                    if ($.fn.DataTable.isDataTable('#' + scope.tid)) {
-                        $('#' + scope.tid).dataTable().fnClearTable();
-                        if (scope.options.data.length > 0)
-                            $('#' + scope.tid).dataTable().fnAddData(scope.options.data);
-                        return;
-                    }
-                    let tableOptions = {
-                        dom: 't<"d-flex justify-content-between" <"" i><"d-flex" lp>>',
-                        // data: scope.options.data,
-                        // columns: scope.options.columns,
-                        // columnDefs: scope.options.columnDefs,
-                        // reponsive: true,
-                        // drawCallback: function () {
-                        //     if (typeof (scope.options.drawCallback) == "function") {
-                        //         scope.options.drawCallback();
-                        //     }
-                        // },
-                        // rowReorder: scope.options.rowReorder
-                    };
-                    if (scope.options.printButton) {
-                        $.extend(tableOptions, {
-                            dom: 'Btip',
-                            buttons: [
-                                {
-                                    "extend": 'print',
-                                    "text": '',
-                                    "className": 'btn float-right',
-                                    "exportOptions": {
-                                        "columns": scope.options.exportColumns
-                                    }
+            $timeout(function () {
+                // if ($.fn.DataTable.isDataTable('#' + scope.tid)) {
+                //     $('#' + scope.tid).dataTable().fnClearTable();
+                //     if (scope.options.data.length > 0)
+                //         $('#' + scope.tid).dataTable().fnAddData(scope.options.data);
+                //     return;
+                // }
+                let tableOptions = {
+                    dom: 't<"d-flex justify-content-between" <"" i><"d-flex" lp>>',
+                    // data: scope.options.data,
+                    // columns: scope.options.columns,
+                    // columnDefs: scope.options.columnDefs,
+                    // reponsive: true,
+                    // drawCallback: function () {
+                    //     if (typeof (scope.options.drawCallback) == "function") {
+                    //         scope.options.drawCallback();
+                    //     }
+                    // },
+                    // rowReorder: scope.options.rowReorder
+                };
+                if (scope.options.printButton) {
+                    $.extend(tableOptions, {
+                        dom: 'Btip',
+                        buttons: [
+                            {
+                                "extend": 'print',
+                                "text": '',
+                                "className": 'btn float-right',
+                                "exportOptions": {
+                                    "columns": scope.options.exportColumns
                                 }
-                            ]
-                        })
-                    }
-                    let table = $('#' + scope.tid).DataTable($.extend(true, tableOptions, scope.options));
-                    table.on('draw', function () {
-                        $('[data-toggle="popover"]').popover();
-                        // console.log($('[data-toggle="popover"]'));
-                    });
+                            }
+                        ]
+                    })
+                }
+                let table = $('#' + scope.tid).DataTable($.extend(true, tableOptions, scope.options));
+                table.on('draw', function () {
+                    $('[data-toggle="popover"]').popover();
+                    // console.log($('[data-toggle="popover"]'));
                 });
             });
+            // scope.$watch('loaded', () => {
+            //     console.log(scope.loaded)
+            //     if (!scope.loaded)
+            //         return
+            // });
 
             scope.filterTable = () => {
                 $('#' + scope.tid).dataTable().api().search(scope.filterTerm).draw();
