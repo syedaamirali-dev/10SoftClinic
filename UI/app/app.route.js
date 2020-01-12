@@ -37,9 +37,16 @@
                 controller: 'periodontalChartCtrl',
                 templateUrl: 'app/components/periodontalChart/periodontalChart.html'
             })
+            // adultPatientSheet
+            .state({
+                name: 'main.adultPatientSheet',
+                url: '/adultPatientSheet',
+                controller: 'adultPatientSheetCtrl',
+                templateUrl: 'app/components/adultPatientSheet/adultPatientSheet.html'
+            })
             /** @RouteReplaceForGulp */
 
-        $urlRouterProvider.when("/my-courses", "/my-courses/");
+        
         $urlRouterProvider.otherwise("/dashboard");
     }
 
