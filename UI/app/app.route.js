@@ -44,6 +44,13 @@
                 controller: 'adultPatientSheetCtrl',
                 templateUrl: 'app/components/adultPatientSheet/adultPatientSheet.html'
             })
+            // waitingList
+            .state({
+                name: 'main.waitingList',
+                url: '/waitingList',
+                controller: 'waitingListCtrl',
+                templateUrl: 'app/components/waitingList/waitingList.html'
+            })
             /** @RouteReplaceForGulp */
 
         
