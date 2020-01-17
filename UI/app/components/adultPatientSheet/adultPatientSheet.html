@@ -1,35 +1,54 @@
-<div class="kt-subheader kt-grid__item" id="kt_subheader">
-    <div class="kt-container kt-container--fluid ">
-    <div class="kt-subheader__main">
-    <h3 class="kt-subheader__title">Adult Screening</h3>    
+<!-- begin:: Subheader -->
+<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+    <div class="kt-container  kt-container--fluid ">
+        <div class="kt-subheader__main">
+            <h3 class="kt-subheader__title">
+                Pateint Screening
+            </h3>
+            <span class="kt-subheader__separator kt-hidden"></span>
+            <div class="kt-subheader__breadcrumbs">
+                <a href="#" class="kt-subheader__breadcrumbs-home">
+                    <i class="flaticon-file-1"></i>
+                </a>
+                <span class="kt-subheader__breadcrumbs-separator"></span>
+                <a href="" class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">
+                    Adult Screening
+                </a>
+
+                <!-- <span class=" kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active
+                    link</span> -->
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
+</div>
+
+<!-- end:: Subheader -->
+
 <div id="adultPatientSheet" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
     <form ng-submit="adultPatientForm()" name="adultPatientForm" id="adultPatientFormId">
-        <div class="row" >
+        <div class="row">
             <div class="col-md-12 col-lg-6">
                 <h5 class="form-header">General Information</h5>
                 <div class="">
                     <div class="form-group mb-0 row">
                         <label for="opdNo" class="col-sm-4 col-form-label"><span class="asterisk">*</span> OPD No
-                    :</label>
+                            :</label>
                         <div class="col-sm-8">
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i
                                             class="mdi mdi-factory"></i></span>
                                 </div>
-                                <input id="opdNo" name="opdNo" maxlength="100" class="form-control" type="text"
-                                    value="" ng-model="patientForm.opdNo" placeholder="Enter OPD No..."
-                                    required>
+                                <input id="opdNo" name="opdNo" maxlength="100" class="form-control" type="text" value=""
+                                    ng-model="patientForm.opdNo" placeholder="Enter OPD No..." required>
                                 <!-- <div class="validation-msg"> This is a required field.</div> -->
                             </div>
 
                         </div>
                     </div>
                     <div class="form-group mb-0 row">
-                        <label for="patName" class="col-sm-4 col-form-label"><span class="asterisk">*</span> Name :</label>
+                        <label for="patName" class="col-sm-4 col-form-label"><span class="asterisk">*</span> Name
+                            :</label>
 
                         <div class="col-sm-8">
                             <div class="input-group input-group-sm mb-3">
@@ -38,8 +57,7 @@
                                             class="mdi mdi-stack-exchange"></i></span>
                                 </div>
                                 <input id="patName" name="patName" maxlength="100" class="form-control" type="text"
-                                value="" ng-model="patientForm.patientName" placeholder="Enter Name..."
-                                required>
+                                    value="" ng-model="patientForm.patientName" placeholder="Enter Name..." required>
                                 <!-- <div class="validation-msg">This is a required field.</div> -->
                             </div>
                         </div>
@@ -54,8 +72,8 @@
                                     </span>
                                 </div>
 
-                                <input id="mobileNo" name="mobileNo" class="form-control" type="text"
-                                    maxlength="12" ng-model="patientForm.mobileNo">
+                                <input id="mobileNo" name="mobileNo" class="form-control" type="text" maxlength="12"
+                                    ng-model="patientForm.mobileNo">
                             </div>
                         </div>
                     </div>
@@ -69,8 +87,8 @@
                                     </span>
                                 </div>
 
-                                <input id="age" name="age" class="form-control" type="text"
-                                    maxlength="12" ng-model="patientForm.age">
+                                <input id="age" name="age" class="form-control" type="text" maxlength="12"
+                                    ng-model="patientForm.age">
                             </div>
                         </div>
                     </div>
@@ -84,8 +102,8 @@
                                     </span>
                                 </div>
 
-                                <input id="gender" name="gender" class="form-control" type="text"
-                                    maxlength="12" ng-model="patientForm.gender">
+                                <input id="gender" name="gender" class="form-control" type="text" maxlength="12"
+                                    ng-model="patientForm.gender">
                             </div>
                         </div>
                     </div>
@@ -100,12 +118,13 @@
                                 </div>
 
                                 <textarea class="form-control " rows="3" id="cheifCompliant" name="cheifCompliant"
-                                ng-model="patientForm.medicalHistory"></textarea>
+                                    ng-model="patientForm.medicalHistory"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="form-group mb-0 row">
-                        <label for="softTissue" class="col-sm-4 col-form-label">Soft Tissue Abnormalites/Lession :</label>
+                        <label for="softTissue" class="col-sm-4 col-form-label">Soft Tissue Abnormalites/Lession
+                            :</label>
                         <div class="col-sm-8">
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
@@ -114,8 +133,8 @@
                                     </span>
                                 </div>
 
-                                <input id="softTissue" name="softTissue" class="form-control" type="text"
-                                maxlength="12" ng-model="patientForm.softTissue">
+                                <input id="softTissue" name="softTissue" class="form-control" type="text" maxlength="12"
+                                    ng-model="patientForm.softTissue">
                             </div>
                         </div>
                     </div>
@@ -151,7 +170,8 @@
                 <div class="">
                     <div class="form-group mb-0 row">
                         <div class="col-sm-12">
-                            <img class="responsive" src="/app/components/adultPatientSheet/dentalChart.PNG" alt="Girl in a jacket">
+                            <img class="responsive" src="/app/components/adultPatientSheet/dentalChart.PNG"
+                                alt="Girl in a jacket">
                         </div>
                     </div>
                 </div>
@@ -195,8 +215,7 @@
                         <div class="col-sm-8">
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-city"></i></span>
+                                    <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-city"></i></span>
                                 </div>
                                 <input id="nationality" name="nationality" class="form-control" type="text"
                                     ng-model="patientForm.nationality" value="" placeholder="Enter nationality...">
@@ -227,7 +246,7 @@
                                 </div>
 
                                 <textarea class="form-control " rows="3" id="medicalHistory" name="medicalHistory"
-                                ng-model="patientForm.medicalHistory"></textarea>
+                                    ng-model="patientForm.medicalHistory"></textarea>
                             </div>
                         </div>
                     </div>
@@ -242,7 +261,7 @@
                                 </div>
 
                                 <textarea class="form-control " rows="3" id="dentalHistory" name="dentalHistory"
-                                ng-model="patientForm.dentalHistory"></textarea>
+                                    ng-model="patientForm.dentalHistory"></textarea>
                             </div>
                         </div>
                     </div>
@@ -257,7 +276,7 @@
                                 </div>
 
                                 <input id="gingival" name="gingival" class="form-control" type="text"
-                                 ng-model="patientForm.gingival">
+                                    ng-model="patientForm.gingival">
                             </div>
                         </div>
                     </div>
@@ -374,7 +393,7 @@
 
                     </div>
                 </div> -->
-  
+
             </div>
         </div>
     </form>
