@@ -24,5 +24,10 @@
 
 <!-- end:: Subheader -->
 <div id="waitingList" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-waitingList is working!!
+    <div custom-data-table tid="waitingTable" options="dtOptions" ng-if="waitingDataLoaded">
+        <div class="page-header d-flex">
+            <h3 class="section-header mr-2">Heading here</h3>
+            <button class="btn btn-sm btn-secondary">Add +</button>
+        </div>
+    </div>
 </div>

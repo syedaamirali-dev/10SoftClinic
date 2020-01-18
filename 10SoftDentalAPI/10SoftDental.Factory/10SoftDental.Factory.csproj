@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Common\CommonResponse.cs" />
+    <Compile Include="Common\ICommon.cs" />
+    <Compile Include="Common\ICommonResponse.cs" />
+    <Compile Include="Common\ResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

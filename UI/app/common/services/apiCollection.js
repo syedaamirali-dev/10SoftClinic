@@ -17,9 +17,15 @@
             forgotPassword: () => apiEndPoint + "UserReg/forgotPassword",
             updatePassword: () => apiEndPoint + "UserReg/updatePassword",
         }
+        var waitingList = {
+            GetWaitingList: function () {
+                return apiEndPoint + "Common/GetAllWaitingList";
+            },
+        }
 
         return {
-            login
+            login,
+            waitingList
         }
     }
 }());
