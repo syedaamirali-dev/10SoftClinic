@@ -10725,21 +10725,21 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 /* makes the font 33% larger relative to the icon container */
 .la-lg {
-    font-size: 1.33333333em;
+    font-size: 1.33333333em !important;
     line-height: 0.75em;
     vertical-align: -15%;
 }
 .la-2x {
-    font-size: 2em;
+    font-size: 2em !important;
 }
 .la-3x {
-    font-size: 3em;
+    font-size: 3em !important;
 }
 .la-4x {
-    font-size: 4em;
+    font-size: 4em !important;
 }
 .la-5x {
-    font-size: 5em;
+    font-size: 5em !important;
 }
 .la-fw {
     width: 1.28571429em;
@@ -10860,7 +10860,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     line-height: inherit;
 }
 .la-stack-2x {
-    font-size: 2em;
+    font-size: 2em !important;
 }
 .la-inverse {
     color: #ffffff;

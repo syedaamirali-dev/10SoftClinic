@@ -39,10 +39,17 @@
             })
             // adultPatientSheet
             .state({
-                name: 'main.adultPatientSheet',
+                name: 'main.docTreatment.adultPatientSheet',
                 url: '/adultPatientSheet',
                 controller: 'adultPatientSheetCtrl',
                 templateUrl: 'app/components/adultPatientSheet/adultPatientSheet.html'
+            })
+            // docTreatment
+            .state({
+                name: 'main.docTreatment',
+                url: '/docTreatment',
+                controller: 'docTreatmentCtrl',
+                templateUrl: 'app/components/docTreatment/docTreatment.html'
             })
             /** @RouteReplaceForGulp */
 
