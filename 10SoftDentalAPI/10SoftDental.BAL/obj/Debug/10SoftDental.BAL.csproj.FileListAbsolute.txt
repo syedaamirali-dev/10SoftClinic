@@ -1,0 +1,13 @@
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\bin\Debug\10SoftDental.BAL.dll
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\bin\Debug\10SoftDental.BAL.pdb
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\obj\Debug\10SoftDental.BAL.csprojAssemblyReference.cache
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\obj\Debug\10SoftDental.BAL.csproj.CoreCompileInputs.cache
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\obj\Debug\10SoftDental.BAL.dll
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\obj\Debug\10SoftDental.BAL.pdb
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\bin\Debug\10SoftDental.DAL.dll
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\bin\Debug\10SoftDental.Factory.dll
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\bin\Debug\ApplicationUtility.dll
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\bin\Debug\10SoftDental.DAL.pdb
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\bin\Debug\10SoftDental.Factory.pdb
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\bin\Debug\ApplicationUtility.pdb
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.BAL\obj\Debug\10SoftDental.BAL.csproj.CopyComplete

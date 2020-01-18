@@ -1,4 +1,33 @@
+<!-- begin:: Subheader -->
+<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+    <div class="kt-container  kt-container--fluid ">
+        <div class="kt-subheader__main">
+            <h3 class="kt-subheader__title">
+                Pateint Screening
+            </h3>
+            <span class="kt-subheader__separator kt-hidden"></span>
+            <div class="kt-subheader__breadcrumbs">
+                <a href="#" class="kt-subheader__breadcrumbs-home">
+                    <i class="flaticon-file-1"></i>
+                </a>
+                <span class="kt-subheader__breadcrumbs-separator"></span>
+                <a href="" class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">
+                    Waiting List
+                </a>
 
+                <!-- <span class=" kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active
+                    link</span> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end:: Subheader -->
 <div id="waitingList" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-waitingList is working!!!
+    <div custom-data-table tid="waitingTable" options="dtOptions" ng-if="waitingDataLoaded">
+        <div class="page-header d-flex">
+            <h3 class="section-header mr-2">Heading here</h3>
+            <button class="btn btn-sm btn-secondary">Add +</button>
+        </div>
+    </div>
 </div>
