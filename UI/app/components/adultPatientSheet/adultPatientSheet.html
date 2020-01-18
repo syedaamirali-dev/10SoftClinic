@@ -1,400 +1,318 @@
-<!-- begin:: Subheader -->
-<div class="kt-subheader   kt-grid__item" id="kt_subheader">
-    <div class="kt-container  kt-container--fluid ">
-        <div class="kt-subheader__main">
-            <h3 class="kt-subheader__title">
-                Pateint Screening
-            </h3>
-            <span class="kt-subheader__separator kt-hidden"></span>
-            <div class="kt-subheader__breadcrumbs">
-                <a href="#" class="kt-subheader__breadcrumbs-home">
-                    <i class="flaticon-file-1"></i>
-                </a>
-                <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">
-                    Adult Screening
-                </a>
-
-                <!-- <span class=" kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active
-                    link</span> -->
+<div class="kt-heading kt-heading--md">Patient Screening Sheet</div>
+<div class="kt-form__section kt-form__section--first">
+    <!--begin::Form-->
+    <form class="kt-form kt-form--label-right">
+        <div class="kt-portlet__body">
+            <div class="form-group row">
+                <h5 class="form-header">Document Information</h5>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label>Document #:</label>
+                    <select class="form-control">
+                        <option selected>DT1</option>
+                        <option>DT2</option>
+                        <option>DT3</option>
+                        <option>DT4</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Document Type:</label>
+                    <select class="form-control">
+                        <option selected>Treatment</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="">Issue Date:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" readonly placeholder="Select date"
+                            id="kt_datepicker_2" />
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-calendar la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label class="">Remarks:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <textarea class="form-control" rows="3" placeholder="Enter Remarks"></textarea>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Analysis Code:</label>
+                    <select class="form-control">
+                        <option selected>AN1</option>
+                        <option>AN2</option>
+                        <option>AN3</option>
+                        <option>AN4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+            </div>
+            <div class="form-group row">
+                <h5 class="form-header">Treatment Information</h5>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label>Treatment DateTime:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" value="1/18/2020 11:36 AM" disabled>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-calendar la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label>Visit Register #:</label>
+                    <select class="form-control">
+                        <option selected>6492</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="">Illness Duration:</label>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <input type="number" class="form-control" value="1" disabled>
+                        </div>
+                        <div class="col-md-5">
+                            <select class="form-control">
+                                <option selected>Days</option>
+                                <option>Months</option>
+                                <option>Years</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label class="">Preferred Lab ::</label>
+                    <select class="form-control">
+                        <option selected>Lab 1</option>
+                        <option>Medical laboratory</option>
+                        <option>Pathology Lab</option>
+                    </select>
 
-<!-- end:: Subheader -->
-
-<div id="adultPatientSheet" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-    <form ng-submit="adultPatientForm()" name="adultPatientForm" id="adultPatientFormId">
-        <div class="row">
-            <div class="col-md-12 col-lg-6">
+                </div>
+                <div class="col-md-4">
+                    <label>Preferred Nurse:</label>
+                    <select class="form-control">
+                        <option selected>EMP002</option>
+                        <option>Medical laboratory</option>
+                        <option>Pathology Lab</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Preferred Pharmacy:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" placeholder="Enter Preferred Pharmancy">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-medkit la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+            </div>
+            <div class="form-group row">
                 <h5 class="form-header">General Information</h5>
-                <div class="">
-                    <div class="form-group mb-0 row">
-                        <label for="opdNo" class="col-sm-4 col-form-label"><span class="asterisk">*</span> OPD No
-                            :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-factory"></i></span>
-                                </div>
-                                <input id="opdNo" name="opdNo" maxlength="100" class="form-control" type="text" value=""
-                                    ng-model="patientForm.opdNo" placeholder="Enter OPD No..." required>
-                                <!-- <div class="validation-msg"> This is a required field.</div> -->
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="patName" class="col-sm-4 col-form-label"><span class="asterisk">*</span> Name
-                            :</label>
-
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-stack-exchange"></i></span>
-                                </div>
-                                <input id="patName" name="patName" maxlength="100" class="form-control" type="text"
-                                    value="" ng-model="patientForm.patientName" placeholder="Enter Name..." required>
-                                <!-- <div class="validation-msg">This is a required field.</div> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="leStatus" class="col-sm-4 col-form-label">Mobile Number:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="mdi mdi-stack-exchange"></i>
-                                    </span>
-                                </div>
-
-                                <input id="mobileNo" name="mobileNo" class="form-control" type="text" maxlength="12"
-                                    ng-model="patientForm.mobileNo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="leStatus" class="col-sm-4 col-form-label">Age :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="mdi mdi-stack-exchange"></i>
-                                    </span>
-                                </div>
-
-                                <input id="age" name="age" class="form-control" type="text" maxlength="12"
-                                    ng-model="patientForm.age">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="leStatus" class="col-sm-4 col-form-label">Gender :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="mdi mdi-stack-exchange"></i>
-                                    </span>
-                                </div>
-
-                                <input id="gender" name="gender" class="form-control" type="text" maxlength="12"
-                                    ng-model="patientForm.gender">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="cheifCompliant" class="col-sm-4 col-form-label">Cheif Compliant :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="mdi mdi-stack-exchange"></i>
-                                    </span>
-                                </div>
-
-                                <textarea class="form-control " rows="3" id="cheifCompliant" name="cheifCompliant"
-                                    ng-model="patientForm.medicalHistory"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="softTissue" class="col-sm-4 col-form-label">Soft Tissue Abnormalites/Lession
-                            :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="mdi mdi-stack-exchange"></i>
-                                    </span>
-                                </div>
-
-                                <input id="softTissue" name="softTissue" class="form-control" type="text" maxlength="12"
-                                    ng-model="patientForm.softTissue">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="form-group mb-0 row">
-                        <label for="leStatus" class="col-sm-4 col-form-label">Is MNE:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-
-                                <label class="switch  mt-1">
-                                    <input type="checkbox" class="custom-toggle primary"
-                                        ng-model="entityData.isMNE">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="form-group mb-0 row">
-                        <label for="leStatus" class="col-sm-4 col-form-label">Comments:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-stack-exchange"></i></span>
-                                </div>
-                                <textarea class="form-control " rows="3" id="comments" name="comments"
-                                    ng-model="entityData.comments"></textarea>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-                <h5 class="form-header">Dental Chart</h5>
-                <div class="">
-                    <div class="form-group mb-0 row">
-                        <div class="col-sm-12">
-                            <img class="responsive" src="/app/components/adultPatientSheet/dentalChart.PNG"
-                                alt="Girl in a jacket">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ---------------------- -->
             </div>
-
-            <div class="col-md-12 col-lg-6">
-                <h5 class="form-header">Primary Address</h5>
-                <div class="">
-                    <div class="form-group mb-0 row">
-                        <label for="address1" class="col-sm-4 col-form-label">Address1:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-map-marker"></i></span>
-                                </div>
-                                <input id="address1" name="address1" class="form-control" type="text" value=""
-                                    ng-model="patientForm.address1" placeholder="Enter Address1...">
-                                </select>
-                            </div>
-                        </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label>OPD No:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" value="OPD 78964" disabled>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-info-circle la-2x"></i></span>
+                        </span>
                     </div>
-                    <div class="form-group mb-0 row">
-                        <label for="occupation" class="col-sm-4 col-form-label">Occupation:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-map-marker"></i></span>
-                                </div>
-                                <input id="occupation" name="occupation" class="form-control" type="text" value=""
-                                    ng-model="patientForm.address2" placeholder="Enter occupation...">
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="nationality" class="col-sm-4 col-form-label"> Nationality :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-city"></i></span>
-                                </div>
-                                <input id="nationality" name="nationality" class="form-control" type="text"
-                                    ng-model="patientForm.nationality" value="" placeholder="Enter nationality...">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="iqamaNo" class="col-sm-4 col-form-label">ID/Iqama No :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-map-legend"></i></span>
-                                </div>
-                                <input id="iqamaNo" name="iqamaNo" class="form-control" type="text"
-                                    ng-model="patientForm.iqamaNo" value="" placeholder="Enter iqamaNo...">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="medicalHistory" class="col-sm-4 col-form-label">Medical History :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="mdi mdi-stack-exchange"></i>
-                                    </span>
-                                </div>
-
-                                <textarea class="form-control " rows="3" id="medicalHistory" name="medicalHistory"
-                                    ng-model="patientForm.medicalHistory"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="dentalHistory" class="col-sm-4 col-form-label">Past Dental History :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="mdi mdi-stack-exchange"></i>
-                                    </span>
-                                </div>
-
-                                <textarea class="form-control " rows="3" id="dentalHistory" name="dentalHistory"
-                                    ng-model="patientForm.dentalHistory"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-0 row">
-                        <label for="gingival" class="col-sm-4 col-form-label">Gingival inflammation :</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="mdi mdi-stack-exchange"></i>
-                                    </span>
-                                </div>
-
-                                <input id="gingival" name="gingival" class="form-control" type="text"
-                                    ng-model="patientForm.gingival">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="form-group mb-0 row">
-                        <label for="Country" class="col-sm-4 col-form-label">Country:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-earth"></i></span>
-                                </div>
-                                <select class="form-control" id="Country" name="Country"
-                                    ng-model="entityData.addressCountriesID"
-                                    ng-options="obj.countriesID as obj.countriesName for obj in countries"
-                                    ng-change="changePostalOnCountry(entityData.addressCountriesID)">
-                                    <option value="">--None--</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="form-group mb-0 row">
-                        <label for="postalCode" class="col-sm-4 col-form-label"> Postal Code:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-postage-stamp"></i></span>
-                                </div>
-                                <input id="postalCode" name="postalCode" class="form-control" type="text"
-                                    ng-model="entityData.postalCode" value="" maxlength="{{max}}"
-                                    placeholder="Enter Postal Code...">
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
-
-                <!-- <h5 class="form-header">Primary Contacts</h5> -->
-                <!-- <div class="">
-                    <div class="form-group mb-0 row">
-                        <label for="fin_leader" class="col-sm-4 col-form-label">
-                            Finance Leader:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm " ng-class="{'mb-3' : !financeRequired}">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-account-network-outline"></i></span>
-                                </div>
-                                <div class="dropdown pull-left RegionalTaxManager-inputbox  "
-                                    auto-close="outsideClick">
-                                    <button
-                                        class="btn btns btn-default dropdowns-toggle RegionalTaxManager-dropdown "
-                                        type="button" id="individualDrop"
-                                        data-toggle="dropdown">{{entityData.financeLeader}}<span
-                                            class=" pull-right"></span></button>
-
-                                    <ul class="dropdown-menu  dropdowns-menu ">
-                                        <input disable-auto-close type="search" ng-model="serchFilterFinance"
-                                            id="nameFinance" class="RegionalTaxManager-Search"
-                                            placeholder="Search..."></input>
-                                        <li role="presentation" style="cursor: pointer"
-                                            ng-repeat="obj in directoryContacts | filter: serchFilterFinance "><a
-                                                role="menuitem"
-                                                ng-click="assignFinanceLeader(obj)">{{obj.name | lowercase}}</a>
-                                        </li>
-                                        <a class="btn  btn-primary add-contact-btnn"
-                                            ng-click="openModal('financeLeader')">
-                                            Add Contact <i class="mdi mdi-plus"></i>
-                                        </a>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="error-validation" ng-if="financeRequired"> This is a required field.</div>
-                        </div>
-
+                <div class="col-md-4">
+                    <label class="">Name:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" placeholder="Enter Name">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-user la-2x"></i></span>
+                        </span>
                     </div>
-                    <div class="form-group mb-0 row">
-                        <label for="regional_mgr" class="col-sm-4 col-form-label">
-                            Regional Tax Manager:</label>
-                        <div class="col-sm-8">
-                            <div class="input-group input-group-sm  " ng-class="{'mb-3' : !regionTaxRequired}">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="mdi mdi-file-document-box-multiple"></i></span>
-                                </div>
-
-                                <div class="dropdown pull-left RegionalTaxManager-inputbox "
-                                    auto-close="outsideClick">
-                                    <button
-                                        class="btn btns btn-default dropdowns-toggle RegionalTaxManager-dropdown "
-                                        type="button" id="individualDrop"
-                                        data-toggle="dropdown">{{entityData.regionalTaxManager}}<span
-                                            class=" pull-right"></span></button>
-
-                                    <ul class="dropdown-menu  dropdowns-menu ">
-                                        <input disable-auto-close type="search" ng-model="serchFilter" id="name"
-                                            class="RegionalTaxManager-Search" placeholder="Search..."></input>
-                                        <li role="presentation" style="cursor: pointer"
-                                            ng-repeat="obj in directoryContacts | filter: serchFilter "><a
-                                                role="menuitem"
-                                                ng-click="assignRegionManager(obj)">{{obj.name | lowercase}}</a>
-                                        </li>
-                                        <a class="btn  btn-primary add-contact-btnn"
-                                            ng-click="openModal('regionalTaxManager')">
-                                            Add Contact <i class="mdi mdi-plus"></i>
-                                        </a>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                            <div class="error-validation" ng-if="regionTaxRequired"> This is a required field.</div>
-
-                        </div>
-
+                </div>
+                <div class="col-md-4">
+                    <label class="">ID/Iqama No:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="number" class="form-control" placeholder="Enter ID/Iqama No">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-info-circle la-2x"></i></span>
+                        </span>
                     </div>
-                </div> -->
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label class="">Mobile Number:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" placeholder="Enter Mobile Number">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-phone la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="">Age:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" placeholder="Enter Age">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-info-circle la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="">Gender:</label>
+                    <div class="kt-radio-inline">
+                        <label class="kt-radio kt-radio--solid">
+                            <input type="radio" name="example_2" checked="checked" value="true"> Male
+                            <span></span>
+                        </label>
+                        <label class="kt-radio kt-radio--solid">
+                            <input type="radio" name="example_2" value="false"> Female
+                            <span></span>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label>Address:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input class="form-control" type="text" placeholder="Enter Address1">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-map-marker la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="">Occupation:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" placeholder="Enter Occupation">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-briefcase la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label class="">Nationality:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" placeholder="Enter Nationality">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-globe la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
 
             </div>
+            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+            </div>
+
+            <div class="form-group row">
+                <h5 class="form-header">Clinical Information</h5>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label class="">Medical History:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <textarea class="form-control" rows="3" placeholder="Enter Medical History"></textarea>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="">Past Dental History:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <textarea class="form-control" rows="3" placeholder="Past Dental History"></textarea>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label class="">Cheif Compliant:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <textarea class="form-control" rows="3" placeholder="Past Cheif Compliant"></textarea>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="">Soft Tissue Abnormalites/Lession:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <input type="text" class="form-control" placeholder="Enter Abnormalites/Lession">
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label class="">Gingival Inflammation/Recession:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <textarea class="form-control" rows="3"
+                            placeholder="Enter Gingival Inflammation/Recession"></textarea>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <label class="">Radiographic Findings:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <textarea class="form-control" rows="3" placeholder="Enter Radiographic Findings"></textarea>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label class="">Any Other Findings/Comments:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <textarea class="form-control" rows="3" placeholder="Enter Comments/Findings"></textarea>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="">Radiographic Findings:</label>
+                    <div class="kt-input-icon kt-input-icon--right">
+                        <textarea class="form-control" rows="3" placeholder="Enter Radiographic Findings"></textarea>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                <i class="la la-align-left la-2x"></i></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+            </div>
+
         </div>
+
     </form>
+
+    <!--end::Form-->
+
 </div>
