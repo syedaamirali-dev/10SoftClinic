@@ -51,9 +51,16 @@
                 controller: 'docTreatmentCtrl',
                 templateUrl: 'app/components/docTreatment/docTreatment.html'
             })
-            /** @RouteReplaceForGulp */
+            // waitingList
+            .state({
+                name: 'main.waitingList',
+                url: '/waitingList',
+                controller: 'waitingListCtrl',
+                templateUrl: 'app/components/waitingList/waitingList.html'
+            })
+        /** @RouteReplaceForGulp */
 
-        
+
         $urlRouterProvider.otherwise("/dashboard");
     }
 
