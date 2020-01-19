@@ -33,7 +33,20 @@ namespace _10SoftDental.BAL.Common
             try
             {
                 _dataSet = this.commonDAL.GetAllWaitingList();
-                return CreateResponse(true, "Success", "GetAllApprovers", _dataSet);
+                return CreateResponse(true, "Success", "GetAllWaitingList", _dataSet);
+            }
+            catch (Exception ex)
+            {
+                return this.commonResponseResult.CreateResponse(false, "Error", ex.Message.ToString(), "");
+            }
+
+        }
+        public ResponseModel GetAllVisitList()
+        {
+            try
+            {
+                _dataSet = this.commonDAL.GetAllVisitList();
+                return CreateResponse(true, "Success", "GetAllVisitList", _dataSet);
             }
             catch (Exception ex)
             {
