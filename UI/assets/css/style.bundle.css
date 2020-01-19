@@ -32438,6 +32438,9 @@ body {
       align-items: flex-end;
       padding: 0 4rem;
       cursor: pointer; }
+      @media (min-width: 769px) {
+        .kt-wizard-v3 .kt-wizard-v3__nav .kt-wizard-v3__nav-items .kt-wizard-v3__nav-item {
+          max-width: 125px; } }
       .kt-wizard-v3 .kt-wizard-v3__nav .kt-wizard-v3__nav-items .kt-wizard-v3__nav-item {
         display: flex;
         align-items: center;
@@ -32672,3 +32675,9 @@ div.dataTables_wrapper .dataTables_length {
 
 #docTreatmentInfo .kt-portlet__body {
   padding: 10px !important; }
+
+#docLabReport {
+  border: 5px solid green; }
+
+#docMedication {
+  border: 5px solid green; }

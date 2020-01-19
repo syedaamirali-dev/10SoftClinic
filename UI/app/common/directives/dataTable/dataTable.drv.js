@@ -33,7 +33,7 @@
                 //     return;
                 // }
                 let tableOptions = {
-                    dom: '<"row"<"col-sm-12 col-md-6"f><"col-sm-12 col-md-6"l>>t<"d-flex justify-content-between" <"" i><"d-flex" p>>',
+                    dom: '<"row"<"col-sm-12 col-md-6"f><"col-sm-12 col-md-6"l>>t<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
                     // data: scope.options.data,
                     // columns: scope.options.columns,
                     // columnDefs: scope.options.columnDefs,

@@ -29,6 +29,14 @@
                 "stepNo": 5,
                 "stepUrl": "main.docTreatment.docTreatVisit"
             },
+            {
+                "stepNo": 6,
+                "stepUrl": "main.docTreatment.docMedication"
+            },
+            {
+                "stepNo": 7,
+                "stepUrl": "main.docTreatment.docLabReport"
+            },
         ];
         /**
          * @description Step Navigation based on stepNumber
@@ -37,7 +45,7 @@
             currentStep = wizard.getStep();
             var currentStepUrl = stepUrlInfo.filter((item) => { return item.stepNo == currentStep }).length > 0
                 ? stepUrlInfo.filter((item) => { return item.stepNo == currentStep })[0].stepUrl
-                : main.docTreatment.adultPatientSheet;
+                : "main.docTreatment.adultPatientSheet";
             $state.go(currentStepUrl);
         }
 

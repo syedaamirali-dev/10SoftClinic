@@ -17,7 +17,7 @@
 
                     <!--begin: Form Wizard Nav -->
                     <div class="kt-wizard-v3__nav">
-                        <div class="kt-wizard-v3__nav-items d-flex justify-content-center">
+                        <div class="kt-wizard-v3__nav-items ">
 
                             <!--doc: Replace A tag with SPAN tag to disable the step link click -->
                             <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
@@ -31,7 +31,7 @@
                             <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
                                 <div class="kt-wizard-v3__nav-body">
                                     <div class="kt-wizard-v3__nav-label">
-                                        Treatment Information
+                                        Treatment
                                     </div>
                                     <div class="kt-wizard-v3__nav-bar"></div>
                                 </div>
@@ -47,7 +47,7 @@
                             <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
                                 <div class="kt-wizard-v3__nav-body">
                                     <div class="kt-wizard-v3__nav-label">
-                                        Insurance & Employee
+                                        Insurance
                                     </div>
                                     <div class="kt-wizard-v3__nav-bar"></div>
                                 </div>
@@ -56,6 +56,22 @@
                                 <div class="kt-wizard-v3__nav-body">
                                     <div class="kt-wizard-v3__nav-label">
                                         Visit
+                                    </div>
+                                    <div class="kt-wizard-v3__nav-bar"></div>
+                                </div>
+                            </div>
+                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
+                                <div class="kt-wizard-v3__nav-body">
+                                    <div class="kt-wizard-v3__nav-label">
+                                        Medication
+                                    </div>
+                                    <div class="kt-wizard-v3__nav-bar"></div>
+                                </div>
+                            </div>
+                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
+                                <div class="kt-wizard-v3__nav-body">
+                                    <div class="kt-wizard-v3__nav-label">
+                                        Lab Report
                                     </div>
                                     <div class="kt-wizard-v3__nav-bar"></div>
                                 </div>
@@ -100,6 +116,18 @@
                             <ui-view></ui-view>
                         </div>
                         <!--end: Form Wizard Step Visit-->
+
+                        <!--begin: Form Wizard Step Medication-->
+                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+                            <ui-view></ui-view>
+                        </div>
+                        <!--end: Form Wizard Step Medication-->
+
+                        <!--begin: Form Wizard Step Lab Report-->
+                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+                            <ui-view></ui-view>
+                        </div>
+                        <!--end: Form Wizard Step Lab Report-->
 
                         <!--begin: Form Actions -->
                         <div class="kt-form__actions">

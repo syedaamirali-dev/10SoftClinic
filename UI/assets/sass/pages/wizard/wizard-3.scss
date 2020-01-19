@@ -30,7 +30,11 @@ $kt-wizard-v3-form-inner-bg: #ffffff;
 			display: flex;
 			align-items: flex-end;
 			padding: 0 4rem;
-
+			@include kt-media-above(768px) {
+			.kt-wizard-v3__nav-item{
+				max-width: 125px;
+				}
+			}
 			.kt-wizard-v3__nav-item{
 				display: flex;
 				align-items: center;
@@ -44,7 +48,6 @@ $kt-wizard-v3-form-inner-bg: #ffffff;
 					flex-direction: column;
 					color: $kt-wizard-v3-step-label;
 					padding: 0.5rem 0.5rem;
-
 					.kt-wizard-v3__nav-label{
 						font-size: 1.1rem;
 						font-weight: 600;
