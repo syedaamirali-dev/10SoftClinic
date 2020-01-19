@@ -58,7 +58,7 @@
                 controller: 'waitingListCtrl',
                 templateUrl: 'app/components/waitingList/waitingList.html'
             })
-        // docTreatPatient
+            // docTreatPatient
             .state({
                 name: 'main.docTreatment.docTreatPatient',
                 url: '/docTreatPatient',
@@ -79,7 +79,21 @@
                 controller: 'docTreatVisitCtrl',
                 templateUrl: 'app/components/docTreatVisit/docTreatVisit.html'
             })
-            /** @RouteReplaceForGulp */
+            // docTreatmentInfo
+            .state({
+                name: 'main.docTreatment.docTreatmentInfo',
+                url: '/docTreatmentInfo',
+                controller: 'docTreatmentInfoCtrl',
+                templateUrl: 'app/components/docTreatmentInfo/docTreatmentInfo.html'
+            })
+            // docVisitHistory
+            .state({
+                name: 'main.docVisitHistory',
+                url: '/docVisitHistory',
+                controller: 'docVisitHistoryCtrl',
+                templateUrl: 'app/components/docVisitHistory/docVisitHistory.html'
+            })
+        /** @RouteReplaceForGulp */
 
 
         $urlRouterProvider.otherwise("/dashboard");

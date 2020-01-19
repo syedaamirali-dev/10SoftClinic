@@ -102,7 +102,6 @@
     <link href="assets/plugins/custom/jstree/dist/themes/default/style.css" rel="stylesheet" type="text/css" />
     <link href="assets/plugins/custom/jqvmap/dist/jqvmap.css" rel="stylesheet" type="text/css" />
     <link href="assets/plugins/custom/uppy/dist/uppy.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/pages/wizard/wizard-3.css" rel="stylesheet" type="text/css" />
 
     <!--end:: Vendor Plugins for custom pages -->
 
@@ -125,6 +124,9 @@
 
 <body ng-app="10softdental"
     class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+    <div class="main-loader-wrapper" ng-show="$root.pageLoading">
+        <div class="lds lds-hourglass"></div>
+    </div>
 
     <!-- begin:: Page -->
 
@@ -282,9 +284,11 @@
                                     <span class="kt-menu__link-text">Waiting List</span>
                                 </a>
                             </li>
-                            <li class="kt-menu__item " aria-haspopup="true" ui-sref-active="kt-menu__item--active">
-                                <a ui-sref="main.docTreatment" class="kt-menu__link ">
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
                                     <span class="kt-menu__link-icon">
+
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
                                             viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -300,7 +304,35 @@
                                         </svg>
                                     </span>
                                     <span class="kt-menu__link-text">Doctor Treatment</span>
+                                    <i class="kt-menu__ver-arrow la la-angle-right"></i>
                                 </a>
+                                <div class="kt-menu__submenu ">
+                                    <span class="kt-menu__arrow"></span>
+                                    <ul class="kt-menu__subnav">
+                                        <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true">
+                                            <span class="kt-menu__link">
+                                                <span class="kt-menu__link-text">Doctor Treatment</span></span>
+                                        </li>
+                                        <li class="kt-menu__item " aria-haspopup="true"
+                                            ui-sref-active="kt-menu__item--active">
+                                            <a ui-sref="main.docVisitHistory" class="kt-menu__link ">
+                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="kt-menu__link-text">Visit History</span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-menu__item " aria-haspopup="true"
+                                            ui-sref-active="kt-menu__item--active">
+                                            <a ui-sref="main.docTreatment.adultPatientSheet" class="kt-menu__link ">
+                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="kt-menu__link-text">Adult Patient Screening</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="kt-menu__section ">
                                 <h4 class="kt-menu__section-text">Periodontal Chart</h4>
@@ -1429,6 +1461,16 @@
     <!-- Page - docTreatVisit -->
     <script src="./app/components/docTreatVisit/docTreatVisit.ctrl.js"></script>
     <script src="./app/components/docTreatVisit/docTreatVisit.factory.js"></script>
+
+
+    <!-- Page - docTreatmentInfo -->
+    <script src="./app/components/docTreatmentInfo/docTreatmentInfo.ctrl.js"></script>
+    <script src="./app/components/docTreatmentInfo/docTreatmentInfo.factory.js"></script>
+
+
+    <!-- Page - docVisitHistory -->
+    <script src="./app/components/docVisitHistory/docVisitHistory.ctrl.js"></script>
+    <script src="./app/components/docVisitHistory/docVisitHistory.factory.js"></script>
 
 </body>
 

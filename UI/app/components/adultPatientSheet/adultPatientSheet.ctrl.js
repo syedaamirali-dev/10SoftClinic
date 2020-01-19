@@ -74,6 +74,15 @@
             });
         }
 
+        $scope.Submit = () => {
+            swal.fire({
+                title: "Data Submitted",
+                text: "Data Saved Successfully!",
+                type: "success",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        }
         function activate() {
             $document.ready(function () {
                 initializeDatePicker()
