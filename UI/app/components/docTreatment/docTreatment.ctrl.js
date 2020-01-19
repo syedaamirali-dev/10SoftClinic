@@ -7,14 +7,17 @@
 
     /** @ngInject */
     function docTreatmentCtrl($scope, docTreatmentService, $state, $document) {
-        activate();
-
+        $scope.currentStepNumber = null;
+        /**
+         * @description Initializing Dynamic array to set active class on breadcrumb
+         */
+        $scope.activeStepClass = []
         /**
          * @description Step Navigation based on stepNumber
-         * @param {int} stepNumber Input is StepNumber
          */
-        function goToTab(stepNumber) {
-            switch (parseInt(stepNumber)) {
+        function goToTab() {
+            $scope.currentStepNumber = wizard.getStep();
+            switch (parseInt($scope.currentStepNumber)) {
                 case 1:
                     $state.go('main.docTreatment.adultPatientSheet');
                     break;
@@ -27,10 +30,63 @@
                 case 4:
                     $state.go('main.docTreatment.docTreatVisit');
                     break;
-
                 default:
+                    $state.go('main.docTreatment.adultPatientSheet');
                     break;
             }
+            $scope.activeStepClass = [
+                {
+                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 1
+                },
+                {
+                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 2
+                },
+                {
+                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 3
+                },
+                {
+                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 4
+                }
+            ];
+        }
+
+        /**
+         * @description Initialize Current step Object according to state
+         */
+        function setCurrentStepNumber() {
+            switch ($state.current.name) {
+                case "main.docTreatment.adultPatientSheet":
+                    $scope.currentStepNumber = 1;
+                    break;
+                case "main.docTreatment.docTreatPatient":
+                    $scope.currentStepNumber = 2;
+                    break;
+                case "main.docTreatment.docTreatInsEmpl":
+                    $scope.currentStepNumber = 3;
+                    break;
+                case "main.docTreatment.docTreatVisit":
+                    $scope.currentStepNumber = 4;
+                    break;
+                default:
+                    $scope.currentStepNumber = 1;
+                    break;
+            }
+            $scope.activeStepClass = [
+                {
+                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 1
+                },
+                {
+                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 2
+                },
+                {
+                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 3
+                },
+                {
+                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 4
+                }
+            ];
+            wizard.goTo($scope.currentStepNumber, true);
+            goToTab();
         }
 
         /** Start: Stepper Configuration */
@@ -41,7 +97,7 @@
         var wizard;
 
         // Private functions
-        var initWizard = function () {
+        var initWizard = function (callback) {
             // Initialize form wizard
             wizard = new KTWizard('kt_wizard_v3', {
                 startStep: 1, // initial active step number
@@ -63,24 +119,18 @@
             });
             // Validation after going to next page
             wizard.on('afterNext', function (wizardObj) {
-                // if (validator.form() !== true) {
-                // 	wizardObj.stop();  // don't go to the next step
-                // }
-                goToTab(wizard.getStep());
+                goToTab();
             });
 
             wizard.on('afterPrev', function (wizardObj) {
-                // if (validator.form() !== true) {
-                // 	wizardObj.stop();  // don't go to the next step
-                // }
-                goToTab(wizard.getStep());
-
+                goToTab();
             });
 
             // Change event
             wizard.on('change', function (wizard) {
                 KTUtil.scrollTop();
             });
+            callback();
         }
 
         var initValidation = function () {
@@ -207,9 +257,14 @@
                 wizardEl = KTUtil.get('kt_wizard_v3');
                 formEl = $('#kt_form');
 
-                initWizard();
+                initWizard(() => { setCurrentStepNumber(); });
+
+
             });
         }
+
+        activate();
+
     }
 
 }());

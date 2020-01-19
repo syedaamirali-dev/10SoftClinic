@@ -1,4 +1,37 @@
 #adultPatientSheet {
-   
-    
+  .stv-radio-buttons-wrapper {
+    clear: both;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    margin-right: 0.3rem;
+  }
+
+  .stv-radio-button {
+    position: relative;
+
+    & + label {
+      float: left;
+      padding: 0.55em 0.55em;
+      cursor: pointer;
+      border: 1px solid #0fb19a;
+      margin-right: -1px;
+      margin-bottom: 0;
+      color: #fff;
+      background-color: #78d6d4;
+    }
+
+    &:checked + label {
+      background-color: kt-state-color(warning, base);
+    }
+  }
+  .left-rad {
+    border-radius: 0.55em 0 0 0.55em;
+  }
+  .right-rad {
+    border-radius: 0 0.55em 0.55em 0;
+  }
+  .all-rad {
+    border-radius: 0.55em 0.55em 0.55em 0.55em;
+  }
 }

@@ -6,15 +6,18 @@
                 Doctor Treatment</h3>
             <span class="kt-subheader__separator kt-hidden"></span>
             <div class="kt-subheader__breadcrumbs">
-                <a href="#" class="kt-subheader__breadcrumbs-home"><i class="la la-lg flaticon-profile"></i></a>
+                <a href="" class="kt-subheader__breadcrumbs-home kt-subheader__breadcrumbs-home--active">
+                    <i class="la la-lg flaticon-profile"></i>
+                </a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active"> Main </a>
+                <a href="" ng-class="activeStepClass[0]" class="kt-subheader__breadcrumbs-link"> Main </a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" class="kt-subheader__breadcrumbs-link"> Patient </a>
+                <a href="" ng-class="activeStepClass[1]" class="kt-subheader__breadcrumbs-link"> Patient </a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" class="kt-subheader__breadcrumbs-link"> Insurance & Employee </a>
+                <a href="" ng-class="activeStepClass[2]" class="kt-subheader__breadcrumbs-link"> Insurance & Employee
+                </a>
                 <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" class="kt-subheader__breadcrumbs-link"> Visit </a>
+                <a href="" ng-class="activeStepClass[3]" class="kt-subheader__breadcrumbs-link"> Visit </a>
 
                 <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
             </div>

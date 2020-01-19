@@ -1,318 +1,533 @@
-<div class="kt-heading kt-heading--md">Patient Screening Sheet</div>
-<div class="kt-form__section kt-form__section--first">
-    <!--begin::Form-->
-    <form class="kt-form kt-form--label-right">
-        <div class="kt-portlet__body">
-            <div class="form-group row">
-                <h5 class="form-header">Document Information</h5>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label>Document #:</label>
-                    <select class="form-control">
-                        <option selected>DT1</option>
-                        <option>DT2</option>
-                        <option>DT3</option>
-                        <option>DT4</option>
-                    </select>
+<div id="adultPatientSheet">
+    <div class="kt-heading kt-heading--md">Patient Screening Sheet</div>
+    <div class="kt-form__section kt-form__section--first">
+        <!--begin::Form-->
+        <form class="kt-form kt-form--label-right">
+            <div class="kt-portlet__body">
+                <div class="form-group row">
+                    <h5 class="form-header">Document Information</h5>
                 </div>
-                <div class="col-md-4">
-                    <label>Document Type:</label>
-                    <select class="form-control">
-                        <option selected>Treatment</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="">Issue Date:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" readonly placeholder="Select date"
-                            id="kt_datepicker_2" />
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-calendar la-2x"></i></span>
-                        </span>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>Document #:</label>
+                        <select class="form-control">
+                            <option selected>DT1</option>
+                            <option>DT2</option>
+                            <option>DT3</option>
+                            <option>DT4</option>
+                        </select>
                     </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label class="">Remarks:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <textarea class="form-control" rows="3" placeholder="Enter Remarks"></textarea>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
+                    <div class="col-md-4">
+                        <label>Document Type:</label>
+                        <select class="form-control">
+                            <option selected>Treatment</option>
+                        </select>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <label>Analysis Code:</label>
-                    <select class="form-control">
-                        <option selected>AN1</option>
-                        <option>AN2</option>
-                        <option>AN3</option>
-                        <option>AN4</option>
-                    </select>
-                </div>
-            </div>
-            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
-            </div>
-            <div class="form-group row">
-                <h5 class="form-header">Treatment Information</h5>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label>Treatment DateTime:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" value="1/18/2020 11:36 AM" disabled>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-calendar la-2x"></i></span>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label>Visit Register #:</label>
-                    <select class="form-control">
-                        <option selected>6492</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="">Illness Duration:</label>
-                    <div class="row">
-                        <div class="col-md-7">
-                            <input type="number" class="form-control" value="1" disabled>
-                        </div>
-                        <div class="col-md-5">
-                            <select class="form-control">
-                                <option selected>Days</option>
-                                <option>Months</option>
-                                <option>Years</option>
-                            </select>
+                    <div class="col-md-4">
+                        <label class="">Issue Date:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" readonly placeholder="Select date"
+                                id="kt_datepicker_2" />
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-calendar la-2x"></i></span>
+                            </span>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label class="">Preferred Lab ::</label>
-                    <select class="form-control">
-                        <option selected>Lab 1</option>
-                        <option>Medical laboratory</option>
-                        <option>Pathology Lab</option>
-                    </select>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label class="">Remarks:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3" placeholder="Enter Remarks"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Analysis Code:</label>
+                        <select class="form-control">
+                            <option selected>AN1</option>
+                            <option>AN2</option>
+                            <option>AN3</option>
+                            <option>AN4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+                </div>
+                <div class="form-group row">
+                    <h5 class="form-header">Treatment Information</h5>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>Treatment DateTime:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" value="1/18/2020 11:36 AM" disabled>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-calendar la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Visit Register #:</label>
+                        <select class="form-control">
+                            <option selected>6492</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="">Illness Duration:</label>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <input type="number" class="form-control" value="1" disabled>
+                            </div>
+                            <div class="col-md-5">
+                                <select class="form-control">
+                                    <option selected>Days</option>
+                                    <option>Months</option>
+                                    <option>Years</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label class="">Preferred Lab ::</label>
+                        <select class="form-control">
+                            <option selected>Lab 1</option>
+                            <option>Medical laboratory</option>
+                            <option>Pathology Lab</option>
+                        </select>
 
-                </div>
-                <div class="col-md-4">
-                    <label>Preferred Nurse:</label>
-                    <select class="form-control">
-                        <option selected>EMP002</option>
-                        <option>Medical laboratory</option>
-                        <option>Pathology Lab</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label>Preferred Pharmacy:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" placeholder="Enter Preferred Pharmancy">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-medkit la-2x"></i></span>
-                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Preferred Nurse:</label>
+                        <select class="form-control">
+                            <option selected>EMP002</option>
+                            <option>Medical laboratory</option>
+                            <option>Pathology Lab</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Preferred Pharmacy:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Preferred Pharmancy">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-medkit la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
-            </div>
-            <div class="form-group row">
-                <h5 class="form-header">General Information</h5>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label>OPD No:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" value="OPD 78964" disabled>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-info-circle la-2x"></i></span>
-                        </span>
+                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+                </div>
+                <div class="form-group row">
+                    <h5 class="form-header">General Information</h5>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>OPD No:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" value="OPD 78964" disabled>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-info-circle la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="">Name:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Name">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-user la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="">ID/Iqama No:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="number" class="form-control" placeholder="Enter ID/Iqama No">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-info-circle la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <label class="">Name:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" placeholder="Enter Name">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-user la-2x"></i></span>
-                        </span>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label class="">Mobile Number:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Mobile Number">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-phone la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="">ID/Iqama No:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="number" class="form-control" placeholder="Enter ID/Iqama No">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-info-circle la-2x"></i></span>
-                        </span>
+                    <div class="col-md-4">
+                        <label class="">Age:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Age">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-info-circle la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label class="">Mobile Number:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" placeholder="Enter Mobile Number">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-phone la-2x"></i></span>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="">Age:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" placeholder="Enter Age">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-info-circle la-2x"></i></span>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="">Gender:</label>
-                    <div class="kt-radio-inline">
-                        <label class="kt-radio kt-radio--solid">
-                            <input type="radio" name="example_2" checked="checked" value="true"> Male
-                            <span></span>
-                        </label>
-                        <label class="kt-radio kt-radio--solid">
-                            <input type="radio" name="example_2" value="false"> Female
-                            <span></span>
-                        </label>
-                    </div>
+                    <div class="col-md-4">
+                        <label class="">Gender:</label>
+                        <div class="kt-radio-inline">
+                            <label class="kt-radio kt-radio--solid">
+                                <input type="radio" name="example_2" checked="checked" value="true"> Male
+                                <span></span>
+                            </label>
+                            <label class="kt-radio kt-radio--solid">
+                                <input type="radio" name="example_2" value="false"> Female
+                                <span></span>
+                            </label>
+                        </div>
 
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <label>Address:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input class="form-control" type="text" placeholder="Enter Address1">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-map-marker la-2x"></i></span>
-                        </span>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <label class="">Occupation:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" placeholder="Enter Occupation">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-briefcase la-2x"></i></span>
-                        </span>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>Address:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input class="form-control" type="text" placeholder="Enter Address1">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-map-marker la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="">Nationality:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" placeholder="Enter Nationality">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-globe la-2x"></i></span>
-                        </span>
+                    <div class="col-md-4">
+                        <label class="">Occupation:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Occupation">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-briefcase la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-
-            </div>
-            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
-            </div>
-
-            <div class="form-group row">
-                <h5 class="form-header">Clinical Information</h5>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label class="">Medical History:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <textarea class="form-control" rows="3" placeholder="Enter Medical History"></textarea>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label class="">Past Dental History:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <textarea class="form-control" rows="3" placeholder="Past Dental History"></textarea>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label class="">Cheif Compliant:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <textarea class="form-control" rows="3" placeholder="Past Cheif Compliant"></textarea>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label class="">Soft Tissue Abnormalites/Lession:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <input type="text" class="form-control" placeholder="Enter Abnormalites/Lession">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label class="">Gingival Inflammation/Recession:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <textarea class="form-control" rows="3"
-                            placeholder="Enter Gingival Inflammation/Recession"></textarea>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
+                    <div class="col-md-4">
+                        <label class="">Nationality:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Nationality">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-globe la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
 
                 </div>
-                <div class="col-md-6">
-                    <label class="">Radiographic Findings:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <textarea class="form-control" rows="3" placeholder="Enter Radiographic Findings"></textarea>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
+                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+                </div>
+
+                <div class="form-group row">
+                    <h5 class="form-header">Clinical Information</h5>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label class="">Medical History:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3" placeholder="Enter Medical History"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="">Past Dental History:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3" placeholder="Past Dental History"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label class="">Any Other Findings/Comments:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <textarea class="form-control" rows="3" placeholder="Enter Comments/Findings"></textarea>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label class="">Cheif Compliant:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3" placeholder="Past Cheif Compliant"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="">Soft Tissue Abnormalites/Lession:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Abnormalites/Lession">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <label class="">Radiographic Findings:</label>
-                    <div class="kt-input-icon kt-input-icon--right">
-                        <textarea class="form-control" rows="3" placeholder="Enter Radiographic Findings"></textarea>
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                <i class="la la-align-left la-2x"></i></span>
-                        </span>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label class="">Gingival Inflammation/Recession:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3"
+                                placeholder="Enter Gingival Inflammation/Recession"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <label class="">Radiographic Findings:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3"
+                                placeholder="Enter Radiographic Findings"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
                     </div>
                 </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label class="">Any Other Findings/Comments:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3" placeholder="Enter Comments/Findings"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="">Radiographic Findings:</label>
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3"
+                                placeholder="Enter Radiographic Findings"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+                </div>
+                <div class="form-group row">
+                    <h5 class="form-header">Higher</h5>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb1">
+                                        <img src="{{'periodontal-chart-master/img/tabla1/periodontograma-dientes-arriba-' + number + '.png'}}"
+                                            alt="" style="height: 50%;">
+                                    </td>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb2">
+                                        <img src="{{'periodontal-chart-master/img/tabla2/periodontograma-dientes-arriba-' + number + '.png'}}"
+                                            alt="" style="height: 50%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb1">
+                                        <p class="m-2">{{number}}</p>
+                                    </td>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb2">
+                                        <p class="m-2">{{number}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb1">
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button1'+number}}"
+                                                checked />
+                                            <label for="{{'button1'+number}}" class="all-rad"></label>
+                                        </div>
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button2'+number}}"
+                                                checked />
+                                            <label for="{{'button2'+number}}" class="left-rad"> </label>
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="2"
+                                                id="{{'button3'+number}}" />
+                                            <label for="{{'button3'+number}}"> </label>
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="3"
+                                                id="{{'button4'+number}}" />
+                                            <label for="{{'button4'+number}}" class="right-rad"> </label>
+                                        </div>
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button5'+number}}"
+                                                checked />
+                                            <label for="{{'button5'+number}}" class="all-rad"> </label>
+                                        </div>
+                                    </td>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb2">
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button1'+number}}"
+                                                checked />
+                                            <label for="{{'button1'+number}}" class="all-rad"></label>
+                                        </div>
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button "
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button2'+number}}"
+                                                checked />
+                                            <label for="{{'button2'+number}}" class="left-rad"> </label>
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="2"
+                                                id="{{'button3'+number}}" />
+                                            <label for="{{'button3'+number}}"> </label>
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="3"
+                                                id="{{'button4'+number}}" />
+                                            <label for="{{'button4'+number}}" class="right-rad"> </label>
+                                        </div>
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button5'+number}}"
+                                                checked />
+                                            <label for="{{'button5'+number}}" class="all-rad"> </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb1">
+                                        <p class="m-2">{{number}}</p>
+                                    </td>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb2">
+                                        <p class="m-2">{{number}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb3">
+                                        <img src="{{'periodontal-chart-master/img/tabla3/periodontograma-dientes-arriba-' + number + '.png'}}"
+                                            alt="" style="height: 50%;">
+                                    </td>
+                                    <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb4">
+                                        <img src="{{'periodontal-chart-master/img/tabla4/periodontograma-dientes-arriba-' + number + '.png'}}"
+                                            alt="" style="height: 50%;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <h5 class="form-header">Lower</h5>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <table id="periodontalTable">
+                            <tbody>
+                                <tr>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb5">
+                                        <img src="{{'periodontal-chart-master/img/tabla5/periodontograma-dientes-abajo-' + number + '.png'}}"
+                                            alt="" style="height: 50%;">
+                                    </td>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb6">
+                                        <img src="{{'periodontal-chart-master/img/tabla6/periodontograma-dientes-abajo-' + number + '.png'}}"
+                                            alt="" style="height: 50%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb5">
+                                        <p class="m-2">{{number}}</p>
+                                    </td>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb6">
+                                        <p class="m-2">{{number}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb5">
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button1'+number}}"
+                                                checked />
+                                            <label for="{{'button1'+number}}" class="all-rad"></label>
+                                        </div>
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button2'+number}}"
+                                                checked />
+                                            <label for="{{'button2'+number}}" class="left-rad"> </label>
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="2"
+                                                id="{{'button3'+number}}" />
+                                            <label for="{{'button3'+number}}"> </label>
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="3"
+                                                id="{{'button4'+number}}" />
+                                            <label for="{{'button4'+number}}" class="right-rad"> </label>
+                                        </div>
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button5'+number}}"
+                                                checked />
+                                            <label for="{{'button5'+number}}" class="all-rad"> </label>
+                                        </div>
+                                    </td>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb6">
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button1'+number}}"
+                                                checked />
+                                            <label for="{{'button1'+number}}" class="all-rad"></label>
+                                        </div>
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button "
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button2'+number}}"
+                                                checked />
+                                            <label for="{{'button2'+number}}" class="left-rad"> </label>
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="2"
+                                                id="{{'button3'+number}}" />
+                                            <label for="{{'button3'+number}}"> </label>
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="3"
+                                                id="{{'button4'+number}}" />
+                                            <label for="{{'button4'+number}}" class="right-rad"> </label>
+                                        </div>
+                                        <div class="stv-radio-buttons-wrapper">
+                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                name="{{'radioButtonTest'+number}}" value="1" id="{{'button5'+number}}"
+                                                checked />
+                                            <label for="{{'button5'+number}}" class="all-rad"> </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb5">
+                                        <p class="m-2">{{number}}</p>
+                                    </td>
+                                    <td align="center" ng-repeat="number in periodontalImg.tb6">
+                                        <p class="m-2">{{number}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb7">
+                                        <img src="{{'periodontal-chart-master/img/tabla7/periodontograma-dientes-abajo-' + number + '.png'}}"
+                                            alt="" style="height: 50%;">
+                                    </td>
+                                    <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb8">
+                                        <img src="{{'periodontal-chart-master/img/tabla8/periodontograma-dientes-abajo-' + number + '.png'}}"
+                                            alt="" style="height: 50%;">
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
-            </div>
+        </form>
 
-        </div>
+        <!--end::Form-->
 
-    </form>
-
-    <!--end::Form-->
-
+    </div>
 </div>

@@ -32453,8 +32453,35 @@ body {
     .my-custom-style .my-custom-element {
       margin-left: 0.5rem; } }
 
+#adultPatientSheet .stv-radio-buttons-wrapper {
+  clear: both;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.3rem; }
+
+#adultPatientSheet .stv-radio-button {
+  position: relative; }
+  #adultPatientSheet .stv-radio-button + label {
+    float: left;
+    padding: 0.55em 0.55em;
+    cursor: pointer;
+    border: 1px solid #0fb19a;
+    margin-right: -1px;
+    margin-bottom: 0;
+    color: #fff;
+    background-color: #78d6d4; }
+  #adultPatientSheet .stv-radio-button:checked + label {
+    background-color: #ffb822; }
+
+#adultPatientSheet .left-rad {
+  border-radius: 0.55em 0 0 0.55em; }
+
+#adultPatientSheet .right-rad {
+  border-radius: 0 0.55em 0.55em 0; }
+
+#adultPatientSheet .all-rad {
+  border-radius: 0.55em 0.55em 0.55em 0.55em; }
+
 #docTreatment .kt-wizard-v3__wrapper .kt-form {
   width: 90% !important; }
-
-#waitingList {
-  border: 5px solid green; }

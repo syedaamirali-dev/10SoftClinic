@@ -3,31 +3,31 @@
     <div class="kt-container  kt-container--fluid ">
         <div class="kt-subheader__main">
             <h3 class="kt-subheader__title">
-                Pateint Screening
+                Waiting List
             </h3>
-            <span class="kt-subheader__separator kt-hidden"></span>
-            <div class="kt-subheader__breadcrumbs">
-                <a href="#" class="kt-subheader__breadcrumbs-home">
-                    <i class="flaticon-file-1"></i>
-                </a>
-                <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">
-                    Waiting List
-                </a>
-
-                <!-- <span class=" kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active
-                    link</span> -->
-            </div>
         </div>
     </div>
 </div>
 
 <!-- end:: Subheader -->
 <div id="waitingList" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-    <div custom-data-table tid="waitingTable" options="dtOptions" ng-if="waitingDataLoaded">
-        <div class="page-header d-flex">
-            <h3 class="section-header mr-2">Heading here</h3>
-            <button class="btn btn-sm btn-secondary">Add +</button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="kt-portlet">
+                <div class="kt-portlet__head">
+                    <div class="kt-portlet__head-label">
+                        <span class="kt-portlet__head-icon kt-hidden">
+                            <i class="la la-clock-o"></i>
+                        </span>
+                        <h3 class="kt-portlet__head-title">
+                            Wating List Dashboard
+                        </h3>
+                    </div>
+                </div>
+                <div class="kt-portlet__body">
+                    <div custom-data-table tid="waitingTable" options="dtOptions" ng-if="waitingDataLoaded"> </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
