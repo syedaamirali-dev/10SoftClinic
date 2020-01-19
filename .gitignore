@@ -5,3 +5,15 @@ DENTAL DEVELOPMENT PLAN.docx
 DentalClinicModuleSRS.docx
 ~$NTAL DEVELOPMENT PLAN.docx
 10Soft TimeSheet.xlsx
+10SoftDentalAPI/10SoftDental/obj/
+10SoftDentalAPI/10SoftDental/bin/
+10SoftDentalAPI/.vs/
+10SoftDentalAPI/10SoftDental.BAL/bin/
+10SoftDentalAPI/10SoftDental.BAL/obj/
+10SoftDentalAPI/10SoftDental.DAL/bin/
+10SoftDentalAPI/10SoftDental.DAL/obj/
+10SoftDentalAPI/10SoftDental.Factory/bin/
+10SoftDentalAPI/10SoftDental.Factory/obj/
+10SoftDentalAPI/10SoftDental/Properties/PublishProfiles/FolderProfile.pubxml
+10SoftDentalAPI/ApplicationUtility/obj/
+10SoftDentalAPI/.vs/10SoftDentalAPI/v15/Server/sqlite3/storage.ide-wal
