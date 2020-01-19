@@ -32672,7 +32672,7 @@ table.dataTable thead > tr > td.sorting {
   border-radius: 0.35em 0.35em 0.35em 0.35em; }
 
 #docTreatment .kt-wizard-v3__wrapper .kt-form {
-  width: 90% !important; }
+  width: 95% !important; }
 
 #waitingList {
   min-height: calc(100vh - 190px); }
@@ -32684,9 +32684,3 @@ table.dataTable thead > tr > td.sorting {
 
 #docTreatmentInfo .kt-portlet__body {
   padding: 10px !important; }
-
-#docLabReport {
-  border: 5px solid green; }
-
-#docMedication {
-  border: 5px solid green; }
