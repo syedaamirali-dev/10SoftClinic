@@ -23,7 +23,7 @@
                     { title: 'End Time', data: 'visitEndTime' },
                     { title: 'Patient Code', data: 'patientCode' },
                     { title: 'Patient Name', data: 'patientName' },
-                    { title: 'ID', data: 'civilID' },
+                    { title: 'ID', data: 'civilID',visible:false },
                     { title: 'Doctor Name', data: 'doctorName' },
                     { title: 'Status', data: 'visitStatusText' },
                     { title: 'Is Visit Free?', data: 'isFreeVisit' },
