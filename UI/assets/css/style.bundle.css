@@ -14025,7 +14025,7 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300;
   font-family: Poppins, Helvetica, sans-serif;
   -ms-text-size-adjust: 100%;
@@ -32615,6 +32615,15 @@ div.dataTables_wrapper .dataTables_filter {
 div.dataTables_wrapper .dataTables_length {
   text-align: right !important; }
 
+table.dataTable thead > tr > th.sorting_asc,
+table.dataTable thead > tr > th.sorting_desc,
+table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+  background: #3d6b91;
+  color: white; }
+
 #adultPatientSheet .kt-heading {
   margin: 0.35rem 0 !important; }
 
@@ -32663,7 +32672,7 @@ div.dataTables_wrapper .dataTables_length {
   border-radius: 0.35em 0.35em 0.35em 0.35em; }
 
 #docTreatment .kt-wizard-v3__wrapper .kt-form {
-  width: 90% !important; }
+  width: 95% !important; }
 
 #waitingList {
   min-height: calc(100vh - 190px); }
@@ -32675,9 +32684,3 @@ div.dataTables_wrapper .dataTables_length {
 
 #docTreatmentInfo .kt-portlet__body {
   padding: 10px !important; }
-
-#docLabReport {
-  border: 5px solid green; }
-
-#docMedication {
-  border: 5px solid green; }

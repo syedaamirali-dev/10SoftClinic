@@ -1,4 +1,4 @@
-(function(){
+(function () {
     'use strict';
 
     angular
@@ -6,14 +6,14 @@
         .factory('waitingListService', waitingListService)
 
     /** @ngInject */
-    function waitingListService(apiCollection, $q, $http){
+    function waitingListService(apiCollection, $q, $http) {
         var service = {
             getWaitingListData,
             getDtOptions
         };
         function getDtOptions(data, functions) {
             return {
-                data:data.data.table,
+                data: data.data.table,
                 columns: [
                     { title: 'Visit Register', data: 'documentNumber' },
                     { title: 'Doctor Treatment', data: 'documentTypeName' },
@@ -23,7 +23,7 @@
                     { title: 'End Time', data: 'visitEndTime' },
                     { title: 'Patient Code', data: 'patientCode' },
                     { title: 'Patient Name', data: 'patientName' },
-                    { title: 'ID', data: 'civilID' },
+                    { title: 'ID', data: 'civilID', visible: false },
                     { title: 'Doctor Name', data: 'doctorName' },
                     { title: 'Status', data: 'visitStatusText' },
                     { title: 'Is Visit Free?', data: 'isFreeVisit' },
@@ -38,10 +38,8 @@
                         //     `;
                         // },
                         targets: 1,
-                        render: function (data, type, row)
-                        {
-                            if (type === 'display')
-                            {
+                        render: function (data, type, row) {
+                            if (type === 'display') {
                                 data = '<a href="#!/docTreatment/adultPatientSheet">Add Treatment</a>'
                             }
                             return data;
@@ -56,7 +54,7 @@
             }
         }
         function getWaitingListData() {
-            return httpGet(apiCollection.waitingList.GetWaitingList(),true);
+            return httpGet(apiCollection.waitingList.GetWaitingList(), true);
         }
         function httpGet(url, isRefresh) {
             let defer = $q.defer();
@@ -72,4 +70,3 @@
     }
 
 }());
-    
