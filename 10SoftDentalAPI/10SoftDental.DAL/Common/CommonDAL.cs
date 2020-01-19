@@ -30,5 +30,21 @@ namespace _10SoftDental.DAL.Common
             _parameters[4].Value = 13;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
+        public DataSet GetAllVisitList()
+        {
+            _storedProcedure = "VisitRegister_SelectByCriteria";
+            _parameters = new SqlParameter[4];
+            _parameters[0] = new SqlParameter("@IsLocal", SqlDbType.Bit);
+            _parameters[0].Value = 0;
+            _parameters[1] = new SqlParameter("@ClinicIdRef", SqlDbType.Int);
+            _parameters[1].Value = 3;
+            _parameters[2] = new SqlParameter("@PageIndex", SqlDbType.Int);
+            _parameters[2].Value = 1;
+            _parameters[3] = new SqlParameter("@PageRecord", SqlDbType.Int);
+            _parameters[3].Value = 100;
+            //_parameters[4] = new SqlParameter("@DoctorIdRef", SqlDbType.Int);
+            //_parameters[4].Value = 13;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
     }
 }
