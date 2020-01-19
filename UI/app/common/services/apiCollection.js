@@ -21,6 +21,9 @@
             GetWaitingList: function () {
                 return apiEndPoint + "Common/GetAllWaitingList";
             },
+            GetVisitHistory: function () {
+                return apiEndPoint + "Common/GetAllVisitList";
+            },
         }
 
         return {

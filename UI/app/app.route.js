@@ -93,7 +93,21 @@
                 controller: 'docVisitHistoryCtrl',
                 templateUrl: 'app/components/docVisitHistory/docVisitHistory.html'
             })
-        /** @RouteReplaceForGulp */
+        // docLabReport
+            .state({
+                name: 'main.docTreatment.docLabReport',
+                url: '/docLabReport',
+                controller: 'docLabReportCtrl',
+                templateUrl: 'app/components/docLabReport/docLabReport.html'
+            })
+            // docMedication
+            .state({
+                name: 'main.docTreatment.docMedication',
+                url: '/docMedication',
+                controller: 'docMedicationCtrl',
+                templateUrl: 'app/components/docMedication/docMedication.html'
+            })
+            /** @RouteReplaceForGulp */
 
 
         $urlRouterProvider.otherwise("/dashboard");
