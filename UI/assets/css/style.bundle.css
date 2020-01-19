@@ -32453,6 +32453,10 @@ body {
     .my-custom-style .my-custom-element {
       margin-left: 0.5rem; } }
 
+@media (max-width: 1000px) {
+  #adultPatientSheet #periodontalTable {
+    display: none; } }
+
 #adultPatientSheet .stv-radio-buttons-wrapper {
   clear: both;
   display: inline-block;

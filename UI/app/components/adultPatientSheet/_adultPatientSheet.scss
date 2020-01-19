@@ -1,4 +1,9 @@
 #adultPatientSheet {
+  @include kt-media-below(1000px) {
+    #periodontalTable {
+      display: none;
+    }
+  }
   .stv-radio-buttons-wrapper {
     clear: both;
     display: inline-block;
@@ -6,7 +11,6 @@
     justify-content: center;
     margin-right: 0.3rem;
   }
-
   .stv-radio-button {
     position: relative;
 
