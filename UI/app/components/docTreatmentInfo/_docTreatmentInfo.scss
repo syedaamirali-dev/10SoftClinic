@@ -1,6 +1,8 @@
-#waitingList {
+#docTreatmentInfo {
   // border: 5px solid green;
-  min-height: calc(100vh - 190px);
+  .kt-heading {
+    margin: 0.35rem 0 !important;
+  }
   .kt-portlet__body {
     padding: 10px !important;
   }

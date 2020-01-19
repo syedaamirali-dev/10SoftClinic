@@ -7,85 +7,49 @@
 
     /** @ngInject */
     function docTreatmentCtrl($scope, docTreatmentService, $state, $document) {
-        $scope.currentStepNumber = null;
-        /**
-         * @description Initializing Dynamic array to set active class on breadcrumb
-         */
-        $scope.activeStepClass = []
+        var currentStep;
+        var stepUrlInfo = [
+            {
+                "stepNo": 1,
+                "stepUrl": "main.docTreatment.adultPatientSheet"
+            },
+            {
+                "stepNo": 2,
+                "stepUrl": "main.docTreatment.docTreatmentInfo"
+            },
+            {
+                "stepNo": 3,
+                "stepUrl": "main.docTreatment.docTreatPatient"
+            },
+            {
+                "stepNo": 4,
+                "stepUrl": "main.docTreatment.docTreatInsEmpl"
+            },
+            {
+                "stepNo": 5,
+                "stepUrl": "main.docTreatment.docTreatVisit"
+            },
+        ];
         /**
          * @description Step Navigation based on stepNumber
          */
         function goToTab() {
-            $scope.currentStepNumber = wizard.getStep();
-            switch (parseInt($scope.currentStepNumber)) {
-                case 1:
-                    $state.go('main.docTreatment.adultPatientSheet');
-                    break;
-                case 2:
-                    $state.go('main.docTreatment.docTreatPatient');
-                    break;
-                case 3:
-                    $state.go('main.docTreatment.docTreatInsEmpl');
-                    break;
-                case 4:
-                    $state.go('main.docTreatment.docTreatVisit');
-                    break;
-                default:
-                    $state.go('main.docTreatment.adultPatientSheet');
-                    break;
-            }
-            $scope.activeStepClass = [
-                {
-                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 1
-                },
-                {
-                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 2
-                },
-                {
-                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 3
-                },
-                {
-                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 4
-                }
-            ];
+            currentStep = wizard.getStep();
+            var currentStepUrl = stepUrlInfo.filter((item) => { return item.stepNo == currentStep }).length > 0
+                ? stepUrlInfo.filter((item) => { return item.stepNo == currentStep })[0].stepUrl
+                : main.docTreatment.adultPatientSheet;
+            $state.go(currentStepUrl);
         }
 
         /**
          * @description Initialize Current step Object according to state
          */
         function setCurrentStepNumber() {
-            switch ($state.current.name) {
-                case "main.docTreatment.adultPatientSheet":
-                    $scope.currentStepNumber = 1;
-                    break;
-                case "main.docTreatment.docTreatPatient":
-                    $scope.currentStepNumber = 2;
-                    break;
-                case "main.docTreatment.docTreatInsEmpl":
-                    $scope.currentStepNumber = 3;
-                    break;
-                case "main.docTreatment.docTreatVisit":
-                    $scope.currentStepNumber = 4;
-                    break;
-                default:
-                    $scope.currentStepNumber = 1;
-                    break;
-            }
-            $scope.activeStepClass = [
-                {
-                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 1
-                },
-                {
-                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 2
-                },
-                {
-                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 3
-                },
-                {
-                    'kt-subheader__breadcrumbs-link--active': $scope.currentStepNumber == 4
-                }
-            ];
-            wizard.goTo($scope.currentStepNumber, true);
+
+            currentStep = stepUrlInfo.filter((item) => { return item.stepUrl == $state.current.name }).length > 0
+                ? stepUrlInfo.filter((item) => { return item.stepUrl == $state.current.name })[0].stepNo
+                : 1;
+            wizard.goTo(currentStep, true);
             goToTab();
         }
 
@@ -258,8 +222,6 @@
                 formEl = $('#kt_form');
 
                 initWizard(() => { setCurrentStepNumber(); });
-
-
             });
         }
 

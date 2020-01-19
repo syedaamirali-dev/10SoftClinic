@@ -8,25 +8,11 @@
         </div>
     </div>
 </div>
-
-<!-- end:: Subheader -->
 <div id="waitingList" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="kt-portlet">
-                <div class="kt-portlet__head">
-                    <div class="kt-portlet__head-label">
-                        <span class="kt-portlet__head-icon kt-hidden">
-                            <i class="la la-clock-o"></i>
-                        </span>
-                        <h3 class="kt-portlet__head-title">
-                            Wating List Dashboard
-                        </h3>
-                    </div>
-                </div>
-                <div class="kt-portlet__body">
-                    <div custom-data-table tid="waitingTable" options="dtOptions" ng-if="waitingDataLoaded"> </div>
-                </div>
+    <div class="col-md-12 p-0">
+        <div class="kt-portlet">
+            <div class="kt-portlet__body">
+                <div custom-data-table tid="waitingTable" options="dtOptions" ng-if="waitingDataLoaded"> </div>
             </div>
         </div>
     </div>

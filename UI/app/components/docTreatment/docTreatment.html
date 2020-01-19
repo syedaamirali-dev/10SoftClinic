@@ -4,25 +4,7 @@
         <div class="kt-subheader__main">
             <h3 class="kt-subheader__title">
                 Doctor Treatment</h3>
-            <span class="kt-subheader__separator kt-hidden"></span>
-            <div class="kt-subheader__breadcrumbs">
-                <a href="" class="kt-subheader__breadcrumbs-home kt-subheader__breadcrumbs-home--active">
-                    <i class="la la-lg flaticon-profile"></i>
-                </a>
-                <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" ng-class="activeStepClass[0]" class="kt-subheader__breadcrumbs-link"> Main </a>
-                <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" ng-class="activeStepClass[1]" class="kt-subheader__breadcrumbs-link"> Patient </a>
-                <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" ng-class="activeStepClass[2]" class="kt-subheader__breadcrumbs-link"> Insurance & Employee
-                </a>
-                <span class="kt-subheader__breadcrumbs-separator"></span>
-                <a href="" ng-class="activeStepClass[3]" class="kt-subheader__breadcrumbs-link"> Visit </a>
-
-                <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
-            </div>
         </div>
-
     </div>
 </div>
 
@@ -42,6 +24,14 @@
                                 <div class="kt-wizard-v3__nav-body">
                                     <div class="kt-wizard-v3__nav-label">
                                         Main
+                                    </div>
+                                    <div class="kt-wizard-v3__nav-bar"></div>
+                                </div>
+                            </div>
+                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
+                                <div class="kt-wizard-v3__nav-body">
+                                    <div class="kt-wizard-v3__nav-label">
+                                        Treatment Information
                                     </div>
                                     <div class="kt-wizard-v3__nav-bar"></div>
                                 </div>
@@ -80,35 +70,36 @@
                     <!--begin: Form Wizard Form-->
                     <form class="kt-form  pt-0" id="kt_form">
 
-                        <!--begin: Form Wizard Step 1-->
+                        <!--begin: Form Wizard Step Main-->
                         <div class="kt-wizard-v3__content" data-ktwizard-type="step-content"
                             data-ktwizard-state="current">
                             <ui-view></ui-view>
                         </div>
+                        <!--end: Form Wizard Step Main-->
 
-                        <!--end: Form Wizard Step 1-->
-
-
-                        <!--begin: Form Wizard Step 3-->
+                        <!--begin: Form Wizard Step Treatment Information-->
                         <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
                             <ui-view></ui-view>
                         </div>
+                        <!--end: Form Wizard Step Treatment Information-->
 
-                        <!--end: Form Wizard Step 3-->
-
-                        <!--begin: Form Wizard Step 4-->
+                        <!--begin: Form Wizard Step Patient-->
                         <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
                             <ui-view></ui-view>
                         </div>
+                        <!--end: Form Wizard Step Patient-->
 
-                        <!--end: Form Wizard Step 4-->
-
-                        <!--begin: Form Wizard Step 5-->
+                        <!--begin: Form Wizard Step Insurance & Employee-->
                         <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
                             <ui-view></ui-view>
                         </div>
+                        <!--end: Form Wizard Step Insurance & Employee-->
 
-                        <!--end: Form Wizard Step 5-->
+                        <!--begin: Form Wizard Step Visit-->
+                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+                            <ui-view></ui-view>
+                        </div>
+                        <!--end: Form Wizard Step Visit-->
 
                         <!--begin: Form Actions -->
                         <div class="kt-form__actions">
@@ -122,7 +113,7 @@
                             </button> -->
                             <button class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
                                 data-ktwizard-type="action-next">
-                                Next Step
+                                Next
                             </button>
                         </div>
 
