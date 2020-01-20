@@ -72,13 +72,6 @@
                 controller: 'docTreatInsEmplCtrl',
                 templateUrl: 'app/components/docTreatInsEmpl/docTreatInsEmpl.html'
             })
-            // docTreatVisit
-            .state({
-                name: 'main.docTreatment.docTreatVisit',
-                url: '/docTreatVisit',
-                controller: 'docTreatVisitCtrl',
-                templateUrl: 'app/components/docTreatVisit/docTreatVisit.html'
-            })
             // docTreatmentInfo
             .state({
                 name: 'main.docTreatment.docTreatmentInfo',

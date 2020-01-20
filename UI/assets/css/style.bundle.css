@@ -32624,6 +32624,10 @@ table.dataTable thead > tr > td.sorting {
   background: #3d6b91;
   color: white; }
 
+#adultPatientSheet .kt-form__actions {
+  float: right;
+  justify-content: end; }
+
 #adultPatientSheet .kt-heading {
   margin: 0.35rem 0 !important; }
 
@@ -32632,7 +32636,7 @@ table.dataTable thead > tr > td.sorting {
 
 #adultPatientSheet .kt-separator.kt-separator--space-lg,
 #adultPatientSheet .kt-separator.kt-separator--lg {
-  margin: 1.5rem 0; }
+  margin: 0.5rem 0; }
 
 #adultPatientSheet td > img {
   height: 30%; }
@@ -32678,6 +32682,12 @@ table.dataTable thead > tr > td.sorting {
   min-height: calc(100vh - 190px); }
   #waitingList .kt-portlet__body {
     padding: 10px !important; }
+
+#docTreatPatient {
+  min-height: calc(100vh - 403px); }
+  #docTreatPatient .kt-form__actions {
+    float: right;
+    justify-content: end; }
 
 #docTreatmentInfo .kt-heading {
   margin: 0.35rem 0 !important; }

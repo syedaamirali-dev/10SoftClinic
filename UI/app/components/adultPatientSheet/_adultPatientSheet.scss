@@ -1,4 +1,8 @@
 #adultPatientSheet {
+    .kt-form__actions {
+    float: right;
+    justify-content: end;
+  }
   .kt-heading {
     margin: 0.35rem 0 !important;
   }
@@ -7,11 +11,13 @@
   }
   .kt-separator.kt-separator--space-lg,
   .kt-separator.kt-separator--lg {
-    margin: 1.5rem 0;
+    margin: 0.5rem 0;
   }
+
   td > img {
     height: 30%;
   }
+
   @include kt-media-below(670px) {
     #periodontalTable {
       display: none;

@@ -27,16 +27,12 @@
             },
             {
                 "stepNo": 5,
-                "stepUrl": "main.docTreatment.docTreatVisit"
-            },
-            {
-                "stepNo": 6,
                 "stepUrl": "main.docTreatment.docMedication"
             },
             {
-                "stepNo": 7,
+                "stepNo": 6,
                 "stepUrl": "main.docTreatment.docLabReport"
-            },
+            }
         ];
         /**
          * @description Step Navigation based on stepNumber

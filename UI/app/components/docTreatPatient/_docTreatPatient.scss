@@ -1,3 +1,7 @@
 #docTreatPatient {
-    // border: 5px solid green; 
+  min-height: calc(100vh - 403px);
+  .kt-form__actions {
+    float: right;
+    justify-content: end;
+  }
 }
