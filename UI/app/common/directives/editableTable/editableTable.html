@@ -1,0 +1,115 @@
+<div class="toolbar">
+    <h5 class="form-header">{{heading}}</h5>
+    <div class="d-flex justify-content-between">
+        <div class="dataTables_filter">
+            <input type="search" class="form-control form-control-sm" placeholder="Search"
+                ng-model="options.searchTerm">
+        </div>
+
+        <span ng-click="addRow()">
+            <i class="la la-2x la-plus-circle"></i>
+        </span>
+    </div>
+</div>
+<div class="dataTables_wrapper">
+    <div class="overflow-x-auto table-responsive">
+        <table class="dataTable table table-sm table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th ng-repeat="item in options.columns">
+                        {{item.title}}</th>
+                    <th ng-hide="options.disableDelete" class="text-center p-0">
+                        <i class="la la-2x la-trash"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr
+                    ng-repeat="row in filteredData = ( data | smartSearch:options.searchTerm) | limitTo : options.pageLength : options.pageLength*(options.currentPage-1)">
+                    <td ng-repeat="cell in options.columns">
+                        <!-- INPUT: NUMBER -->
+                        <input ng-if="cell.type.name == 'input' && cell.type.inputType == 'number'"
+                            ng-class="{ 'text-right': cell.type.inputType == 'number'}"
+                            ng-change="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                            placeholder="{{cell.type.placeHolder}}" title="{{cell.type.placeHolder}}"
+                            ng-required="cell.type.required" ng-disabled="cell.type.disabled" type="number"
+                            class="form-control" ng-model="row[cell.data]" name="{{row[cell.data]}}">
+
+                        <!-- INPUT: ANY -->
+                        <input ng-if="cell.type.name == 'input' && cell.type.inputType != 'number' "
+                            ng-class="{ 'text-right': cell.type.inputType == 'number'}"
+                            ng-change="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                            placeholder="{{cell.type.placeHolder}}" title="{{cell.type.placeHolder}}"
+                            maxlength="{{cell.type.maxlength}}" ng-required="cell.type.required"
+                            ng-disabled="cell.type.disabled" type="{{cell.type.inputType}}" class="form-control"
+                            ng-model="row[cell.data]" name="{{row[cell.data]}}">
+
+                        <!-- TEXT AREA -->
+                        <textarea rows="2" class="form-control" ng-model="row[cell.data]"
+                            title="{{cell.type.placeHolder}}" ng-if="cell.type.name == 'textarea'"
+                            ng-disabled="cell.type.disabled" maxlength="{{cell.type.maxlength}}"
+                            ng-required="cell.type.required" placeholder="{{cell.type.placeHolder}}"
+                            name="{{row[cell.data]}}"></textarea>
+                        <!-- SELECT -->
+                        <select ng-required="cell.type.required"
+                            ng-change="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                            ng-if="cell.type.name == 'select'" class="form-control" ng-model="row[cell.data]"
+                            title="{{cell.type.placeHolder}}"
+                            ng-options="item[cell.type.id] as item[cell.type.value] for item in cell.type.data">
+                            <option value="">{{cell.type.placeHolder}}</option>
+                        </select>
+                        <!-- TYPE AhEAD -->
+                        <input type="text" ng-required="cell.type.required"
+                            typeahead-on-select="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                            ng-if="cell.type.name == 'typeahead'" class="form-control" ng-model="row[cell.data]"
+                            title="{{cell.type.placeHolder}}" placeholder="{{cell.type.placeHolder}}"
+                            uib-typeahead="item[cell.type.id] as item[cell.type.value] for item in cell.type.data | filter:$viewValue | limitTo:8"
+                            class="form-control" name="{{row[cell.data]}}">
+
+                        <!-- DATE -->
+                        <div ng-if="cell.type.name == 'date'" class="d-flex">
+                            <input type="text" class="form-control" uib-datepicker-popup="MM-dd-yyyy"
+                                ng-required="cell.type.required" ng-model="row[cell.data]" is-open="dateOpen" patter=""
+                                placeholder="mm-dd-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}" title="mm-dd-yyyy"
+                                datepicker-options="dateOptions" close-text="Close" ng-disabled="cell.type.disabled"
+                                name="{{row[cell.data]}}" />
+                            <button type="button" class="btn" ng-click="dateOpen = !dateOpen"
+                                ng-hide="cell.type.disabled">
+                                <i class="la la-2x la-calendar"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td ng-hide="options.disableDelete" class="text-center">
+                        <button type="button" class="btn" title="Remove row" ng-click="removeRow($index)">
+                            <i class="la la-2x la-close"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-top mb-2" ng-show="filteredData.length > options.pageLength">
+        <div class="dataTables_info">
+            Showing {{options.pageLength*(options.currentPage-1)+1}} to
+            {{options.pageLength*(options.currentPage-1)+options.pageLength > filteredData.length ? filteredData.length : options.pageLength*(options.currentPage-1)+options.pageLength}}
+            of {{filteredData.length}} entries <span ng-show="options.searchTerm && false">(filtered from
+                {{data.length}} total
+                entries)</span>
+        </div>
+        <ul uib-pagination total-items="filteredData.length" ng-model="options.currentPage" max-size="6"
+            items-per-page="options.pageLength" class="mb-0 pagination-sm" boundary-link-numbers="true" rotate="false">
+        </ul>
+    </div>
+
+</div>
+<!-- <div>
+        <div> options.pageLength: {{options.pageLength}} </div>
+        <div>options.currentPage: {{options.currentPage}}</div>
+        <div>length: {{data.length}}</div>
+        <hr>
+        <div>limit: {{options.pageLength}}</div>
+        <div>begin: {{options.pageLength*(options.currentPage-1)}}</div>
+    </div> -->
+</div>

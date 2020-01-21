@@ -44,7 +44,7 @@
             }
         }
         function getvisitHistorytData() {
-            return httpGet(apiCollection.waitingList.GetVisitHistory(), true);
+            return httpGet(apiCollection.doctorTreatment.GetVisitHistory(), true);
         }
         function httpGet(url, isRefresh) {
             let defer = $q.defer();

@@ -21,14 +21,20 @@
             GetWaitingList: function () {
                 return apiEndPoint + "Common/GetAllWaitingList";
             },
+
+        }
+        var doctorTreatment = {
             GetVisitHistory: function () {
                 return apiEndPoint + "Common/GetAllVisitList";
             },
+            SaveDiagnosis: () => apiEndPoint + "Common/SaveDiagnosis",
+            GetDiagnosisDetails: () => apiEndPoint + "Common/GetDiagnosisDetails"
         }
 
         return {
             login,
-            waitingList
+            waitingList,
+            doctorTreatment
         }
     }
 }());

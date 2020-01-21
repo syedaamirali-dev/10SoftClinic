@@ -7,14 +7,34 @@
                     <h5 class="form-header">Document Information</h5>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-2 col-md-2 col-form-label">Document Type:</label>
-                    <div class="col-lg-2 col-md-2">
+                    <label class="col-lg-1 col-md-2 col-sm-2 col-form-label">OPD No:</label>
+                    <div class="col-lg-3 col-md-2 col-sm-2">
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" value="OPD 78964" disabled>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-info-circle la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <label class="col-lg-1 col-md-1 col-sm-1 col-form-label">Name:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Name">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-user la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <label class="col-lg-2 col-md-2 col-sm-2 col-form-label">Document Type:</label>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
                         <select class="form-control">
                             <option selected>Treatment</option>
                         </select>
                     </div>
-                    <label class="col-lg-1 col-md-1 pr-0 col-form-label">Issue Date:</label>
-                    <div class="col-lg-3 col-md-3">
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-1 col-md-1 col-sm-1 pr-0 col-form-label">Issue Date:</label>
+                    <div class="col-lg-3 col-md-1 col-sm-1">
                         <div class="kt-input-icon kt-input-icon--right">
                             <input type="text" class="form-control" readonly placeholder="Select date"
                                 id="kt_datepicker_2" />
@@ -23,35 +43,14 @@
                             </span>
                         </div>
                     </div>
-                    <label class="col-lg-1 col-md-1 col-form-label">Name:</label>
-                    <div class="col-lg-3 col-md-3">
-                        <div class="kt-input-icon kt-input-icon--right">
-                            <input type="text" class="form-control" placeholder="Enter Name">
-                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                    <i class="la la-user la-2x"></i></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-lg-2 col-md-2 col-form-label">OPD No:</label>
-                    <div class="col-lg-2 col-md-2">
-                        <div class="kt-input-icon kt-input-icon--right">
-                            <input type="text" class="form-control" value="OPD 78964" disabled>
-                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                    <i class="la la-info-circle la-2x"></i></span>
-                            </span>
-                        </div>
-                    </div>
-
                 </div>
                 <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
                 </div>
-                <div class="form-group row justify-content-center" id="periodontalTable">
+                <div class="form-group row" id="periodontalTable">
                     <h5 class="form-header">Higher</h5>
                 </div>
                 <div class="form-group row" id="periodontalTable">
-                    <div class="col-md-12 d-flex justify-content-center">
+                    <div class="col-md-12 d-flex">
                         <table>
                             <tbody>
                                 <tr>
@@ -157,11 +156,11 @@
                         </table>
                     </div>
                 </div>
-                <div class="form-group row justify-content-center" id="periodontalTable">
+                <div class="form-group row" id="periodontalTable">
                     <h5 class="form-header">Lower</h5>
                 </div>
                 <div class="form-group row" id="periodontalTable">
-                    <div class="col-md-12 d-flex justify-content-center">
+                    <div class="col-md-12 d-flex">
                         <table>
                             <tbody>
                                 <tr>

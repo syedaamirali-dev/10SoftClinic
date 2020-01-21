@@ -10,4 +10,8 @@
     float: right;
     justify-content: end;
   }
+  .kt-separator.kt-separator--space-lg,
+  .kt-separator.kt-separator--lg {
+    margin: 0.5rem 0;
+  }
 }

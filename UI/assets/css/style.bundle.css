@@ -32624,6 +32624,48 @@ table.dataTable thead > tr > td.sorting {
   background: #3d6b91;
   color: white; }
 
+.table th,
+.table td {
+  padding: 0.5rem !important; }
+
+.editable-table .table th,
+.editable-table .table td {
+  padding: 0.15rem 0.15rem 0.15rem 0.5rem !important; }
+
+.editable-table .table-bordered {
+  border: 1px solid #ebedf2 !important; }
+
+.editable-table th {
+  background: #3d6b91;
+  color: white !important; }
+
+.editable-table .la {
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #c8cad5; }
+  .editable-table .la:hover {
+    color: #5d78ff; }
+
+.editable-table .dataTables_wrapper > .row:nth-child(2) > div {
+  overflow-x: auto; }
+
+.editable-table .dataTables_wrapper .dataTable {
+  border-radius: 0; }
+
+.editable-table .dataTables_wrapper td {
+  padding: 1px !important; }
+  .editable-table .dataTables_wrapper td .form-control {
+    border-radius: 0 !important;
+    border: 0 !important; }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .editable-table .dataTables_wrapper td .form-control {
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    padding: 5px; } }
+
 #adultPatientSheet .kt-form__actions {
   float: right;
   justify-content: end; }
@@ -32698,3 +32740,7 @@ table.dataTable thead > tr > td.sorting {
 #docTreatmentInfo .kt-form__actions {
   float: right;
   justify-content: end; }
+
+#docTreatmentInfo .kt-separator.kt-separator--space-lg,
+#docTreatmentInfo .kt-separator.kt-separator--lg {
+  margin: 0.5rem 0; }
