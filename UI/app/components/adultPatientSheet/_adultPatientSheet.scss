@@ -1,5 +1,5 @@
 #adultPatientSheet {
-    .kt-form__actions {
+  .kt-form__actions {
     float: right;
     justify-content: end;
   }
@@ -23,7 +23,9 @@
       display: none;
     }
   }
-
+  #periodontalTable {
+    max-height: 450px;
+  }
   .stv-radio-buttons-wrapper {
     clear: both;
     display: inline-block;
@@ -57,5 +59,12 @@
   }
   .all-rad {
     border-radius: 0.35em 0.35em 0.35em 0.35em;
+  }
+  .legend-img {
+    text-align: center;
+    img {
+      padding-top: 20px;
+      padding-left: 20px;
+    }
   }
 }

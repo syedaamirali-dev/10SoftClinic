@@ -32687,6 +32687,9 @@ table.dataTable thead > tr > td.sorting {
   #adultPatientSheet #periodontalTable {
     display: none; } }
 
+#adultPatientSheet #periodontalTable {
+  max-height: 450px; }
+
 #adultPatientSheet .stv-radio-buttons-wrapper {
   clear: both;
   display: inline-block;
@@ -32716,6 +32719,12 @@ table.dataTable thead > tr > td.sorting {
 
 #adultPatientSheet .all-rad {
   border-radius: 0.35em 0.35em 0.35em 0.35em; }
+
+#adultPatientSheet .legend-img {
+  text-align: center; }
+  #adultPatientSheet .legend-img img {
+    padding-top: 20px;
+    padding-left: 20px; }
 
 #docTreatment .kt-wizard-v3__wrapper .kt-form {
   width: 95% !important; }
