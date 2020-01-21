@@ -40,7 +40,7 @@
                         targets: 1,
                         render: function (data, type, row) {
                             if (type === 'display') {
-                                data = '<a href="#!/docTreatment/adultPatientSheet">Add Treatment</a>'
+                                data ='<a href="#!/docTreatment/adultPatientSheet">Add Treatment</a>'
                             }
                             return data;
                         },
