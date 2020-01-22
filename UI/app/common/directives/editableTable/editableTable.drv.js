@@ -9,7 +9,7 @@
     function editableTable($window, $timeout) {
         function link(scope, element) {
 
-            //console.log(scope);
+
             scope.options.minRecords = scope.options.minRecords || 0;
 
             scope.addRow = () => {
@@ -23,6 +23,30 @@
                 if (scope.formInstance) {
                     scope.formInstance.$setDirty();
                 }
+                /*var dateColumns = scope.options.columns.filter((item) => item.type.name == 'date')
+                var datePickerIdList = []
+                dateColumns.forEach((item) => {
+                    var columnPosition = item.$$hashKey;
+                    datePickerIdList.push((scope.data.length-1) + "" + (parseInt(columnPosition.substr(columnPosition.length - 2, 2)) - 11));
+                });
+                $timeout(
+                    () => {
+                        datePickerIdList.forEach((datePickerId) => {
+                            console.log('#kt_datepicker' + datePickerId);
+                            console.log($('#kt_datepicker' + datePickerId));
+                            $('#kt_datepicker' + datePickerId).datepicker({
+                                rtl: KTUtil.isRTL(),
+                                todayHighlight: true,
+                                todayBtn: "linked",
+                                clearBtn: true,
+                                orientation: "bottom left",
+                                templates: {
+                                    leftArrow: '<i class="la la-angle-left"></i>',
+                                    rightArrow: '<i class="la la-angle-right"></i>'
+                                }
+                            });
+                        });
+                    }, 500);*/
             };
 
             scope.removeRow = (index) => {

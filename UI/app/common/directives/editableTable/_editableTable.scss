@@ -1,16 +1,27 @@
 .editable-table {
-  .table th,
-  .table td {
-    padding: 0.15rem 0.15rem 0.15rem 0.5rem !important;
+  .kt-switch {
+    margin-top: 5px;
+    label {
+      margin: 0;
+    }
+  }
+
+  .editable {
+    &-th {
+      background: #3d6b91;
+      color: white !important;
+      min-width: 130px !important;
+      padding: 0.15rem 0.15rem 0.15rem 0.15rem !important;
+    }
+    &-td {
+      padding: 0.15rem 0.15rem 0.15rem 0.15rem !important;
+    }
   }
 
   .table-bordered {
     border: 1px solid #ebedf2 !important;
   }
-  th {
-    background: #3d6b91;
-    color: white !important;
-  }
+
   .la {
     padding: 0;
     cursor: pointer;

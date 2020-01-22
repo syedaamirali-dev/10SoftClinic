@@ -34,45 +34,6 @@
                 "31b", "32b", "33b", "34b", "35b", "36b", "37b", "38b"
             ]
         }
-        var arrows;
-        /**
-         * @Description Initializing Arrows according to RTL design
-         */
-        if (KTUtil.isRTL()) {
-            arrows = {
-                leftArrow: '<i class="la la-angle-right"></i>',
-                rightArrow: '<i class="la la-angle-left"></i>'
-            }
-        } else {
-            arrows = {
-                leftArrow: '<i class="la la-angle-left"></i>',
-                rightArrow: '<i class="la la-angle-right"></i>'
-            }
-        }
-        /**
-         * @description Initializing DatePicker options
-         */
-        function initializeDatePicker() {
-            // input group layout 
-            $('#kt_datepicker_2, #kt_datepicker_2_validate').datepicker({
-                rtl: KTUtil.isRTL(),
-                todayHighlight: true,
-                todayBtn: "linked",
-                clearBtn: true,
-                orientation: "bottom left",
-                templates: arrows
-            });
-
-            // input group layout for modal demo
-            $('#kt_datepicker_2_modal').datepicker({
-                rtl: KTUtil.isRTL(),
-                todayHighlight: true,
-                todayBtn: "linked",
-                clearBtn: true,
-                orientation: "bottom left",
-                templates: arrows
-            });
-        }
 
         $scope.Submit = () => {
             swal.fire({
@@ -85,7 +46,17 @@
         }
         function activate() {
             $document.ready(function () {
-                initializeDatePicker()
+                $('#kt_datepicker_2').datepicker({
+                    rtl: KTUtil.isRTL(),
+                    todayHighlight: true,
+                    todayBtn: "linked",
+                    clearBtn: true,
+                    orientation: "bottom left",
+                    templates: {
+                        leftArrow: '<i class="la la-angle-left"></i>',
+                        rightArrow: '<i class="la la-angle-right"></i>'
+                    }
+                });
             });
         }
 

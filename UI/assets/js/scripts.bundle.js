@@ -210,6 +210,10 @@ var KTApp = function() {
             initTooltips();
         },
 
+        initScroll: function() {
+            initScroll();
+        },
+
         initTooltip: function(el) {
             initTooltip(el);
         },

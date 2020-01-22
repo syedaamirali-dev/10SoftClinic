@@ -12,13 +12,13 @@
     </div>
 </div>
 <div class="dataTables_wrapper">
-    <div class="overflow-x-auto table-responsive">
-        <table class="dataTable table table-sm table-bordered table-hover">
+    <div class="overflow-x-auto table-responsive ">
+        <table class="table table-sm table-bordered table-hover ">
             <thead>
                 <tr>
-                    <th ng-repeat="item in options.columns">
-                        {{item.title}}</th>
-                    <th ng-hide="options.disableDelete" class="text-center p-0">
+                    <th ng-repeat="item in options.columns" class="editable-th" ng-hide="item.isHidden"> {{item.title}}
+                    </th>
+                    <th ng-hide=" options.disableDelete" class="text-center p-0 editable-th">
                         <i class="la la-2x la-trash"></i>
                     </th>
                 </tr>
@@ -27,7 +27,7 @@
 
                 <tr
                     ng-repeat="row in filteredData = ( data | smartSearch:options.searchTerm) | limitTo : options.pageLength : options.pageLength*(options.currentPage-1)">
-                    <td ng-repeat="cell in options.columns">
+                    <td ng-repeat="cell in options.columns" ng-hide="cell.isHidden" class="text-center editable-td">
                         <!-- INPUT: NUMBER -->
                         <input ng-if="cell.type.name == 'input' && cell.type.inputType == 'number'"
                             ng-class="{ 'text-right': cell.type.inputType == 'number'}"
@@ -69,16 +69,29 @@
 
                         <!-- DATE -->
                         <div ng-if="cell.type.name == 'date'" class="d-flex">
+                            <!-- <input type="text" class="form-control" id="{{'kt_datepicker'+$parent.$parent.$index+$index}}"
+                                readonly placeholder="Select date" ng-model="row[cell.data]" /> -->
                             <input type="text" class="form-control" uib-datepicker-popup="MM-dd-yyyy"
                                 ng-required="cell.type.required" ng-model="row[cell.data]" is-open="dateOpen" patter=""
                                 placeholder="mm-dd-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}" title="mm-dd-yyyy"
                                 datepicker-options="dateOptions" close-text="Close" ng-disabled="cell.type.disabled"
-                                name="{{row[cell.data]}}" />
+                                name="{{row[cell.data]}}" popup-placement="auto bottom-left" />
                             <button type="button" class="btn" ng-click="dateOpen = !dateOpen"
                                 ng-hide="cell.type.disabled">
                                 <i class="la la-2x la-calendar"></i>
                             </button>
                         </div>
+                        <!-- TOGGLE(CHECK BOX) -->
+                        <span class="kt-switch kt-switch--sm kt-switch--icon" ng-if="cell.type.name == 'checkbox'"
+                            ng-disabled="cell.type.disabled">
+                            <label>
+                                <input type="checkbox" name="{{row[cell.data]}}" ng-model="row[cell.data]"
+                                    title="{{cell.type.placeHolder}}"
+                                    ng-change="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                                    ng-required="cell.type.required">
+                                <span></span>
+                            </label>
+                        </span>
                     </td>
                     <td ng-hide="options.disableDelete" class="text-center">
                         <button type="button" class="btn" title="Remove row" ng-click="removeRow($index)">
@@ -113,3 +126,20 @@
         <div>begin: {{options.pageLength*(options.currentPage-1)}}</div>
     </div> -->
 </div>
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <ul>
+            <li ng-repeat="item in $ctrl.items">
+                <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+            </li>
+        </ul>
+        <!-- Selected: <b>{{ $ctrl.selected.item }}</b> -->
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+    </div>
+</script>
