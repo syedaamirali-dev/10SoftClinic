@@ -32666,15 +32666,14 @@ table.dataTable thead > tr > td.sorting {
     font-weight: 500 !important;
     padding: 5px; } }
 
-#adultPatientSheet .kt-form__actions {
-  float: right;
-  justify-content: end; }
+#adultPatientSheet .kt-portlet__foot {
+  padding: 10px; }
 
 #adultPatientSheet .kt-heading {
   margin: 0.35rem 0 !important; }
 
 #adultPatientSheet .kt-portlet__body {
-  padding: 10px !important; }
+  padding: 10px 0 0 0 !important; }
 
 #adultPatientSheet .kt-separator.kt-separator--space-lg,
 #adultPatientSheet .kt-separator.kt-separator--lg {
@@ -32682,13 +32681,6 @@ table.dataTable thead > tr > td.sorting {
 
 #adultPatientSheet td > img {
   height: 30%; }
-
-@media (max-width: 670px) {
-  #adultPatientSheet #periodontalTable {
-    display: none; } }
-
-#adultPatientSheet #periodontalTable {
-  max-height: 450px; }
 
 #adultPatientSheet .stv-radio-buttons-wrapper {
   clear: both;
@@ -32726,6 +32718,22 @@ table.dataTable thead > tr > td.sorting {
     padding-top: 20px;
     padding-left: 20px; }
 
+@media (min-width: 769px) {
+  #adultPatientSheet div.form-group label:first-child {
+    padding-left: 0 !important; } }
+
+@media (max-width: 670px) {
+  #adultPatientSheet #periodontalTable {
+    display: none; } }
+
+@media (min-width: 769px) {
+  #adultPatientSheet #periodontalTable div {
+    max-height: 450px; } }
+
+@media (max-width: 1024px) {
+  #adultPatientSheet #periodontalTable div {
+    max-height: 865px; } }
+
 #docTreatment .kt-wizard-v3__wrapper .kt-form {
   width: 95% !important; }
 
@@ -32736,20 +32744,37 @@ table.dataTable thead > tr > td.sorting {
 
 #docTreatPatient {
   min-height: calc(100vh - 403px); }
-  #docTreatPatient .kt-form__actions {
-    float: right;
-    justify-content: end; }
+  #docTreatPatient .kt-portlet__foot {
+    padding: 10px; }
+  #docTreatPatient .kt-portlet__body {
+    padding: 10px 0 0 0 !important; }
+
+#docTreatInsEmpl .kt-portlet__foot {
+  padding: 10px; }
+
+#docTreatInsEmpl .kt-portlet__body {
+  padding: 10px 0 0 0 !important; }
+
+#docTreatInsEmpl #center-line div {
+  border: 1px solid;
+  width: 1px;
+  height: 100%; }
 
 #docTreatmentInfo .kt-heading {
   margin: 0.35rem 0 !important; }
 
 #docTreatmentInfo .kt-portlet__body {
-  padding: 10px !important; }
+  padding: 10px 0 0 0 !important; }
 
-#docTreatmentInfo .kt-form__actions {
-  float: right;
-  justify-content: end; }
+#docTreatmentInfo .kt-portlet__foot {
+  padding: 10px; }
 
 #docTreatmentInfo .kt-separator.kt-separator--space-lg,
 #docTreatmentInfo .kt-separator.kt-separator--lg {
   margin: 0.5rem 0; }
+
+#docMedication .kt-portlet__foot {
+  padding: 10px; }
+
+#docMedication .kt-portlet__body {
+  padding: 10px 0 0 0 !important; }
