@@ -1,7 +1,9 @@
 #docTreatPatient {
   min-height: calc(100vh - 403px);
-  .kt-form__actions {
-    float: right;
-    justify-content: end;
+  .kt-portlet__foot {
+    padding: 10px;
+  }
+  .kt-portlet__body {
+    padding: 10px 0 0 0 !important;
   }
 }

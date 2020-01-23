@@ -4,10 +4,13 @@
     margin: 0.35rem 0 !important;
   }
   .kt-portlet__body {
-    padding: 10px !important;
+    padding: 10px 0 0 0 !important;
   }
-  .kt-form__actions {
-    float: right;
-    justify-content: end;
+  .kt-portlet__foot {
+    padding: 10px;
+  }
+  .kt-separator.kt-separator--space-lg,
+  .kt-separator.kt-separator--lg {
+    margin: 0.5rem 0;
   }
 }

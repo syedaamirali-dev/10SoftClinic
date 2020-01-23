@@ -5,6 +5,19 @@
         .module('10softdental')
         .config(appConfig)
         .run(runConfig)
+        .filter('smartSearch', ['$filter', function ($filter) {
+            return function (collection, keywords) {
+                if (!keywords) {
+                    return collection;
+                } else {
+                    keywords = keywords.split(" ");
+                    $.each(keywords, function (k, v) {
+                        collection = $filter('filter')(collection, { $: v });
+                    });
+                    return collection;
+                }
+            }
+        }]);
 
     /** @ngInject */
     function appConfig($httpProvider, $logProvider) {

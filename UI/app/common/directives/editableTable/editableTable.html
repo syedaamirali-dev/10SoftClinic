@@ -1,0 +1,145 @@
+<div class="toolbar">
+    <h5 class="form-header">{{heading}}</h5>
+    <div class="d-flex justify-content-between">
+        <div class="dataTables_filter">
+            <input type="search" class="form-control form-control-sm" placeholder="Search"
+                ng-model="options.searchTerm">
+        </div>
+
+        <span ng-click="addRow()">
+            <i class="la la-2x la-plus-circle"></i>
+        </span>
+    </div>
+</div>
+<div class="dataTables_wrapper">
+    <div class="overflow-x-auto table-responsive ">
+        <table class="table table-sm table-bordered table-hover ">
+            <thead>
+                <tr>
+                    <th ng-repeat="item in options.columns" class="editable-th" ng-hide="item.isHidden"> {{item.title}}
+                    </th>
+                    <th ng-hide=" options.disableDelete" class="text-center p-0 editable-th">
+                        <i class="la la-2x la-trash"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr
+                    ng-repeat="row in filteredData = ( data | smartSearch:options.searchTerm) | limitTo : options.pageLength : options.pageLength*(options.currentPage-1)">
+                    <td ng-repeat="cell in options.columns" ng-hide="cell.isHidden" class="text-center editable-td">
+                        <!-- INPUT: NUMBER -->
+                        <input ng-if="cell.type.name == 'input' && cell.type.inputType == 'number'"
+                            ng-class="{ 'text-right': cell.type.inputType == 'number'}"
+                            ng-change="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                            placeholder="{{cell.type.placeHolder}}" title="{{cell.type.placeHolder}}"
+                            ng-required="cell.type.required" ng-disabled="cell.type.disabled" type="number"
+                            class="form-control" ng-model="row[cell.data]" name="{{row[cell.data]}}">
+
+                        <!-- INPUT: ANY -->
+                        <input ng-if="cell.type.name == 'input' && cell.type.inputType != 'number' "
+                            ng-class="{ 'text-right': cell.type.inputType == 'number'}"
+                            ng-change="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                            placeholder="{{cell.type.placeHolder}}" title="{{cell.type.placeHolder}}"
+                            maxlength="{{cell.type.maxlength}}" ng-required="cell.type.required"
+                            ng-disabled="cell.type.disabled" type="{{cell.type.inputType}}" class="form-control"
+                            ng-model="row[cell.data]" name="{{row[cell.data]}}">
+
+                        <!-- TEXT AREA -->
+                        <textarea rows="2" class="form-control" ng-model="row[cell.data]"
+                            title="{{cell.type.placeHolder}}" ng-if="cell.type.name == 'textarea'"
+                            ng-disabled="cell.type.disabled" maxlength="{{cell.type.maxlength}}"
+                            ng-required="cell.type.required" placeholder="{{cell.type.placeHolder}}"
+                            name="{{row[cell.data]}}"></textarea>
+                        <!-- SELECT -->
+                        <select ng-required="cell.type.required"
+                            ng-change="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                            ng-if="cell.type.name == 'select'" class="form-control" ng-model="row[cell.data]"
+                            title="{{cell.type.placeHolder}}"
+                            ng-options="item[cell.type.id] as item[cell.type.value] for item in cell.type.data">
+                            <option value="">{{cell.type.placeHolder}}</option>
+                        </select>
+                        <!-- TYPE AhEAD -->
+                        <input type="text" ng-required="cell.type.required"
+                            typeahead-on-select="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                            ng-if="cell.type.name == 'typeahead'" class="form-control" ng-model="row[cell.data]"
+                            title="{{cell.type.placeHolder}}" placeholder="{{cell.type.placeHolder}}"
+                            uib-typeahead="item[cell.type.id] as item[cell.type.value] for item in cell.type.data | filter:$viewValue | limitTo:8"
+                            class="form-control" name="{{row[cell.data]}}">
+
+                        <!-- DATE -->
+                        <div ng-if="cell.type.name == 'date'" class="d-flex">
+                            <!-- <input type="text" class="form-control" id="{{'kt_datepicker'+$parent.$parent.$index+$index}}"
+                                readonly placeholder="Select date" ng-model="row[cell.data]" /> -->
+                            <input type="text" class="form-control" uib-datepicker-popup="MM-dd-yyyy"
+                                ng-required="cell.type.required" ng-model="row[cell.data]" is-open="dateOpen" patter=""
+                                placeholder="mm-dd-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}" title="mm-dd-yyyy"
+                                datepicker-options="dateOptions" close-text="Close" ng-disabled="cell.type.disabled"
+                                name="{{row[cell.data]}}" popup-placement="auto bottom-left" />
+                            <button type="button" class="btn" ng-click="dateOpen = !dateOpen"
+                                ng-hide="cell.type.disabled">
+                                <i class="la la-2x la-calendar"></i>
+                            </button>
+                        </div>
+                        <!-- TOGGLE(CHECK BOX) -->
+                        <span class="kt-switch kt-switch--sm kt-switch--icon" ng-if="cell.type.name == 'checkbox'"
+                            ng-disabled="cell.type.disabled">
+                            <label>
+                                <input type="checkbox" name="{{row[cell.data]}}" ng-model="row[cell.data]"
+                                    title="{{cell.type.placeHolder}}"
+                                    ng-change="optionChanged(row[cell.data],'{{row[cell.data]}}', row, cell)"
+                                    ng-required="cell.type.required">
+                                <span></span>
+                            </label>
+                        </span>
+                    </td>
+                    <td ng-hide="options.disableDelete" class="text-center">
+                        <button type="button" class="btn" title="Remove row" ng-click="removeRow($index)">
+                            <i class="la la-2x la-close"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-top mb-2" ng-show="filteredData.length > options.pageLength">
+        <div class="dataTables_info">
+            Showing {{options.pageLength*(options.currentPage-1)+1}} to
+            {{options.pageLength*(options.currentPage-1)+options.pageLength > filteredData.length ? filteredData.length : options.pageLength*(options.currentPage-1)+options.pageLength}}
+            of {{filteredData.length}} entries <span ng-show="options.searchTerm && false">(filtered from
+                {{data.length}} total
+                entries)</span>
+        </div>
+        <ul uib-pagination total-items="filteredData.length" ng-model="options.currentPage" max-size="6"
+            items-per-page="options.pageLength" class="mb-0 pagination-sm" boundary-link-numbers="true" rotate="false">
+        </ul>
+    </div>
+
+</div>
+<!-- <div>
+        <div> options.pageLength: {{options.pageLength}} </div>
+        <div>options.currentPage: {{options.currentPage}}</div>
+        <div>length: {{data.length}}</div>
+        <hr>
+        <div>limit: {{options.pageLength}}</div>
+        <div>begin: {{options.pageLength*(options.currentPage-1)}}</div>
+    </div> -->
+</div>
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <ul>
+            <li ng-repeat="item in $ctrl.items">
+                <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+            </li>
+        </ul>
+        <!-- Selected: <b>{{ $ctrl.selected.item }}</b> -->
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+    </div>
+</script>

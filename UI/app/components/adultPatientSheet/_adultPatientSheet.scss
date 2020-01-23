@@ -1,13 +1,12 @@
 #adultPatientSheet {
-    .kt-form__actions {
-    float: right;
-    justify-content: end;
+  .kt-portlet__foot {
+    padding: 10px;
   }
   .kt-heading {
     margin: 0.35rem 0 !important;
   }
   .kt-portlet__body {
-    padding: 10px !important;
+    padding: 10px 0 0 0 !important;
   }
   .kt-separator.kt-separator--space-lg,
   .kt-separator.kt-separator--lg {
@@ -16,12 +15,6 @@
 
   td > img {
     height: 30%;
-  }
-
-  @include kt-media-below(670px) {
-    #periodontalTable {
-      display: none;
-    }
   }
 
   .stv-radio-buttons-wrapper {
@@ -57,5 +50,36 @@
   }
   .all-rad {
     border-radius: 0.35em 0.35em 0.35em 0.35em;
+  }
+  .legend-img {
+    text-align: center;
+    img {
+      padding-top: 20px;
+      padding-left: 20px;
+    }
+  }
+  @include kt-desktop-and-tablet {
+    div.form-group label:first-child {
+      padding-left: 0 !important;
+    }
+  }
+  @include kt-media-below(670px) {
+    #periodontalTable {
+      display: none;
+    }
+  }
+  @include kt-desktop-and-tablet {
+    #periodontalTable {
+      div {
+        max-height: 450px;
+      }
+    }
+  }
+  @include kt-tablet-and-mobile {
+    #periodontalTable {
+      div {
+        max-height: 865px;
+      }
+    }
   }
 }

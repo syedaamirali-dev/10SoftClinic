@@ -15,3 +15,7 @@ table.dataTable thead > tr > td.sorting {
   background: #3d6b91;
   color: white;
 }
+.table th,
+.table td {
+  padding: 0.5rem !important;
+}
