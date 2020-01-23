@@ -23,6 +23,11 @@ namespace _10SoftDental.BAL.Common
             this.commonResponseResult = new CommonResponse();
             this.commonDAL = new CommonDAL();
         }
+
+        public DataSet ValidateUser(string userName, string password)
+        {
+            return new DAL.Common.CommonDAL().ValidateUser(userName, password);
+        }
         public ResponseModel CreateResponse(bool status, string messageCode, string message, object data)
         {
             return this.commonResponseResult.CreateResponse(status, messageCode, message, data);

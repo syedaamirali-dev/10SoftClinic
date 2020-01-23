@@ -45,6 +45,8 @@ namespace _10SoftDental.Controllers
                 }
                 return await client.PostAsync(apiEndPoint, model != null ? new
                FormUrlEncodedContent(model) : null);
+                // return await client.PostAsync("api/authtoken", model != null ? new
+                //FormUrlEncodedContent(model) : null);
             }
         }
 

@@ -11,6 +11,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using _10SoftDental.Models;
 using System.Data;
+using _10SoftDental.Helper;
 
 
 namespace _10SoftDental.Providers
@@ -37,10 +38,11 @@ namespace _10SoftDental.Providers
         {
             try
             {
-                //MobWeb_BAL.Common.Common _common = new MobWeb_BAL.Common.Common();
+                _10SoftDental.BAL.Common.CommonBAL _common = new _10SoftDental.BAL.Common.CommonBAL();
                 DataSet _dataSet = new DataSet();
-               // _dataSet = _common.ValidateUser(context.UserName, context.Password);
-                if (_dataSet!= null)
+                Helper.EncryptionDecryption encryption = new EncryptionDecryption();
+                _dataSet = _common.ValidateUser(context.UserName, encryption.GetEncrypt(context.Password));
+                if (_dataSet != null)
                 {
 
                     var Identity = new ClaimsIdentity(context.Options.AuthenticationType);
@@ -48,26 +50,44 @@ namespace _10SoftDental.Providers
                     var props = new AuthenticationProperties(new Dictionary<string, string>
                         {
                             {
-                                "Email", _dataSet.Tables[0].Rows[0]["Email"].ToString()
+                                "UserEmail", _dataSet.Tables[0].Rows[0]["UserEmail"].ToString()
                             },
                             {
-                                "RoleID", _dataSet.Tables[0].Rows[0]["RoleID"].ToString()
+                                "IsActive", _dataSet.Tables[0].Rows[0]["IsActive"].ToString()
                             },
 
                             {
-                                "FirstName", _dataSet.Tables[0].Rows[0]["FirstName"].ToString()
+                                "UserName", _dataSet.Tables[0].Rows[0]["UserName"].ToString()
                             },
                             {
-                                "LastName", _dataSet.Tables[0].Rows[0]["LastName"].ToString()
+                                "BranchIdRef", _dataSet.Tables[0].Rows[0]["BranchIdRef"].ToString()
                             },
                             {
-                                "UserID",_dataSet.Tables[0].Rows[0]["UserID"].ToString()
+                                "UserId",_dataSet.Tables[0].Rows[0]["UserId"].ToString()
                             },
                             {
-                                "Phone",_dataSet.Tables[0].Rows[0]["Phone"].ToString()
+                                "ClinicId",_dataSet.Tables[0].Rows[0]["ClinicId"].ToString()
                             },
                             {
-                                "IsAdmin",_dataSet.Tables[0].Rows[0]["IsAdmin"].ToString()
+                                "IsSystemAdmin",_dataSet.Tables[0].Rows[0]["IsSystemAdmin"].ToString()
+                            },
+                             {
+                                "UserEmployeePatientId",_dataSet.Tables[0].Rows[0]["UserEmployeePatientId"].ToString()
+                            },
+                              {
+                                "JobGroupForeignName",_dataSet.Tables[0].Rows[0]["JobGroupForeignName"].ToString()
+                            },
+                               {
+                                "JobGroupLocalName",_dataSet.Tables[0].Rows[0]["JobGroupLocalName"].ToString()
+                            },
+                                {
+                                "JobGroupIdRef",_dataSet.Tables[0].Rows[0]["JobGroupIdRef"].ToString()
+                            },
+                         {
+                                "UserType",_dataSet.Tables[0].Rows[0]["UserType"].ToString()
+                            },
+                        {
+                                "ClinicIdRef",_dataSet.Tables[0].Rows[0]["ClinicIdRef"].ToString()
                             }
 
                         });
@@ -135,7 +155,7 @@ namespace _10SoftDental.Providers
 
         public static AuthenticationProperties CreateProperties(string userName, string password)
         {
-           // MobWeb_BAL.Common.Common _common = new MobWeb_BAL.Common.Common();
+            // MobWeb_BAL.Common.Common _common = new MobWeb_BAL.Common.Common();
             DataSet _dataSet = new DataSet();
             //_dataSet = _common.ValidateUser(userName, password);
             if (Convert.ToInt32(_dataSet.Tables[0].Rows[0][0]) != 0)

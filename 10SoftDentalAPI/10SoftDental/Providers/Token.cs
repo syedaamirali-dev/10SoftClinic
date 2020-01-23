@@ -11,22 +11,34 @@ namespace _10SoftDental.Providers
         
         [JsonProperty("Access_token")]
         public string AccessToken { get; set; }
-        [JsonProperty("Email")]
-        public string Email { get; set; }
-        [JsonProperty("RoleID")]
-        public string RoleID { get; set; }
+        [JsonProperty("UserId")]
+        public string UserId { get; set; }
+        [JsonProperty("UserName")]
+        public string UserName { get; set; }
    
-        [JsonProperty("FirstName")]
-        public string FirstName { get; set; }
-        [JsonProperty("LastName")]
-        public string LastName { get; set; }
-        [JsonProperty("UserID")]
-        public string UserID { get; set; }
+        [JsonProperty("IsSystemAdmin")]
+        public string IsSystemAdmin { get; set; }
+        [JsonProperty("IsActive")]
+        public string IsActive { get; set; }
+        [JsonProperty("ClinicIdRef")]
+        public string ClinicIdRef { get; set; }
 
-        [JsonProperty("Phone")]
-        public string Phone { get; set; }
+        [JsonProperty("JobGroupIdRef")]
+        public string JobGroupIdRef { get; set; }
 
-        [JsonProperty("IsAdmin")]
-        public string IsAdmin { get; set; }
+        [JsonProperty("UserType")]
+        public string UserType { get; set; }
+        [JsonProperty("UserEmployeePatientId")]
+        public string UserEmployeePatientId { get; set; }
+        [JsonProperty("JobGroupLocalName")]
+        public string JobGroupLocalName { get; set; }
+        [JsonProperty("JobGroupForeignName")]
+        public string JobGroupForeignName { get; set; }
+        [JsonProperty("BranchIdRef")]
+        public string BranchIdRef { get; set; }
+        [JsonProperty("ClinicId")]
+        public string ClinicId { get; set; }
+        [JsonProperty("UserEmail")]
+        public string UserEmail { get; set; }
     }
 }
