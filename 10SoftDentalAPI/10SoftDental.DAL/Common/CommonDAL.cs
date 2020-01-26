@@ -12,7 +12,6 @@ namespace _10SoftDental.DAL.Common
         public CommonDAL() :
             base(ApplicationUtility.Utility.ConnectionString)
         {
-
         }
         public DataSet GetAllWaitingList()
         {
@@ -44,6 +43,19 @@ namespace _10SoftDental.DAL.Common
             _parameters[3].Value = 100;
             //_parameters[4] = new SqlParameter("@DoctorIdRef", SqlDbType.Int);
             //_parameters[4].Value = 13;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+
+      
+
+        public DataSet ValidateUser(string userName, string password)
+        {
+            _storedProcedure = "User_ValidateLogin";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@Username", SqlDbType.NVarChar);
+            _parameters[0].Value = userName;
+            _parameters[1] = new SqlParameter("@Password", SqlDbType.NVarChar);
+            _parameters[1].Value = password;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
     }

@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="10SoftDental.DAL">
+      <HintPath>..\10SoftDental.DAL\bin\Debug\10SoftDental.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="10SoftDental.Factory">
+      <HintPath>..\10SoftDental.Factory\bin\Debug\10SoftDental.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="ApplicationUtility">
+      <HintPath>..\ApplicationUtility\bin\Debug\ApplicationUtility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,23 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Common\CommonBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\10SoftDental.DAL\10SoftDental.DAL.csproj">
-      <Project>{0035DA18-9689-4F5E-BCD1-85F50868C53B}</Project>
-      <Name>10SoftDental.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\10SoftDental.Factory\10SoftDental.Factory.csproj">
-      <Project>{9632F426-8589-4AD3-BF49-21CEB6303F98}</Project>
-      <Name>10SoftDental.Factory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ApplicationUtility\ApplicationUtility.csproj">
-      <Project>{85C44D0F-5D66-4DA6-B038-6789715A1842}</Project>
-      <Name>ApplicationUtility</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
