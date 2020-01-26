@@ -1,7 +1,7 @@
 <div id="adultPatientSheet">
     <div class="kt-form__section kt-form__section--first">
         <!--begin::Form-->
-        <form class="kt-form kt-form--label-right">
+        <form class="kt-form kt-form--label-left">
             <div class="kt-portlet__body">
                 <div class="form-group row">
                     <h5 class="form-header">Document Information</h5>
@@ -57,7 +57,7 @@
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td>Facial</td>
+                                            <td class="periodontal-label">Facial</td class="periodontal-label">
                                             <td align="center" ng-repeat="number in periodontalImg.tb1">
                                                 <img src="{{'periodontal-chart-master/img/tabla1/periodontograma-dientes-arriba-' + number + '.png'}}"
                                                     alt="">
@@ -67,17 +67,19 @@
                                                     alt="">
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb1">
-                                                <p class="m-2">{{number}}</p>
+                                        <tr class="periodontal-tr">
+                                            <td class="periodontal-label">&nbsp;</td>
+                                            <td class="periodontal-number" align="center"
+                                                ng-repeat="number in periodontalImg.tb1">
+                                                <p>{{number}}</p>
                                             </td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb2">
-                                                <p class="m-2">{{number}}</p>
+                                            <td class="periodontal-number" align="center"
+                                                ng-repeat="number in periodontalImg.tb2">
+                                                <p>{{number}}</p>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
+                                        <tr class="periodontal-tr">
+                                            <td class="periodontal-label">&nbsp;</td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb1">
                                                 <div class="stv-radio-buttons-wrapper">
                                                     <input type="radio" class="kt-hidden stv-radio-button"
@@ -136,16 +138,18 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>&nbsp;</td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb1">
-                                                <p class="m-2">{{number}}</p>
+                                            <td class="periodontal-label">&nbsp;</td>
+                                            <td class="periodontal-number" align="center"
+                                                ng-repeat="number in periodontalImg.tb1">
+                                                <p>{{number}}</p>
                                             </td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb2">
-                                                <p class="m-2">{{number}}</p>
+                                            <td class="periodontal-number" align="center"
+                                                ng-repeat="number in periodontalImg.tb2">
+                                                <p>{{number}}</p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Lingual</td>
+                                            <td class="periodontal-label">Lingual</td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb3">
                                                 <img src="{{'periodontal-chart-master/img/tabla3/periodontograma-dientes-arriba-' + number + '.png'}}"
                                                     alt="">
@@ -167,7 +171,7 @@
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td>Facial</td>
+                                            <td class="periodontal-label">Facial</td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb5">
                                                 <img src="{{'periodontal-chart-master/img/tabla5/periodontograma-dientes-abajo-' + number + '.png'}}"
                                                     alt="">
@@ -177,17 +181,19 @@
                                                     alt="">
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb5">
-                                                <p class="m-2">{{number}}</p>
+                                        <tr class="periodontal-tr">
+                                            <td class="periodontal-label">&nbsp;</td>
+                                            <td class="periodontal-number" align="center"
+                                                ng-repeat="number in periodontalImg.tb5">
+                                                <p>{{number}}</p>
                                             </td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb6">
-                                                <p class="m-2">{{number}}</p>
+                                            <td class="periodontal-number" align="center"
+                                                ng-repeat="number in periodontalImg.tb6">
+                                                <p>{{number}}</p>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
+                                        <tr class="periodontal-tr">
+                                            <td class="periodontal-label">&nbsp;</td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb5">
                                                 <div class="stv-radio-buttons-wrapper">
                                                     <input type="radio" class="kt-hidden stv-radio-button"
@@ -246,16 +252,18 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>&nbsp;</td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb5">
-                                                <p class="m-2">{{number}}</p>
+                                            <td class="periodontal-label">&nbsp;</td>
+                                            <td class="periodontal-number" align="center"
+                                                ng-repeat="number in periodontalImg.tb5">
+                                                <p>{{number}}</p>
                                             </td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb6">
-                                                <p class="m-2">{{number}}</p>
+                                            <td class="periodontal-number" align="center"
+                                                ng-repeat="number in periodontalImg.tb6">
+                                                <p>{{number}}</p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Lingual</td>
+                                            <td class="periodontal-label">Lingual</td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb7">
                                                 <img src="{{'periodontal-chart-master/img/tabla7/periodontograma-dientes-abajo-' + number + '.png'}}"
                                                     alt="">
@@ -271,8 +279,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 legend-img">
-                        <img src="assets\media\images\legend-dental.jpeg" height="100%" alt="">
+                    <div class="col-lg-5">
+                        <img src="assets\media\images\legend-dental.jpeg" class="img-fluid" alt="">
                     </div>
                 </div>
 

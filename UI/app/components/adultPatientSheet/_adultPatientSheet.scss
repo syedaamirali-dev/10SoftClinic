@@ -51,34 +51,28 @@
   .all-rad {
     border-radius: 0.35em 0.35em 0.35em 0.35em;
   }
-  .legend-img {
-    text-align: center;
-    img {
-      padding-top: 20px;
-      padding-left: 20px;
-    }
-  }
+
   @include kt-desktop-and-tablet {
+    .periodontal-number p {
+      margin: 0.5rem !important;
+    }
     div.form-group label:first-child {
       padding-left: 0 !important;
     }
   }
   @include kt-media-below(670px) {
-    #periodontalTable {
-      display: none;
+    td > img {
+      height: 24%;
     }
-  }
-  @include kt-desktop-and-tablet {
-    #periodontalTable {
-      div {
-        max-height: 450px;
+    .periodontal {
+      &-label {
+        display: none;
       }
-    }
-  }
-  @include kt-tablet-and-mobile {
-    #periodontalTable {
-      div {
-        max-height: 865px;
+      &-number p {
+        margin: 0 !important;
+      }
+      &-tr {
+        display: none;
       }
     }
   }
