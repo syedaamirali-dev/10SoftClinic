@@ -1,0 +1,11 @@
+#loginCtrl {
+  .kt-checkbox > span {
+    border: 1px solid #b1b2b3 !important;
+  }
+  button[disabled="disabled"] {
+    cursor: not-allowed;
+  }
+  .kt-login__link {
+    cursor: pointer;
+  }
+}

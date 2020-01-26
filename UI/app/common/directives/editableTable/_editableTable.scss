@@ -5,13 +5,29 @@
       margin: 0;
     }
   }
+  .pagination {
+    .page-item.active .page-link {
+      background-color: #5d78ff;
+    }
+
+    @include kt-mobile {
+      justify-content: center !important;
+      margin-top: 10px !important;
+    }
+    .page-link {
+      padding: 0.25rem 0.75rem;
+      padding: 4px;
+      font-size: 11px;
+    }
+  }
 
   .editable {
     &-th {
       background: #3d6b91;
       color: white !important;
       min-width: 130px !important;
-      padding: 0.15rem 0.15rem 0.15rem 0.15rem !important;
+      padding: 0.15rem 0.05rem 0.15rem 0.5rem !important;
+      vertical-align: middle !important;
     }
     &-td {
       padding: 0.15rem 0.15rem 0.15rem 0.15rem !important;

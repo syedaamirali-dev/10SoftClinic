@@ -10,12 +10,12 @@
         $stateProvider
 
             // login
-            // .state({
-            //     name: 'login',
-            //     url: '/login',
-            //     controller: 'loginCtrl',
-            //     templateUrl: 'app/components/login/login.html'
-            // })
+            .state({
+                name: 'login',
+                url: '/login',
+                controller: 'loginCtrl',
+                templateUrl: 'app/components/login/login.html'
+            })
             // layout
             .state({
                 name: 'main',

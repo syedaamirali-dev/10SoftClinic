@@ -2,9 +2,6 @@
 // Main Stylesheet
 //
 
-
-
-
 ////////////////////////////////////////////////////////////////
 ///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
 ////////////////////////////////////////////////////////////////
@@ -31,7 +28,6 @@
 @import "global/layout/aside/config";
 @import "global/layout/footer/config";
 
-
 // 5: Layout includes
 @import "global/layout/base/base";
 @import "global/layout/header/header";
@@ -46,6 +42,5 @@
 // 6:  User defined custom styles includes
 @import "custom/example-1";
 @import "custom/example-2";
-
 
 @import "app";
