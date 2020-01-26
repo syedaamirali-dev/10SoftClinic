@@ -127,8 +127,8 @@
     <div class="main-loader-wrapper" ng-show="$root.pageLoading">
         <div class="lds lds-hourglass"></div>
     </div>
-    <div class="vh-100">
-        <ui-view ng-if="!$root.isLayout"></ui-view>
+    <div class="vh-100" ng-if="!$root.isLayout">
+        <ui-view></ui-view>
     </div>
 
     <!-- begin:: Page -->
