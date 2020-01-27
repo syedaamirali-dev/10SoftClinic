@@ -50,6 +50,7 @@
             else if (["login"].includes(trans.to().name)) {
                 $rootScope.isLayout = false;
                 $rootScope.userDetails = "";
+                ls.remove('softDentalUserDetails');
             }
 
         });

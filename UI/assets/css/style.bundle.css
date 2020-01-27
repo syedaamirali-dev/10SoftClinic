@@ -32736,7 +32736,7 @@ table.dataTable thead > tr > td.sorting {
   margin: 0.35rem 0 !important; }
 
 #adultPatientSheet .kt-portlet__body {
-  padding: 10px 0 0 0 !important; }
+  padding: 15px !important; }
 
 #adultPatientSheet .kt-separator.kt-separator--space-lg,
 #adultPatientSheet .kt-separator.kt-separator--lg {
@@ -32791,13 +32791,26 @@ table.dataTable thead > tr > td.sorting {
   #adultPatientSheet .periodontal-tr {
     display: none; } }
 
-#docTreatment .kt-form {
-  width: 100% !important;
-  padding: 0rem; }
+#docTreatment .kt-wizard-v3__wrapper .kt-form {
+  width: 95% !important; }
 
-#docTreatment .kt-portlet__body {
-  padding-top: 5px;
-  padding-bottom: 5px; }
+@media (max-width: 768px) {
+  #docTreatment nav {
+    width: 100%; } }
+
+#docTreatment .kt-portlet__head {
+  padding: 0 5px;
+  min-height: 30px; }
+
+#docTreatment .nav-link {
+  padding: 0.5rem 3rem 0.5rem 0;
+  border-bottom: 4px solid #959cb6;
+  color: #959cb6;
+  font-size: 1.1rem;
+  font-weight: 600; }
+  #docTreatment .nav-link:hover, #docTreatment .nav-link.active {
+    border-bottom: 4px solid #5d78ff;
+    color: #5d78ff; }
 
 #waitingList {
   min-height: calc(100vh - 190px); }
@@ -32845,3 +32858,62 @@ table.dataTable thead > tr > td.sorting {
 
 #docMedication .kt-portlet__body {
   padding: 10px 0 0 0 !important; }
+
+#childPatientSheet .kt-portlet__foot {
+  padding: 10px; }
+
+#childPatientSheet .kt-portlet__body {
+  padding: 15px !important; }
+
+#childPatientSheet .kt-separator.kt-separator--space-lg,
+#childPatientSheet .kt-separator.kt-separator--lg {
+  margin: 0.5rem 0; }
+
+#childPatientSheet td > img {
+  height: 30%; }
+
+#childPatientSheet .stv-radio-buttons-wrapper {
+  clear: both;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.3rem; }
+
+#childPatientSheet .stv-radio-button {
+  position: relative; }
+  #childPatientSheet .stv-radio-button + label {
+    float: left;
+    padding: 0.35em 0.35em;
+    cursor: pointer;
+    border: 1px solid #0fb19a;
+    margin-right: -1px;
+    margin-bottom: 0;
+    color: #fff;
+    background-color: #78d6d4; }
+  #childPatientSheet .stv-radio-button:checked + label {
+    background-color: #ffb822; }
+
+#childPatientSheet .left-rad {
+  border-radius: 0.35em 0 0 0.35em; }
+
+#childPatientSheet .right-rad {
+  border-radius: 0 0.35em 0.35em 0; }
+
+#childPatientSheet .all-rad {
+  border-radius: 0.35em 0.35em 0.35em 0.35em; }
+
+@media (min-width: 769px) {
+  #childPatientSheet .periodontal-number p {
+    margin: 0.5rem !important; }
+  #childPatientSheet div.form-group label:first-child {
+    padding-left: 0 !important; } }
+
+@media (max-width: 670px) {
+  #childPatientSheet td > img {
+    height: 24%; }
+  #childPatientSheet .periodontal-label {
+    display: none; }
+  #childPatientSheet .periodontal-number p {
+    margin: 0 !important; }
+  #childPatientSheet .periodontal-tr {
+    display: none; } }

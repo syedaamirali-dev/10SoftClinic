@@ -1,0 +1,257 @@
+<div id="childPatientSheet" class="">
+    <!-- begin:: Subheader -->
+    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">
+                    Child Patient Sheet</h3>
+            </div>
+        </div>
+    </div>
+    <!-- end:: Subheader -->
+    <div class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+        <div class="col-md-12 p-0">
+            <div class="kt-portlet">
+                <!--begin::Form-->
+                <form class="kt-form kt-form--label-left">
+                    <div class="kt-portlet__body">
+                        <div class="form-group row">
+                            <h5 class="form-header">Document Information</h5>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-1 col-md-2 col-sm-2 col-form-label">OPD No:</label>
+                            <div class="col-lg-3 col-md-2 col-sm-2">
+                                <div class="kt-input-icon kt-input-icon--right">
+                                    <input type="text" class="form-control" value="OPD 78964" disabled>
+                                    <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                            <i class="la la-info-circle la-2x"></i></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <label class="col-lg-1 col-md-1 col-sm-1 col-form-label">Name:</label>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="kt-input-icon kt-input-icon--right">
+                                    <input type="text" class="form-control" placeholder="Enter Name">
+                                    <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                            <i class="la la-user la-2x"></i></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-form-label">Document Type:</label>
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                <select class="form-control">
+                                    <option selected>Treatment</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-1 col-md-2 col-sm-2 pr-0 col-form-label">Issue Date:</label>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="kt-input-icon kt-input-icon--right">
+                                    <input type="text" class="form-control" readonly placeholder="Select date"
+                                        id="kt_datepicker_2" />
+                                    <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                            <i class="la la-calendar la-2x"></i></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
+                        </div>
+
+                        <div class="form-group row" id="periodontalTable">
+                            <div class="col-lg-7">
+                                <div class="form-group row">
+                                    <h5 class="form-header">Higher</h5>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12 d-flex">
+                                        <table>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td class="periodontal-label">&nbsp;</td>
+                                                    <td class="periodontal-number" align="center"
+                                                        ng-repeat="number in periodontalImg.tb1">
+                                                        <p>{{number}}</p>
+                                                    </td>
+                                                    <td class="periodontal-number" align="center"
+                                                        ng-repeat="number in periodontalImg.tb2">
+                                                        <p>{{number}}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="periodontal-tr">
+                                                    <td class="periodontal-label">&nbsp;</td>
+                                                    <td align="center" ng-repeat="number in periodontalImg.tb1">
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button1'+number}}" checked />
+                                                            <label for="{{'button1'+number}}" class="all-rad"></label>
+                                                        </div>
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button2'+number}}" checked />
+                                                            <label for="{{'button2'+number}}" class="left-rad"> </label>
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="2"
+                                                                id="{{'button3'+number}}" />
+                                                            <label for="{{'button3'+number}}"> </label>
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="3"
+                                                                id="{{'button4'+number}}" />
+                                                            <label for="{{'button4'+number}}" class="right-rad">
+                                                            </label>
+                                                        </div>
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button5'+number}}" checked />
+                                                            <label for="{{'button5'+number}}" class="all-rad"> </label>
+                                                        </div>
+                                                    </td>
+                                                    <td align="center" ng-repeat="number in periodontalImg.tb2">
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button1'+number}}" checked />
+                                                            <label for="{{'button1'+number}}" class="all-rad"></label>
+                                                        </div>
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button "
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button2'+number}}" checked />
+                                                            <label for="{{'button2'+number}}" class="left-rad"> </label>
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="2"
+                                                                id="{{'button3'+number}}" />
+                                                            <label for="{{'button3'+number}}"> </label>
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="3"
+                                                                id="{{'button4'+number}}" />
+                                                            <label for="{{'button4'+number}}" class="right-rad">
+                                                            </label>
+                                                        </div>
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button5'+number}}" checked />
+                                                            <label for="{{'button5'+number}}" class="all-rad"> </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <h5 class="form-header">Lower</h5>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12 d-flex">
+                                        <table>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td class="periodontal-label">&nbsp;</td>
+                                                    <td class="periodontal-number" align="center"
+                                                        ng-repeat="number in periodontalImg.tb5">
+                                                        <p>{{number}}</p>
+                                                    </td>
+                                                    <td class="periodontal-number" align="center"
+                                                        ng-repeat="number in periodontalImg.tb6">
+                                                        <p>{{number}}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="periodontal-tr">
+                                                    <td class="periodontal-label">&nbsp;</td>
+                                                    <td align="center" ng-repeat="number in periodontalImg.tb5">
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button1'+number}}" checked />
+                                                            <label for="{{'button1'+number}}" class="all-rad"></label>
+                                                        </div>
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button2'+number}}" checked />
+                                                            <label for="{{'button2'+number}}" class="left-rad"> </label>
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="2"
+                                                                id="{{'button3'+number}}" />
+                                                            <label for="{{'button3'+number}}"> </label>
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="3"
+                                                                id="{{'button4'+number}}" />
+                                                            <label for="{{'button4'+number}}" class="right-rad">
+                                                            </label>
+                                                        </div>
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button5'+number}}" checked />
+                                                            <label for="{{'button5'+number}}" class="all-rad"> </label>
+                                                        </div>
+                                                    </td>
+                                                    <td align="center" ng-repeat="number in periodontalImg.tb6">
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button1'+number}}" checked />
+                                                            <label for="{{'button1'+number}}" class="all-rad"></label>
+                                                        </div>
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button "
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button2'+number}}" checked />
+                                                            <label for="{{'button2'+number}}" class="left-rad"> </label>
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="2"
+                                                                id="{{'button3'+number}}" />
+                                                            <label for="{{'button3'+number}}"> </label>
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="3"
+                                                                id="{{'button4'+number}}" />
+                                                            <label for="{{'button4'+number}}" class="right-rad">
+                                                            </label>
+                                                        </div>
+                                                        <div class="stv-radio-buttons-wrapper">
+                                                            <input type="radio" class="kt-hidden stv-radio-button"
+                                                                name="{{'radioButtonTest'+number}}" value="1"
+                                                                id="{{'button5'+number}}" checked />
+                                                            <label for="{{'button5'+number}}" class="all-rad"> </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <img src="assets\media\images\legend-dental.jpeg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="kt-portlet__foot d-flex justify-content-end">
+                        <div class="kt-form__actions">
+                            <button type="reset" class="btn btn-secondary m-2">Cancel</button>
+                            <button type="submit" class="btn btn-success m-2" ng-click="Submit()">Save</button>
+                        </div>
+                    </div>
+                </form>
+                <!--end::Form-->
+            </div>
+        </div>
+    </div>
+
+
+</div>

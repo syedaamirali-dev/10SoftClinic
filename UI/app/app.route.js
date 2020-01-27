@@ -100,6 +100,13 @@
                 controller: 'docMedicationCtrl',
                 templateUrl: 'app/components/docMedication/docMedication.html'
             })
+            // childPatientSheet
+            .state({
+                name: 'main.childPatientSheet',
+                url: '/childPatientSheet',
+                controller: 'childPatientSheetCtrl',
+                templateUrl: 'app/components/childPatientSheet/childPatientSheet.html'
+            })
             /** @RouteReplaceForGulp */
 
 

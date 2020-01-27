@@ -1,9 +1,6 @@
-#adultPatientSheet {
+#childPatientSheet {
   .kt-portlet__foot {
     padding: 10px;
-  }
-  .kt-heading {
-    margin: 0.35rem 0 !important;
   }
   .kt-portlet__body {
     padding: 15px !important;
@@ -12,11 +9,9 @@
   .kt-separator.kt-separator--lg {
     margin: 0.5rem 0;
   }
-
   td > img {
     height: 30%;
   }
-
   .stv-radio-buttons-wrapper {
     clear: both;
     display: inline-block;

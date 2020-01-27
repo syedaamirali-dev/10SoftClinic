@@ -9,134 +9,28 @@
 </div>
 
 <!-- end:: Subheader -->
-<div id="docTreatment" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-    <div class="kt-portlet">
-        <div class="kt-portlet__body kt-portlet__body--fit">
-            <div class="kt-grid kt-wizard-v3 kt-wizard-v3--white" id="kt_wizard_v3" data-ktwizard-state="step-first">
-                <div class="kt-grid__item">
+<div id="docTreatment" class="">
 
-                    <!--begin: Form Wizard Nav -->
-                    <div class="kt-wizard-v3__nav">
-                        <div class="kt-wizard-v3__nav-items d-flex justify-content-center">
-
-                            <!--doc: Replace A tag with SPAN tag to disable the step link click -->
-                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
-                                <div class="kt-wizard-v3__nav-body">
-                                    <div class="kt-wizard-v3__nav-label">
-                                        Main
-                                    </div>
-                                    <div class="kt-wizard-v3__nav-bar"></div>
-                                </div>
-                            </div>
-                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
-                                <div class="kt-wizard-v3__nav-body">
-                                    <div class="kt-wizard-v3__nav-label">
-                                        Treatment
-                                    </div>
-                                    <div class="kt-wizard-v3__nav-bar"></div>
-                                </div>
-                            </div>
-                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
-                                <div class="kt-wizard-v3__nav-body">
-                                    <div class="kt-wizard-v3__nav-label">
-                                        Patient
-                                    </div>
-                                    <div class="kt-wizard-v3__nav-bar"></div>
-                                </div>
-                            </div>
-                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
-                                <div class="kt-wizard-v3__nav-body">
-                                    <div class="kt-wizard-v3__nav-label">
-                                        Insurance
-                                    </div>
-                                    <div class="kt-wizard-v3__nav-bar"></div>
-                                </div>
-                            </div>
-                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
-                                <div class="kt-wizard-v3__nav-body">
-                                    <div class="kt-wizard-v3__nav-label">
-                                        Medication
-                                    </div>
-                                    <div class="kt-wizard-v3__nav-bar"></div>
-                                </div>
-                            </div>
-                            <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step">
-                                <div class="kt-wizard-v3__nav-body">
-                                    <div class="kt-wizard-v3__nav-label">
-                                        Lab Report
-                                    </div>
-                                    <div class="kt-wizard-v3__nav-bar"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--end: Form Wizard Nav -->
-                </div>
-                <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v3__wrapper">
-
-                    <!--begin: Form Wizard Form-->
-                    <form class="kt-form  pt-0" id="kt_form">
-
-                        <!--begin: Form Wizard Step Main-->
-                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content"
-                            data-ktwizard-state="current">
-                            <ui-view></ui-view>
-                        </div>
-                        <!--end: Form Wizard Step Main-->
-
-                        <!--begin: Form Wizard Step Treatment Information-->
-                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
-                            <ui-view></ui-view>
-                        </div>
-                        <!--end: Form Wizard Step Treatment Information-->
-
-                        <!--begin: Form Wizard Step Patient-->
-                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
-                            <ui-view></ui-view>
-                        </div>
-                        <!--end: Form Wizard Step Patient-->
-
-                        <!--begin: Form Wizard Step Insurance & Employee-->
-                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
-                            <ui-view></ui-view>
-                        </div>
-                        <!--end: Form Wizard Step Insurance & Employee-->
-
-                        
-                        <!--begin: Form Wizard Step Medication-->
-                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
-                            <ui-view></ui-view>
-                        </div>
-                        <!--end: Form Wizard Step Medication-->
-
-                        <!--begin: Form Wizard Step Lab Report-->
-                        <div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
-                            <ui-view></ui-view>
-                        </div>
-                        <!--end: Form Wizard Step Lab Report-->
-
-                        <!--begin: Form Actions -->
-                        <div class="kt-form__actions">
-                            <button class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
-                                data-ktwizard-type="action-prev">
-                                Previous
-                            </button>
-                            <!-- <button class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
-                                data-ktwizard-type="action-submit">
-                                Submit
-                            </button> -->
-                            <button class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
-                                data-ktwizard-type="action-next">
-                                Next
-                            </button>
-                        </div>
-
-                        <!--end: Form Actions -->
-
-
-                        <!--end: Form Wizard Form-->
-                </div>
+    <div class="col-md-12">
+        <div class="kt-portlet">
+            <div class="kt-portlet__head justify-content-center align-items-center">
+                <nav class="nav flex-column flex-sm-row">
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatment.adultPatientSheet">Main</a>
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatment.docTreatmentInfo">Treatment</a>
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatment.docTreatPatient">Patient</a>
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatment.docTreatInsEmpl">Insurance</a>
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatment.docMedication">Medication</a>
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatment.docLabReport">Lab Report</a>
+                </nav>
+            </div>
+            <div class="kt-portlet__body">
+                <ui-view></ui-view>
             </div>
         </div>
     </div>
