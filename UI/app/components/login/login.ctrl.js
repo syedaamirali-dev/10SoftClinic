@@ -13,22 +13,11 @@
         $scope.userInfo = {
             validateUser: () => {
                 $scope.loadingLogin = true;
-                /*loginService.validateUser($scope.userObject).then((result) => {
-                    if (data.access_token) {
-                        $rootScope.userDetails = result.data;
-                        
-                    }
-                });*/
-                $timeout(() => {
-                    $scope.loadingLogin = false;
-                    $rootScope.userDetails = {
-                        "accessTocken": "54f86s1fas68fsf6f4f54sa6f6asfds6f6",
-                        "userName": "abdullah",
-                        "FirstName": "Abdullah",
-                        "LastName": "Bin Ahmed",
-                        "Role": "Admin"
-                    }
-                    ls.set('softDentalUserDetails', $rootScope.userDetails);
+                loginService.validateUser($scope.userInfo).then((result) => {
+                    if (result.access_token) {
+                        $rootScope.userDetails = result;
+                        $scope.loadingLogin = false;
+                        ls.set('softDentalUserDetails', $rootScope.userDetails);
                     if ($scope.rememberMe) {
                         ls.set('softDentalLoginDetails', { userName: $scope.userInfo.userName, password: $scope.userInfo.password });
                     }
@@ -37,7 +26,27 @@
                     }
                     $rootScope.isLayout = true;
                     $state.go("main.dashboard");
-                }, 3000);
+                    }
+                });
+                // $timeout(() => {
+                //     $scope.loadingLogin = false;
+                //     // $rootScope.userDetails = {
+                //     //     "accessTocken": "54f86s1fas68fsf6f4f54sa6f6asfds6f6",
+                //     //     "userName": "abdullah",
+                //     //     "FirstName": "Abdullah",
+                //     //     "LastName": "Bin Ahmed",
+                //     //     "Role": "Admin"
+                //     // }
+                //     ls.set('softDentalUserDetails', $rootScope.userDetails);
+                //     if ($scope.rememberMe) {
+                //         ls.set('softDentalLoginDetails', { userName: $scope.userInfo.userName, password: $scope.userInfo.password });
+                //     }
+                //     else {
+                //         ls.remove('softDentalLoginDetails');
+                //     }
+                //     $rootScope.isLayout = true;
+                //     $state.go("main.dashboard");
+                // }, 3000);
 
             },
             forgotPassword: () => {

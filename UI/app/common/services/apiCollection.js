@@ -9,10 +9,10 @@
     function apiCollection(apiEndPoint) {
         var login = {
             validateUser: function () {
-                return apiEndPoint + "UserReg/login";
+                return apiEndPoint + "Login/ValidateUser";
             },
-            forgotPassword: () => apiEndPoint + "UserReg/forgotPassword",
-            updatePassword: () => apiEndPoint + "UserReg/updatePassword",
+            // forgotPassword: () => apiEndPoint + "UserReg/forgotPassword",
+            // updatePassword: () => apiEndPoint + "UserReg/updatePassword",
         }
         var waitingList = {
             GetWaitingList: function () {

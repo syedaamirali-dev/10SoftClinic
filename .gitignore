@@ -17,3 +17,7 @@ DentalClinicModuleSRS.docx
 10SoftDentalAPI/10SoftDental/Properties/PublishProfiles/FolderProfile.pubxml
 10SoftDentalAPI/ApplicationUtility/obj/
 10SoftDentalAPI/.vs/10SoftDentalAPI/v15/Server/sqlite3/storage.ide-wal
+10SoftDentalAPI/.vs/10SoftDentalAPI/v15/Server/sqlite3/storage.ide-wal
+10SoftDentalAPI/.vs/10SoftDentalAPI/v15/Server/sqlite3/storage.ide-shm
+*.ide-shm
+*.ide-wal
