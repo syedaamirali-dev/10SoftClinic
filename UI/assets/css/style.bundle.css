@@ -32791,6 +32791,9 @@ table.dataTable thead > tr > td.sorting {
   #adultPatientSheet .periodontal-tr {
     display: none; } }
 
+#docTreatment .kt-portlet__body:first-child {
+  padding: 0 !important; }
+
 #docTreatment .kt-wizard-v3__wrapper .kt-form {
   width: 95% !important; }
 
@@ -32816,6 +32819,8 @@ table.dataTable thead > tr > td.sorting {
   min-height: calc(100vh - 190px); }
   #waitingList .kt-portlet__body {
     padding: 5px !important; }
+  #waitingList a {
+    cursor: pointer; }
 
 #docTreatPatient {
   min-height: calc(100vh - 403px); }
@@ -32905,15 +32910,27 @@ table.dataTable thead > tr > td.sorting {
 @media (min-width: 769px) {
   #childPatientSheet .periodontal-number p {
     margin: 0.5rem !important; }
-  #childPatientSheet div.form-group label:first-child {
+  #childPatientSheet .periodontal-tb-mobile {
+    display: none; }
+  #childPatientSheet div.form-group > label:first-child {
     padding-left: 0 !important; } }
 
 @media (max-width: 670px) {
   #childPatientSheet td > img {
     height: 24%; }
-  #childPatientSheet .periodontal-label {
-    display: none; }
   #childPatientSheet .periodontal-number p {
     margin: 0 !important; }
-  #childPatientSheet .periodontal-tr {
+  #childPatientSheet .periodontal-tb-desktop {
     display: none; } }
+
+#docTreatmentchild {
+  border: 5px solid green; }
+
+#childHistory {
+  border: 5px solid green; }
+
+#childClinical {
+  border: 5px solid green; }
+
+#childOcclusion {
+  border: 5px solid green; }

@@ -7,10 +7,10 @@
                     <h5 class="form-header">Document Information</h5>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-1 col-md-2 col-sm-2 col-form-label">OPD No:</label>
-                    <div class="col-lg-3 col-md-2 col-sm-2">
+                    <label class="col-lg-1 col-md-1 col-sm-1 pr-0 col-form-label">OPD No:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="kt-input-icon kt-input-icon--right">
-                            <input type="text" class="form-control" value="OPD 78964" disabled>
+                            <input type="text" class="form-control" value="0PD 78964" disabled>
                             <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
                                     <i class="la la-info-circle la-2x"></i></span>
                             </span>
@@ -33,13 +33,33 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-1 col-md-2 col-sm-2 pr-0 col-form-label">Issue Date:</label>
+                    <label class="col-lg-1 col-md-1 col-sm-1 pr-0 col-form-label">Issue Date:</label>
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="kt-input-icon kt-input-icon--right">
                             <input type="text" class="form-control" readonly placeholder="Select date"
                                 id="kt_datepicker_2" />
                             <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
                                     <i class="la la-calendar la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <label class="col-lg-1 col-md-1 col-sm-1 pr-0 col-form-label">Assigned To:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <select class="form-control">
+                            <option selected>Abdul Gaffar</option>
+                            <option>Abu Saaqib</option>
+                            <option>Sheik Haneef</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-md-3 col-form-label text-left">Any Other Findings/Comments:</label>
+                    <div class="col-lg-5 col-md-5">
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="3" placeholder="Enter Comments/Findings"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
                             </span>
                         </div>
                     </div>
@@ -82,57 +102,57 @@
                                             <td class="periodontal-label">&nbsp;</td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb1">
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button1'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest1'+number}}" value="0"
+                                                        id="{{'button1'+number}}" />
                                                     <label for="{{'button1'+number}}" class="all-rad"></label>
                                                 </div>
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button2'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest2'+number}}" value="0"
+                                                        id="{{'button2'+number}}" />
                                                     <label for="{{'button2'+number}}" class="left-rad"> </label>
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="2"
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest3'+number}}" value="0"
                                                         id="{{'button3'+number}}" />
                                                     <label for="{{'button3'+number}}"> </label>
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="3"
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest4'+number}}" value="0"
                                                         id="{{'button4'+number}}" />
                                                     <label for="{{'button4'+number}}" class="right-rad"> </label>
                                                 </div>
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button5'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest5'+number}}" value="0"
+                                                        id="{{'button5'+number}}" />
                                                     <label for="{{'button5'+number}}" class="all-rad"> </label>
                                                 </div>
                                             </td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb2">
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button1'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest1'+number}}" value="0"
+                                                        id="{{'button1'+number}}" />
                                                     <label for="{{'button1'+number}}" class="all-rad"></label>
                                                 </div>
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button "
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button2'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button "
+                                                        name="{{'radioButtonTest2'+number}}" value="0"
+                                                        id="{{'button2'+number}}" />
                                                     <label for="{{'button2'+number}}" class="left-rad"> </label>
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="2"
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest3'+number}}" value="0"
                                                         id="{{'button3'+number}}" />
                                                     <label for="{{'button3'+number}}"> </label>
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="3"
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest4'+number}}" value="0"
                                                         id="{{'button4'+number}}" />
                                                     <label for="{{'button4'+number}}" class="right-rad"> </label>
                                                 </div>
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button5'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest5'+number}}" value="0"
+                                                        id="{{'button5'+number}}" />
                                                     <label for="{{'button5'+number}}" class="all-rad"> </label>
                                                 </div>
                                             </td>
@@ -196,57 +216,57 @@
                                             <td class="periodontal-label">&nbsp;</td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb5">
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button1'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest1'+number}}" value="0"
+                                                        id="{{'button1'+number}}" />
                                                     <label for="{{'button1'+number}}" class="all-rad"></label>
                                                 </div>
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button2'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest2'+number}}" value="0"
+                                                        id="{{'button2'+number}}" />
                                                     <label for="{{'button2'+number}}" class="left-rad"> </label>
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="2"
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest3'+number}}" value="0"
                                                         id="{{'button3'+number}}" />
                                                     <label for="{{'button3'+number}}"> </label>
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="3"
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest4'+number}}" value="0"
                                                         id="{{'button4'+number}}" />
                                                     <label for="{{'button4'+number}}" class="right-rad"> </label>
                                                 </div>
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button5'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest5'+number}}" value="0"
+                                                        id="{{'button5'+number}}" />
                                                     <label for="{{'button5'+number}}" class="all-rad"> </label>
                                                 </div>
                                             </td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb6">
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button1'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest1'+number}}" value="0"
+                                                        id="{{'button1'+number}}" />
                                                     <label for="{{'button1'+number}}" class="all-rad"></label>
                                                 </div>
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button "
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button2'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest2'+number}}" value="0"
+                                                        id="{{'button2'+number}}" />
                                                     <label for="{{'button2'+number}}" class="left-rad"> </label>
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="2"
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest3'+number}}" value="0"
                                                         id="{{'button3'+number}}" />
                                                     <label for="{{'button3'+number}}"> </label>
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="3"
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest4'+number}}" value="0"
                                                         id="{{'button4'+number}}" />
                                                     <label for="{{'button4'+number}}" class="right-rad"> </label>
                                                 </div>
                                                 <div class="stv-radio-buttons-wrapper">
-                                                    <input type="radio" class="kt-hidden stv-radio-button"
-                                                        name="{{'radioButtonTest'+number}}" value="1"
-                                                        id="{{'button5'+number}}" checked />
+                                                    <input type="checkbox" class="kt-hidden stv-radio-button"
+                                                        name="{{'radioButtonTest5'+number}}" value="0"
+                                                        id="{{'button5'+number}}" />
                                                     <label for="{{'button5'+number}}" class="all-rad"> </label>
                                                 </div>
                                             </td>

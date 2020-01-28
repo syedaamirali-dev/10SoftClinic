@@ -31,22 +31,16 @@
                 ],
                 columnDefs: [
                     {
-                        // targets: 12,
-                        // render: (data, type, row) => {
-                        //     return `
-                        //     <button class="btn btn-sm btn-primary">Action</button>
-                        //     `;
-                        // },
                         targets: 1,
                         render: function (data, type, row) {
                             if (type === 'display') {
-                                data ='<a href="#!/docTreatment/adultPatientSheet">Add Treatment</a>'
+                                data = '<a class="kt-link kt-link--brand kt-font-bolder btn-redirect">Add Treatment</a>'
                             }
                             return data;
                         },
                         fnCreatedCell: (nTd, cellData, rowData, row, col) => {
-                            $(nTd).find(".btn").on("click", () => {
-                                functions.onClick(cellData)
+                            $(nTd).find(".btn-redirect").on("click", () => {
+                                functions.pageRedirect(cellData)
                             });
                         }
                     }

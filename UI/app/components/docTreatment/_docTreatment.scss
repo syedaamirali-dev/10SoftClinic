@@ -1,4 +1,8 @@
 #docTreatment {
+  .kt-portlet__body:first-child{
+    padding: 0 !important;
+  }
+
   .kt-wizard-v3__wrapper .kt-form {
     width: 95% !important;
   }

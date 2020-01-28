@@ -86,7 +86,7 @@
                 controller: 'docVisitHistoryCtrl',
                 templateUrl: 'app/components/docVisitHistory/docVisitHistory.html'
             })
-        // docLabReport
+            // docLabReport
             .state({
                 name: 'main.docTreatment.docLabReport',
                 url: '/docLabReport',
@@ -107,7 +107,36 @@
                 controller: 'childPatientSheetCtrl',
                 templateUrl: 'app/components/childPatientSheet/childPatientSheet.html'
             })
-            /** @RouteReplaceForGulp */
+
+            // docTreatmentchild
+            .state({
+                name: 'main.docTreatmentchild',
+                url: '/docTreatmentchild',
+                controller: 'docTreatmentchildCtrl',
+                templateUrl: 'app/components/docTreatmentchild/docTreatmentchild.html'
+            })
+            // childHistory
+            .state({
+                name: 'main.docTreatmentchild.childHistory',
+                url: '/childHistory',
+                controller: 'childHistoryCtrl',
+                templateUrl: 'app/components/childHistory/childHistory.html'
+            })
+            // childClinical
+            .state({
+                name: 'main.docTreatmentchild.childClinical',
+                url: '/childClinical',
+                controller: 'childClinicalCtrl',
+                templateUrl: 'app/components/childClinical/childClinical.html'
+            })
+            // childOcclusion
+            .state({
+                name: 'main.docTreatmentchild.childOcclusion',
+                url: '/childOcclusion',
+                controller: 'childOcclusionCtrl',
+                templateUrl: 'app/components/childOcclusion/childOcclusion.html'
+            })
+        /** @RouteReplaceForGulp */
 
 
         $urlRouterProvider.otherwise("/dashboard");
