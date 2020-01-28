@@ -32736,7 +32736,8 @@ table.dataTable thead > tr > td.sorting {
   margin: 0.35rem 0 !important; }
 
 #adultPatientSheet .kt-portlet__body {
-  padding: 15px !important; }
+  padding: 15px !important;
+  padding-top: 5px !important; }
 
 #adultPatientSheet .kt-separator.kt-separator--space-lg,
 #adultPatientSheet .kt-separator.kt-separator--lg {
@@ -32791,6 +32792,9 @@ table.dataTable thead > tr > td.sorting {
   #adultPatientSheet .periodontal-tr {
     display: none; } }
 
+#docTreatment .kt-portlet__body:first-child {
+  padding: 0 !important; }
+
 #docTreatment .kt-wizard-v3__wrapper .kt-form {
   width: 95% !important; }
 
@@ -32816,6 +32820,8 @@ table.dataTable thead > tr > td.sorting {
   min-height: calc(100vh - 190px); }
   #waitingList .kt-portlet__body {
     padding: 5px !important; }
+  #waitingList a {
+    cursor: pointer; }
 
 #docTreatPatient {
   min-height: calc(100vh - 403px); }
@@ -32905,15 +32911,73 @@ table.dataTable thead > tr > td.sorting {
 @media (min-width: 769px) {
   #childPatientSheet .periodontal-number p {
     margin: 0.5rem !important; }
-  #childPatientSheet div.form-group label:first-child {
+  #childPatientSheet .periodontal-tb-mobile {
+    display: none; }
+  #childPatientSheet div.form-group > label:first-child {
     padding-left: 0 !important; } }
 
 @media (max-width: 670px) {
   #childPatientSheet td > img {
     height: 24%; }
-  #childPatientSheet .periodontal-label {
-    display: none; }
   #childPatientSheet .periodontal-number p {
     margin: 0 !important; }
-  #childPatientSheet .periodontal-tr {
+  #childPatientSheet .periodontal-tb-desktop {
     display: none; } }
+
+#docTreatmentchild .nav-link {
+  padding: 0.5rem 3rem 0.5rem 0;
+  border-bottom: 4px solid #959cb6;
+  color: #959cb6;
+  font-size: 1.1rem;
+  font-weight: 600; }
+  #docTreatmentchild .nav-link:hover, #docTreatmentchild .nav-link.active {
+    border-bottom: 4px solid #5d78ff;
+    color: #5d78ff; }
+
+@media (max-width: 768px) {
+  #docTreatmentchild nav {
+    width: 100%; } }
+
+#docTreatmentchild .kt-portlet__head {
+  padding: 0 5px !important;
+  min-height: 30px !important; }
+
+#docTreatmentchild .kt-portlet--body {
+  padding: 5px !important; }
+
+@media (min-width: 769px) {
+  #docTreatmentchild {
+    min-height: calc(100vh - 180px); } }
+
+#childHistory .kt-portlet__foot {
+  padding: 10px; }
+
+#childHistory .kt-portlet__body {
+  padding: 15px !important;
+  padding-top: 5px !important; }
+
+#childHistory .kt-separator.kt-separator--space-lg,
+#childHistory .kt-separator.kt-separator--lg {
+  margin: 0.5rem 0; }
+
+#childClinical .kt-portlet__foot {
+  padding: 10px; }
+
+#childClinical .kt-portlet__body {
+  padding: 15px !important;
+  padding-top: 5px !important; }
+
+#childClinical .kt-separator.kt-separator--space-lg,
+#childClinical .kt-separator.kt-separator--lg {
+  margin: 0.5rem 0; }
+
+#childOcclusion .kt-portlet__foot {
+  padding: 10px; }
+
+#childOcclusion .kt-portlet__body {
+  padding: 15px !important;
+  padding-top: 5px !important; }
+
+#childOcclusion .kt-separator.kt-separator--space-lg,
+#childOcclusion .kt-separator.kt-separator--lg {
+  margin: 0.5rem 0; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace _10SoftDental.Factory.DentalMaster
    public interface IDentalMaster
     {
         int? DentalNotationId { get; set; }
-        int PatientType { get; set; }
+        bool PatientType { get; set; }
         string IconNameEn { get; set; }
         string IconNameAr { get; set; }
         string DescriptionEn { get; set; }
@@ -18,5 +19,9 @@ namespace _10SoftDental.Factory.DentalMaster
         bool IsActive { get; set; }
         int? CreatedBy { get; set; }
         int LangId { get; set; }
+
+
+        DataSet SaveDentalChartNotations();
+        
     }
 }

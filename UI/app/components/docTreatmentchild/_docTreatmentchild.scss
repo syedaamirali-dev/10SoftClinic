@@ -1,0 +1,29 @@
+#docTreatmentchild {
+  .nav-link {
+    padding: 0.5rem 3rem 0.5rem 0;
+    border-bottom: 4px solid #959cb6;
+    color: #959cb6;
+    font-size: 1.1rem;
+    font-weight: 600;
+    &:hover,
+    &.active {
+      border-bottom: 4px solid #5d78ff;
+      color: #5d78ff;
+    }
+  }
+  @include kt-mobile {
+    nav {
+      width: 100%;
+    }
+  }
+  .kt-portlet__head {
+    padding: 0 5px !important;
+    min-height: 30px !important;
+  }
+  .kt-portlet--body {
+    padding: 5px !important;
+  }
+  @include kt-desktop-and-tablet {
+    min-height: calc(100vh - 180px);
+  }
+}

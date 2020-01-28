@@ -7,6 +7,7 @@ D:\F Drive\10Soft\10SoftCode\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDe
 D:\F Drive\10Soft\10SoftCode\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.csproj.CopyComplete
 D:\F Drive\10Soft\10SoftCode\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.dll
 D:\F Drive\10Soft\10SoftCode\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.pdb
+
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.csprojAssemblyReference.cache
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.csproj.CoreCompileInputs.cache
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.dll
@@ -18,3 +19,16 @@ F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\b
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\bin\Debug\10SoftDental.Factory.pdb
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\bin\Debug\ApplicationUtility.pdb
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.csproj.CopyComplete
+
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\bin\Debug\10SoftDental.DAL.dll
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\bin\Debug\10SoftDental.DAL.pdb
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\bin\Debug\10SoftDental.Factory.dll
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\bin\Debug\ApplicationUtility.dll
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\bin\Debug\10SoftDental.Factory.pdb
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\bin\Debug\ApplicationUtility.pdb
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.csprojAssemblyReference.cache
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.csproj.CoreCompileInputs.cache
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.csproj.CopyComplete
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.dll
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.DAL\obj\Debug\10SoftDental.DAL.pdb
+
