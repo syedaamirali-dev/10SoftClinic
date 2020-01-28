@@ -1,4 +1,81 @@
-
 <div id="childHistory" class="">
-childHistory is working!!!
+    <div class="col-md-12 p-0">
+        <!--begin::Form-->
+        <form class="kt-form kt-form--label-left">
+            <div class="kt-portlet__body">
+
+                <div class="form-group row">
+                    <h5 class="form-header">History (Dental/Medical)</h5>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-4 col-md-4 col-form-label">
+                        Did the Child undergo any previous dental treatment?
+                    </label>
+                    <div class="col-lg-2 col-md-2">
+                        <div class="kt-radio-inline">
+                            <label class="kt-radio kt-radio--solid">
+                                <input type="checkbox" id="dentTreat1" name="dentalTreatment" value="1">
+                                Yes
+                                <span></span>
+                            </label>
+                            <label class="kt-radio kt-radio--solid">
+                                <input type="checkbox" id="dentTreat2" name="dentalTreatment" value="0">
+                                No
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <label class="col-lg-1 col-md-1 col-form-label text-left">
+                        If Yes, specify:
+                    </label>
+                    <div class="col-lg-5 col-md-5">
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="2"
+                                placeholder="Enter History of Chief Complaint"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-4 col-md-4 col-form-label">
+                        Does the child have any medical condition?
+                    </label>
+                    <div class="col-lg-2 col-md-2">
+                        <div class="kt-radio-inline">
+                            <label class="kt-radio kt-radio--solid">
+                                <input type="checkbox" id="dentTreat3" name="dentalTreatment1" value="1">
+                                Yes
+                                <span></span>
+                            </label>
+                            <label class="kt-radio kt-radio--solid">
+                                <input type="checkbox" id="dentTreat4" name="dentalTreatment1" value="0">
+                                No
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <label class="col-lg-1 col-md-1 col-form-label text-left">
+                        If Yes, specify:
+                    </label>
+                    <div class="col-lg-5 col-md-5">
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <textarea class="form-control" rows="2"
+                                placeholder="Enter History of Chief Complaint"></textarea>
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-align-left la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kt-portlet__foot d-flex justify-content-end">
+                <div class="kt-form__actions">
+                    <button type="reset" class="btn btn-secondary m-2">Cancel</button>
+                    <button type="submit" class="btn btn-success m-2" ng-click="Submit()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

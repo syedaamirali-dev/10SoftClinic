@@ -102,7 +102,7 @@
             })
             // childPatientSheet
             .state({
-                name: 'main.childPatientSheet',
+                name: 'main.docTreatmentchild.childPatientSheet',
                 url: '/childPatientSheet',
                 controller: 'childPatientSheetCtrl',
                 templateUrl: 'app/components/childPatientSheet/childPatientSheet.html'

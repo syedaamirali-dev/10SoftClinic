@@ -1,4 +1,41 @@
-
 <div id="docTreatmentchild" class="">
-docTreatmentchild is working!!!
+    <!-- begin:: Subheader -->
+    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">
+                    Doctor Treatment</h3>
+                <span class="kt-subheader__separator kt-hidden"></span>
+                <div class="kt-subheader__breadcrumbs">
+                    <a href="" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+                    <span class="kt-subheader__breadcrumbs-separator"></span>
+                    <a href="" class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">
+                        Child Patient Screening </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end:: Subheader -->
+
+    <div class="col-md-12">
+        <div class="kt-portlet">
+            <div class="kt-portlet__head justify-content-center align-items-center">
+                <nav class="nav flex-column flex-sm-row">
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatmentchild.childPatientSheet">Main</a>
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatmentchild.childHistory">History</a>
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatmentchild.childClinical">Clinical Examination</a>
+                    <a class="flex-sm-fill text-left m-1 nav-link" ui-sref-active="active"
+                        ui-sref="main.docTreatmentchild.childOcclusion">Occlusion</a>
+                </nav>
+            </div>
+            <div class="kt-portlet__body kt-portlet--body">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+
 </div>
