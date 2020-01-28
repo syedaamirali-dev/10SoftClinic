@@ -46,6 +46,7 @@
     <Compile Include="Common\ICommonResponse.cs" />
     <Compile Include="Common\ResponseModel.cs" />
     <Compile Include="DentalClinic\IPatientScreeningSheet.cs" />
+    <Compile Include="DentalMaster\IDentalMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
