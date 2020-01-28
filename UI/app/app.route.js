@@ -107,6 +107,13 @@
                 controller: 'childPatientSheetCtrl',
                 templateUrl: 'app/components/childPatientSheet/childPatientSheet.html'
             })
+            // dentalChartNotation
+            .state({
+                name: 'main.dentalChartNotation',
+                url: '/dentalChartNotation',
+                controller: 'dentalChartNotationCtrl',
+                templateUrl: 'app/components/dentalChartNotation/dentalChartNotation.html'
+            })
             /** @RouteReplaceForGulp */
 
 
