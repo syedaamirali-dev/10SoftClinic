@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="10SoftDental.Factory">
+      <HintPath>..\10SoftDental.Factory\bin\Debug\10SoftDental.Factory.dll</HintPath>
+    </Reference>
     <Reference Include="ApplicationUtility">
       <HintPath>..\ApplicationUtility\bin\Debug\ApplicationUtility.dll</HintPath>
     </Reference>
@@ -45,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CommonDAL.cs" />
+    <Compile Include="Master\DentalMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
