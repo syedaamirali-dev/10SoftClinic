@@ -6,9 +6,9 @@ namespace _10SoftDental.BAL.DentalMaster
     public class DentalMaster:IDentalMaster
     {
         private int? dentalNotationId;
-        private bool patientType;
+        private int patientType;
         private string iconNameEn;
-        private string inconNameAr;
+        private string iconNameAr;
         private string descriptionEn;
         private string descriptionAr;
         private string imageURL;
@@ -16,9 +16,9 @@ namespace _10SoftDental.BAL.DentalMaster
         private int? createdBy;
         private int langId;
         public int? DentalNotationId { get => dentalNotationId; set => dentalNotationId = value; }
-        public bool PatientType { get => patientType; set => patientType = value; }
+        public int PatientType { get => patientType; set => patientType = value; }
         public string IconNameEn { get => iconNameEn; set => iconNameEn = value; }
-        public string InconNameAr { get => inconNameAr; set => inconNameAr = value; }
+        public string IconNameAr { get => iconNameAr; set => iconNameAr = value; }
         public string DescriptionEn { get => descriptionEn; set => descriptionEn = value; }
         public string DescriptionAr { get => descriptionAr; set => descriptionAr = value; }
         public string ImageURL { get => imageURL; set => imageURL = value; }
