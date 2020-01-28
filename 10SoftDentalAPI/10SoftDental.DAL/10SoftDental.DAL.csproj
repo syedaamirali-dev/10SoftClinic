@@ -48,5 +48,11 @@
     <Compile Include="Master\DentalMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\10SoftDental.Factory\10SoftDental.Factory.csproj">
+      <Project>{9632f426-8589-4ad3-bf49-21ceb6303f98}</Project>
+      <Name>10SoftDental.Factory</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,3 +22,7 @@ DentalClinicModuleSRS.docx
 *.ide-shm
 *.ide-wal
 10SoftDentalAPI/10SoftDental/10SoftDental.csproj
+10SoftDentalAPI/.vs/config/applicationhost.config
+10SoftDentalAPI/.vs/config/applicationhost.config
+10SoftDentalAPI/10SoftDental.DAL/obj/Debug/10SoftDental.DAL.csproj.FileListAbsolute.txt
+10SoftDentalAPI/10SoftDental/obj/Debug/10SoftDental.csproj.FileListAbsolute.txt
