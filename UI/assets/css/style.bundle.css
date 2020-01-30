@@ -32829,17 +32829,13 @@ table.dataTable thead > tr > td.sorting {
     padding: 10px; }
   #docTreatPatient .kt-portlet__body {
     padding: 10px 0 0 0 !important; }
-
-#docTreatInsEmpl .kt-portlet__foot {
-  padding: 10px; }
-
-#docTreatInsEmpl .kt-portlet__body {
-  padding: 10px 0 0 0 !important; }
-
-#docTreatInsEmpl #center-line div {
-  border: 1px solid;
-  width: 1px;
-  height: 100%; }
+  #docTreatPatient .kt-separator.kt-separator--space-lg,
+  #docTreatPatient .kt-separator.kt-separator--lg {
+    margin: 0.5rem 0; }
+  #docTreatPatient #center-line div {
+    border: 1px solid;
+    width: 1px;
+    height: 100%; }
 
 #docTreatmentInfo .kt-heading {
   margin: 0.35rem 0 !important; }
@@ -32923,6 +32919,9 @@ table.dataTable thead > tr > td.sorting {
     margin: 0 !important; }
   #childPatientSheet .periodontal-tb-desktop {
     display: none; } }
+
+#dentalChartNotation {
+  border: 5px solid green; }
 
 #docTreatmentchild .nav-link {
   padding: 0.5rem 3rem 0.5rem 0;
