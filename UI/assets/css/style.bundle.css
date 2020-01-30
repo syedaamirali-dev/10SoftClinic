@@ -32836,6 +32836,8 @@ table.dataTable thead > tr > td.sorting {
     border: 1px solid;
     width: 1px;
     height: 100%; }
+  #docTreatPatient .kt-checkbox-inline {
+    margin-top: 0 !important; }
 
 #docTreatmentInfo .kt-heading {
   margin: 0.35rem 0 !important; }
