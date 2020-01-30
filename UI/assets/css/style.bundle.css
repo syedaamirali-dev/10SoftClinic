@@ -12420,9 +12420,6 @@ code {
 .is-invalid .md-editor {
   border-color: #fd397a; }
 
-.dropzone {
-  min-height: auto; }
-
 .dropzone.dropzone-default {
   padding: 20px;
   text-align: center;
@@ -32921,9 +32918,6 @@ table.dataTable thead > tr > td.sorting {
     margin: 0 !important; }
   #childPatientSheet .periodontal-tb-desktop {
     display: none; } }
-
-#dentalChartNotation {
-  border: 5px solid green; }
 
 #docTreatmentchild .nav-link {
   padding: 0.5rem 3rem 0.5rem 0;

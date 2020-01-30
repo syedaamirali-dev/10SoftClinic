@@ -16,6 +16,7 @@
     "bootstrap": "^4.4.1",
     "izitoast": "^1.4.0",
     "lodash": "^4.17.15",
+    "ngdropzone": "^2.0.2",
     "secure-ls": "^1.2.6",
     "ui-bootstrap4": "^3.0.6"
   },
