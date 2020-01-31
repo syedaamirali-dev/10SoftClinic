@@ -15,7 +15,7 @@
   }
 
   td > img {
-    height: 30%;
+    height: 45%;
   }
 
   .stv-radio-buttons-wrapper {
@@ -52,11 +52,27 @@
   .all-rad {
     border-radius: 0.35em 0.35em 0.35em 0.35em;
   }
-
-  @include kt-desktop-and-tablet {
-    .periodontal-number p {
+  .kt-checkbox-inline {
+    margin-top: 0 !important ;
+  }
+  .periodontal {
+    &-legend {
+      height: 510px;
+      overflow-y: auto;
+      padding: 10px;
+      border: 4px solid #efefef;
+      div.form-group {
+        align-items: center;
+      }
+      div.col-3 {
+        text-align: center;
+      }
+    }
+    &-number p {
       margin: 0.5rem !important;
     }
+  }
+  @include kt-desktop-and-tablet {
     div.form-group label:first-child {
       padding-left: 0 !important;
     }

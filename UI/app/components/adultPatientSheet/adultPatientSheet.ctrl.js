@@ -34,7 +34,7 @@
                 "31b", "32b", "33b", "34b", "35b", "36b", "37b", "38b"
             ]
         }
-
+        $scope.showLegend = true;
         $scope.Submit = () => {
             swal.fire({
                 title: "Data Submitted",
