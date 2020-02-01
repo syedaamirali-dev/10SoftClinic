@@ -10,6 +10,7 @@
             // 'ui.sortable',
             // 'angular-intro',
             'ngSanitize',
-            // 'angularjs-dropdown-multiselect'
+            // 'angularjs-dropdown-multiselect',
+            'thatisuday.dropzone'
         ]);
 }());

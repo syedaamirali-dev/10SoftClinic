@@ -16,6 +16,7 @@
     "bootstrap": "^4.4.1",
     "izitoast": "^1.4.0",
     "lodash": "^4.17.15",
+    "ngdropzone": "^2.0.2",
     "secure-ls": "^1.2.6",
     "ui-bootstrap4": "^3.0.6"
   },
@@ -35,6 +36,6 @@
     "gulp-tap": "^2.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-uglifycss": "^1.1.0",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.1"
   }
 }

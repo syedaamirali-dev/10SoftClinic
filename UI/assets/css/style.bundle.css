@@ -12420,9 +12420,6 @@ code {
 .is-invalid .md-editor {
   border-color: #fd397a; }
 
-.dropzone {
-  min-height: auto; }
-
 .dropzone.dropzone-default {
   padding: 20px;
   text-align: center;
@@ -32743,8 +32740,22 @@ table.dataTable thead > tr > td.sorting {
 #adultPatientSheet .kt-separator.kt-separator--lg {
   margin: 0.5rem 0; }
 
+#adultPatientSheet .la {
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #c8cad5; }
+  #adultPatientSheet .la:hover {
+    color: #5d78ff; }
+
+#adultPatientSheet .btn-close {
+  position: absolute;
+  right: 15px; }
+
 #adultPatientSheet td > img {
-  height: 30%; }
+  height: 45%;
+  cursor: pointer; }
 
 #adultPatientSheet .stv-radio-buttons-wrapper {
   clear: both;
@@ -32776,15 +32787,30 @@ table.dataTable thead > tr > td.sorting {
 #adultPatientSheet .all-rad {
   border-radius: 0.35em 0.35em 0.35em 0.35em; }
 
+#adultPatientSheet .kt-checkbox-inline {
+  margin-top: 0 !important; }
+
+#adultPatientSheet .periodontal-legend {
+  height: 510px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 4px solid #efefef; }
+  #adultPatientSheet .periodontal-legend div.form-group {
+    align-items: center; }
+  #adultPatientSheet .periodontal-legend div.col-3 {
+    text-align: center; }
+
+#adultPatientSheet .periodontal-number p {
+  margin: 0.5rem !important; }
+
 @media (min-width: 769px) {
-  #adultPatientSheet .periodontal-number p {
-    margin: 0.5rem !important; }
   #adultPatientSheet div.form-group label:first-child {
     padding-left: 0 !important; } }
 
 @media (max-width: 670px) {
   #adultPatientSheet td > img {
-    height: 24%; }
+    height: 24%;
+    cursor: pointer; }
   #adultPatientSheet .periodontal-label {
     display: none; }
   #adultPatientSheet .periodontal-number p {
@@ -32829,17 +32855,15 @@ table.dataTable thead > tr > td.sorting {
     padding: 10px; }
   #docTreatPatient .kt-portlet__body {
     padding: 10px 0 0 0 !important; }
-
-#docTreatInsEmpl .kt-portlet__foot {
-  padding: 10px; }
-
-#docTreatInsEmpl .kt-portlet__body {
-  padding: 10px 0 0 0 !important; }
-
-#docTreatInsEmpl #center-line div {
-  border: 1px solid;
-  width: 1px;
-  height: 100%; }
+  #docTreatPatient .kt-separator.kt-separator--space-lg,
+  #docTreatPatient .kt-separator.kt-separator--lg {
+    margin: 0.5rem 0; }
+  #docTreatPatient #center-line div {
+    border: 1px solid;
+    width: 1px;
+    height: 100%; }
+  #docTreatPatient .kt-checkbox-inline {
+    margin-top: 0 !important; }
 
 #docTreatmentInfo .kt-heading {
   margin: 0.35rem 0 !important; }

@@ -52,12 +52,13 @@
                             </div>
                             <label class="col-lg-1 col-md-1 col-sm-1 col-form-label">Image Upload:</label>
                             <div class="col-lg-4 col-md-9 col-sm-12">
-                                <div class="dropzone dropzone-default" id="kt_dropzone_1" >
+                                <!-- <div class="dropzone dropzone-default" id="kt_dropzone_1" >
                                     <div class="dropzone-msg dz-message needsclick">
                                         <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>
                                         <span class="dropzone-msg-desc">This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.</span>
                                     </div>
-                                </div>
+                                </div> -->
+                                <ng-dropzone class="dropzone" options="chartObject.dzOptions" callbacks="chartObject.dzCallbacks" methods="chartObject.dzMethods"></ng-dropzone>
                             </div>
                         </div>
                         <div

@@ -77,11 +77,11 @@
                                             <td class="periodontal-label">Facial</td class="periodontal-label">
                                             <td align="center" ng-repeat="number in periodontalImg.tb1">
                                                 <img src="{{'periodontal-chart-master/img/tabla1/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)">
                                             </td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb2">
                                                 <img src="{{'periodontal-chart-master/img/tabla2/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)">
                                             </td>
                                         </tr>
                                         <tr class="periodontal-tr">
@@ -169,11 +169,11 @@
                                             <td class="periodontal-label">Lingual</td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb3">
                                                 <img src="{{'periodontal-chart-master/img/tabla3/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)" alt="">
                                             </td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb4">
                                                 <img src="{{'periodontal-chart-master/img/tabla4/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)" alt="">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -296,8 +296,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
-                        <img src="assets\media\images\legend-dental.jpeg" class="img-fluid" alt="">
+                    <div class="col-lg-5 " ng-if="showLegend">
+                        <button type="button" class="btn btn-close" title="Close" ng-click="hideLegends()">
+                            <i class="la la-2x la-close"></i>
+                        </button>
+                        <div class="periodontal-legend">
+                            <div class="form-group row" ng-repeat="legend in legendInfo">
+                                <div class="col-1">
+                                    <div class="kt-checkbox-inline">
+                                        <label class="kt-checkbox">
+                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img"
+                                                ng-click="changeImage($index)">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <img src="{{legend.image}}" class="img-fluid" alt="">
+                                </div>
+                                <label class="col-8 col-form-label">{{legend.name}}</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

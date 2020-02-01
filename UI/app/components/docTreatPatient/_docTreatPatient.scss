@@ -6,4 +6,18 @@
   .kt-portlet__body {
     padding: 10px 0 0 0 !important;
   }
+  .kt-separator.kt-separator--space-lg,
+  .kt-separator.kt-separator--lg {
+    margin: 0.5rem 0;
+  }
+  #center-line {
+    div {
+      border: 1px solid;
+      width: 1px;
+      height: 100%;
+    }
+  }
+  .kt-checkbox-inline {
+    margin-top: 0 !important;
+  }
 }

@@ -65,13 +65,6 @@
                 controller: 'docTreatPatientCtrl',
                 templateUrl: 'app/components/docTreatPatient/docTreatPatient.html'
             })
-            // docTreatInsEmpl
-            .state({
-                name: 'main.docTreatment.docTreatInsEmpl',
-                url: '/docTreatInsEmpl',
-                controller: 'docTreatInsEmplCtrl',
-                templateUrl: 'app/components/docTreatInsEmpl/docTreatInsEmpl.html'
-            })
             // docTreatmentInfo
             .state({
                 name: 'main.docTreatment.docTreatmentInfo',
@@ -107,7 +100,6 @@
                 controller: 'childPatientSheetCtrl',
                 templateUrl: 'app/components/childPatientSheet/childPatientSheet.html'
             })
-
             // dentalChartNotation
             .state({
                 name: 'main.dentalChartNotation',
@@ -115,6 +107,7 @@
                 controller: 'dentalChartNotationCtrl',
                 templateUrl: 'app/components/dentalChartNotation/dentalChartNotation.html'
             })
+
             // viewChartNotations
             .state({
                 name: 'main.viewChartNotations',
@@ -122,8 +115,6 @@
                 controller: 'viewChartNotationsCtrl',
                 templateUrl: 'app/components/viewChartNotations/viewChartNotations.html'
             })
-            /** @RouteReplaceForGulp */
-
             // docTreatmentchild
             .state({
                 name: 'main.docTreatmentchild',
