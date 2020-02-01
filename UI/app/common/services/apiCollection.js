@@ -20,6 +20,12 @@
             },
 
         }
+        var viewChartList = {
+            GetViewChartNotationList: function () {
+                return apiEndPoint + "DentalMaster/GetDentalChartNotations?dentalNotationId=null&langId=1";
+            },
+
+        }
         var doctorTreatment = {
             GetVisitHistory: function () {
                 return apiEndPoint + "Common/GetAllVisitList";
@@ -31,7 +37,8 @@
         return {
             login,
             waitingList,
-            doctorTreatment
+            doctorTreatment,
+            viewChartList
         }
     }
 }());
