@@ -32740,8 +32740,22 @@ table.dataTable thead > tr > td.sorting {
 #adultPatientSheet .kt-separator.kt-separator--lg {
   margin: 0.5rem 0; }
 
+#adultPatientSheet .la {
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #c8cad5; }
+  #adultPatientSheet .la:hover {
+    color: #5d78ff; }
+
+#adultPatientSheet .btn-close {
+  position: absolute;
+  right: 15px; }
+
 #adultPatientSheet td > img {
-  height: 45%; }
+  height: 45%;
+  cursor: pointer; }
 
 #adultPatientSheet .stv-radio-buttons-wrapper {
   clear: both;
@@ -32795,7 +32809,8 @@ table.dataTable thead > tr > td.sorting {
 
 @media (max-width: 670px) {
   #adultPatientSheet td > img {
-    height: 24%; }
+    height: 24%;
+    cursor: pointer; }
   #adultPatientSheet .periodontal-label {
     display: none; }
   #adultPatientSheet .periodontal-number p {

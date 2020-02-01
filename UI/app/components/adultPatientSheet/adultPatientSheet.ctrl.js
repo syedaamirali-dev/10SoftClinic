@@ -7,7 +7,7 @@
 
     /** @ngInject */
     function adultPatientSheetCtrl($scope, $document, adultPatientSheetService) {
-
+        let periodontalImageClicked;
         $scope.periodontalImg = {
             tb1: [
                 "18", "17", "16", "15", "14", "13", "12", "11"
@@ -34,7 +34,47 @@
                 "31b", "32b", "33b", "34b", "35b", "36b", "37b", "38b"
             ]
         }
-        $scope.showLegend = true;
+        $scope.showLegend = false;
+        $scope.hideLegends = () => {
+            $scope.showLegend = false;
+            periodontalImageClicked = "";
+        }
+        $scope.showLegends = ($event) => {
+            $scope.hideLegends();
+            console.log($event.target.src);
+            $scope.showLegend = true;
+            periodontalImageClicked = $event;
+        };
+        $scope.legendInfo = [
+            {
+                name: "Metal Crown",
+                image: "assets/media/images/legnd-1.jpeg"
+            },
+            {
+                name: "Implant",
+                image: "assets/media/images/legnd-2.jpeg"
+            },
+            {
+                name: "Missing Tooth(not require intevention)",
+                image: "assets/media/images/legnd-3.jpeg"
+            },
+            {
+                name: "Missing Tooth(Require intervention)",
+                image: "assets/media/images/legnd-4.jpeg"
+            },
+            {
+                name: "Composite Restoration",
+                image: "assets/media/images/legnd-5.jpeg"
+            },
+            {
+                name: "Improper Root Canal Filling Require intervention",
+                image: "assets/media/images/legnd-6.jpeg"
+            },
+        ];
+        $scope.changeImage = (param) => {
+            periodontalImageClicked.target.src = $scope.legendInfo[param].image;
+        }
+        $scope.periodontalData = {};
         $scope.Submit = () => {
             swal.fire({
                 title: "Data Submitted",
@@ -45,6 +85,7 @@
             });
         }
         function activate() {
+
             $document.ready(function () {
                 $('#kt_datepicker_2').datepicker({
                     rtl: KTUtil.isRTL(),

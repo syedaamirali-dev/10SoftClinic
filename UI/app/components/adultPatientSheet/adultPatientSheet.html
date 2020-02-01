@@ -77,11 +77,11 @@
                                             <td class="periodontal-label">Facial</td class="periodontal-label">
                                             <td align="center" ng-repeat="number in periodontalImg.tb1">
                                                 <img src="{{'periodontal-chart-master/img/tabla1/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)">
                                             </td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb2">
                                                 <img src="{{'periodontal-chart-master/img/tabla2/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)">
                                             </td>
                                         </tr>
                                         <tr class="periodontal-tr">
@@ -169,11 +169,11 @@
                                             <td class="periodontal-label">Lingual</td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb3">
                                                 <img src="{{'periodontal-chart-master/img/tabla3/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)" alt="">
                                             </td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb4">
                                                 <img src="{{'periodontal-chart-master/img/tabla4/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)" alt="">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -296,92 +296,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 " ng-show="showLegend">
+                    <div class="col-lg-5 " ng-if="showLegend">
+                        <button type="button" class="btn btn-close" title="Close" ng-click="hideLegends()">
+                            <i class="la la-2x la-close"></i>
+                        </button>
                         <div class="periodontal-legend">
-                            <div class="form-group row">
+                            <div class="form-group row" ng-repeat="legend in legendInfo">
                                 <div class="col-1">
                                     <div class="kt-checkbox-inline">
                                         <label class="kt-checkbox">
-                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img">
+                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img"
+                                                ng-click="changeImage($index)">
                                             <span></span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-3">
-                                    <img src="assets/media/images/legnd-1.jpeg" class="img-fluid" alt="">
+                                    <img src="{{legend.image}}" class="img-fluid" alt="">
                                 </div>
-                                <label class="col-8 col-form-label">Metal Crown</label>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-1">
-                                    <div class="kt-checkbox-inline">
-                                        <label class="kt-checkbox">
-                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img">
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/media/images/legnd-2.jpeg" class="img-fluid" alt="">
-                                </div>
-                                <label class="col-8 col-form-label">Implant</label>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-1">
-                                    <div class="kt-checkbox-inline">
-                                        <label class="kt-checkbox">
-                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img">
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/media/images/legnd-3.jpeg" class="img-fluid" alt="">
-                                </div>
-                                <label class="col-8 col-form-label">Missing Tooth(not require intevention</label>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-1">
-                                    <div class="kt-checkbox-inline">
-                                        <label class="kt-checkbox">
-                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img">
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/media/images/legnd-4.jpeg" class="img-fluid" alt="">
-                                </div>
-                                <label class="col-8 col-form-label">Missing Tooth(Require intervention)</label>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-1">
-                                    <div class="kt-checkbox-inline">
-                                        <label class="kt-checkbox">
-                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img">
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/media/images/legnd-5.jpeg" class="img-fluid" alt="">
-                                </div>
-                                <label class="col-8 col-form-label">Composite Restoration</label>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-1">
-                                    <div class="kt-checkbox-inline">
-                                        <label class="kt-checkbox">
-                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img">
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/media/images/legnd-6.jpeg" class="img-fluid" alt="">
-                                </div>
-                                <label class="col-8 col-form-label">Improper Root Canal Filling Require
-                                    intervention</label>
+                                <label class="col-8 col-form-label">{{legend.name}}</label>
                             </div>
                         </div>
                     </div>

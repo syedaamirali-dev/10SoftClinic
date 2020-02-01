@@ -13,9 +13,23 @@
   .kt-separator.kt-separator--lg {
     margin: 0.5rem 0;
   }
-
+  .la {
+    padding: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #c8cad5;
+    &:hover {
+      color: kt-get($kt-state-colors, brand, base);
+    }
+  }
+  .btn-close {
+    position: absolute;
+    right: 15px;
+  }
   td > img {
     height: 45%;
+    cursor: pointer;
   }
 
   .stv-radio-buttons-wrapper {
@@ -80,6 +94,7 @@
   @include kt-media-below(670px) {
     td > img {
       height: 24%;
+      cursor: pointer;
     }
     .periodontal {
       &-label {
