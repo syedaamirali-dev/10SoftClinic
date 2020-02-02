@@ -107,6 +107,14 @@
                 controller: 'dentalChartNotationCtrl',
                 templateUrl: 'app/components/dentalChartNotation/dentalChartNotation.html'
             })
+
+            // viewChartNotations
+            .state({
+                name: 'main.viewChartNotations',
+                url: '/viewChartNotations',
+                controller: 'viewChartNotationsCtrl',
+                templateUrl: 'app/components/viewChartNotations/viewChartNotations.html'
+            })
             // docTreatmentchild
             .state({
                 name: 'main.docTreatmentchild',
@@ -142,6 +150,13 @@
                 controller: 'docVisitCtrl',
                 templateUrl: 'app/components/docVisit/docVisit.html'
             })
+        // // viewChartNotations
+        //     .state({
+        //         name: 'main.viewChartNotations',
+        //         url: '/viewChartNotations',
+        //         controller: 'viewChartNotationsCtrl',
+        //         templateUrl: 'app/components/viewChartNotations/viewChartNotations.html'
+        //     })
         /** @RouteReplaceForGulp */
 
 
