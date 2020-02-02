@@ -3,10 +3,10 @@
 
     angular
         .module('10softdental')
-        .factory('docTreatPatientService', docTreatPatientService)
+        .factory('docPatientService', docPatientService)
 
     /** @ngInject */
-    function docTreatPatientService(apiCollection, $q, $http){
+    function docPatientService(apiCollection, $q, $http){
         var service = {
 
         };

@@ -3,10 +3,10 @@
 
     angular
         .module('10softdental')
-        .controller('docTreatPatientCtrl', docTreatPatientCtrl)
+        .controller('docPatientCtrl', docPatientCtrl)
 
     /** @ngInject */
-    function docTreatPatientCtrl($scope, docTreatPatientService){
+    function docPatientCtrl($scope, docPatientService){
         activate();
 
         function activate(){
