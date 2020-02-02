@@ -150,13 +150,7 @@
                 controller: 'docVisitCtrl',
                 templateUrl: 'app/components/docVisit/docVisit.html'
             })
-        // // viewChartNotations
-        //     .state({
-        //         name: 'main.viewChartNotations',
-        //         url: '/viewChartNotations',
-        //         controller: 'viewChartNotationsCtrl',
-        //         templateUrl: 'app/components/viewChartNotations/viewChartNotations.html'
-        //     })
+
         /** @RouteReplaceForGulp */
 
 

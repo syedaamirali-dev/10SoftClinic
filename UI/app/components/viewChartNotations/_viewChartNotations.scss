@@ -1,3 +1,6 @@
 #viewChartNotations {
-    border: 5px solid green; 
+  min-height: calc(100vh - 190px);
+  .kt-portlet__body {
+    padding: 5px !important;
+  }
 }

@@ -1,23 +1,26 @@
-
 <div id="dentalChartNotation" class="">
- <!-- begin:: Subheader -->
- <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-    <div class="kt-container  kt-container--fluid ">
-        <div class="kt-subheader__main">
-            <h3 class="kt-subheader__title">
-                Dental Chart Notation</h3>
+    <!-- begin:: Subheader -->
+    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">
+                    Dental Chart Notation</h3>
+            </div>
         </div>
     </div>
-</div>
-<!-- end:: Subheader -->
-<div class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+    <!-- end:: Subheader -->
+    <div class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
         <div class="col-md-12 p-0">
             <div class="kt-portlet">
                 <!--begin::Form-->
                 <form class="kt-form kt-form--label-left">
                     <div class="kt-portlet__body">
-                        <div class="form-group row">
-                            <h5 class="form-header">Dental Chart</h5>
+                        <div class="form-group row justify-content-between align-items-center ">
+                            <h5 class="form-header m-0 pl-3">Dental Chart</h5>
+                            <a ui-sref="main.viewChartNotations" class="d-flex align-items-center pr-3">
+                                <span class="p-3">Back</span>
+                                <i class="la la-2x la-chevron-circle-left"></i>
+                            </a>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-1 col-md-2 col-sm-2 col-form-label">Chart Type:</label>
@@ -30,13 +33,13 @@
                             <label class="col-lg-1 col-md-1 col-sm-1 col-form-label">Notation:</label>
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="kt-input-icon kt-input-icon--right">
-                                    <input type="text" class="form-control" placeholder="Enter Notation">                                  
+                                    <input type="text" class="form-control" placeholder="Enter Notation">
                                 </div>
                             </div>
                             <label class="col-lg-2 col-md-2 col-sm-2 col-form-label">Arabic Notation:</label>
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="kt-input-icon kt-input-icon--right">
-                                    <input type="text" class="form-control" placeholder="Enter Notation">                                    
+                                    <input type="text" class="form-control" placeholder="Enter Notation">
                                 </div>
                             </div>
                         </div>
@@ -58,15 +61,10 @@
                                         <span class="dropzone-msg-desc">This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.</span>
                                     </div>
                                 </div> -->
-                                <ng-dropzone class="dropzone" options="chartObject.dzOptions" callbacks="chartObject.dzCallbacks" methods="chartObject.dzMethods"></ng-dropzone>
+                                <ng-dropzone class="dropzone" options="chartObject.dzOptions"
+                                    callbacks="chartObject.dzCallbacks" methods="chartObject.dzMethods"></ng-dropzone>
                             </div>
                         </div>
-                        <div
-                            class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit">
-                        </div>
-
-                        
-
 
                     </div>
                     <div class="kt-portlet__foot d-flex justify-content-end">

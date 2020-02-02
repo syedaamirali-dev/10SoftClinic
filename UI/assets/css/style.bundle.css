@@ -32940,6 +32940,13 @@ table.dataTable thead > tr > td.sorting {
   #childPatientSheet .periodontal-tb-desktop {
     display: none; } }
 
+#dentalChartNotation {
+  min-height: calc(100vh - 190px); }
+  #dentalChartNotation .kt-portlet__body {
+    padding: 10px !important; }
+  #dentalChartNotation .kt-portlet__foot {
+    padding: 10px; }
+
 #docTreatmentchild .nav-link {
   padding: 0.5rem 3rem 0.5rem 0;
   border-bottom: 4px solid #959cb6;
@@ -33002,4 +33009,6 @@ table.dataTable thead > tr > td.sorting {
   padding: 0px !important; }
 
 #viewChartNotations {
-  border: 5px solid green; }
+  min-height: calc(100vh - 190px); }
+  #viewChartNotations .kt-portlet__body {
+    padding: 5px !important; }
