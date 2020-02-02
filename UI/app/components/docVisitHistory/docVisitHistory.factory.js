@@ -23,10 +23,10 @@
                     { title: 'End Time', data: 'visitEndTime' },
                     { title: 'Patient Code', data: 'patientCode' },
                     { title: 'Patient Name', data: 'patientName' },
-                    { title: 'ID', data: 'civilID',visible:false },
+                    { title: 'ID', data: 'civilID', visible: false },
                     { title: 'Doctor Name', data: 'doctorName' },
                     { title: 'Status', data: 'visitStatusText' },
-                    { title: 'Is Visit Free?', data: 'isFreeVisit' },
+                    { title: 'Is Visit Free?', data: 'isFreeVisit', class: 'text-center' },
                     // { title: 'Actions', data: 'visitRegisterId' },
                 ],
                 columnDefs: [
@@ -38,6 +38,26 @@
                                 data = `<a href="#!/docTreatment/adultPatientSheet">${treatmentNum}</a>`
                             }
                             return data;
+                        }
+                    }
+                    , {
+                        targets: 3,
+                        render: function (data, type, row) {
+                            if (data != null) {
+                                let dateObj = new Date(data);
+                                return `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+                            }
+                            return "";
+                        }
+                    }
+
+                    , {
+                        targets: 11,
+                        render: function (data, type, row) {
+                            if (data != null) {
+                                return `${data == true ? "Yes" : "No"}`;
+                            }
+                            return "";
                         }
                     }
                 ]

@@ -3,12 +3,12 @@
 
     angular
         .module('10softdental')
-        .factory('waitingListService', waitingListService)
+        .factory('docVisitService', docVisitService)
 
     /** @ngInject */
-    function waitingListService(apiCollection, $q, $http) {
+    function docVisitService(apiCollection, $q, $http) {
         var service = {
-            getWaitingListData,
+            getvisitHistorytData,
             getDtOptions
         };
         function getDtOptions(data, functions) {
@@ -16,7 +16,7 @@
                 data: data.data.table,
                 columns: [
                     { title: 'Visit Register', data: 'documentNumber' },
-                    { title: 'Doctor Treatment', data: 'documentTypeName' },
+                    { title: 'Doctor Treatment', data: 'doctorTreatmentNumber' },
                     { title: 'Document Type', data: 'documentTypeName' },
                     { title: 'Visit Date', data: 'visitDate' },
                     { title: 'Start Time', data: 'visitStartTime' },
@@ -26,22 +26,18 @@
                     { title: 'ID', data: 'civilID', visible: false },
                     { title: 'Doctor Name', data: 'doctorName' },
                     { title: 'Status', data: 'visitStatusText' },
-                    { title: 'Is Visit Free?', data: 'isFreeVisitk', class: 'text-center'},
+                    { title: 'Is Visit Free?', data: 'isFreeVisit', class: 'text-center' },
                     // { title: 'Actions', data: 'visitRegisterId' },
                 ],
                 columnDefs: [
                     {
                         targets: 1,
                         render: function (data, type, row) {
+                            var treatmentNum = data == null ? "" : data;
                             if (type === 'display') {
-                                data = '<a class="kt-link kt-link--brand kt-font-bolder btn-redirect">Add Treatment</a>'
+                                data = `<a href="#!/docTreatment/adultPatientSheet">${treatmentNum}</a>`
                             }
                             return data;
-                        },
-                        fnCreatedCell: (nTd, cellData, rowData, row, col) => {
-                            $(nTd).find(".btn-redirect").on("click", () => {
-                                functions.pageRedirect(cellData)
-                            });
                         }
                     }
                     , {
@@ -67,8 +63,8 @@
                 ]
             }
         }
-        function getWaitingListData() {
-            return httpGet(apiCollection.waitingList.GetWaitingList(), true);
+        function getvisitHistorytData() {
+            return httpGet(apiCollection.doctorTreatment.GetVisitHistory(), true);
         }
         function httpGet(url, isRefresh) {
             let defer = $q.defer();

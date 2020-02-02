@@ -1,22 +1,28 @@
-
 <div id="viewChartNotations" class="">
-<!-- begin:: Subheader -->
-<div class="kt-subheader   kt-grid__item" id="kt_subheader">
-    <div class="kt-container  kt-container--fluid ">
-        <div class="kt-subheader__main">
-            <h3 class="kt-subheader__title">
-                Dental Chart Notations
-            </h3>
-        </div>
-    </div>
-</div>
-<div id="viewChartNotations" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-    <div class="col-md-12 p-0">
-        <div class="kt-portlet">
-            <div class="kt-portlet__body">
-                <div custom-data-table tid="viewChartNotationTable" options="dtOptions" ng-if="viewChartLoaded"> </div>
+    <!-- begin:: Subheader -->
+    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">
+                    Dental Chart Notations
+                </h3>
             </div>
         </div>
     </div>
-</div>
+    <div id="viewChartNotations" class="kt-container kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+        <div class="col-md-12 p-0">
+            <div class="kt-portlet">
+                <div class="kt-portlet__body">
+                    <div class="d-flex justify-content-end">
+                        <a ui-sref="main.dentalChartNotation" class="d-flex align-items-center">
+                            <span class="p-3">Add Notation</span>
+                            <i class="la la-2x la-plus-circle"></i>
+                        </a>
+                    </div>
+                    <div custom-data-table tid="viewChartNotationTable" options="dtOptions" ng-if="viewChartLoaded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -32818,8 +32818,12 @@ table.dataTable thead > tr > td.sorting {
   #adultPatientSheet .periodontal-tr {
     display: none; } }
 
-#docTreatment .kt-portlet__body:first-child {
-  padding: 0 !important; }
+@media (min-width: 769px) {
+  #docTreatment {
+    min-height: calc(100vh - 190px); } }
+
+#docTreatment .kt-portlet__body {
+  padding: 5px 10px !important; }
 
 #docTreatment .kt-wizard-v3__wrapper .kt-form {
   width: 95% !important; }
@@ -32853,23 +32857,14 @@ table.dataTable thead > tr > td.sorting {
   min-height: calc(100vh - 403px); }
   #docTreatPatient .kt-portlet__foot {
     padding: 10px; }
-  #docTreatPatient .kt-portlet__body {
-    padding: 10px 0 0 0 !important; }
   #docTreatPatient .kt-separator.kt-separator--space-lg,
   #docTreatPatient .kt-separator.kt-separator--lg {
     margin: 0.5rem 0; }
-  #docTreatPatient #center-line div {
-    border: 1px solid;
-    width: 1px;
-    height: 100%; }
   #docTreatPatient .kt-checkbox-inline {
     margin-top: 0 !important; }
 
 #docTreatmentInfo .kt-heading {
   margin: 0.35rem 0 !important; }
-
-#docTreatmentInfo .kt-portlet__body {
-  padding: 10px 0 0 0 !important; }
 
 #docTreatmentInfo .kt-portlet__foot {
   padding: 10px; }
@@ -32885,9 +32880,6 @@ table.dataTable thead > tr > td.sorting {
 
 #docMedication .kt-portlet__foot {
   padding: 10px; }
-
-#docMedication .kt-portlet__body {
-  padding: 10px 0 0 0 !important; }
 
 #childPatientSheet .kt-portlet__foot {
   padding: 10px; }
@@ -32948,6 +32940,13 @@ table.dataTable thead > tr > td.sorting {
   #childPatientSheet .periodontal-tb-desktop {
     display: none; } }
 
+#dentalChartNotation {
+  min-height: calc(100vh - 190px); }
+  #dentalChartNotation .kt-portlet__body {
+    padding: 10px !important; }
+  #dentalChartNotation .kt-portlet__foot {
+    padding: 10px; }
+
 #docTreatmentchild .nav-link {
   padding: 0.5rem 3rem 0.5rem 0;
   border-bottom: 4px solid #959cb6;
@@ -33005,3 +33004,11 @@ table.dataTable thead > tr > td.sorting {
 #childOcclusion .kt-separator.kt-separator--space-lg,
 #childOcclusion .kt-separator.kt-separator--lg {
   margin: 0.5rem 0; }
+
+#docVisit .kt-portlet__body {
+  padding: 0px !important; }
+
+#viewChartNotations {
+  min-height: calc(100vh - 190px); }
+  #viewChartNotations .kt-portlet__body {
+    padding: 5px !important; }
