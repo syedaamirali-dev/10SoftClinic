@@ -50,7 +50,7 @@ namespace ApplicationUtility
         }
         public static void LogFile(string[] lines, string logPath,string fileName)
         {
-           // string fileName = logPath + "log_" + datetime + ".txt";
+             fileName = logPath + "log_" + datetime + ".txt";
             var directory = new DirectoryInfo(logPath);
             if (directory.Exists)
             {
