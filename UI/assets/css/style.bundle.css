@@ -32566,6 +32566,9 @@ body {
       .kt-login.kt-login--v3 .kt-login__wrapper .kt-login__container .kt-login__account {
         margin-top: 1rem; } }
 
+button[disabled="disabled"] {
+  cursor: not-allowed; }
+
 .form-group {
   margin-bottom: 0.25rem; }
 
@@ -32719,9 +32722,6 @@ table.dataTable thead > tr > td.sorting {
 
 #loginCtrl .kt-checkbox > span {
   border: 1px solid #b1b2b3 !important; }
-
-#loginCtrl button[disabled="disabled"] {
-  cursor: not-allowed; }
 
 #loginCtrl .kt-login__link {
   cursor: pointer; }
@@ -32877,6 +32877,17 @@ table.dataTable thead > tr > td.sorting {
   min-height: calc(100vh - 190px); }
   #docVisitHistory .kt-portlet__body {
     padding: 5px !important; }
+
+#docLabReport .kt-portlet__foot {
+  padding: 10px; }
+
+#docLabReport .kt-portlet__body {
+  padding: 15px !important;
+  padding-top: 5px !important; }
+
+#docLabReport .kt-separator.kt-separator--space-lg,
+#docLabReport .kt-separator.kt-separator--lg {
+  margin: 0.5rem 0; }
 
 #docMedication .kt-portlet__foot {
   padding: 10px; }
