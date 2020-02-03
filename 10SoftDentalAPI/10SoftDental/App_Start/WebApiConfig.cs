@@ -9,7 +9,6 @@ using System.Web.Http.Cors;
 using System.Net.Http.Formatting;
 using Newtonsoft.Json;
 using System.Data;
-using System.Data.Entity.Core;
 
 
 namespace _10SoftDental
