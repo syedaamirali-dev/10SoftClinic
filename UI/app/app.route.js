@@ -151,6 +151,27 @@
                 templateUrl: 'app/components/docVisit/docVisit.html'
             })
 
+            // childPatient
+            .state({
+                name: 'main.docTreatmentchild.childPatient',
+                url: '/childPatient',
+                controller: 'childPatientCtrl',
+                templateUrl: 'app/components/childPatient/childPatient.html'
+            })
+            // childMedication
+            .state({
+                name: 'main.docTreatmentchild.childMedication',
+                url: '/childMedication',
+                controller: 'childMedicationCtrl',
+                templateUrl: 'app/components/childMedication/childMedication.html'
+            })
+            // childLabReport
+            .state({
+                name: 'main.docTreatmentchild.childLabReport',
+                url: '/childLabReport',
+                controller: 'childLabReportCtrl',
+                templateUrl: 'app/components/childLabReport/childLabReport.html'
+            })
         /** @RouteReplaceForGulp */
 
 

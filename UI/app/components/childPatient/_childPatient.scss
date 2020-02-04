@@ -1,0 +1,16 @@
+#childPatient {
+  min-height: calc(100vh - 403px);
+  .kt-portlet__foot {
+    padding: 10px;
+  }
+  .kt-portlet__body {
+    padding: 15px !important;
+  }
+  .kt-separator.kt-separator--space-lg,
+  .kt-separator.kt-separator--lg {
+    margin: 0.5rem 0;
+  }
+  .kt-checkbox-inline {
+    margin-top: 0 !important;
+  }
+}

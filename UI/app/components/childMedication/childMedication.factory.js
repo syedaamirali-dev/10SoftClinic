@@ -3,10 +3,10 @@
 
     angular
         .module('10softdental')
-        .factory('docMedicationService', docMedicationService)
+        .factory('childMedicationService', childMedicationService)
 
     /** @ngInject */
-    function docMedicationService(apiCollection, $q, $http) {
+    function childMedicationService(apiCollection, $q, $http) {
         var service = {
             getMedicationDtOptions
         };
@@ -62,7 +62,6 @@
                 ]
             }
         }
-
         return service;
     }
 

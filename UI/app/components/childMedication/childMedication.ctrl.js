@@ -3,10 +3,10 @@
 
     angular
         .module('10softdental')
-        .controller('docMedicationCtrl', docMedicationCtrl)
+        .controller('childMedicationCtrl', childMedicationCtrl)
 
     /** @ngInject */
-    function docMedicationCtrl($scope, docMedicationService, $timeout) {
+    function childMedicationCtrl($scope, childMedicationService, $timeout) {
         $scope.medicationInfoObject = {
             medicineList: [],
             dosageList: [],
@@ -98,7 +98,7 @@
 
 
         function GetMedicationDetails() {
-            // docMedicationService.getDiagnosisIDetails().then((res) => {
+            // childMedicationService.getDiagnosisIDetails().then((res) => {
             //     if (res.status == "Success") {
 
             //     }
@@ -139,7 +139,7 @@
                     },
                 ];
                 $scope.medicationInfoObject.dtTable.dtOptions =
-                    docMedicationService.getMedicationDtOptions(
+                    childMedicationService.getMedicationDtOptions(
                         $scope.medicationInfoObject.dtTable.data,
                         {
                             edit: $scope.medicationInfoObject.edit,

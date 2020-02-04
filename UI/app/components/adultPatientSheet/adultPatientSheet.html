@@ -4,21 +4,22 @@
         <form class="kt-form kt-form--label-left">
             <div class="kt-portlet__body">
                 <div class="form-group row">
-                    <label class="col-lg-1 col-md-1 col-sm-1 pr-0 col-form-label">OPD No:</label>
+                    <label class="col-lg-1 col-md-1 col-sm-1 pr-0 col-form-label">Visit Reg. No.:</label>
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="kt-input-icon kt-input-icon--right">
-                            <input type="text" class="form-control" value="0PD 78964" disabled>
+                            <input type="text" class="form-control" value="VR10004" disabled>
                             <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
                                     <i class="la la-info-circle la-2x"></i></span>
                             </span>
                         </div>
                     </div>
-                    <label class="col-lg-1 col-md-1 col-sm-1 col-form-label">Name:</label>
+                    <label class="col-lg-1 col-md-1 col-sm-1 pr-0 col-form-label">Issue Date:</label>
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="kt-input-icon kt-input-icon--right">
-                            <input type="text" class="form-control" placeholder="Enter Name">
+                            <input type="text" class="form-control" readonly placeholder="Select date"
+                                id="kt_datepicker_2" />
                             <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                    <i class="la la-user la-2x"></i></span>
+                                    <i class="la la-calendar la-2x"></i></span>
                             </span>
                         </div>
                     </div>
@@ -30,13 +31,22 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-1 col-md-1 col-sm-1 pr-0 col-form-label">Issue Date:</label>
+
+                    <label class="col-lg-1 col-md-1 col-sm-1 col-form-label">OPD No.:</label>
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="kt-input-icon kt-input-icon--right">
-                            <input type="text" class="form-control" readonly placeholder="Select date"
-                                id="kt_datepicker_2" />
+                            <input type="text" class="form-control" value="OPD 78964" disabled>
                             <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
-                                    <i class="la la-calendar la-2x"></i></span>
+                                    <i class="la la-user la-2x"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <label class="col-lg-1 col-md-1 col-sm-1 col-form-label">Name:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="kt-input-icon kt-input-icon--right">
+                            <input type="text" class="form-control" placeholder="Enter Name">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span>
+                                    <i class="la la-user la-2x"></i></span>
                             </span>
                         </div>
                     </div>
@@ -191,11 +201,11 @@
                                             <td class="periodontal-label">Facial</td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb5">
                                                 <img src="{{'periodontal-chart-master/img/tabla5/periodontograma-dientes-abajo-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)" alt="">
                                             </td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb6">
                                                 <img src="{{'periodontal-chart-master/img/tabla6/periodontograma-dientes-abajo-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)" alt="">
                                             </td>
                                         </tr>
                                         <tr class="periodontal-tr">
@@ -283,11 +293,11 @@
                                             <td class="periodontal-label">Lingual</td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb7">
                                                 <img src="{{'periodontal-chart-master/img/tabla7/periodontograma-dientes-abajo-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)" alt="">
                                             </td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb8">
                                                 <img src="{{'periodontal-chart-master/img/tabla8/periodontograma-dientes-abajo-' + number + '.png'}}"
-                                                    alt="">
+                                                    ng-click="showLegends($event)" alt="">
                                             </td>
                                         </tr>
                                     </tbody>

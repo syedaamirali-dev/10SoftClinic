@@ -32566,12 +32566,6 @@ body {
       .kt-login.kt-login--v3 .kt-login__wrapper .kt-login__container .kt-login__account {
         margin-top: 1rem; } }
 
-button[disabled="disabled"] {
-  cursor: not-allowed; }
-
-.form-group {
-  margin-bottom: 0.25rem; }
-
 .modal {
   text-align: center;
   padding: 0 !important; }
@@ -32628,39 +32622,47 @@ button[disabled="disabled"] {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #adadad; }
 
-.my-custom-style {
-  padding: 1rem 0.5rem;
-  color: #5d78ff; }
-  .my-custom-style .my-custom-element {
-    margin-left: 1rem; }
+button[disabled="disabled"] {
+  cursor: not-allowed; }
 
-@media (max-width: 1024px) {
-  .my-custom-style {
-    padding: 0.5rem 0.25rem; }
-    .my-custom-style .my-custom-element {
-      margin-left: 0.5rem; } }
+.form-group {
+  margin-bottom: 0.25rem; }
 
-div.dataTables_wrapper .dataTable {
+.form-astrik {
+  color: red; }
+
+#custom-dataTable div.dataTables_wrapper .dataTable {
   margin: 0 !important; }
 
-div.dataTables_wrapper .dataTables_filter {
+#custom-dataTable div.dataTables_wrapper .dataTables_filter {
   text-align: left !important; }
 
-div.dataTables_wrapper .dataTables_length {
+#custom-dataTable div.dataTables_wrapper .dataTables_length {
   text-align: right !important; }
 
-table.dataTable thead > tr > th.sorting_asc,
-table.dataTable thead > tr > th.sorting_desc,
-table.dataTable thead > tr > th.sorting,
-table.dataTable thead > tr > td.sorting_asc,
-table.dataTable thead > tr > td.sorting_desc,
-table.dataTable thead > tr > td.sorting {
+#custom-dataTable table.dataTable thead > tr > th.sorting_asc,
+#custom-dataTable table.dataTable thead > tr > th.sorting_desc,
+#custom-dataTable table.dataTable thead > tr > th.sorting,
+#custom-dataTable table.dataTable thead > tr > td.sorting_asc,
+#custom-dataTable table.dataTable thead > tr > td.sorting_desc,
+#custom-dataTable table.dataTable thead > tr > td.sorting {
   background: #3d6b91;
   color: white; }
 
-.table th,
-.table td {
+#custom-dataTable .table th,
+#custom-dataTable .table td {
   padding: 0.5rem !important; }
+
+#custom-dataTable .la {
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #c8cad5; }
+  #custom-dataTable .la:hover {
+    color: #5d78ff; }
+  #custom-dataTable .la-trash:hover {
+    color: #fd397a; }
 
 .editable-table .kt-switch {
   margin-top: 5px; }
@@ -32889,9 +32891,6 @@ table.dataTable thead > tr > td.sorting {
 #docLabReport .kt-separator.kt-separator--lg {
   margin: 0.5rem 0; }
 
-#docMedication .kt-portlet__foot {
-  padding: 10px; }
-
 #childPatientSheet .kt-portlet__foot {
   padding: 10px; }
 
@@ -33023,3 +33022,25 @@ table.dataTable thead > tr > td.sorting {
   min-height: calc(100vh - 190px); }
   #viewChartNotations .kt-portlet__body {
     padding: 5px !important; }
+
+#childPatient {
+  min-height: calc(100vh - 403px); }
+  #childPatient .kt-portlet__foot {
+    padding: 10px; }
+  #childPatient .kt-portlet__body {
+    padding: 15px !important; }
+  #childPatient .kt-separator.kt-separator--space-lg,
+  #childPatient .kt-separator.kt-separator--lg {
+    margin: 0.5rem 0; }
+  #childPatient .kt-checkbox-inline {
+    margin-top: 0 !important; }
+
+#childMedication .kt-portlet__body {
+  padding: 15px !important; }
+
+#childLabReport .kt-portlet__body {
+  padding: 15px !important; }
+
+#childLabReport .kt-separator.kt-separator--space-lg,
+#childLabReport .kt-separator.kt-separator--lg {
+  margin: 0.5rem 0; }

@@ -38,7 +38,7 @@
                 disableDelete: false,
                 columns: [
                     {
-                        title: "Diagnosis",
+                        title: "Chief Complaint",
                         data: "diagnosisId",
                         type: {
                             name: "typeahead",
@@ -51,24 +51,22 @@
                         onChange: $scope.onDiagnosisChange
                     },
                     {
-                        title: "Diagnosis Name",
+                        title: "Chief Complaint Name",
                         data: "diagnosisName",
                         type: {
                             name: "input",
                             inputType: "text",
                             required: false,
-                            disabled:true
+                            disabled: true
                         },
                     },
                     {
-                        title: "Level",
-                        data: "level",
+                        title: "Teeth",
+                        data: "teeth",
                         type: {
-                            name: "select",
-                            data: $scope.levelList,
-                            id: "level",
-                            value: "level",
-                            required: true,
+                            name: "input",
+                            inputType: "number",
+                            required: false,
                         },
                     },
                     {
@@ -108,18 +106,16 @@
                             name: "input",
                             inputType: "text",
                             required: false,
-                            disabled:true
+                            disabled: true
                         },
                     },
                     {
-                        title: "Level",
-                        data: "level",
+                        title: "Teeth",
+                        data: "teeth",
                         type: {
-                            name: "select",
-                            data: $scope.levelList,
-                            id: "level",
-                            value: "level",
-                            required: true,
+                            name: "input",
+                            inputType: "number",
+                            required: false,
                         },
                     },
                     {
@@ -159,18 +155,16 @@
                             name: "input",
                             inputType: "text",
                             required: false,
-                            disabled:true
+                            disabled: true
                         },
                     },
                     {
-                        title: "Level",
-                        data: "level",
+                        title: "Teeth",
+                        data: "teeth",
                         type: {
-                            name: "select",
-                            data: $scope.levelList,
-                            id: "level",
-                            value: "level",
-                            required: true,
+                            name: "input",
+                            inputType: "number",
+                            required: false,
                         },
                     },
                     {
@@ -209,14 +203,12 @@
                         },
                     },
                     {
-                        title: "Level",
-                        data: "level",
+                        title: "Teeth",
+                        data: "teeth",
                         type: {
-                            name: "select",
-                            data: $scope.levelList,
-                            id: "level",
-                            value: "level",
-                            required: true,
+                            name: "input",
+                            inputType: "number",
+                            required: false,
                         },
                     },
                     {
