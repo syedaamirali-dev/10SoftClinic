@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using _10SoftDental.Factory.DentalMaster;
+using ApplicationUtility;
 
 namespace _10SoftDental.DAL.Master
 {
-    public class DentalMaster : ApplicationUtility.DataAccess
+    public class DentalMaster : DataAccess
     {
         private string _storedProcedure;
         private DataSet dataSet;

@@ -35,7 +35,7 @@
                     $state.go("main.docTreatment.adultPatientSheet");
                 }
                 else {
-                    $state.go("main.childPatientSheet");
+                    $state.go("main.docTreatmentchild.childPatientSheet");
                 }
                 return;
             });

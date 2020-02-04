@@ -58,12 +58,12 @@
                 controller: 'waitingListCtrl',
                 templateUrl: 'app/components/waitingList/waitingList.html'
             })
-            // docTreatPatient
+            // docPatient
             .state({
-                name: 'main.docTreatment.docTreatPatient',
-                url: '/docTreatPatient',
-                controller: 'docTreatPatientCtrl',
-                templateUrl: 'app/components/docTreatPatient/docTreatPatient.html'
+                name: 'main.docTreatment.docPatient',
+                url: '/docPatient',
+                controller: 'docPatientCtrl',
+                templateUrl: 'app/components/docPatient/docPatient.html'
             })
             // docTreatmentInfo
             .state({
@@ -143,14 +143,15 @@
                 controller: 'childOcclusionCtrl',
                 templateUrl: 'app/components/childOcclusion/childOcclusion.html'
             })
-        // // viewChartNotations
-        //     .state({
-        //         name: 'main.viewChartNotations',
-        //         url: '/viewChartNotations',
-        //         controller: 'viewChartNotationsCtrl',
-        //         templateUrl: 'app/components/viewChartNotations/viewChartNotations.html'
-        //     })
-            /** @RouteReplaceForGulp */
+            // docVisit
+            .state({
+                name: 'main.docTreatment.docVisit',
+                url: '/docVisit',
+                controller: 'docVisitCtrl',
+                templateUrl: 'app/components/docVisit/docVisit.html'
+            })
+
+        /** @RouteReplaceForGulp */
 
 
         $urlRouterProvider.otherwise("/dashboard");

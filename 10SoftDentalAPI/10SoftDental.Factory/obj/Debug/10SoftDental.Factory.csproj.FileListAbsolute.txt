@@ -5,6 +5,7 @@ D:\F Drive\10Soft\10SoftCode\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10So
 D:\F Drive\10Soft\10SoftCode\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.pdb
 D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\bin\Debug\10SoftDental.Factory.dll
 D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\bin\Debug\10SoftDental.Factory.pdb
+D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.csprojAssemblyReference.cache
 D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.csproj.CoreCompileInputs.cache
 D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.dll
 D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.pdb

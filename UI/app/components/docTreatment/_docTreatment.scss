@@ -1,6 +1,9 @@
 #docTreatment {
-  .kt-portlet__body:first-child{
-    padding: 0 !important;
+  @include kt-desktop-and-tablet {
+    min-height: calc(100vh - 190px);
+  }
+  .kt-portlet__body {
+    padding: 5px 10px !important;
   }
 
   .kt-wizard-v3__wrapper .kt-form {

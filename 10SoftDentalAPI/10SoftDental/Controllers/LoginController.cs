@@ -84,7 +84,7 @@ namespace _10SoftDental.Controllers
             }
             catch (Exception E)
             {
-                //Logger.Error(E, "Validate Controller");
+                Logger.Error(E,@"C:\DentalChartIcons\","error.txt");
                 return Ok(E.Message.ToString());
             }
         }

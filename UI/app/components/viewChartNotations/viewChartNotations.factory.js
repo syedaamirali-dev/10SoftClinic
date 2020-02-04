@@ -1,4 +1,4 @@
-(function(){
+(function () {
     'use strict';
 
     angular
@@ -6,7 +6,7 @@
         .factory('viewChartNotationsService', viewChartNotationsService)
 
     /** @ngInject */
-    function viewChartNotationsService(apiCollection, $q, $http){
+    function viewChartNotationsService(apiCollection, $q, $http) {
         var service = {
             getViewChartData,
             getDtOptions
@@ -17,27 +17,14 @@
                 columns: [
                     { title: 'Notation Name', data: 'iconNameEn' },
                     { title: 'Descripition', data: 'descriptionEn' },
-                    { title: 'Icon', data: 'imageUrl' }                    
+                    { title: 'Icon', data: 'imageURL' }
                     // { title: 'Actions', data: 'visitRegisterId' },
                 ],
                 columnDefs: [
                     {
                         targets: 2,
-                            render: function(data) {
-                              return '<img src="'+data+'">'
-                            },
-                         
-                        // targets: 1,
-                        // render: function (data, type, row) {
-                        //     if (type === 'display') {
-                        //         data = '<a class="kt-link kt-link--brand kt-font-bolder btn-redirect">Add Treatment</a>'
-                        //     }
-                        //     return data;
-                        // },
-                        fnCreatedCell: (nTd, cellData, rowData, row, col) => {
-                            $(nTd).find(".btn-redirect").on("click", () => {
-                                functions.pageRedirect(cellData)
-                            });
+                        render: function (data, type, row) {
+                            return `<img class="img-fluid" src="${data}" />`;
                         }
                     }
                 ]
@@ -60,4 +47,3 @@
     }
 
 }());
-    

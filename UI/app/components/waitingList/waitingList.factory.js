@@ -26,7 +26,7 @@
                     { title: 'ID', data: 'civilID', visible: false },
                     { title: 'Doctor Name', data: 'doctorName' },
                     { title: 'Status', data: 'visitStatusText' },
-                    { title: 'Is Visit Free?', data: 'isFreeVisit' },
+                    { title: 'Is Visit Free?', data: 'isFreeVisitk', class: 'text-center'},
                     // { title: 'Actions', data: 'visitRegisterId' },
                 ],
                 columnDefs: [
@@ -42,6 +42,26 @@
                             $(nTd).find(".btn-redirect").on("click", () => {
                                 functions.pageRedirect(cellData)
                             });
+                        }
+                    }
+                    , {
+                        targets: 3,
+                        render: function (data, type, row) {
+                            if (data != null) {
+                                let dateObj = new Date(data);
+                                return `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+                            }
+                            return "";
+                        }
+                    }
+
+                    , {
+                        targets: 11,
+                        render: function (data, type, row) {
+                            if (data != null) {
+                                return `${data == true ? "Yes" : "No"}`;
+                            }
+                            return "";
                         }
                     }
                 ]

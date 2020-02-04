@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-//using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
-using Owin;
 using _10SoftDental.Providers;
 using _10SoftDental.Models;
+using ApplicationUtility;
 
 namespace _10SoftDental
 {
@@ -22,6 +19,9 @@ namespace _10SoftDental
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
+            try
+            {
+           
             // Configure the db context and user manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -47,25 +47,12 @@ namespace _10SoftDental
 
             // Enable the application to use bearer tokens to authenticate users
             app.UseOAuthBearerTokens(OAuthOptions);
-
-            // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
-
-            //app.UseTwitterAuthentication(
-            //    consumerKey: "",
-            //    consumerSecret: "");
-
-            //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
-
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            }
+            catch (Exception E)
+            {
+                Logger.Error(E, @"C:\DentalChartIcons\", "error.txt");
+                throw;
+            }
         }
     }
 }
