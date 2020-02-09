@@ -86,15 +86,15 @@
                                         <tr>
                                             <td class="periodontal-label">Facial</td class="periodontal-label">
                                             <td align="center" ng-repeat="number in periodontalImg.tb1">
-                                                <img src="{{'periodontal-chart-master/img/tabla1/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    ng-click="showLegends($event)">
+                                                <img src="{{'assets/media/periodontal-Images/'+ number + '.png'}}"
+                                                    ng-click="legendInfoObject.showLegends($event)" alt="{{number}}">
                                             </td>
-                                            <td align="center" ng-repeat="number in periodontalImg.tb2">
-                                                <img src="{{'periodontal-chart-master/img/tabla2/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    ng-click="showLegends($event)">
+                                            <td align=" center" ng-repeat="number in periodontalImg.tb2">
+                                                <img src="{{'assets/media/periodontal-Images/'+ number + '.png'}}"
+                                                    ng-click="legendInfoObject.showLegends($event)" alt="{{number}}">
                                             </td>
                                         </tr>
-                                        <tr class="periodontal-tr">
+                                        <tr class=" periodontal-tr">
                                             <td class="periodontal-label">&nbsp;</td>
                                             <td class="periodontal-number" align="center"
                                                 ng-repeat="number in periodontalImg.tb1">
@@ -178,12 +178,12 @@
                                         <tr>
                                             <td class="periodontal-label">Lingual</td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb3">
-                                                <img src="{{'periodontal-chart-master/img/tabla3/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    ng-click="showLegends($event)" alt="">
+                                                <img src="{{'assets/media/periodontal-Images/'+ number + '.png'}}"
+                                                    ng-click="legendInfoObject.showLegends($event)" alt="{{number}}">
                                             </td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb4">
-                                                <img src="{{'periodontal-chart-master/img/tabla4/periodontograma-dientes-arriba-' + number + '.png'}}"
-                                                    ng-click="showLegends($event)" alt="">
+                                                <img src="{{'assets/media/periodontal-Images/'+ number + '.png'}}"
+                                                    ng-click="legendInfoObject.showLegends($event)" alt="{{number}}">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -200,12 +200,12 @@
                                         <tr>
                                             <td class="periodontal-label">Facial</td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb5">
-                                                <img src="{{'periodontal-chart-master/img/tabla5/periodontograma-dientes-abajo-' + number + '.png'}}"
-                                                    ng-click="showLegends($event)" alt="">
+                                                <img src="{{'assets/media/periodontal-Images/'+ number + '.png'}}"
+                                                    ng-click="legendInfoObject.showLegends($event)" alt="{{number}}">
                                             </td>
                                             <td align="center" ng-repeat="number in periodontalImg.tb6">
-                                                <img src="{{'periodontal-chart-master/img/tabla6/periodontograma-dientes-abajo-' + number + '.png'}}"
-                                                    ng-click="showLegends($event)" alt="">
+                                                <img src="{{'assets/media/periodontal-Images/'+ number + '.png'}}"
+                                                    ng-click="legendInfoObject.showLegends($event)" alt="{{number}}">
                                             </td>
                                         </tr>
                                         <tr class="periodontal-tr">
@@ -292,12 +292,12 @@
                                         <tr>
                                             <td class="periodontal-label">Lingual</td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb7">
-                                                <img src="{{'periodontal-chart-master/img/tabla7/periodontograma-dientes-abajo-' + number + '.png'}}"
-                                                    ng-click="showLegends($event)" alt="">
+                                                <img src="{{'assets/media/periodontal-Images/'+ number + '.png'}}"
+                                                    ng-click="legendInfoObject.showLegends($event)" alt="{{number}}">
                                             </td>
                                             <td class="mt-1" align="center" ng-repeat="number in periodontalImg.tb8">
-                                                <img src="{{'periodontal-chart-master/img/tabla8/periodontograma-dientes-abajo-' + number + '.png'}}"
-                                                    ng-click="showLegends($event)" alt="">
+                                                <img src="{{'assets/media/periodontal-Images/'+ number + '.png'}}"
+                                                    ng-click="legendInfoObject.showLegends($event)" alt="{{number}}">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -306,25 +306,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 " ng-if="showLegend">
-                        <button type="button" class="btn btn-close" title="Close" ng-click="hideLegends()">
-                            <i class="la la-2x la-close"></i>
-                        </button>
-                        <div class="periodontal-legend">
-                            <div class="form-group row" ng-repeat="legend in legendInfo">
-                                <div class="col-1">
-                                    <div class="kt-checkbox-inline">
-                                        <label class="kt-checkbox">
-                                            <input type="radio" id="periodontal-lgnd-img" name="periodontal-lgnd-img"
-                                                ng-click="changeImage($index)">
-                                            <span></span>
-                                        </label>
+                    <div class="col-lg-5 ">
+                        <div ng-if="legendInfoObject.showLegend" class="periodontal-legend" >
+                            <div class="row justify-content-between">
+                                <button type="button" class="btn btn-success m-2"
+                                    ng-click="legendInfoObject.changeImage()">Save</button>
+                                <button type="button" class="btn btn-danger m-2"
+                                    ng-click="legendInfoObject.resetLegend()">Reset</button>
+                                <button type="button" class="btn btn-secondary m-2"
+                                    ng-click="legendInfoObject.hideLegends()">Cancel</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" ng-repeat="legend in legendInfoObject.legendInfo">
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <div class="kt-checkbox-inline">
+                                                <label class="kt-checkbox">
+                                                    <input type="radio" id="periodontal-lgnd-img"
+                                                        name="periodontal-lgnd-img"
+                                                        ng-click="legendInfoObject.selectImage($index)">
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <img src="{{legend.image}}" class="img-fluid" alt="{{number}}">
+                                        </div>
+                                        <div class="col-sm-7 pr-0">
+                                            <label class="col-form-label">{{legend.name}}</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-3">
-                                    <img src="{{legend.image}}" class="img-fluid" alt="">
-                                </div>
-                                <label class="col-8 col-form-label">{{legend.name}}</label>
                             </div>
                         </div>
                     </div>

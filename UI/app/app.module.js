@@ -5,7 +5,7 @@
         .module('10softdental', [
             'ui.router',
             'ui.bootstrap',
-            // 'ngAnimate',
+            'ngAnimate',
             // 'ngSweetAlert',
             // 'ui.sortable',
             // 'angular-intro',

@@ -2,4 +2,8 @@
   .kt-portlet__body {
     padding: 15px !important;
   }
+  .kt-separator.kt-separator--space-lg,
+  .kt-separator.kt-separator--lg {
+    margin: 0.5rem 0;
+  }
 }

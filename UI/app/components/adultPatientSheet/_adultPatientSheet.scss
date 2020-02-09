@@ -30,6 +30,7 @@
   td > img {
     height: 45%;
     cursor: pointer;
+    transition: all 0.25s linear;
   }
 
   .stv-radio-buttons-wrapper {
@@ -54,7 +55,7 @@
     }
 
     &:checked + label {
-      background-color: kt-state-color(warning, base);
+      background-color: kt-state-color(danger, base);
     }
   }
   .left-rad {
@@ -67,14 +68,37 @@
     border-radius: 0.35em 0.35em 0.35em 0.35em;
   }
   .kt-checkbox-inline {
-    margin-top: 0 !important ;
+    margin-top: -12px !important;
   }
+
   .periodontal {
     &-legend {
+      word-break: break-all;
       height: 510px;
       overflow-y: auto;
       padding: 10px;
       border: 4px solid #efefef;
+      &-active {
+        border: 2px solid;
+        color: #0abb87;
+        border-radius: 43%;
+        padding: 5px;
+        height: 35% !important;
+      }
+      &.ng-enter,
+      &.ng-leave {
+        transition: all ease-in 1s;
+      }
+      &.ng-enter,
+      &.ng-leave.ng-leave-active {
+        transform: scale(0.5, 0.5) translate(-50%);
+        opacity: 0;
+      }
+      &.ng-leave,
+      &.ng-enter.ng-enter-active {
+        transform: scale(1, 1);
+        opacity: 1;
+      }
       div.form-group {
         align-items: center;
       }

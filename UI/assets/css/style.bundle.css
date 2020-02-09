@@ -32757,7 +32757,8 @@ button[disabled="disabled"] {
 
 #adultPatientSheet td > img {
   height: 45%;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all 0.25s linear; }
 
 #adultPatientSheet .stv-radio-buttons-wrapper {
   clear: both;
@@ -32778,7 +32779,7 @@ button[disabled="disabled"] {
     color: #fff;
     background-color: #78d6d4; }
   #adultPatientSheet .stv-radio-button:checked + label {
-    background-color: #ffb822; }
+    background-color: #fd397a; }
 
 #adultPatientSheet .left-rad {
   border-radius: 0.35em 0 0 0.35em; }
@@ -32790,13 +32791,28 @@ button[disabled="disabled"] {
   border-radius: 0.35em 0.35em 0.35em 0.35em; }
 
 #adultPatientSheet .kt-checkbox-inline {
-  margin-top: 0 !important; }
+  margin-top: -12px !important; }
 
 #adultPatientSheet .periodontal-legend {
+  word-break: break-all;
   height: 510px;
   overflow-y: auto;
   padding: 10px;
   border: 4px solid #efefef; }
+  #adultPatientSheet .periodontal-legend-active {
+    border: 2px solid;
+    color: #0abb87;
+    border-radius: 43%;
+    padding: 5px;
+    height: 35% !important; }
+  #adultPatientSheet .periodontal-legend.ng-enter, #adultPatientSheet .periodontal-legend.ng-leave {
+    transition: all ease-in 1s; }
+  #adultPatientSheet .periodontal-legend.ng-enter, #adultPatientSheet .periodontal-legend.ng-leave.ng-leave-active {
+    transform: scale(0.5, 0.5) translate(-50%);
+    opacity: 0; }
+  #adultPatientSheet .periodontal-legend.ng-leave, #adultPatientSheet .periodontal-legend.ng-enter.ng-enter-active {
+    transform: scale(1, 1);
+    opacity: 1; }
   #adultPatientSheet .periodontal-legend div.form-group {
     align-items: center; }
   #adultPatientSheet .periodontal-legend div.col-3 {
@@ -33037,6 +33053,10 @@ button[disabled="disabled"] {
 
 #childMedication .kt-portlet__body {
   padding: 15px !important; }
+
+#childMedication .kt-separator.kt-separator--space-lg,
+#childMedication .kt-separator.kt-separator--lg {
+  margin: 0.5rem 0; }
 
 #childLabReport .kt-portlet__body {
   padding: 15px !important; }
