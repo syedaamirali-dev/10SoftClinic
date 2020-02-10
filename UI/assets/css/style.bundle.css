@@ -32799,12 +32799,20 @@ button[disabled="disabled"] {
   overflow-y: auto;
   padding: 10px;
   border: 4px solid #efefef; }
+  @media (max-width: 670px) {
+    #adultPatientSheet .periodontal-legend .row > .col-sm-7, #adultPatientSheet .periodontal-legend .row > .col-sm-3 {
+      width: 40%; }
+    #adultPatientSheet .periodontal-legend .row > .col-sm-2 {
+      width: 20%; } }
   #adultPatientSheet .periodontal-legend-active {
     border: 2px solid;
     color: #0abb87;
     border-radius: 43%;
     padding: 5px;
     height: 35% !important; }
+    @media (max-width: 670px) {
+      #adultPatientSheet .periodontal-legend-active {
+        height: 15% !important; } }
   #adultPatientSheet .periodontal-legend.ng-enter, #adultPatientSheet .periodontal-legend.ng-leave {
     transition: all ease-in 1s; }
   #adultPatientSheet .periodontal-legend.ng-enter, #adultPatientSheet .periodontal-legend.ng-leave.ng-leave-active {
@@ -32833,8 +32841,8 @@ button[disabled="disabled"] {
     display: none; }
   #adultPatientSheet .periodontal-number p {
     margin: 0 !important; }
-  #adultPatientSheet .periodontal-tr {
-    display: none; } }
+  #adultPatientSheet .periodontal-tr .stv-radio-button + label {
+    padding: 0.15em 0.15em; } }
 
 @media (min-width: 769px) {
   #docTreatment {
