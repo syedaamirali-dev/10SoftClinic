@@ -7,10 +7,7 @@
 
     /** @ngInject */
     function adultPatientSheetCtrl($scope, $document, $timeout, adultPatientSheetService) {
-        let periodontalImageObject = {
-            clicked: "",
-            selected: ""
-        };
+
         $scope.periodontalImg = {
             tb1: [
                 "18", "17", "16", "15", "14", "13", "12", "11"
@@ -37,7 +34,10 @@
                 "31b", "32b", "33b", "34b", "35b", "36b", "37b", "38b"
             ]
         }
-
+        let periodontalImageObject = {
+            clicked: "",
+            selected: ""
+        };
         $scope.legendInfoObject = {
             showLegend: false,
             hideLegends: () => {

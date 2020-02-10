@@ -32947,7 +32947,7 @@ button[disabled="disabled"] {
     color: #fff;
     background-color: #78d6d4; }
   #childPatientSheet .stv-radio-button:checked + label {
-    background-color: #ffb822; }
+    background-color: #fd397a; }
 
 #childPatientSheet .left-rad {
   border-radius: 0.35em 0 0 0.35em; }
@@ -32958,17 +32958,48 @@ button[disabled="disabled"] {
 #childPatientSheet .all-rad {
   border-radius: 0.35em 0.35em 0.35em 0.35em; }
 
+#childPatientSheet .periodontal-legend {
+  word-break: break-all;
+  height: 510px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 4px solid #efefef; }
+  @media (max-width: 670px) {
+    #childPatientSheet .periodontal-legend .row > .col-sm-7, #childPatientSheet .periodontal-legend .row > .col-sm-3 {
+      width: 40%; }
+    #childPatientSheet .periodontal-legend .row > .col-sm-2 {
+      width: 20%; } }
+  #childPatientSheet .periodontal-legend-active {
+    border: 2px solid;
+    color: #0abb87;
+    border-radius: 43%;
+    font-size: 10px; }
+  #childPatientSheet .periodontal-legend.ng-enter, #childPatientSheet .periodontal-legend.ng-leave {
+    transition: all ease-in 1s; }
+  #childPatientSheet .periodontal-legend.ng-enter, #childPatientSheet .periodontal-legend.ng-leave.ng-leave-active {
+    transform: scale(0.5, 0.5) translate(-50%);
+    opacity: 0; }
+  #childPatientSheet .periodontal-legend.ng-leave, #childPatientSheet .periodontal-legend.ng-enter.ng-enter-active {
+    transform: scale(1, 1);
+    opacity: 1; }
+  #childPatientSheet .periodontal-legend div.form-group {
+    align-items: center; }
+  #childPatientSheet .periodontal-legend div.col-3 {
+    text-align: center; }
+
 @media (min-width: 769px) {
-  #childPatientSheet .periodontal-number p {
-    margin: 0.5rem !important; }
+  #childPatientSheet .periodontal-number {
+    cursor: pointer; }
+    #childPatientSheet .periodontal-number p {
+      margin: 0.5rem !important; }
+      #childPatientSheet .periodontal-number p img {
+        width: 50%; }
   #childPatientSheet .periodontal-tb-mobile {
     display: none; }
   #childPatientSheet div.form-group > label:first-child {
     padding-left: 0 !important; } }
 
 @media (max-width: 670px) {
-  #childPatientSheet td > img {
-    height: 24%; }
   #childPatientSheet .periodontal-number p {
     margin: 0 !important; }
   #childPatientSheet .periodontal-tb-desktop {

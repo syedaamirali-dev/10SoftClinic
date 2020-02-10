@@ -110,12 +110,12 @@
                                             <td>Right</td>
                                             <td class="periodontal-number" align="center"
                                                 ng-repeat="number in periodontalImg.tb1">
-                                                <p>{{number}}</p>
+                                                <p ng-click="legendInfoObject.showLegends($event)" title="{{number}}">{{number}}</p>
                                             </td>
                                             <td>&nbsp;</td>
                                             <td class="periodontal-number" align="center"
                                                 ng-repeat="number in periodontalImg.tb2">
-                                                <p>{{number}}</p>
+                                                <p ng-click="legendInfoObject.showLegends($event)" title="{{number}}">{{number}}</p>
                                             </td>
                                             <td>Left</td>
                                         </tr>
@@ -186,13 +186,13 @@
                                             <td>&nbsp;</td>
                                             <td class="periodontal-number" align="center"
                                                 ng-repeat="number in periodontalImg.tb3">
-                                                <p ng-if="number != '5_1' && number != '5_2'">{{number}}</p>
+                                                <p ng-click="legendInfoObject.showLegends($event)" title="{{number}}" ng-if="number != '5_1' && number != '5_2'">{{number}}</p>
                                                 <p ng-if="number == '5_1' || number == '5_2'">&nbsp;</p>
                                             </td>
                                             <td>&nbsp;</td>
                                             <td class="periodontal-number" align="center"
                                                 ng-repeat="number in periodontalImg.tb4">
-                                                <p ng-if="number != '6_6' && number != '6_7'">{{number}}</p>
+                                                <p ng-click="legendInfoObject.showLegends($event)" title="{{number}}" ng-if="number != '6_6' && number != '6_7'">{{number}}</p>
                                                 <p ng-if="number == '6_6' || number == '6_7'">&nbsp;</p>
                                             </td>
                                             <td>&nbsp;</td>
@@ -804,7 +804,38 @@
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <img src="assets\media\images\legend-dental.jpeg" class="img-fluid" alt="">
+                        <div ng-if="legendInfoObject.showLegend" class="periodontal-legend" >
+                            <div class="row justify-content-between">
+                                <button type="button" class="btn btn-success m-2"
+                                    ng-click="legendInfoObject.changeImage()">Save</button>
+                                <button type="button" class="btn btn-danger m-2"
+                                    ng-click="legendInfoObject.resetLegend()">Reset</button>
+                                <button type="button" class="btn btn-secondary m-2"
+                                    ng-click="legendInfoObject.hideLegends()">Cancel</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" ng-repeat="legend in legendInfoObject.legendInfo">
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <div class="kt-checkbox-inline">
+                                                <label class="kt-checkbox">
+                                                    <input type="radio" id="periodontal-lgnd-img"
+                                                        name="periodontal-lgnd-img"
+                                                        ng-click="legendInfoObject.selectImage($index)">
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <img src="{{legend.image}}" class="img-fluid" alt="{{number}}">
+                                        </div>
+                                        <div class="col-sm-7 pr-0">
+                                            <label class="col-form-label">{{legend.name}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

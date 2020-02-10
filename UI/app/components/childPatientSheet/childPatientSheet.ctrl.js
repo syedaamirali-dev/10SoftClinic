@@ -6,7 +6,7 @@
         .controller('childPatientSheetCtrl', childPatientSheetCtrl)
 
     /** @ngInject */
-    function childPatientSheetCtrl($scope, $document, childPatientSheetService) {
+    function childPatientSheetCtrl($scope, $document, $timeout, childPatientSheetService) {
         $scope.periodontalImg = {
             tb1: [
                 "17", "16", "15", "14", "13", "12", "11"
@@ -33,7 +33,71 @@
                 "71", "72", "73", "74", "75", "7_6", "7_7"
             ]
         }
-
+        let periodontalImageObject = {
+            clicked: "",
+            selected: ""
+        };
+        $scope.legendInfoObject = {
+            showLegend: false,
+            hideLegends: () => {
+                $scope.legendInfoObject.showLegend = false;
+                if (periodontalImageObject.clicked) {
+                    periodontalImageObject.clicked.currentTarget.classList.remove("periodontal-legend-active");
+                }
+                periodontalImageObject = {
+                    clicked: "",
+                    selected: ""
+                }
+            },
+            showLegends: ($event) => {
+                // console.log($event.target.src, ", Event ", $event);
+                $scope.legendInfoObject.hideLegends();
+                $timeout(() => {
+                    $scope.legendInfoObject.showLegend = true;
+                    periodontalImageObject.clicked = $event;
+                    console.log($event);
+                    periodontalImageObject.clicked.currentTarget.classList.add("periodontal-legend-active");
+                }, 200);
+            },
+            legendInfo: [
+                {
+                    name: "Metal Crown",
+                    image: "assets/media/images/legnd-1.jpeg"
+                },
+                {
+                    name: "Implant",
+                    image: "assets/media/images/legnd-2.jpeg"
+                },
+                {
+                    name: "Missing Tooth(NotReq. intevention)",
+                    image: "assets/media/images/legnd-3.jpeg"
+                },
+                {
+                    name: "Missing Tooth(Req. intervention)",
+                    image: "assets/media/images/legnd-4.jpeg"
+                },
+                {
+                    name: "Composite Restoration",
+                    image: "assets/media/images/legnd-5.jpeg"
+                },
+                {
+                    name: "Improper Root Canal Filling",
+                    image: "assets/media/images/legnd-6.jpeg"
+                },
+            ],
+            selectImage: (param) => {
+                periodontalImageObject.selected = $scope.legendInfoObject.legendInfo[param].image;
+            },
+            changeImage: () => {
+                if (periodontalImageObject.selected) {
+                    periodontalImageObject.clicked.currentTarget.innerHTML = `<img src="${periodontalImageObject.selected}" class="img-fluid" />`;
+                }
+                $scope.legendInfoObject.hideLegends();
+            },
+            resetLegend: () => {
+                periodontalImageObject.clicked.currentTarget.innerHTML = `${periodontalImageObject.clicked.currentTarget.title}`;
+            }
+        }
         $scope.Submit = () => {
             swal.fire({
                 title: "Data Submitted",
