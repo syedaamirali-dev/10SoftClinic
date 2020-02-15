@@ -3,8 +3,8 @@
 
   angular
     .module('10softdental')
-    .constant('apiEndPoint', "http://209.159.151.189/10SoftDentalApi/api/")
-    // .constant('apiEndPoint', "http://localhost:55453/api/")
+    //.constant('apiEndPoint', "http://209.159.151.189/10SoftDentalApi/api/")
+     .constant('apiEndPoint', "http://localhost:55453/api/")
 
 
 

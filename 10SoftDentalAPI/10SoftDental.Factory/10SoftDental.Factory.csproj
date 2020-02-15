@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ApplicationUtility">
+      <HintPath>..\ApplicationUtility\bin\Debug\ApplicationUtility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,8 +49,11 @@
     <Compile Include="Common\ICommon.cs" />
     <Compile Include="Common\ICommonResponse.cs" />
     <Compile Include="Common\ResponseModel.cs" />
+    <Compile Include="DentalClinic\IPatientAdultMainScreen.cs" />
     <Compile Include="DentalClinic\IPatientScreeningSheet.cs" />
+    <Compile Include="DentalClinic\ITeethSectionNotationMapping.cs" />
     <Compile Include="DentalMaster\IDentalMaster.cs" />
+    <Compile Include="Helper\ListToDatatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
