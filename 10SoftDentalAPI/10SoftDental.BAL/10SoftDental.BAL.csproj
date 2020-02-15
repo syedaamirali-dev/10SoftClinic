@@ -54,6 +54,7 @@
     <Compile Include="Common\CommonBAL.cs" />
     <Compile Include="Dental\DentalMaster.cs" />
     <Compile Include="Dental\PatientAdultMain.cs" />
+    <Compile Include="Helper\ListToDatatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

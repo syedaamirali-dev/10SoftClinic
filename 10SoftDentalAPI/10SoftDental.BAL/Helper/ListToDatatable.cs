@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using _10SoftDental.Factory.DentalClinic;
+using _10SoftDental.BAL.Dental;
 using ApplicationUtility;
 
-namespace _10SoftDental.Factory.Helper
+namespace _10SoftDental.BAL.Helper
 {
     public class ListToDatatable
     {
         DataTable dataTable = null;
-        public DataTable ToDataTableTeetNotationList(List<ITeethSectionNotationMapping> datalist)
+        public DataTable ToDataTableTeetNotationList(List<TeethSectionNotationMapping> datalist)
         {
             dataTable = new DataTable();
             DataRow row = null;
