@@ -75,10 +75,11 @@ namespace _10SoftDental.DAL.Common
             return RunProcedure(_storedProcedure, _parameters, true);
         }
 
-        public DataSet SaveDentalAdultMain(IPatientAdultMainScreen patient)
+        public string SaveDentalAdultMain(IPatientAdultMainScreen patient)
         {
             try
             {
+                dataSet = new DataSet();
                 _storedProcedure = "SaveDentalAdultMain";
                 _parameters = new SqlParameter[12];
                 _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
@@ -105,7 +106,8 @@ namespace _10SoftDental.DAL.Common
                 _parameters[10].Value = patient.DocumentTypeId;
                 _parameters[11] = new SqlParameter("@TblTeethSectionNotationMappingType", SqlDbType.Structured);
                 _parameters[11].Value = patient.TeethSectionNotationMappingDT;
-                return RunProcedure(_storedProcedure, _parameters, true);
+                dataSet= RunProcedure(_storedProcedure, _parameters, true);
+                return (dataSet.Tables[0].Rows[0][0].ToString());
             }
             catch (System.Exception)
             {

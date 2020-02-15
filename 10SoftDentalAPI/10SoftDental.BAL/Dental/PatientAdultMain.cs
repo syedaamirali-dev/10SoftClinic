@@ -41,11 +41,11 @@ namespace _10SoftDental.BAL.Dental
 
         private CommonDAL commonDAL = null;
 
-        public void SaveDentalAdultMain()
+        public string SaveDentalAdultMain()
         {
             commonDAL = new CommonDAL();
             this.TeethSectionNotationMappingDT = new ListToDatatable().ToDataTableTeetNotationList(this.TeethSectionNotationMapping);
-            commonDAL.SaveDentalAdultMain(this);
+           return commonDAL.SaveDentalAdultMain(this);
         }
     }
 

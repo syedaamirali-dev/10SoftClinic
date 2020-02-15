@@ -13,8 +13,9 @@ namespace _10SoftDental.Controllers
         {
             try
             {
-                adultMain.SaveDentalAdultMain();
-                return Ok();
+                string result = "";
+                result=adultMain.SaveDentalAdultMain();
+                return Ok(result);
             }
             catch (Exception ex)
             {
