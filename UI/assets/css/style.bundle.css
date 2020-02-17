@@ -33103,3 +33103,10 @@ button[disabled="disabled"] {
 #childLabReport .kt-separator.kt-separator--space-lg,
 #childLabReport .kt-separator.kt-separator--lg {
   margin: 0.5rem 0; }
+
+#visitRegister {
+  min-height: calc(100vh - 190px); }
+  #visitRegister .kt-portlet__body {
+    padding: 10px !important; }
+  #visitRegister .kt-portlet__foot {
+    padding: 10px; }
