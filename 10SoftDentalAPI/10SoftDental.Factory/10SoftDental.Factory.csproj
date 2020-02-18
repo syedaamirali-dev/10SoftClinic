@@ -48,6 +48,7 @@
     <Compile Include="Common\ResponseModel.cs" />
     <Compile Include="DentalClinic\IPatientScreeningSheet.cs" />
     <Compile Include="DentalMaster\IDentalMaster.cs" />
+    <Compile Include="Helper\ListToDatatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
