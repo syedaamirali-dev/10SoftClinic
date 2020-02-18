@@ -93,7 +93,21 @@ namespace ApplicationUtility
         }
 
 
+        public static long? LongNZ(object obj)
+        {
+            if (obj == DBNull.Value)
+                return null;
 
+            return Convert.ToInt64(obj);
+        }
+
+        public static long LongNZ(object obj, long defaultValue)
+        {
+            if (obj == DBNull.Value)
+                return defaultValue;
+
+            return Convert.ToInt64(obj);
+        }
         public static DateTime DateTimeNZ(object obj, DateTime defaultValue)
         {
             if (obj == DBNull.Value)
