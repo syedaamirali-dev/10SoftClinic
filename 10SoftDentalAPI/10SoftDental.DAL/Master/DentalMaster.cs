@@ -53,5 +53,38 @@ namespace _10SoftDental.DAL.Master
             _parameters[9].Value = dentalMaster.LangId;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
+
+
+        public string SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_SaveVisitRegister";
+            _parameters = new SqlParameter[5];
+            _parameters[0] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
+            _parameters[0].Value = visitRegisterId;
+            _parameters[1] = new SqlParameter("@IssueDate", SqlDbType.Date);
+            _parameters[1].Value = IssueDate;
+            _parameters[2] = new SqlParameter("@DoctorIdRef", SqlDbType.BigInt);
+            _parameters[2].Value = doctorId;
+            _parameters[3] = new SqlParameter("@PatientId", SqlDbType.BigInt);
+            _parameters[3].Value = patientId;
+            _parameters[4] = new SqlParameter("@CreatedBy", SqlDbType.BigInt);
+            _parameters[4].Value = modifiedBy;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return (dataSet.Tables[0].Rows[0][0].ToString());
+        }
+
+        public DataSet GetPatientVisitRegister(long? patientId, long? doctorId)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_GetPatientVisitRegister";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@PatientId", SqlDbType.BigInt);
+            _parameters[0].Value = patientId;
+            _parameters[1] = new SqlParameter("@DoctorId", SqlDbType.BigInt);
+            _parameters[1].Value = doctorId;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
     }
 }

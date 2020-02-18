@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using _10SoftDental.BAL.DentalMaster;
+using _10SoftDental.BAL.Dental;
 
 namespace _10SoftDental.Controllers
 {
@@ -17,13 +17,22 @@ namespace _10SoftDental.Controllers
         private string destinationPath { get; set; }
         public DentalMasterController()
         {
-            this.dentalMassterBAL = new BAL.DentalMaster.DentalMaster();
+            this.dentalMassterBAL = new BAL.Dental.DentalMaster();
         }
 
         [HttpGet]
         public IHttpActionResult GetDentalChartNotations(int? dentalNotationId, int langId)
         {
             var result = this.dentalMassterBAL.GetDentalChartNotations(dentalNotationId, langId);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
+
+        //http://localhost:55453/api/DentalMaster/GetPatientVisitRegister?patientId=15&doctorId=
+        [HttpGet]
+        public IHttpActionResult GetPatientVisitRegister(long? patientId, long? doctorId)
+        {
+            var result = this.dentalMassterBAL.GetPatientVisitRegister(patientId, doctorId);
             if (result == null) return NotFound();
             return Ok(result);
         }
@@ -41,7 +50,26 @@ namespace _10SoftDental.Controllers
             return Ok(result);
         }
 
-        
+        //http://localhost:55453/api/DentalMaster/SaveVisitRegister?visitRegisterId=40&IssueDate=2020-02-01&doctorId=13&patientId=15&modifiedBy=29
+        [HttpPost]
+        public IHttpActionResult SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        {
+            try
+            {
+                string result = "";
+                dentalMassterBAL = new DentalMaster();
+                result=dentalMassterBAL.SaveVisitRegister(visitRegisterId, IssueDate, doctorId, patientId, modifiedBy);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+
+
         private async Task<string> UploadNotationImage(HttpContext httpContext)
         {
             string path=string.Empty, newFilename=string.Empty;

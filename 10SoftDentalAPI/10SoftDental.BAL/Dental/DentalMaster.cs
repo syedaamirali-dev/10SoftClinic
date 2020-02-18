@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using _10SoftDental.Factory.DentalMaster;
 
 namespace _10SoftDental.BAL.Dental
@@ -34,6 +35,17 @@ namespace _10SoftDental.BAL.Dental
         public DataSet GetDentalChartNotations(int? dentalNotationId, int langId)
         {
             return new DAL.Master.DentalMaster().GetDentalChartNotations(dentalNotationId, langId);
+        }
+
+        public DataSet GetPatientVisitRegister(long? patientId, long? doctorId)
+        {
+            return new DAL.Master.DentalMaster().GetPatientVisitRegister(patientId, doctorId);
+        }
+
+
+        public string SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        {
+            return new DAL.Master.DentalMaster().SaveVisitRegister(visitRegisterId, IssueDate,doctorId,patientId,modifiedBy);
         }
     }
 }
