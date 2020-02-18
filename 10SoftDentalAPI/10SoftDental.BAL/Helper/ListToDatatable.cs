@@ -55,11 +55,11 @@ namespace _10SoftDental.BAL.Helper
             for (int i = 0; i < datalist.Count; i++)
             {
                 row = dataTable.NewRow();
-                row["DoctorTreatmentDiagnosisId"] = DataTypesUtilities.IntNZ(datalist[i].DoctorTreatmentDiagnosisId);
-                row["DoctorTreatmentIdRef"] = DataTypesUtilities.IntNZ(datalist[i].DoctorTreatmentIdRef);
+                row["DoctorTreatmentDiagnosisId"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentDiagnosisId);
+                row["DoctorTreatmentIdRef"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentIdRef);
                 row["DiagnosisIdRef"] = DataTypesUtilities.IntNZ(datalist[i].DiagnosisIdRef);
-                row["Level"] = DataTypesUtilities.BoolNZ(datalist[i].Level);
-                row["Comment"] = DataTypesUtilities.LongNZ(datalist[i].Comment);
+                row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
+                row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
@@ -78,11 +78,11 @@ namespace _10SoftDental.BAL.Helper
             for (int i = 0; i < datalist.Count; i++)
             {
                 row = dataTable.NewRow();
-                row["DoctorTreatmentIllnessId"] = DataTypesUtilities.IntNZ(datalist[i].DoctorTreatmentIllnessId);
-                row["DoctorTreatmentIdRef"] = DataTypesUtilities.IntNZ(datalist[i].DoctorTreatmentIdRef);
+                row["DoctorTreatmentIllnessId"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentIllnessId);
+                row["DoctorTreatmentIdRef"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentIdRef);
                 row["IllnessIdRef"] = DataTypesUtilities.IntNZ(datalist[i].IllnessIdRef);
-                row["Level"] = DataTypesUtilities.BoolNZ(datalist[i].Level);
-                row["Comment"] = DataTypesUtilities.LongNZ(datalist[i].Comment);
+                row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
+                row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
@@ -101,11 +101,11 @@ namespace _10SoftDental.BAL.Helper
             for (int i = 0; i < datalist.Count; i++)
             {
                 row = dataTable.NewRow();
-                row["DoctorTreatmentSymptomId"] = DataTypesUtilities.IntNZ(datalist[i].DoctorTreatmentSymptomId);
-                row["DoctorTreatmentIdRef"] = DataTypesUtilities.IntNZ(datalist[i].DoctorTreatmentIdRef);
+                row["DoctorTreatmentSymptomId"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentSymptomId);
+                row["DoctorTreatmentIdRef"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentIdRef);
                 row["SymptonIdRef"] = DataTypesUtilities.IntNZ(datalist[i].SymptonIdRef);
-                row["Level"] = DataTypesUtilities.BoolNZ(datalist[i].Level);
-                row["Comment"] = DataTypesUtilities.LongNZ(datalist[i].Comment);
+                row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
+                row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
@@ -124,11 +124,11 @@ namespace _10SoftDental.BAL.Helper
             for (int i = 0; i < datalist.Count; i++)
             {
                 row = dataTable.NewRow();
-                row["DoctorTreatmentPatientProblemId"] = DataTypesUtilities.IntNZ(datalist[i].DoctorTreatmentPatientProblemId);
-                row["DoctorTreatmentIdRef"] = DataTypesUtilities.IntNZ(datalist[i].DoctorTreatmentIdRef);
-                row["Problem"] = DataTypesUtilities.IntNZ(datalist[i].Problem);
-                row["Level"] = DataTypesUtilities.BoolNZ(datalist[i].Level);
-                row["Comment"] = DataTypesUtilities.LongNZ(datalist[i].Comment);
+                row["DoctorTreatmentPatientProblemId"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentPatientProblemId);
+                row["DoctorTreatmentIdRef"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentIdRef);
+                row["Problem"] = DataTypesUtilities.StringNZ(datalist[i].Problem);
+                row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
+                row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
