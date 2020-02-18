@@ -117,5 +117,58 @@ namespace _10SoftDental.DAL.Common
         }
 
 
+        public DataSet GetDentalAdultDropdownMaster()
+        {
+            _storedProcedure = "GetDentalAdultDropdownMaster";
+            return RunProcedure(_storedProcedure, true);
+        }
+
+        public DataSet GetDentalAdultTreatmentMaster(string diagnosis)
+        {
+            _storedProcedure = "GetDentalAdultTreatmentMaster";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@Diagnosis", SqlDbType.NVarChar);
+            _parameters[0].Value = diagnosis;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+
+        public DataSet GetDentalAdultTreatmentDetails(long? doctorTreatmentId)
+        {
+            _storedProcedure = "GetDentalAdultTreatmentDetails";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@DentalTreatmentId", SqlDbType.BigInt);
+            _parameters[0].Value = doctorTreatmentId;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+
+
+        public string SaveDentalAdultTreatmentDiagnosis(IDentalTreatment dentalTreatment)
+        {
+            try
+            {
+                dataSet = new DataSet();
+                _storedProcedure = "SaveDentalAdultTreatmentDiagnosis";
+                _parameters = new SqlParameter[6];
+                _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+                _parameters[0].Value = dentalTreatment.DoctorTreatmentsDT;
+                _parameters[1] = new SqlParameter("@PatientId", SqlDbType.BigInt);
+                _parameters[1].Value = dentalTreatment.DoctorTreatmentIllnessesDT;
+                _parameters[2] = new SqlParameter("@ClinicRefId", SqlDbType.BigInt);
+                _parameters[2].Value = dentalTreatment.DoctorTreatmentSymptonsDT;
+                _parameters[3] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
+                _parameters[3].Value = dentalTreatment.DoctorTreatmentPatientProblemsDT;
+                _parameters[4] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
+                _parameters[4].Value = dentalTreatment.DoctorTreatmentId;
+                _parameters[5] = new SqlParameter("@DoctorAssignedTo", SqlDbType.BigInt);
+                _parameters[5].Value = dentalTreatment.VisitRegisterid;
+                dataSet = RunProcedure(_storedProcedure, _parameters, true);
+                return (dataSet.Tables[0].Rows[0][0].ToString());
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
