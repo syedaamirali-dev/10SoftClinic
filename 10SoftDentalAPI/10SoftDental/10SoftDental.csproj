@@ -49,8 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="10SoftDental.BAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="10SoftDental.BAL">
       <HintPath>..\10SoftDental.BAL\bin\Debug\10SoftDental.BAL.dll</HintPath>
     </Reference>
     <Reference Include="10SoftDental.Factory">
@@ -239,7 +238,6 @@
     <Compile Include="Controllers\DentalMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

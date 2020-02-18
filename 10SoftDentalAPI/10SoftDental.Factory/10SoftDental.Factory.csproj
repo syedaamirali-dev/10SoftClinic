@@ -49,10 +49,12 @@
     <Compile Include="Common\ICommon.cs" />
     <Compile Include="Common\ICommonResponse.cs" />
     <Compile Include="Common\ResponseModel.cs" />
+    <Compile Include="DentalClinic\IDentalTreatment.cs" />
     <Compile Include="DentalClinic\IPatientAdultMainScreen.cs" />
     <Compile Include="DentalClinic\IPatientScreeningSheet.cs" />
     <Compile Include="DentalClinic\ITeethSectionNotationMapping.cs" />
     <Compile Include="DentalMaster\IDentalMaster.cs" />
+    <Compile Include="Models\DoctorTreatment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using _10SoftDental.Factory.DentalClinic;
 
 namespace _10SoftDental.DAL.Common
 {
@@ -47,22 +46,7 @@ namespace _10SoftDental.DAL.Common
             return RunProcedure(_storedProcedure, _parameters, true);
         }
 
-        public DataSet GetAdultMainScreeningData(int patientId,int? clinicId,string patientMobile, int? doctorTreatmentId,int? dentalMainId)
-        {
-            _storedProcedure = "GetAdultMainScreeningData";
-            _parameters = new SqlParameter[5];
-            _parameters[0] = new SqlParameter("@PatientId", SqlDbType.Int);
-            _parameters[0].Value = patientId;
-            _parameters[1] = new SqlParameter("@ClinicIdRef", SqlDbType.Int);
-            _parameters[1].Value = clinicId;
-            _parameters[2] = new SqlParameter("@PatientMobile", SqlDbType.NVarChar);
-            _parameters[2].Value = patientMobile;
-            _parameters[3] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
-            _parameters[3].Value = doctorTreatmentId;
-            _parameters[4] = new SqlParameter("@DentalMainId", SqlDbType.BigInt);
-            _parameters[4].Value = dentalMainId;
-            return RunProcedure(_storedProcedure, _parameters, true);
-        }
+      
 
         public DataSet ValidateUser(string userName, string password)
         {
@@ -74,6 +58,7 @@ namespace _10SoftDental.DAL.Common
             _parameters[1].Value = password;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
+<<<<<<< HEAD
 
         public string SaveDentalAdultMain(IPatientAdultMainScreen patient)
         {
@@ -170,5 +155,7 @@ namespace _10SoftDental.DAL.Common
                 throw;
             }
         }
+=======
+>>>>>>> 7babb1366b6e380054a362701d197f3771697d9a
     }
 }

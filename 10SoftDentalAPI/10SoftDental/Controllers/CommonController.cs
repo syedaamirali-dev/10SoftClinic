@@ -30,14 +30,5 @@ namespace _10SoftDental.Controllers
             if (result == null) return NotFound();
             return Ok(result);
         }
-
-        [HttpGet]
-        public IHttpActionResult GetAdultMainScreeningData()
-        {
-            var result = this.commonBAL.GetAllVisitList();
-            if (result == null) return NotFound();
-            return Ok(result);
-        }
-
     }
 }
