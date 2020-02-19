@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using _10SoftDental.Factory.DentalClinic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace _10SoftDental.DAL.Common
@@ -58,7 +59,7 @@ namespace _10SoftDental.DAL.Common
             _parameters[1].Value = password;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
-<<<<<<< HEAD
+
 
         public string SaveDentalAdultMain(IPatientAdultMainScreen patient)
         {
@@ -134,17 +135,17 @@ namespace _10SoftDental.DAL.Common
                 dataSet = new DataSet();
                 _storedProcedure = "SaveDentalAdultTreatmentDiagnosis";
                 _parameters = new SqlParameter[6];
-                _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+                _parameters[0] = new SqlParameter("@DoctorTreatmentDiagnosisTypeTbl", SqlDbType.Structured);
                 _parameters[0].Value = dentalTreatment.DoctorTreatmentsDT;
-                _parameters[1] = new SqlParameter("@PatientId", SqlDbType.BigInt);
+                _parameters[1] = new SqlParameter("@DoctorTreatmentIllnessTypeTbl", SqlDbType.Structured);
                 _parameters[1].Value = dentalTreatment.DoctorTreatmentIllnessesDT;
-                _parameters[2] = new SqlParameter("@ClinicRefId", SqlDbType.BigInt);
+                _parameters[2] = new SqlParameter("@DoctorTreatmentSymptomTypeTbl", SqlDbType.Structured);
                 _parameters[2].Value = dentalTreatment.DoctorTreatmentSymptonsDT;
-                _parameters[3] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
+                _parameters[3] = new SqlParameter("@DoctorTreatmentPatientProblemTypeTbl", SqlDbType.Structured);
                 _parameters[3].Value = dentalTreatment.DoctorTreatmentPatientProblemsDT;
                 _parameters[4] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
                 _parameters[4].Value = dentalTreatment.DoctorTreatmentId;
-                _parameters[5] = new SqlParameter("@DoctorAssignedTo", SqlDbType.BigInt);
+                _parameters[5] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
                 _parameters[5].Value = dentalTreatment.VisitRegisterid;
                 dataSet = RunProcedure(_storedProcedure, _parameters, true);
                 return (dataSet.Tables[0].Rows[0][0].ToString());
@@ -155,7 +156,21 @@ namespace _10SoftDental.DAL.Common
                 throw;
             }
         }
-=======
->>>>>>> 7babb1366b6e380054a362701d197f3771697d9a
+        public DataSet GetAdultMainScreeningData(int patientId, int? clinicId, string patientMobile, int? doctorTreatmentId, int? dentalMainId)
+        {
+            _storedProcedure = "GetAdultMainScreeningData";
+            _parameters = new SqlParameter[5];
+            _parameters[0] = new SqlParameter("@PatientId", SqlDbType.Int);
+            _parameters[0].Value = patientId;
+            _parameters[1] = new SqlParameter("@ClinicIdRef", SqlDbType.Int);
+            _parameters[1].Value = clinicId;
+            _parameters[2] = new SqlParameter("@PatientMobile", SqlDbType.NVarChar);
+            _parameters[2].Value = patientMobile;
+            _parameters[3] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
+            _parameters[3].Value = doctorTreatmentId;
+            _parameters[4] = new SqlParameter("@DentalMainId", SqlDbType.BigInt);
+            _parameters[4].Value = dentalMainId;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
     }
 }
