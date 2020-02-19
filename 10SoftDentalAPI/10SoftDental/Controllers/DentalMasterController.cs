@@ -37,6 +37,15 @@ namespace _10SoftDental.Controllers
             return Ok(result);
         }
 
+        //http://localhost:55453/api/DentalMaster/GetPatientInsurance?patientId=15
+        [HttpGet]
+        public IHttpActionResult GetPatientInsurance(long patientId)
+        {
+            var result = this.dentalMassterBAL.GetPatientInsurance(patientId);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
+
         [HttpPost]
         public async Task<IHttpActionResult> SaveDentalChartNotations(DentalMaster dentalMaster)
         {
@@ -68,7 +77,20 @@ namespace _10SoftDental.Controllers
             }
         }
 
-
+        [HttpGet]
+        public IHttpActionResult Dental_GetDropdownMasterData()
+        {
+            try
+            {
+                var result = dentalMassterBAL.Dental_GetDropdownMasterData();
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
         private async Task<string> UploadNotationImage(HttpContext httpContext)
         {

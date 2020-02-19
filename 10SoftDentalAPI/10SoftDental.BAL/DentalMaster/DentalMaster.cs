@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Data;
 using _10SoftDental.Factory.DentalMaster;
-namespace _10SoftDental.BAL.DentalMaster
+
+namespace _10SoftDental.BAL.Dental
 {
-    public class DentalMaster:IDentalMaster
+    public class DentalMaster : IDentalMaster
     {
         private int? dentalNotationId;
         private bool patientType;
@@ -34,6 +35,27 @@ namespace _10SoftDental.BAL.DentalMaster
         public DataSet GetDentalChartNotations(int? dentalNotationId, int langId)
         {
             return new DAL.Master.DentalMaster().GetDentalChartNotations(dentalNotationId, langId);
+        }
+
+        public DataSet GetPatientVisitRegister(long? patientId, long? doctorId)
+        {
+            return new DAL.Master.DentalMaster().GetPatientVisitRegister(patientId, doctorId);
+        }
+
+        public DataSet GetPatientInsurance(long patientId)
+        {
+            return new DAL.Master.DentalMaster().GetPatientInsurance(patientId);
+        }
+
+
+        public string SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        {
+            return new DAL.Master.DentalMaster().SaveVisitRegister(visitRegisterId, IssueDate,doctorId,patientId,modifiedBy);
+        }
+
+        public DataSet Dental_GetDropdownMasterData()
+        {
+            return new DAL.Master.DentalMaster().Dental_GetDropdownMasterData();
         }
     }
 }

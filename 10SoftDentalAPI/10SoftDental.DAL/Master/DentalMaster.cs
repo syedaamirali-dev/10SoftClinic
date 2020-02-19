@@ -86,5 +86,24 @@ namespace _10SoftDental.DAL.Master
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
+
+        public DataSet GetPatientInsurance(long patientId)
+        {
+              dataSet = new DataSet();
+            _storedProcedure = "Dental_GetPatientInsuranceDetails";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@PatientId", SqlDbType.BigInt);
+            _parameters[0].Value = patientId;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+        public DataSet Dental_GetDropdownMasterData()
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_GetDropdownMasterData";
+            dataSet = RunProcedure(_storedProcedure, true);
+            return dataSet;
+        }
     }
 }
