@@ -42,10 +42,20 @@ namespace _10SoftDental.BAL.Dental
             return new DAL.Master.DentalMaster().GetPatientVisitRegister(patientId, doctorId);
         }
 
+        public DataSet GetPatientInsurance(long patientId)
+        {
+            return new DAL.Master.DentalMaster().GetPatientInsurance(patientId);
+        }
+
 
         public string SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
         {
             return new DAL.Master.DentalMaster().SaveVisitRegister(visitRegisterId, IssueDate,doctorId,patientId,modifiedBy);
+        }
+
+        public DataSet Dental_GetDropdownMasterData()
+        {
+            return new DAL.Master.DentalMaster().Dental_GetDropdownMasterData();
         }
     }
 }

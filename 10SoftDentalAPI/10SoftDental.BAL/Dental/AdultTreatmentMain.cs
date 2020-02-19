@@ -7,7 +7,7 @@ using _10SoftDental.Factory.Models;
 
 namespace _10SoftDental.BAL.Dental
 {
-    public class AdultTreatmentMain : IDentalTreatment
+    public class AdultMainTreatment : IDentalTreatment
     {
         long? doctorTreatmentId;
         long? visitRegisterid;
