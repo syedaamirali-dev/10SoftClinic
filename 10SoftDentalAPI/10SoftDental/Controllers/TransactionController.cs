@@ -8,7 +8,7 @@ namespace _10SoftDental.Controllers
     public class TransactionController : ApiController
     {
 
-        DentalMaster dentalMasterBAL = null;
+        PatientAdultMain patientBAL = null;
         AdultMainTreatment adultMainTreatmentBAL = null;
         DataSet dataSet = null;
         [HttpPost]
@@ -32,9 +32,9 @@ namespace _10SoftDental.Controllers
         {
             try
             {
-                dentalMasterBAL = new DentalMaster();
-                var result = dentalMasterBAL.Dental_GetAdultMainScreeningData(clinicId, patientId, Mobile, doctorId, DoctorTreatmentId, dentalMainId);
-                return Ok(result);
+                patientBAL = new PatientAdultMain();
+                patientBAL = patientBAL.Dental_GetAdultMainScreeningData(clinicId, patientId, Mobile, doctorId, DoctorTreatmentId, dentalMainId);
+                return Ok(patientBAL);
             }
             catch (Exception ex)
             {

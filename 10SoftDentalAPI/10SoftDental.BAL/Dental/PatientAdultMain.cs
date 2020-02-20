@@ -9,8 +9,12 @@ namespace _10SoftDental.BAL.Dental
 {
     public class PatientAdultMain : IPatientAdultMainScreen
     {
+        private PatientAdultMain patientBAL = null;
+        DataSet dataSet = null;
         private long? dentalAdultMainId;
+        private string doctorTreatmentNumber;
         private long visitRegisterId;
+        private string visitRegisterNumber;
         private long? doctorTreatmentId;
         private long? doctorAssignedTo;
         private string comments;
@@ -21,6 +25,9 @@ namespace _10SoftDental.BAL.Dental
         private long? clinicId;
         private long? documentBookId;
         private long? documentTypeId;
+        private string patientCode;
+        private string patientNameEn;
+        private string patientNameAr;
         private List<TeethSectionNotationMapping> teethSectionNotationMapping;
         private DataTable teethSectionNotationMappingDT;
 
@@ -38,6 +45,11 @@ namespace _10SoftDental.BAL.Dental
         public long? DocumentTypeId { get => documentTypeId; set => documentTypeId = value; }
         public List<TeethSectionNotationMapping> TeethSectionNotationMapping { get => teethSectionNotationMapping; set => teethSectionNotationMapping = value; }
         public DataTable TeethSectionNotationMappingDT { get => teethSectionNotationMappingDT; set => teethSectionNotationMappingDT = value; }
+        public string VisitRegisterNumber { get => visitRegisterNumber; set => visitRegisterNumber = value; }
+        public string DoctorTreatmentNumber { get => doctorTreatmentNumber; set => doctorTreatmentNumber = value; }
+        public string PatientCode { get => patientCode; set => patientCode = value; }
+        public string PatientNameEn { get => patientNameEn; set => patientNameEn = value; }
+        public string PatientNameAr { get => patientNameAr; set => patientNameAr = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -46,6 +58,29 @@ namespace _10SoftDental.BAL.Dental
             commonDAL = new CommonDAL();
             this.TeethSectionNotationMappingDT = new ListToDatatable().ToDataTableTeetNotationList(this.TeethSectionNotationMapping);
             return commonDAL.SaveDentalAdultMain(this);
+        }
+
+        public PatientAdultMain Dental_GetAdultMainScreeningData(int? clinicId, long patientId, string Mobile, long? doctorId, long? DoctorTreatmentId, long? dentalMainId)
+        {
+            patientBAL = new PatientAdultMain();
+            dataSet = new DataSet();
+            dataSet = new DAL.Master.DentalMaster().Dental_GetAdultMainScreeningData(clinicId, patientId, Mobile, doctorId, DoctorTreatmentId, dentalMainId);
+            if(dentalMainId>0)
+            { 
+                patientBAL.visitRegisterId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VisitRegisterId"]);
+                patientBAL.VisitRegisterNumber= dataSet.Tables[0].Rows[0]["VRNo"].ToString();
+                patientBAL.DoctorTreatmentId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DoctorTreatmentId"]);
+                patientBAL.DoctorTreatmentNumber = dataSet.Tables[0].Rows[0]["DTNo"].ToString();
+                patientBAL.PatientCode = dataSet.Tables[0].Rows[0]["PatientCode"].ToString();
+                patientBAL.PatientNameEn = dataSet.Tables[0].Rows[0]["ForeignName"].ToString();
+                patientBAL.PatientNameAr = dataSet.Tables[0].Rows[0]["LocalName"].ToString();
+                patientBAL.DocumentTypeId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DocumentTypeId"]);
+                patientBAL.IssueDate =Convert.ToDateTime(dataSet.Tables[0].Rows[0]["VRIssueDate"].ToString());
+                patientBAL.DoctorAssignedTo = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DoctorAssignedTo"]);
+                patientBAL.Comments =dataSet.Tables[0].Rows[0]["Comments"].ToString();
+                patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
+            }
+            return patientBAL;
         }
     }
 

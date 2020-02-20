@@ -58,9 +58,8 @@ namespace _10SoftDental.BAL.Dental
             return new DAL.Master.DentalMaster().Dental_GetDropdownMasterData();
         }
 
-        public DataSet Dental_GetAdultMainScreeningData(int? clinicId, long patientId, string Mobile, long? doctorId, long? DoctorTreatmentId, long? dentalMainId)
-        {
-            return new DAL.Master.DentalMaster().Dental_GetAdultMainScreeningData(clinicId, patientId, Mobile, doctorId, DoctorTreatmentId, dentalMainId);
-        }
+     
+
+
     }
 }

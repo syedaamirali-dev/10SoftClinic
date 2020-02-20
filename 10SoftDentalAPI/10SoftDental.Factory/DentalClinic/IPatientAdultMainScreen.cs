@@ -7,7 +7,9 @@ namespace _10SoftDental.Factory.DentalClinic
     public interface IPatientAdultMainScreen
     {
         long? DentalAdultMainId { get; set; }
+        string DoctorTreatmentNumber { get; set; }
         long VisitRegisterId { get; set; }
+        string VisitRegisterNumber { get; set; }
         long? DoctorTreatmentId { get; set; }
         long? DoctorAssignedTo { get; set; }
         string Comments { get; set; }
@@ -18,6 +20,9 @@ namespace _10SoftDental.Factory.DentalClinic
         long? ClinicId { get; set; }
         long? DocumentBookId { get; set; }
         long? DocumentTypeId { get; set; }
+        string PatientCode { get; set; }
+        string PatientNameEn { get; set; }
+        string PatientNameAr { get; set; }
         //List<ITeethSectionNotationMapping> ITeethSectionNotationMapping { get; set; }
         DataTable TeethSectionNotationMappingDT { get; set; }
     }
