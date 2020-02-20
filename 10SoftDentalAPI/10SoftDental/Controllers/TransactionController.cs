@@ -27,6 +27,7 @@ namespace _10SoftDental.Controllers
             }
         }
 
+        //http://localhost:55453/api/Transaction/GetAdultMainScreeningData?clinicId=3&patientId=15&Mobile=&doctorId=&DoctorTreatmentId=35&dentalMainId=1
         [HttpGet]
         public IHttpActionResult GetAdultMainScreeningData(int? clinicId, long patientId, string Mobile, long? doctorId, long? DoctorTreatmentId, long? dentalMainId)
         {
