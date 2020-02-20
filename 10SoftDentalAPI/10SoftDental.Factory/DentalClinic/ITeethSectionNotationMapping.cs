@@ -17,6 +17,7 @@ namespace _10SoftDental.Factory.DentalClinic
         long? UpdatedBy { get; set; }
         long? DentalAdultMainId { get; set; }
         long? VisitRegisterId { get; set; }
+        string Color { get; set; }
 
     }
 }

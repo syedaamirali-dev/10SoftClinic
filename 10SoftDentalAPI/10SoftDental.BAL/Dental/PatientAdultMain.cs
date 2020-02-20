@@ -61,6 +61,7 @@ namespace _10SoftDental.BAL.Dental
         private long? updatedBy;
         private long? dentalAdultMainId;
         private long? visitRegisterId;
+        private string color;
 
         public int? TeethSectionNotationMappingId { get => teethSectionNotationMappingId; set => teethSectionNotationMappingId = value; }
         public int? DentalTeethMasterId { get => dentalTeethMasterId; set => dentalTeethMasterId = value; }
@@ -71,5 +72,6 @@ namespace _10SoftDental.BAL.Dental
         public long? UpdatedBy { get => updatedBy; set => updatedBy = value; }
         public long? DentalAdultMainId { get => dentalAdultMainId; set => dentalAdultMainId = value; }
         public long? VisitRegisterId { get => visitRegisterId; set => visitRegisterId = value; }
+        public string Color { get => color; set => color = value; }
     }
 }

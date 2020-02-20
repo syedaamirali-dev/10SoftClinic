@@ -8,7 +8,7 @@ namespace _10SoftDental.Controllers
     public class TransactionController : ApiController
     {
 
-        PatientAdultMain patientBAL = null;
+        DentalMaster dentalMasterBAL = null;
         AdultMainTreatment adultMainTreatmentBAL = null;
         DataSet dataSet = null;
         [HttpPost]
@@ -18,6 +18,22 @@ namespace _10SoftDental.Controllers
             {
                 string result = "";
                 result=adultMain.SaveDentalAdultMain();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetAdultMainScreeningData(int? clinicId, long patientId, string Mobile, long? doctorId, long? DoctorTreatmentId, long? dentalMainId)
+        {
+            try
+            {
+                dentalMasterBAL = new DentalMaster();
+                var result = dentalMasterBAL.Dental_GetAdultMainScreeningData(clinicId, patientId, Mobile, doctorId, DoctorTreatmentId, dentalMainId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -51,7 +67,7 @@ namespace _10SoftDental.Controllers
                 adultMainTreatmentBAL = new AdultMainTreatment();
                 dataSet = new DataSet();
                 dataSet=adultMainTreatmentBAL.GetDentalAdultTreatmentDetails(DentalTreatmentId);
-                dataSet.Tables[0].TableName = "LevelManager";
+                dataSet.Tables[0].TableName = "LevelMaster";
                 dataSet.Tables[1].TableName = "IllnessMaster";
                 dataSet.Tables[2].TableName = "SymptomMaster";
                 dataSet.Tables[3].TableName = "DoctorTreatmentDiagnosis";

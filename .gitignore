@@ -40,3 +40,5 @@ DentalClinicModuleSRS.docx
 10SoftDentalAPI/.vs/10SoftDentalAPI/v15/Server/sqlite3/storage.ide-shm
 10SoftDentalAPI/.vs/10SoftDentalAPI/v15/Server/sqlite3/storage.ide-wal
 10SoftDentalAPI/10SoftDental/bin/
+10SoftDentalAPI/.vs/10SoftDentalAPI/v15/Server/sqlite3/storage.ide
+*.ide
