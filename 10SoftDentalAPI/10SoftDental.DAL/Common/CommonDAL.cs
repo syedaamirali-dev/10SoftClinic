@@ -90,8 +90,10 @@ namespace _10SoftDental.DAL.Common
                 _parameters[9].Value = patient.DocumentBookId;
                 _parameters[10] = new SqlParameter("@DocumentTypeIdRef", SqlDbType.BigInt);
                 _parameters[10].Value = patient.DocumentTypeId;
-                _parameters[11] = new SqlParameter("@TblTeethSectionNotationMappingType", SqlDbType.Structured);
-                _parameters[11].Value = patient.TeethSectionNotationMappingDT;
+                _parameters[11] = new SqlParameter("@IsAdult", SqlDbType.Bit);
+                _parameters[11].Value = patient.IsAdult;
+                _parameters[12] = new SqlParameter("@TblTeethSectionNotationMappingType", SqlDbType.Structured);
+                _parameters[12].Value = patient.TeethSectionNotationMappingDT;
                 dataSet= RunProcedure(_storedProcedure, _parameters, true);
                 return (dataSet.Tables[0].Rows[0][0].ToString());
             }
@@ -152,7 +154,6 @@ namespace _10SoftDental.DAL.Common
             }
             catch (System.Exception)
             {
-
                 throw;
             }
         }

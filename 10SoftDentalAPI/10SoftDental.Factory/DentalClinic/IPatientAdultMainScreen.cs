@@ -23,6 +23,7 @@ namespace _10SoftDental.Factory.DentalClinic
         string PatientCode { get; set; }
         string PatientNameEn { get; set; }
         string PatientNameAr { get; set; }
+        bool? IsAdult { get; set; } 
         //List<ITeethSectionNotationMapping> ITeethSectionNotationMapping { get; set; }
         DataTable TeethSectionNotationMappingDT { get; set; }
     }

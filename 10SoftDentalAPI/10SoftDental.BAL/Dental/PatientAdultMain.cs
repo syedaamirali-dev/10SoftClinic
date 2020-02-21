@@ -28,6 +28,7 @@ namespace _10SoftDental.BAL.Dental
         private string patientCode;
         private string patientNameEn;
         private string patientNameAr;
+        private bool? isAdult;
         private List<TeethSectionNotationMapping> teethSectionNotationMapping;
         private DataTable teethSectionNotationMappingDT;
 
@@ -50,6 +51,7 @@ namespace _10SoftDental.BAL.Dental
         public string PatientCode { get => patientCode; set => patientCode = value; }
         public string PatientNameEn { get => patientNameEn; set => patientNameEn = value; }
         public string PatientNameAr { get => patientNameAr; set => patientNameAr = value; }
+        public bool? IsAdult { get => isAdult; set => isAdult = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -79,6 +81,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.DoctorAssignedTo = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DoctorAssignedTo"]);
                 patientBAL.Comments =dataSet.Tables[0].Rows[0]["Comments"].ToString();
                 patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
+                patientBAL.IsAdult = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsAdult"]);
             }
             return patientBAL;
         }
