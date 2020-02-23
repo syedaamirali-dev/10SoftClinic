@@ -60,14 +60,30 @@ namespace _10SoftDental.Controllers
         }
 
         //http://localhost:55453/api/DentalMaster/SaveVisitRegister?visitRegisterId=40&IssueDate=2020-02-01&doctorId=13&patientId=15&modifiedBy=29
+        //[HttpPost]
+        //public IHttpActionResult SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        //{
+        //    try
+        //    {
+        //        string result = "";
+        //        dentalMassterBAL = new DentalMaster();
+        //        result=dentalMassterBAL.SaveVisitRegister(visitRegisterId, IssueDate, doctorId, patientId, modifiedBy);
+        //        return Ok(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw;
+        //    }
+        //}
+
         [HttpPost]
-        public IHttpActionResult SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        public IHttpActionResult SaveVisitRegister(DentalMaster dentalMaster)
         {
             try
-            {
-                string result = "";
-                dentalMassterBAL = new DentalMaster();
-                result=dentalMassterBAL.SaveVisitRegister(visitRegisterId, IssueDate, doctorId, patientId, modifiedBy);
+            {   
+                var result = this.dentalMassterBAL.SaveVisitRegister(dentalMaster);
+                if (result == null) return NotFound();
                 return Ok(result);
             }
             catch (Exception ex)

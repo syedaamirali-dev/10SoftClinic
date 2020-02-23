@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Data;
 using _10SoftDental.BAL.Helper;
 using _10SoftDental.DAL.Common;
+using _10SoftDental.Factory.Common;
 
 namespace _10SoftDental.BAL.Dental
 {
-    public class PatientAdultMain : IPatientAdultMainScreen
+    public class PatientAdultMain : IPatientAdultMainScreen, ICommonResponse
     {
         private PatientAdultMain patientBAL = null;
+        private CommonResponse commonResponseResult;
         DataSet dataSet = null;
         private long? dentalAdultMainId;
         private string doctorTreatmentNumber;
@@ -32,6 +34,15 @@ namespace _10SoftDental.BAL.Dental
         private List<TeethSectionNotationMapping> teethSectionNotationMapping;
         private DataTable teethSectionNotationMappingDT;
 
+        public PatientAdultMain()
+        {
+            this.commonResponseResult = new CommonResponse();           
+            this.dataSet = new DataSet();
+        }
+        public ResponseModel CreateResponse(bool status, string messageCode, string message, object data)
+        {
+            return this.commonResponseResult.CreateResponse(status, messageCode, message, data);
+        }
         public long? DentalAdultMainId { get => dentalAdultMainId; set => dentalAdultMainId = value; }
         public long VisitRegisterId { get => visitRegisterId; set => visitRegisterId = value; }
         public long? DoctorTreatmentId { get => doctorTreatmentId; set => doctorTreatmentId = value; }
@@ -55,11 +66,20 @@ namespace _10SoftDental.BAL.Dental
 
         private CommonDAL commonDAL = null;
 
-        public string SaveDentalAdultMain()
+        public ResponseModel SaveDentalAdultMain()
         {
-            commonDAL = new CommonDAL();
-            this.TeethSectionNotationMappingDT = new ListToDatatable().ToDataTableTeetNotationList(this.TeethSectionNotationMapping);
-            return commonDAL.SaveDentalAdultMain(this);
+            try
+            {
+                commonDAL = new CommonDAL();
+                this.TeethSectionNotationMappingDT = new ListToDatatable().ToDataTableTeetNotationList(this.TeethSectionNotationMapping);
+                dataSet = commonDAL.SaveDentalAdultMain(this);
+                return CreateResponse(Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", dataSet.Tables[0].Rows[0]["Message"].ToString(), dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");                
+            }
+            
         }
 
         public PatientAdultMain Dental_GetAdultMainScreeningData(int? clinicId, long patientId, string Mobile, long? doctorId, long? DoctorTreatmentId, long? dentalMainId)

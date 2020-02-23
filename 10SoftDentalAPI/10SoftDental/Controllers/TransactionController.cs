@@ -15,14 +15,13 @@ namespace _10SoftDental.Controllers
         public IHttpActionResult SaveDentalAdultMain(PatientAdultMain adultMain)
         {
             try
-            {
-                string result = "";
-                result=adultMain.SaveDentalAdultMain();
+            {                
+               var result=adultMain.SaveDentalAdultMain();
+                if (result == null) return NotFound();
                 return Ok(result);
             }
             catch (Exception ex)
             {
-
                 throw;
             }
         }

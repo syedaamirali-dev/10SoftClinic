@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using _10SoftDental.Factory.DentalClinic;
 using _10SoftDental.Factory.DentalMaster;
 using ApplicationUtility;
 
@@ -55,23 +56,41 @@ namespace _10SoftDental.DAL.Master
         }
 
 
-        public string SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        //public string SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        //{
+        //    dataSet = new DataSet();
+        //    _storedProcedure = "Dental_SaveVisitRegister";
+        //    _parameters = new SqlParameter[5];
+        //    _parameters[0] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
+        //    _parameters[0].Value = visitRegisterId;
+        //    _parameters[1] = new SqlParameter("@IssueDate", SqlDbType.Date);
+        //    _parameters[1].Value = IssueDate;
+        //    _parameters[2] = new SqlParameter("@DoctorIdRef", SqlDbType.BigInt);
+        //    _parameters[2].Value = doctorId;
+        //    _parameters[3] = new SqlParameter("@PatientId", SqlDbType.BigInt);
+        //    _parameters[3].Value = patientId;
+        //    _parameters[4] = new SqlParameter("@CreatedBy", SqlDbType.BigInt);
+        //    _parameters[4].Value = modifiedBy;
+        //    dataSet = RunProcedure(_storedProcedure, _parameters, true);
+        //    return (dataSet.Tables[0].Rows[0][0].ToString());
+        //}
+        public DataSet SaveVisitRegister(IDentalMaster visitHistory)
         {
             dataSet = new DataSet();
             _storedProcedure = "Dental_SaveVisitRegister";
             _parameters = new SqlParameter[5];
             _parameters[0] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
-            _parameters[0].Value = visitRegisterId;
+            _parameters[0].Value = visitHistory.VisitID;
             _parameters[1] = new SqlParameter("@IssueDate", SqlDbType.Date);
-            _parameters[1].Value = IssueDate;
+            _parameters[1].Value = visitHistory.IssueDate;
             _parameters[2] = new SqlParameter("@DoctorIdRef", SqlDbType.BigInt);
-            _parameters[2].Value = doctorId;
+            _parameters[2].Value = visitHistory.DoctorId;
             _parameters[3] = new SqlParameter("@PatientId", SqlDbType.BigInt);
-            _parameters[3].Value = patientId;
+            _parameters[3].Value = visitHistory.PatientId;
             _parameters[4] = new SqlParameter("@CreatedBy", SqlDbType.BigInt);
-            _parameters[4].Value = modifiedBy;
+            _parameters[4].Value = visitHistory.CreatedBy;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
-            return (dataSet.Tables[0].Rows[0][0].ToString());
+            return dataSet;
         }
 
         public DataSet GetPatientVisitRegister(long? patientId, long? doctorId)
