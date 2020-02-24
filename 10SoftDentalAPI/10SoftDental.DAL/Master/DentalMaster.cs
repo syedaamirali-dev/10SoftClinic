@@ -18,14 +18,16 @@ namespace _10SoftDental.DAL.Master
         {
         }
 
-        public DataSet GetDentalChartNotations(int? dentalNotationId,int langId)
+        public DataSet GetDentalChartNotations(int? dentalNotationId,int langId,string ApiUri)
         {
             _storedProcedure = "GetDentalChartNotations";
-            _parameters = new SqlParameter[2];
+            _parameters = new SqlParameter[3];
             _parameters[0] = new SqlParameter("@DentalNotationId", SqlDbType.Int);
             _parameters[0].Value = dentalNotationId;
             _parameters[1] = new SqlParameter("@LangId", SqlDbType.Int);
             _parameters[1].Value = langId;
+            _parameters[2] = new SqlParameter("@ApiUri", SqlDbType.VarChar);
+            _parameters[2].Value = ApiUri;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
         public DataSet SaveDentalChartNotations(IDentalMaster dentalMaster)

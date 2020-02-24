@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,6 +14,7 @@ namespace _10SoftDental.Controllers
 {
     public class DentalMasterController : ApiController
     {
+        public static string ApiUri = ConfigurationManager.AppSettings["AppURL"].ToString();
         private DentalMaster dentalMassterBAL;
         private string destinationPath { get; set; }
         public DentalMasterController()
@@ -23,7 +25,8 @@ namespace _10SoftDental.Controllers
         [HttpGet]
         public IHttpActionResult GetDentalChartNotations(int? dentalNotationId, int langId)
         {
-            var result = this.dentalMassterBAL.GetDentalChartNotations(dentalNotationId, langId);
+            var result = this.dentalMassterBAL.GetDentalChartNotations(dentalNotationId, langId, ApiUri);
+          
             if (result == null) return NotFound();
             return Ok(result);
         }
@@ -47,13 +50,24 @@ namespace _10SoftDental.Controllers
         }
 
         [HttpPost]
-        public async Task<IHttpActionResult> SaveDentalChartNotations(DentalMaster dentalMaster)
+        public async Task<IHttpActionResult> SaveDentalChartNotations()//DentalMaster dentalMaster
         {
+            DentalMaster dentalMaster = new DentalMaster();
+            dentalMaster.DentalNotationId = Convert.ToInt32(HttpContext.Current.Request.Form["dentalNotationId"]);
+            dentalMaster.PatientType = Convert.ToBoolean(HttpContext.Current.Request.Form["patientType"]);
+            dentalMaster.IconNameEn = Convert.ToString(HttpContext.Current.Request.Form["iconNameEn"]);
+            dentalMaster.IconNameAr = Convert.ToString(HttpContext.Current.Request.Form["iconNameAr"]);
+            dentalMaster.DescriptionEn = Convert.ToString(HttpContext.Current.Request.Form["descriptionEn"]);
+            dentalMaster.DescriptionAr = Convert.ToString(HttpContext.Current.Request.Form["descriptionAr"]);
+            dentalMaster.IsActive = Convert.ToBoolean(HttpContext.Current.Request.Form["isActive"]);
+            dentalMaster.CreatedBy = Convert.ToInt32(HttpContext.Current.Request.Form["createdBy"]);
             if (HttpContext.Current.Request.Files.AllKeys.Any())
-            { 
+            {
                 this.destinationPath = "Images\\DentalNotationImgs\\"; 
-                dentalMaster.ImageURL = await UploadNotationImage(HttpContext.Current);
+                string ImageName = await UploadNotationImage(HttpContext.Current);
+                dentalMaster.ImageURL = destinationPath + ImageName;
             }
+
             var result = dentalMaster.SaveDentalChartNotations();
             if (result == null) return NotFound();
             return Ok(result);
@@ -118,7 +132,7 @@ namespace _10SoftDental.Controllers
                      //string errorPath = Path.Combine(HttpRuntime.AppDomainAppPath, "logFiles\\");
                      newFilename = DateTime.Now.Ticks + file.FileName;
                      file.SaveAs(path+ newFilename);
-                     return path + newFilename;
+                     return newFilename;
             }
             catch (Exception ex)
             {

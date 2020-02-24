@@ -62,9 +62,9 @@ namespace _10SoftDental.BAL.Dental
             return new DAL.Master.DentalMaster().SaveDentalChartNotations(this);
         }
 
-        public DataSet GetDentalChartNotations(int? dentalNotationId, int langId)
+        public DataSet GetDentalChartNotations(int? dentalNotationId, int langId,string ApiUri)
         {
-            return new DAL.Master.DentalMaster().GetDentalChartNotations(dentalNotationId, langId);
+            return new DAL.Master.DentalMaster().GetDentalChartNotations(dentalNotationId, langId, ApiUri);
         }
 
         public DataSet GetPatientVisitRegister(long? patientId, long? doctorId)
