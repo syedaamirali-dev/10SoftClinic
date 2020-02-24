@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10SoftDental.Factory.DentalClinic;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _10SoftDental.Factory.DentalMaster
 {
-   public interface IDentalMaster
+   public interface IDentalMaster : IVisitHistory
     {
         int? DentalNotationId { get; set; }
         bool PatientType { get; set; }

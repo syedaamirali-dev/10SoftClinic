@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Data;
 using _10SoftDental.Factory.DentalMaster;
+using _10SoftDental.Factory.DentalClinic;
+using _10SoftDental.Factory.Common;
 
 namespace _10SoftDental.BAL.Dental
 {
-    public class DentalMaster : IDentalMaster
+    public class DentalMaster : IDentalMaster,IVisitHistory, ICommonResponse
     {
+        private CommonResponse commonResponseResult;
+        private DAL.Master.DentalMaster dentalMaster;
+        private DataSet dataSet;
         private int? dentalNotationId;
         private bool patientType;
         private string iconNameEn;
@@ -16,6 +21,31 @@ namespace _10SoftDental.BAL.Dental
         private bool isActive;
         private int? createdBy;
         private int langId;
+
+        private int? visitID;
+        private DateTime? visitDate;
+        private DateTime? issueDate;
+        private int? doctorId;
+        private int? patientId;
+
+        public DentalMaster()
+        {            
+            this.commonResponseResult = new CommonResponse();
+            this.dentalMaster = new DAL.Master.DentalMaster();
+            this.dataSet = new DataSet();
+        }
+        public ResponseModel CreateResponse(bool status, string messageCode, string message, object data)
+        {
+            return this.commonResponseResult.CreateResponse(status, messageCode, message, data);
+        }
+        public int? VisitID { get => visitID; set => visitID = value; }
+        public int? DoctorId { get => doctorId; set => doctorId = value; }
+        public int? PatientId { get => patientId; set => patientId = value; }
+
+        public DateTime? VisitDate { get => visitDate; set => visitDate = value; }
+
+        public DateTime? IssueDate { get => issueDate; set => issueDate = value; }
+
         public int? DentalNotationId { get => dentalNotationId; set => dentalNotationId = value; }
         public bool PatientType { get => patientType; set => patientType = value; }
         public string IconNameEn { get => iconNameEn; set => iconNameEn = value; }
@@ -48,9 +78,18 @@ namespace _10SoftDental.BAL.Dental
         }
 
 
-        public string SaveVisitRegister(long? visitRegisterId, DateTime IssueDate, long? doctorId, long? patientId, long? modifiedBy)
+        public ResponseModel SaveVisitRegister(DentalMaster dentalMaster)
         {
-            return new DAL.Master.DentalMaster().SaveVisitRegister(visitRegisterId, IssueDate,doctorId,patientId,modifiedBy);
+            try
+            {
+                dataSet = this.dentalMaster.SaveVisitRegister(dentalMaster);
+                return CreateResponse(Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", dataSet.Tables[0].Rows[0]["Message"].ToString(), dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
+                   
         }
 
         public DataSet Dental_GetDropdownMasterData()

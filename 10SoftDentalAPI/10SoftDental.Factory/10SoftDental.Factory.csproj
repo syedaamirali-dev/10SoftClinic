@@ -53,6 +53,7 @@
     <Compile Include="DentalClinic\IPatientAdultMainScreen.cs" />
     <Compile Include="DentalClinic\IPatientScreeningSheet.cs" />
     <Compile Include="DentalClinic\ITeethSectionNotationMapping.cs" />
+    <Compile Include="DentalClinic\IVisitHistory.cs" />
     <Compile Include="DentalMaster\IDentalMaster.cs" />
     <Compile Include="Helper\ListToDatatable.cs" />
     <Compile Include="Models\DoctorTreatment.cs" />
