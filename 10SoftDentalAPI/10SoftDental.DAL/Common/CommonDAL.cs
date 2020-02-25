@@ -173,5 +173,25 @@ namespace _10SoftDental.DAL.Common
             _parameters[4].Value = dentalMainId;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
+
+
+        public DataSet Dental_SavePatientHistory(IPatientAdultMainScreen patientAdultMain)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_SavePatientHistory";
+            _parameters = new SqlParameter[5];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[0].Value = patientAdultMain.DentalAdultMainId;
+            _parameters[1] = new SqlParameter("@IsPatientTreatedPreviously", SqlDbType.Bit);
+            _parameters[1].Value = patientAdultMain.IsPatientTreatedPreviously;
+            _parameters[2] = new SqlParameter("@DetailsHistoryTreatment", SqlDbType.NVarChar);
+            _parameters[2].Value = patientAdultMain.DetailsHistoryTreatment;
+            _parameters[3] = new SqlParameter("@IsPatientHaveMedicalCondition", SqlDbType.Bit);
+            _parameters[3].Value = patientAdultMain.IsPatientHaveMedicalCondition;
+            _parameters[4] = new SqlParameter("@MedicalConditionDetails", SqlDbType.NVarChar);
+            _parameters[4].Value = patientAdultMain.MedicalConditionDetails;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
     }
 }

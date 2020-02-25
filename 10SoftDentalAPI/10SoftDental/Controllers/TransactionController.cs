@@ -27,6 +27,20 @@ namespace _10SoftDental.Controllers
             }
         }
 
+        [HttpPost]
+        public IHttpActionResult SavePatientHistory(PatientAdultMain adultMain)
+        {
+            try
+            {
+                var result = adultMain.SavePatientHistory();
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
         //http://localhost:55453/api/Transaction/GetAdultMainScreeningData?clinicId=3&patientId=15&Mobile=&doctorId=&DoctorTreatmentId=35&dentalMainId=1
         [HttpGet]
         public IHttpActionResult GetAdultMainScreeningData(int? clinicId, long patientId, string Mobile, long? doctorId, long? DoctorTreatmentId, long? dentalMainId)

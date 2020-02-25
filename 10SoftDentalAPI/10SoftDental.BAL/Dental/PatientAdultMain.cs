@@ -33,6 +33,11 @@ namespace _10SoftDental.BAL.Dental
         private bool? isAdult;
         private List<TeethSectionNotationMapping> teethSectionNotationMapping;
         private DataTable teethSectionNotationMappingDT;
+        private bool? isPatientTreatedPreviously;
+        private bool? isPatientHaveMedicalCondition;
+        private string detailsHistoryTreatment;
+        private string medicalConditionDetails;
+
 
         public PatientAdultMain()
         {
@@ -63,6 +68,10 @@ namespace _10SoftDental.BAL.Dental
         public string PatientNameEn { get => patientNameEn; set => patientNameEn = value; }
         public string PatientNameAr { get => patientNameAr; set => patientNameAr = value; }
         public bool? IsAdult { get => isAdult; set => isAdult = value; }
+        public bool? IsPatientTreatedPreviously { get => isPatientTreatedPreviously; set => isPatientTreatedPreviously = value; }
+        public bool? IsPatientHaveMedicalCondition { get => isPatientHaveMedicalCondition; set => isPatientHaveMedicalCondition = value; }
+        public string DetailsHistoryTreatment { get => detailsHistoryTreatment; set => detailsHistoryTreatment = value; }
+        public string MedicalConditionDetails { get => medicalConditionDetails; set => medicalConditionDetails = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -80,6 +89,21 @@ namespace _10SoftDental.BAL.Dental
                 return CreateResponse(false, "Error", ex.InnerException.ToString(), "");                
             }
             
+        }
+
+        public ResponseModel SavePatientHistory()
+        {
+            try
+            {
+                commonDAL = new CommonDAL();
+                dataSet = commonDAL.Dental_SavePatientHistory(this);
+                return CreateResponse(Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", dataSet.Tables[0].Rows[0]["Message"].ToString(), dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
+
         }
 
         public PatientAdultMain Dental_GetAdultMainScreeningData(int? clinicId, long patientId, string Mobile, long? doctorId, long? DoctorTreatmentId, long? dentalMainId)
@@ -100,8 +124,15 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.IssueDate =Convert.ToDateTime(dataSet.Tables[0].Rows[0]["VRIssueDate"].ToString());
                 patientBAL.DoctorAssignedTo = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DoctorAssignedTo"]);
                 patientBAL.Comments =dataSet.Tables[0].Rows[0]["Comments"].ToString();
-                patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
                 patientBAL.IsAdult = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsAdult"]);
+                patientBAL.IsPatientHaveMedicalCondition = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsPatientHaveMedicalCondition"]);
+                patientBAL.MedicalConditionDetails= dataSet.Tables[0].Rows[0]["MedicalConditionDetails"].ToString();
+                patientBAL.IsPatientTreatedPreviously= Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsPatientTreatedPreviously"]);
+                patientBAL.DetailsHistoryTreatment = dataSet.Tables[0].Rows[0]["DetailsHistoryTreatment"].ToString();
+                if(dataSet.Tables.Count>1)
+                { 
+                    patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
+                }
             }
             return patientBAL;
         }

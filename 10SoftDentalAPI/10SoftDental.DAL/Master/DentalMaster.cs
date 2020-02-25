@@ -147,5 +147,7 @@ namespace _10SoftDental.DAL.Master
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
+
+        
     }
 }
