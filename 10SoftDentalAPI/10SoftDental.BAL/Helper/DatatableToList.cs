@@ -25,5 +25,24 @@ namespace _10SoftDental.BAL.Helper
                                      }).ToList();
                 return convertedList.ConvertAll<TeethSectionNotationMapping>(o => (TeethSectionNotationMapping)o);
             }
+
+        public List<PatientMedication> PatientMedicationList(DataTable dt)
+        {
+            var convertedList = (from col in dt.AsEnumerable()
+                                 select new PatientMedication()
+                                 {
+                                     DoctorTreatmentMedicationId = Convert.ToInt64(col["DoctorTreatmentMedicationId"]),
+                                     NoOfTimes = Convert.ToInt16(col["NoOfTimes"]),
+                                     DosageIdRef = Convert.ToInt32(col["DosageIdRef"]),
+                                     Quantities = Convert.ToInt32(col["Quantities"]),
+                                     MedicineIdRef = Convert.ToInt64(col["MedicineIdRef"]),
+                                     DentalAdultMainId = Convert.ToInt64(col["DentalAdultMainId"]),
+                                     MedicineAr = Convert.ToString(col["MedicineAr"]),
+                                     MedicineEn = Convert.ToString(col["MedicineEn"]),
+                                     DosageEn = Convert.ToString(col["DosageEn"]),
+                                     DosageAr = Convert.ToString(col["DosageAr"]),
+                                 }).ToList();
+            return convertedList.ConvertAll<PatientMedication>(o => (PatientMedication)o);
+        }
     }
 }

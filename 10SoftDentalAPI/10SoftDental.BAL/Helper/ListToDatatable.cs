@@ -67,6 +67,33 @@ namespace _10SoftDental.BAL.Helper
             return dataTable;
         }
 
+        public DataTable ToDataTablePatientMedication(List<PatientMedication> datalist)
+        {
+            dataTable = new DataTable();
+            DataRow row = null;
+            dataTable.Columns.Add("DoctorTreatmentMedicationId", typeof(long));
+            dataTable.Columns.Add("DoctorTreatmentIdRef", typeof(long));
+            dataTable.Columns.Add("MedicineIdRef", typeof(long));
+            dataTable.Columns.Add("DosageIdRef", typeof(long));
+            dataTable.Columns.Add("NoOfTimeInDay", typeof(int));
+            dataTable.Columns.Add("Quantities", typeof(int));
+            dataTable.Columns.Add("DentalAdultMainId", typeof(long));
+
+            for (int i = 0; i < datalist.Count; i++)
+            {
+                row = dataTable.NewRow();
+                row["DoctorTreatmentMedicationId"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentMedicationId);
+                row["DoctorTreatmentIdRef"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentIdRef);
+                row["MedicineIdRef"] = DataTypesUtilities.IntNZ(datalist[i].MedicineIdRef);
+                row["DosageIdRef"] = DataTypesUtilities.LongNZ(datalist[i].DosageIdRef);
+                row["NoOfTimeInDay"] = DataTypesUtilities.IntNZ(datalist[i].NoOfTimes);
+                row["Quantities"] = DataTypesUtilities.IntNZ(datalist[i].Quantities);
+                row["DentalAdultMainId"] = DataTypesUtilities.LongNZ(datalist[i].DentalAdultMainId);
+                dataTable.Rows.Add(row);
+            }
+            return dataTable;
+        }
+
         public DataTable ToDataTableIllness(List<DoctorTreatmentIllness> datalist)
         {
             dataTable = new DataTable();

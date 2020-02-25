@@ -1,4 +1,4 @@
-﻿﻿using _10SoftDental.Factory.DentalClinic;
+﻿using _10SoftDental.Factory.DentalClinic;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +12,9 @@ namespace _10SoftDental.BAL.Dental
     {
         private PatientAdultMain patientBAL = null;
         private CommonResponse commonResponseResult;
+        private List<PatientMedication> patientMedicationList = null;
         DataSet dataSet = null;
+        DataTable dataTable = null;
         private long? dentalAdultMainId;
         private string doctorTreatmentNumber;
         private long visitRegisterId;
@@ -41,7 +43,7 @@ namespace _10SoftDental.BAL.Dental
 
         public PatientAdultMain()
         {
-            this.commonResponseResult = new CommonResponse();           
+            this.commonResponseResult = new CommonResponse();
             this.dataSet = new DataSet();
         }
         public ResponseModel CreateResponse(bool status, string messageCode, string message, object data)
@@ -86,11 +88,26 @@ namespace _10SoftDental.BAL.Dental
             }
             catch (Exception ex)
             {
-                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");                
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
             }
-            
+
         }
 
+        public ResponseModel SavePatientMedication(List<PatientMedication> patientMedicationList)
+        {
+            try
+            {
+                commonDAL = new CommonDAL();
+                dataTable = new DataTable();
+                dataTable = new ListToDatatable().ToDataTablePatientMedication(patientMedicationList);
+                dataSet = commonDAL.SaveDentalAdultMain(this);
+                return CreateResponse(Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", dataSet.Tables[0].Rows[0]["Message"].ToString(), dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
+        }
         public ResponseModel SavePatientHistory()
         {
             try
@@ -111,30 +128,49 @@ namespace _10SoftDental.BAL.Dental
             patientBAL = new PatientAdultMain();
             dataSet = new DataSet();
             dataSet = new DAL.Master.DentalMaster().Dental_GetAdultMainScreeningData(clinicId, patientId, Mobile, doctorId, DoctorTreatmentId, dentalMainId);
-            if(dentalMainId>0)
-            { 
+            if (dentalMainId > 0)
+            {
                 patientBAL.visitRegisterId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VisitRegisterId"]);
-                patientBAL.VisitRegisterNumber= dataSet.Tables[0].Rows[0]["VRNo"].ToString();
+                patientBAL.VisitRegisterNumber = dataSet.Tables[0].Rows[0]["VRNo"].ToString();
                 patientBAL.DoctorTreatmentId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DoctorTreatmentId"]);
                 patientBAL.DoctorTreatmentNumber = dataSet.Tables[0].Rows[0]["DTNo"].ToString();
                 patientBAL.PatientCode = dataSet.Tables[0].Rows[0]["PatientCode"].ToString();
                 patientBAL.PatientNameEn = dataSet.Tables[0].Rows[0]["ForeignName"].ToString();
                 patientBAL.PatientNameAr = dataSet.Tables[0].Rows[0]["LocalName"].ToString();
                 patientBAL.DocumentTypeId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DocumentTypeId"]);
-                patientBAL.IssueDate =Convert.ToDateTime(dataSet.Tables[0].Rows[0]["VRIssueDate"].ToString());
+                patientBAL.IssueDate = Convert.ToDateTime(dataSet.Tables[0].Rows[0]["VRIssueDate"].ToString());
                 patientBAL.DoctorAssignedTo = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DoctorAssignedTo"]);
-                patientBAL.Comments =dataSet.Tables[0].Rows[0]["Comments"].ToString();
+                patientBAL.Comments = dataSet.Tables[0].Rows[0]["Comments"].ToString();
                 patientBAL.IsAdult = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsAdult"]);
                 patientBAL.IsPatientHaveMedicalCondition = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsPatientHaveMedicalCondition"]);
-                patientBAL.MedicalConditionDetails= dataSet.Tables[0].Rows[0]["MedicalConditionDetails"].ToString();
-                patientBAL.IsPatientTreatedPreviously= Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsPatientTreatedPreviously"]);
+                patientBAL.MedicalConditionDetails = dataSet.Tables[0].Rows[0]["MedicalConditionDetails"].ToString();
+                patientBAL.IsPatientTreatedPreviously = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsPatientTreatedPreviously"]);
                 patientBAL.DetailsHistoryTreatment = dataSet.Tables[0].Rows[0]["DetailsHistoryTreatment"].ToString();
-                if(dataSet.Tables.Count>1)
-                { 
+                if (dataSet.Tables.Count > 1)
+                {
                     patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
                 }
             }
             return patientBAL;
+        }
+
+        public List<PatientMedication> Dental_PatientMedication(long dentalAdultMainId)
+        {
+            patientMedicationList = new List<PatientMedication>();
+            dataSet = new DataSet();
+            dataSet = new DAL.Common.CommonDAL().Dental_PatientMedication(dentalAdultMainId);
+            if (dataSet.Tables.Count > 0)
+            {
+                patientMedicationList = new Helper.DatatableToList().PatientMedicationList(dataSet.Tables[0]);
+            }
+            return patientMedicationList;
+        }
+
+        public DataSet Dental_GetPatienDropdownData()
+        {
+            dataSet = new DataSet();
+            dataSet = new DAL.Common.CommonDAL().Dental_GetPatienDropdownData();
+            return dataSet;
         }
     }
 

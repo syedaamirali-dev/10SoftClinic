@@ -49,6 +49,7 @@
     <Compile Include="Dental\AdultTreatmentMain.cs" />
     <Compile Include="Dental\DentalMaster.cs" />
     <Compile Include="Dental\PatientAdultMain.cs" />
+    <Compile Include="Dental\PatientMedication.cs" />
     <Compile Include="Helper\DatatableToList.cs" />
     <Compile Include="Helper\ListToDatatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

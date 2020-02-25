@@ -103,11 +103,23 @@ namespace _10SoftDental.DAL.Common
                 throw;
             }
         }
-
+        public DataSet SavePatientMedication(DataTable patientMedicationDt)
+        {
+            _storedProcedure = "Dental_SavePatientMedication";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@Diagnosis", SqlDbType.Structured);
+            _parameters[0].Value = patientMedicationDt;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
 
         public DataSet GetDentalAdultDropdownMaster()
         {
             _storedProcedure = "GetDentalAdultDropdownMaster";
+            return RunProcedure(_storedProcedure, true);
+        }
+        public DataSet Dental_GetPatienDropdownData()
+        {
+            _storedProcedure = "Dental_GetPatienDropdownData";
             return RunProcedure(_storedProcedure, true);
         }
 
@@ -190,6 +202,17 @@ namespace _10SoftDental.DAL.Common
             _parameters[3].Value = patientAdultMain.IsPatientHaveMedicalCondition;
             _parameters[4] = new SqlParameter("@MedicalConditionDetails", SqlDbType.NVarChar);
             _parameters[4].Value = patientAdultMain.MedicalConditionDetails;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+        public DataSet Dental_PatientMedication(long dentalAdultMainId)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_PatientMedication";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[0].Value = dentalAdultMainId;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
