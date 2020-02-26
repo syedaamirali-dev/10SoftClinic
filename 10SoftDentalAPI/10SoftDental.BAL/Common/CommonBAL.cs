@@ -57,6 +57,18 @@ namespace _10SoftDental.BAL.Common
             {
                 return this.commonResponseResult.CreateResponse(false, "Error", ex.Message.ToString(), "");
             }
+        }
+        public ResponseModel GetAllVisitList(int? userId)
+        {
+            try
+            {
+                _dataSet = this.commonDAL.GetAllVisitList(userId);
+                return CreateResponse(true, "Success", "GetAllVisitList", _dataSet);
+            }
+            catch (Exception ex)
+            {
+                return this.commonResponseResult.CreateResponse(false, "Error", ex.Message.ToString(), "");
+            }
 
         }
     }
