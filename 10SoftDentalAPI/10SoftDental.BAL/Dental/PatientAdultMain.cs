@@ -59,6 +59,7 @@ namespace _10SoftDental.BAL.Dental
         private string approvedStatus ;
         private long? caseAssignedStudentId ;
         private bool isSentforCaseStudy;
+        private long? vRDoctorIdRef;
 
 
 
@@ -104,6 +105,7 @@ namespace _10SoftDental.BAL.Dental
         public string ApprovedStatus { get => approvedStatus; set => approvedStatus = value; }
         public long? CaseAssignedStudentId { get => caseAssignedStudentId; set => caseAssignedStudentId = value; }
         public bool IsSentforCaseStudy { get => isSentforCaseStudy; set => isSentforCaseStudy = value; }
+        public long? VRDoctorIdRef { get => vRDoctorIdRef; set => vRDoctorIdRef = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -247,6 +249,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.ApprovedStatus = dataSet.Tables[0].Rows[0]["ApprovedStatus"].ToString();
                 patientBAL.CaseAssignedStudentId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["CaseAssignedStudentId"]);
                 patientBAL.IsSentforCaseStudy = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsSentforCaseStudy"]);
+                patientBAL.VRDoctorIdRef = Convert.ToInt64(dataSet.Tables[0].Rows[0]["IsSentforCaseStudy"]);
                 if (dataSet.Tables.Count > 1)
                 {
                     patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
