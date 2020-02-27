@@ -1,4 +1,5 @@
 ﻿using _10SoftDental.Factory.DentalClinic;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -229,6 +230,77 @@ namespace _10SoftDental.DAL.Common
             _parameters = new SqlParameter[1];
             _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
             _parameters[0].Value = dentalAdultMainId;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+        public DataSet Dental_SendforApproval(long dentalAdultMainId,bool IsSentforApproval)
+        {
+             dataSet = new DataSet();
+            _storedProcedure = "Dental_SendforApproval";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[0].Value = dentalAdultMainId;
+            _parameters[1] = new SqlParameter("@Status", SqlDbType.Bit);
+            _parameters[1].Value = IsSentforApproval;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+        public DataSet Dental_SendforCaseStudy(IPatientAdultMainScreen patientAdultMainScreen)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_SendforCaseStudy";
+            _parameters = new SqlParameter[3];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[0].Value = Convert.ToInt64(patientAdultMainScreen.DentalAdultMainId);
+            _parameters[1] = new SqlParameter("@Status", SqlDbType.Bit);
+            _parameters[1].Value = Convert.ToBoolean(patientAdultMainScreen.IsSentforCaseStudy);
+            _parameters[2] = new SqlParameter("@CaseAssignedStudentId", SqlDbType.BigInt);
+            _parameters[2].Value = Convert.ToInt64(patientAdultMainScreen.CaseAssignedStudentId);
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+        public DataSet Dental_ApproveCaseStudy(IPatientAdultMainScreen patientAdultMainScreen)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_ApproveCaseStudy";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[0].Value = Convert.ToInt64(patientAdultMainScreen.DentalAdultMainId);
+            _parameters[1] = new SqlParameter("@ApprovedStatus", SqlDbType.NVarChar);
+            _parameters[1].Value = patientAdultMainScreen.ApprovedStatus;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+
+        public DataSet Dental_SavePatientCaseSheet(IPatientAdultMainScreen patientAdultMain)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_SavePatientCaseSheet";
+            _parameters = new SqlParameter[10];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.Int);
+            _parameters[0].Value = patientAdultMain.DentalAdultMainId;
+            _parameters[1] = new SqlParameter("@Temperature", SqlDbType.BigInt);
+            _parameters[1].Value = patientAdultMain.Temperature;
+            _parameters[2] = new SqlParameter("@RespiratoryRate", SqlDbType.NVarChar);
+            _parameters[2].Value = patientAdultMain.RespiratoryRate;
+            _parameters[3] = new SqlParameter("@PulseRate", SqlDbType.BigInt);
+            _parameters[3].Value = patientAdultMain.PulseRate;
+            _parameters[4] = new SqlParameter("@FamilyHistory", SqlDbType.BigInt);
+            _parameters[4].Value = patientAdultMain.FamilyHistory;
+            _parameters[5] = new SqlParameter("@SocialHistory", SqlDbType.BigInt);
+            _parameters[5].Value = patientAdultMain.SocialHistory;
+            _parameters[6] = new SqlParameter("@MedicalHistory", SqlDbType.BigInt);
+            _parameters[6].Value = patientAdultMain.MedicalHistory;
+            _parameters[7] = new SqlParameter("@DentalHistory", SqlDbType.BigInt);
+            _parameters[7].Value = patientAdultMain.DentalHistory;
+            _parameters[8] = new SqlParameter("@HistoryOfIllness", SqlDbType.BigInt);
+            _parameters[8].Value = patientAdultMain.HistoryOfIllness;
+            _parameters[9] = new SqlParameter("@CaseChiefComplaint", SqlDbType.BigInt);
+            _parameters[9].Value = patientAdultMain.CaseChiefComplaint;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
