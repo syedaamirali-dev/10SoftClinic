@@ -279,7 +279,7 @@ namespace _10SoftDental.DAL.Common
         {
             dataSet = new DataSet();
             _storedProcedure = "Dental_SavePatientCaseSheet";
-            _parameters = new SqlParameter[10];
+            _parameters = new SqlParameter[11];
             _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
             _parameters[0].Value = patientAdultMain.DentalAdultMainId;
             _parameters[1] = new SqlParameter("@Temperature", SqlDbType.NVarChar);
@@ -300,6 +300,8 @@ namespace _10SoftDental.DAL.Common
             _parameters[8].Value = patientAdultMain.HistoryOfIllness;
             _parameters[9] = new SqlParameter("@CaseChiefComplaint", SqlDbType.NVarChar);
             _parameters[9].Value = patientAdultMain.CaseChiefComplaint;
+            _parameters[10] = new SqlParameter("@BloodPressure", SqlDbType.NVarChar);
+            _parameters[10].Value = patientAdultMain.BloodPressure;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
