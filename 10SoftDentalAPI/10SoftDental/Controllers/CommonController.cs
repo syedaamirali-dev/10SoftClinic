@@ -30,5 +30,13 @@ namespace _10SoftDental.Controllers
             if (result == null) return NotFound();
             return Ok(result);
         }
+
+        [HttpGet]
+        public IHttpActionResult GetAllVisitList(int? userId)
+        {
+            var result = this.commonBAL.GetAllVisitList(userId);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
     }
 }

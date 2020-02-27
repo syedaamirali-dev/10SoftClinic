@@ -31,7 +31,7 @@ namespace _10SoftDental.Factory.Models
         public long DoctorTreatmentSymptomId { get; set; }
         public long DoctorTreatmentIdRef { get; set; }
 
-        public int SymptonIdRef { get; set; }
+        public int SymptomIdRef { get; set; }
         public long Level { get; set; }
         public string Comment { get; set; }
     }

@@ -123,7 +123,7 @@ namespace _10SoftDental.BAL.Helper
             DataRow row = null;
             dataTable.Columns.Add("DoctorTreatmentSymptomId", typeof(long));
             dataTable.Columns.Add("DoctorTreatmentIdRef", typeof(long));
-            dataTable.Columns.Add("SymptonIdRef", typeof(int));
+            dataTable.Columns.Add("SymptomIdRef", typeof(int));
             dataTable.Columns.Add("Level", typeof(long));
             dataTable.Columns.Add("Comment", typeof(string));
 
@@ -132,7 +132,7 @@ namespace _10SoftDental.BAL.Helper
                 row = dataTable.NewRow();
                 row["DoctorTreatmentSymptomId"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentSymptomId);
                 row["DoctorTreatmentIdRef"] = DataTypesUtilities.LongNZ(datalist[i].DoctorTreatmentIdRef);
-                row["SymptonIdRef"] = DataTypesUtilities.IntNZ(datalist[i].SymptonIdRef);
+                row["SymptonIdRef"] = DataTypesUtilities.IntNZ(datalist[i].SymptomIdRef);
                 row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
                 row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
                 dataTable.Rows.Add(row);
