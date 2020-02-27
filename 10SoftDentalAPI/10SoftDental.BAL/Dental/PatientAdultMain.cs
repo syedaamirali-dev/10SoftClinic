@@ -214,6 +214,9 @@ namespace _10SoftDental.BAL.Dental
             dataSet = new DAL.Master.DentalMaster().Dental_GetAdultMainScreeningData(clinicId, patientId, Mobile, doctorId, DoctorTreatmentId, dentalMainId);
             if (dentalMainId > 0)
             {
+                patientBAL.DentalAdultMainId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DentalAdultMainId"]);
+                patientBAL.PatientId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["PatientIdRef"]);
+                patientBAL.ClinicId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["ClinicIdRef"]);
                 patientBAL.visitRegisterId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VisitRegisterId"]);
                 patientBAL.VisitRegisterNumber = dataSet.Tables[0].Rows[0]["VRNo"].ToString();
                 patientBAL.DoctorTreatmentId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DoctorTreatmentId"]);
