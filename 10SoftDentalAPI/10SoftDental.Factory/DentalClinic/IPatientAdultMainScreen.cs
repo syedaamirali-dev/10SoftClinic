@@ -28,6 +28,20 @@ namespace _10SoftDental.Factory.DentalClinic
         bool? IsPatientHaveMedicalCondition { get; set; }
         string DetailsHistoryTreatment { get; set; }
         string MedicalConditionDetails { get; set; }
+        string CaseChiefComplaint { get; set; }
+        string HistoryOfIllness { get; set; }
+        string DentalHistory { get; set; }
+        string MedicalHistory { get; set; }
+        string SocialHistory { get; set; }
+        string FamilyHistory { get; set; }
+        string BloodPressure { get; set; }
+        string PulseRate { get; set; }
+        string RespiratoryRate { get; set; }
+        bool? IsSentForApproval { get; set; }
+        string Temperature { get; set; }
+        string ApprovedStatus { get; set; }
+        long? CaseAssignedStudentId { get; set; }
+        bool IsSentforCaseStudy { get; set; }
 
         //List<ITeethSectionNotationMapping> ITeethSectionNotationMapping { get; set; }
         DataTable TeethSectionNotationMappingDT { get; set; }

@@ -127,9 +127,11 @@ namespace _10SoftDental.DAL.Master
             return dataSet;
         }
 
+       
+
         public DataSet Dental_GetAdultMainScreeningData(int? clinicId,long patientId,string Mobile,long? doctorId,long? DoctorTreatmentId,long? dentalMainId)
         {
-            dataSet = new DataSet();
+             dataSet = new DataSet();
             _storedProcedure = "GetAdultMainScreeningData";
             _parameters = new SqlParameter[6];
             _parameters[0] = new SqlParameter("@ClinicId", SqlDbType.Int);
@@ -144,10 +146,8 @@ namespace _10SoftDental.DAL.Master
             _parameters[4].Value = DoctorTreatmentId;
             _parameters[5] = new SqlParameter("@DentalMainId", SqlDbType.BigInt);
             _parameters[5].Value = dentalMainId;
-            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
-
-        
     }
 }
