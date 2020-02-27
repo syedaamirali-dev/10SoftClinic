@@ -249,7 +249,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.ApprovedStatus = dataSet.Tables[0].Rows[0]["ApprovedStatus"].ToString();
                 patientBAL.CaseAssignedStudentId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["CaseAssignedStudentId"]);
                 patientBAL.IsSentforCaseStudy = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsSentforCaseStudy"]);
-                patientBAL.VRDoctorIdRef = Convert.ToInt64(dataSet.Tables[0].Rows[0]["IsSentforCaseStudy"]);
+                patientBAL.VRDoctorIdRef = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VRDoctorIdRef"]);
                 if (dataSet.Tables.Count > 1)
                 {
                     patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
