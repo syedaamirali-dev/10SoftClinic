@@ -60,6 +60,8 @@ namespace _10SoftDental.BAL.Dental
         private long? caseAssignedStudentId ;
         private bool isSentforCaseStudy;
         private long? vRDoctorIdRef;
+        private string doctorAssignedEn;
+        private string doctorAssignedAr;
 
 
 
@@ -106,6 +108,8 @@ namespace _10SoftDental.BAL.Dental
         public long? CaseAssignedStudentId { get => caseAssignedStudentId; set => caseAssignedStudentId = value; }
         public bool IsSentforCaseStudy { get => isSentforCaseStudy; set => isSentforCaseStudy = value; }
         public long? VRDoctorIdRef { get => vRDoctorIdRef; set => vRDoctorIdRef = value; }
+        public string DoctorAssignedEn { get => doctorAssignedEn; set => doctorAssignedEn = value; }
+        public string DoctorAssignedAr { get => doctorAssignedAr; set => doctorAssignedAr = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -245,6 +249,8 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.PulseRate = dataSet.Tables[0].Rows[0]["PulseRate"].ToString();
                 patientBAL.RespiratoryRate = dataSet.Tables[0].Rows[0]["RespiratoryRate"].ToString();
                 patientBAL.Temperature = dataSet.Tables[0].Rows[0]["Temperature"].ToString();
+                patientBAL.DoctorAssignedEn = dataSet.Tables[0].Rows[0]["DoctorAssignedEn"].ToString();
+                patientBAL.DoctorAssignedAr = dataSet.Tables[0].Rows[0]["DoctorAssignedAr"].ToString();
                 patientBAL.IsSentForApproval =Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsSentForApproval"]);
                 patientBAL.ApprovedStatus = dataSet.Tables[0].Rows[0]["ApprovedStatus"].ToString();
                 patientBAL.CaseAssignedStudentId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["CaseAssignedStudentId"]);
