@@ -42,6 +42,8 @@ namespace _10SoftDental.Factory.DentalClinic
         string ApprovedStatus { get; set; }
         long? CaseAssignedStudentId { get; set; }
         bool IsSentforCaseStudy { get; set; }
+        long? VRDoctorIdRef { get; set; }
+        long? PatientClinicalExaminationId { get; set; }
 
         //List<ITeethSectionNotationMapping> ITeethSectionNotationMapping { get; set; }
         DataTable TeethSectionNotationMappingDT { get; set; }

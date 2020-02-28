@@ -186,6 +186,7 @@ namespace _10SoftDental.DAL.Common
                 throw;
             }
         }
+
         public DataSet GetAdultMainScreeningData(int patientId, int? clinicId, string patientMobile, int? doctorTreatmentId, int? dentalMainId)
         {
             _storedProcedure = "GetAdultMainScreeningData";
@@ -302,6 +303,91 @@ namespace _10SoftDental.DAL.Common
             _parameters[9].Value = patientAdultMain.CaseChiefComplaint;
             _parameters[10] = new SqlParameter("@BloodPressure", SqlDbType.NVarChar);
             _parameters[10].Value = patientAdultMain.BloodPressure;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+
+        public DataSet Dental_SavePatientLabReport(IPatientAdultMainScreen patientAdultMainScreen)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_SavePatientLabReport";
+            _parameters = new SqlParameter[7];
+            _parameters[0] = new SqlParameter("@DentalLabReportId", SqlDbType.BigInt);
+            _parameters[0].Value = patientAdultMainScreen.DentalAdultMainId;
+            _parameters[1] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[1].Value = patientAdultMainScreen.ApprovedStatus;
+            _parameters[2] = new SqlParameter("@LabReportRequestId", SqlDbType.VarChar);
+            _parameters[2].Value = patientAdultMainScreen.ApprovedStatus;
+            _parameters[3] = new SqlParameter("@ReportTypeId", SqlDbType.Int);
+            _parameters[3].Value = patientAdultMainScreen.ApprovedStatus;
+            _parameters[4] = new SqlParameter("@PreferredLabId", SqlDbType.Int);
+            _parameters[4].Value = patientAdultMainScreen.ApprovedStatus;
+            _parameters[5] = new SqlParameter("@Comments", SqlDbType.NVarChar);
+            _parameters[5].Value = patientAdultMainScreen.ApprovedStatus;
+            _parameters[6] = new SqlParameter("@UpdatedBy", SqlDbType.BigInt);
+            _parameters[6].Value = patientAdultMainScreen.ApprovedStatus;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+
+        public DataSet GetPatientClinicalExamination(long dentalAdultMainId, long? ClinicalExaminationId)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_GetPatientClinicalExamination";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[0].Value = dentalAdultMainId;
+            _parameters[1] = new SqlParameter("@PatientClinicalExaminationId", SqlDbType.BigInt);
+            _parameters[1].Value = ClinicalExaminationId;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+        public DataSet SavePatientClinicalExamination(IPatientClinicalExamination patientClinical)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_SavePatientClinicalExamination";
+            _parameters = new SqlParameter[19];
+            _parameters[0] = new SqlParameter("@PatientClinicalExaminationId", SqlDbType.BigInt);
+            _parameters[0].Value = patientClinical.PatientClinicalExaminationId;
+            _parameters[1] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[1].Value = patientClinical.DentalAdultMainId;
+            _parameters[2] = new SqlParameter("@Lips", SqlDbType.Bit);
+            _parameters[2].Value = patientClinical.Lips;
+            _parameters[3] = new SqlParameter("@Cheek", SqlDbType.Bit);
+            _parameters[3].Value = patientClinical.Cheek;
+            _parameters[4] = new SqlParameter("@Tongue", SqlDbType.Bit);
+            _parameters[4].Value = patientClinical.Tongue;
+            _parameters[5] = new SqlParameter("@Palat", SqlDbType.Bit);
+            _parameters[5].Value = patientClinical.Palat;
+            _parameters[6] = new SqlParameter("@LymphNodes", SqlDbType.Bit);
+            _parameters[6].Value = patientClinical.LymphNodes;
+            _parameters[7] = new SqlParameter("@OralHygiene_Good", SqlDbType.Bit);
+            _parameters[7].Value = patientClinical.OralHygiene_Good;
+            _parameters[8] = new SqlParameter("@OralHygiene_Fair", SqlDbType.Bit);
+            _parameters[8].Value = patientClinical.OralHygiene_Fair;
+            _parameters[9] = new SqlParameter("@OralHygiene_Poor", SqlDbType.Bit);
+            _parameters[9].Value = patientClinical.OralHygiene_Poor;
+            _parameters[10] = new SqlParameter("@OralHygiene_Plaque", SqlDbType.Bit);
+            _parameters[10].Value = patientClinical.OralHygiene_Plaque;
+            _parameters[11] = new SqlParameter("@OralHygiene_Stain", SqlDbType.Bit);
+            _parameters[11].Value = patientClinical.OralHygiene_Stain;
+            _parameters[12] = new SqlParameter("@Gingiva_Normal", SqlDbType.Bit);
+            _parameters[12].Value = patientClinical.Gingiva_Normal;
+            _parameters[13] = new SqlParameter("@Gingiva_Inflamed", SqlDbType.Bit);
+            _parameters[13].Value = patientClinical.Gingiva_Inflamed;
+            _parameters[14] = new SqlParameter("@Gingiva_HyperPlastic", SqlDbType.Bit);
+            _parameters[14].Value = patientClinical.Gingiva_HyperPlastic;
+            _parameters[15] = new SqlParameter("@Profile_ClassI", SqlDbType.Bit);
+            _parameters[15].Value = patientClinical.Profile_ClassI;
+            _parameters[16] = new SqlParameter("@Profile_ClassII", SqlDbType.Bit);
+            _parameters[16].Value = patientClinical.Profile_ClassII;
+            _parameters[17] = new SqlParameter("@Profile_ClassIII", SqlDbType.Bit);
+            _parameters[17].Value = patientClinical.Profile_ClassIII;
+            _parameters[18] = new SqlParameter("@UpdatedBY", SqlDbType.BigInt);
+            _parameters[18].Value = patientClinical.UpdatedBY;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }

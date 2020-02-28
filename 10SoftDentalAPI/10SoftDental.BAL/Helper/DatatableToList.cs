@@ -44,5 +44,32 @@ namespace _10SoftDental.BAL.Helper
                                  }).ToList();
             return convertedList.ConvertAll<PatientMedication>(o => (PatientMedication)o);
         }
+
+        public List<PatientClinicalExamination> PatientClinicalExamincationList(DataTable dt)
+        {
+            var convertedList = (from col in dt.AsEnumerable()
+                                 select new PatientClinicalExamination()
+                                 {
+                                     PatientClinicalExaminationId = Convert.ToInt64(col["PatientClinicalExaminationId"]),
+                                     DentalAdultMainId = Convert.ToInt64(col["DentalAdultMainId"]),
+                                     Lips = Convert.ToBoolean(col["Lips"]),
+                                     Cheek = Convert.ToBoolean(col["Cheek"]),
+                                     Tongue = Convert.ToBoolean(col["Tongue"]),
+                                     Palat = Convert.ToBoolean(col["Palat"]),
+                                     LymphNodes = Convert.ToBoolean(col["LymphNodes"]),
+                                     OralHygiene_Good = Convert.ToBoolean(col["OralHygiene_Good"]),
+                                     OralHygiene_Fair = Convert.ToBoolean(col["OralHygiene_Fair"]),
+                                     OralHygiene_Poor = Convert.ToBoolean(col["OralHygiene_Poor"]),
+                                     OralHygiene_Plaque = Convert.ToBoolean(col["OralHygiene_Plaque"]),
+                                     OralHygiene_Stain = Convert.ToBoolean(col["OralHygiene_Stain"]),
+                                     Gingiva_Normal = Convert.ToBoolean(col["Gingiva_Normal"]),
+                                     Gingiva_Inflamed = Convert.ToBoolean(col["Gingiva_Inflamed"]),
+                                     Gingiva_HyperPlastic = Convert.ToBoolean(col["Gingiva_HyperPlastic"]),
+                                     Profile_ClassI = Convert.ToBoolean(col["Profile_ClassI"]),
+                                     Profile_ClassII = Convert.ToBoolean(col["Profile_ClassII"]),
+                                     Profile_ClassIII = Convert.ToBoolean(col["Profile_ClassIII"])
+                                 }).ToList();
+            return convertedList.ConvertAll<PatientClinicalExamination>(o => (PatientClinicalExamination)o);
+        }
     }
 }

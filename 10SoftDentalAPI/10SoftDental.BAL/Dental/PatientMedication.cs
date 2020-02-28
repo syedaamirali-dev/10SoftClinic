@@ -22,4 +22,16 @@ namespace _10SoftDental.BAL.Dental
         public string DosageAr { get; set; }
         public long DoctorTreatmentIdRef { get; set; }
     }
+
+
+    public class PatientLabReport
+    {
+        public long? DentalLabReportId { get; set; }
+        public long DentalAdultMainId { get; set; }
+        public string LabReportRequestId { get; set; }
+        public int ReportTypeId { get; set; }
+        public int PreferredLabId { get; set; }
+        public string Comments { get; set; }
+
+    }
 }
