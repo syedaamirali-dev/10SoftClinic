@@ -9,12 +9,7 @@ namespace _10SoftDental.BAL.Dental
 {
     public class PatientClinicalExamination: IPatientClinicalExamination
     {
-        public PatientClinicalExamination()
-        {
-
-            this.PatientClinicalExaminationId = null;
-            this.DentalAdultMainId = null;
-        }
+       
         public long? PatientClinicalExaminationId { get; set; }
         public long DentalAdultMainId { get; set; }
         public bool? Lips { get; set; }

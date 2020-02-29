@@ -111,6 +111,23 @@ namespace _10SoftDental.Controllers
         }
 
         [HttpPost]
+        public IHttpActionResult SavePatientClinicalExamination(PatientClinicalExamination patientClinical)
+        {
+            try
+            {
+                patientBAL = new PatientAdultMain();
+                var result = patientBAL.SavePatientClinicalExamination(patientClinical);
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpPost]
         public IHttpActionResult SendforCaseStudy(PatientAdultMain patientAdultMain)
         {
             try
@@ -159,6 +176,22 @@ namespace _10SoftDental.Controllers
             }
         }
 
+        [HttpGet]
+        public IHttpActionResult GetPatientClinicalExamination(long dentalAdultMainId, long? ClinicalExaminationId)
+        {
+            try
+            {
+                List<PatientClinicalExamination> patientClinical = new List<PatientClinicalExamination>();
+                patientBAL = new PatientAdultMain();
+                patientClinical = patientBAL.GetPatientClinicalExamination(dentalAdultMainId, ClinicalExaminationId);
+                return Ok(patientClinical);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
         [HttpGet]
         public IHttpActionResult GetDentalAdultTreatmentDetails(long? DentalTreatmentId)
         {
