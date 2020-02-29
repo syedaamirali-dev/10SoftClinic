@@ -9,7 +9,7 @@ namespace _10SoftDental.Factory.DentalClinic
     public interface IPatientClinicalExamination
     {
          long? PatientClinicalExaminationId { get; set; }
-         long DentalAdultMainId { get; set; }
+         long? DentalAdultMainId { get; set; }
          bool? Lips { get; set; }
          bool? Cheek { get; set; }
          bool? Tongue { get; set; }

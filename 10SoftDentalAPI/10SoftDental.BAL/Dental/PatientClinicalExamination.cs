@@ -16,7 +16,7 @@ namespace _10SoftDental.BAL.Dental
             this.DentalAdultMainId = null;
         }
         public long? PatientClinicalExaminationId { get; set; }
-        public long DentalAdultMainId { get; set; }
+        public long? DentalAdultMainId { get; set; }
         public bool? Lips { get; set; }
         public bool? Cheek { get; set; }
         public bool? Tongue { get; set; }
