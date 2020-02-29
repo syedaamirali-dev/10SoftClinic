@@ -15,7 +15,10 @@ namespace _10SoftDental.BAL.Dental
             this.commonResponseResult = new CommonResponse();
             this.dataSet = new DataSet();
         }
-
+        public ResponseModel CreateResponse(bool status, string messageCode, string message, object data)
+        {
+            return this.commonResponseResult.CreateResponse(status, messageCode, message, data);
+        }
         private PatientAdultMain patientBAL = null;
         private CommonResponse commonResponseResult;
         private List<PatientMedication> patientMedicationList = null;
@@ -64,11 +67,11 @@ namespace _10SoftDental.BAL.Dental
         private string doctorAssignedAr;
         private string caseSheetComments;
         
+        private long? patientClinicalExaminationId;
 
-        public ResponseModel CreateResponse(bool status, string messageCode, string message, object data)
-        {
-            return this.commonResponseResult.CreateResponse(status, messageCode, message, data);
-        }
+
+
+        
         public long? DentalAdultMainId { get => dentalAdultMainId; set => dentalAdultMainId = value; }
         public long VisitRegisterId { get => visitRegisterId; set => visitRegisterId = value; }
         public long? DoctorTreatmentId { get => doctorTreatmentId; set => doctorTreatmentId = value; }
@@ -110,6 +113,7 @@ namespace _10SoftDental.BAL.Dental
         public long? VRDoctorIdRef { get => vRDoctorIdRef; set => vRDoctorIdRef = value; }
         public string DoctorAssignedEn { get => doctorAssignedEn; set => doctorAssignedEn = value; }
         public string DoctorAssignedAr { get => doctorAssignedAr; set => doctorAssignedAr = value; }
+        public long? PatientClinicalExaminationId { get => patientClinicalExaminationId; set => patientClinicalExaminationId = value; }
 
         public string CaseSheetComments { get => caseSheetComments; set => caseSheetComments = value; }
 
@@ -172,6 +176,38 @@ namespace _10SoftDental.BAL.Dental
             catch (Exception ex)
             {
                 return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
+        }
+
+        public ResponseModel SavePatientClinicalExamination(PatientClinicalExamination patientClinical)
+        {
+            try
+            {
+                commonDAL = new CommonDAL();
+                dataSet = commonDAL.SavePatientClinicalExamination(patientClinical);
+                return CreateResponse(Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", dataSet.Tables[0].Rows[0]["Message"].ToString(), dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
+        }
+
+        public List<PatientClinicalExamination> GetPatientClinicalExamination(long dentalAdultMainId, long? ClinicalExaminationId)
+        {
+            List<PatientClinicalExamination> patientClinical = new List<PatientClinicalExamination>();
+            try
+            {
+                commonDAL = new CommonDAL();
+               
+                dataSet = commonDAL.GetPatientClinicalExamination(dentalAdultMainId, ClinicalExaminationId);
+                if(dataSet.Tables.Count>0)
+                patientClinical = new Helper.DatatableToList().PatientClinicalExamincationList(dataSet.Tables[0]);
+                return patientClinical;
+            }
+            catch (Exception ex)
+            {
+                return patientClinical;
             }
         }
         public ResponseModel SendforApproval(long DentalAdultMainId,bool IsSentForApproval)
@@ -259,6 +295,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.IsSentforCaseStudy = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsSentforCaseStudy"]);
                 patientBAL.VRDoctorIdRef = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VRDoctorIdRef"]);
                 patientBAL.CaseSheetComments = Convert.ToString(dataSet.Tables[0].Rows[0]["CaseSheetComments"]);
+                patientBAL.PatientClinicalExaminationId= dataSet.Tables[0].Rows[0]["PatientClinicalExaminationId"].ToString()=="0"?(long?)null:Convert.ToInt64(dataSet.Tables[0].Rows[0]["PatientClinicalExaminationId"]);
                 if (dataSet.Tables.Count > 1)
                 {
                     patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
