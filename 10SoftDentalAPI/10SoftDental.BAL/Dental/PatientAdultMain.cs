@@ -65,6 +65,8 @@ namespace _10SoftDental.BAL.Dental
         private long? vRDoctorIdRef;
         private string doctorAssignedEn;
         private string doctorAssignedAr;
+        private string caseSheetComments;
+        
         private long? patientClinicalExaminationId;
 
 
@@ -112,6 +114,8 @@ namespace _10SoftDental.BAL.Dental
         public string DoctorAssignedEn { get => doctorAssignedEn; set => doctorAssignedEn = value; }
         public string DoctorAssignedAr { get => doctorAssignedAr; set => doctorAssignedAr = value; }
         public long? PatientClinicalExaminationId { get => patientClinicalExaminationId; set => patientClinicalExaminationId = value; }
+
+        public string CaseSheetComments { get => caseSheetComments; set => caseSheetComments = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -290,6 +294,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.CaseAssignedStudentId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["CaseAssignedStudentId"]);
                 patientBAL.IsSentforCaseStudy = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsSentforCaseStudy"]);
                 patientBAL.VRDoctorIdRef = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VRDoctorIdRef"]);
+                patientBAL.CaseSheetComments = Convert.ToString(dataSet.Tables[0].Rows[0]["CaseSheetComments"]);
                 patientBAL.PatientClinicalExaminationId= dataSet.Tables[0].Rows[0]["PatientClinicalExaminationId"].ToString()=="0"?(long?)null:Convert.ToInt64(dataSet.Tables[0].Rows[0]["PatientClinicalExaminationId"]);
                 if (dataSet.Tables.Count > 1)
                 {

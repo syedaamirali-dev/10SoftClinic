@@ -266,11 +266,13 @@ namespace _10SoftDental.DAL.Common
         {
             dataSet = new DataSet();
             _storedProcedure = "Dental_ApproveCaseStudy";
-            _parameters = new SqlParameter[2];
+            _parameters = new SqlParameter[3];
             _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
             _parameters[0].Value = Convert.ToInt64(patientAdultMainScreen.DentalAdultMainId);
             _parameters[1] = new SqlParameter("@ApprovedStatus", SqlDbType.NVarChar);
             _parameters[1].Value = patientAdultMainScreen.ApprovedStatus;
+            _parameters[2] = new SqlParameter("@CaseSheetComments", SqlDbType.NVarChar);
+            _parameters[2].Value = patientAdultMainScreen.CaseSheetComments;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }

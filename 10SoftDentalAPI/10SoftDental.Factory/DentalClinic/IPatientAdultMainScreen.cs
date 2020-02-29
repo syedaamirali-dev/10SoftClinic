@@ -45,6 +45,7 @@ namespace _10SoftDental.Factory.DentalClinic
         long? VRDoctorIdRef { get; set; }
         long? PatientClinicalExaminationId { get; set; }
 
+        string CaseSheetComments { get; set; }
         //List<ITeethSectionNotationMapping> ITeethSectionNotationMapping { get; set; }
         DataTable TeethSectionNotationMappingDT { get; set; }
     }
