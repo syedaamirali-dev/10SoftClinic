@@ -51,6 +51,7 @@
     <Compile Include="Common\ResponseModel.cs" />
     <Compile Include="DentalClinic\IDentalTreatment.cs" />
     <Compile Include="DentalClinic\IPatientAdultMainScreen.cs" />
+    <Compile Include="DentalClinic\IPatientClinicalExamination.cs" />
     <Compile Include="DentalClinic\IPatientScreeningSheet.cs" />
     <Compile Include="DentalClinic\ITeethSectionNotationMapping.cs" />
     <Compile Include="DentalClinic\IVisitHistory.cs" />
