@@ -393,5 +393,13 @@ namespace _10SoftDental.DAL.Common
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
+        public DataSet GetResources(int? resourceId)
+        {
+            _storedProcedure = "Dental_GetResources";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@ResourcesId", SqlDbType.Int);
+            _parameters[0].Value = resourceId;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
     }
 }

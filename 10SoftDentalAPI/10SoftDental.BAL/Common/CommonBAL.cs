@@ -71,5 +71,18 @@ namespace _10SoftDental.BAL.Common
             }
 
         }
+        public ResponseModel GetResources(int? screenId)
+        {
+            try
+            {
+                _dataSet = this.commonDAL.GetResources(screenId);
+                return CreateResponse(true, "Success", "GetAllResourceList", _dataSet);
+            }
+            catch (Exception ex)
+            {
+                return this.commonResponseResult.CreateResponse(false, "Error", ex.Message.ToString(), "");
+            }
+
+        }
     }
 }

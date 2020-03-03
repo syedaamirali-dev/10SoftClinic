@@ -38,5 +38,12 @@ namespace _10SoftDental.Controllers
             if (result == null) return NotFound();
             return Ok(result);
         }
+        [HttpGet]
+        public IHttpActionResult GetResources(int? screenId)
+        {
+            var result = this.commonBAL.GetResources(screenId);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
     }
 }
