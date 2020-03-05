@@ -27,6 +27,9 @@ namespace _10SoftDental.BAL.Dental
         private DateTime? issueDate;
         private int? doctorId;
         private int? patientId;
+        private string bloodPressure;
+        private bool? isPregnant;
+        private string diabetes;
 
         public DentalMaster()
         {            
@@ -56,6 +59,9 @@ namespace _10SoftDental.BAL.Dental
         public bool IsActive { get => isActive; set => isActive = value; }
         public int? CreatedBy { get => createdBy; set => createdBy = value; }
         public int LangId { get => langId; set => langId = value; }
+        public bool? IsPregnant { get => isPregnant; set => isPregnant = value; }
+        public string BloodPressure { get => bloodPressure; set => bloodPressure = value; }
+        public string Diabetes { get => diabetes; set => diabetes = value; }
 
         public DataSet SaveDentalChartNotations()
         {

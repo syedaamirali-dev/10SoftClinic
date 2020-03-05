@@ -71,6 +71,19 @@ namespace _10SoftDental.BAL.Common
             }
 
         }
+        public ResponseModel GetAllVisitHistoyList(bool? isLocal, int? clinicId, int? doctorId, int? loginUserId, int? visitId, int? patientId)
+        {
+            try
+            {
+                _dataSet = this.commonDAL.GetAllVisitHistoyList(isLocal,clinicId,doctorId,loginUserId,visitId,patientId);
+                return CreateResponse(true, "Success", "GetAllVisitHistoyList", _dataSet);
+            }
+            catch (Exception ex)
+            {
+                return this.commonResponseResult.CreateResponse(false, "Error", ex.Message.ToString(), "");
+            }
+
+        }
         public ResponseModel GetResources(int? screenId)
         {
             try

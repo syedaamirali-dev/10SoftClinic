@@ -80,7 +80,7 @@ namespace _10SoftDental.DAL.Master
         {
             dataSet = new DataSet();
             _storedProcedure = "Dental_SaveVisitRegister";
-            _parameters = new SqlParameter[5];
+            _parameters = new SqlParameter[8];
             _parameters[0] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
             _parameters[0].Value = visitHistory.VisitID;
             _parameters[1] = new SqlParameter("@IssueDate", SqlDbType.Date);
@@ -91,6 +91,12 @@ namespace _10SoftDental.DAL.Master
             _parameters[3].Value = visitHistory.PatientId;
             _parameters[4] = new SqlParameter("@CreatedBy", SqlDbType.BigInt);
             _parameters[4].Value = visitHistory.CreatedBy;
+            _parameters[5] = new SqlParameter("@BloodPressure", SqlDbType.NVarChar);
+            _parameters[5].Value = visitHistory.BloodPressure;
+            _parameters[6] = new SqlParameter("@IsPregnant", SqlDbType.Bit);
+            _parameters[6].Value = visitHistory.IsPregnant;
+            _parameters[7] = new SqlParameter("@Diabetes", SqlDbType.NVarChar);
+            _parameters[7].Value = visitHistory.Diabetes;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
@@ -129,24 +135,28 @@ namespace _10SoftDental.DAL.Master
 
        
 
-        public DataSet Dental_GetAdultMainScreeningData(int? clinicId,long patientId,string Mobile,long? doctorId,long? DoctorTreatmentId,long? dentalMainId)
+        public DataSet Dental_GetAdultMainScreeningData(int? clinicId,long patientId,long? doctorId,long? DoctorTreatmentId,long? dentalMainId,bool? isLocal,int? visitId)
         {
              dataSet = new DataSet();
             _storedProcedure = "GetAdultMainScreeningData";
-            _parameters = new SqlParameter[6];
+            _parameters = new SqlParameter[8];
             _parameters[0] = new SqlParameter("@ClinicId", SqlDbType.Int);
             _parameters[0].Value = clinicId;
             _parameters[1] = new SqlParameter("@PatientId", SqlDbType.BigInt);
             _parameters[1].Value = patientId;
             _parameters[2] = new SqlParameter("@PatientMobile", SqlDbType.NVarChar);
-            _parameters[2].Value = Mobile;
+            _parameters[2].Value = null;
             _parameters[3] = new SqlParameter("@DoctorId", SqlDbType.BigInt);
             _parameters[3].Value = doctorId;
             _parameters[4] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
             _parameters[4].Value = DoctorTreatmentId;
             _parameters[5] = new SqlParameter("@DentalMainId", SqlDbType.BigInt);
             _parameters[5].Value = dentalMainId;
-             dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            _parameters[6] = new SqlParameter("@IsLocal", SqlDbType.Bit);
+            _parameters[6].Value = isLocal;
+            _parameters[7] = new SqlParameter("@VisitID", SqlDbType.BigInt);
+            _parameters[7].Value = visitId;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
     }

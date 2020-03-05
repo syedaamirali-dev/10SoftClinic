@@ -39,6 +39,13 @@ namespace _10SoftDental.Controllers
             return Ok(result);
         }
         [HttpGet]
+        public IHttpActionResult GetAllVisitHistoyList(bool? isLocal, int? clinicId, int? doctorId, int? loginUserId, int? visitId, int? patientId)
+        {
+            var result = this.commonBAL.GetAllVisitHistoyList(isLocal, clinicId, doctorId, loginUserId, visitId, patientId);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
+        [HttpGet]
         public IHttpActionResult GetResources(int? screenId)
         {
             var result = this.commonBAL.GetResources(screenId);

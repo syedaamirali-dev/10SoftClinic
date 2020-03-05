@@ -62,6 +62,24 @@ namespace _10SoftDental.DAL.Common
             _parameters[4] = new SqlParameter("@DoctorIdRef", SqlDbType.Int);
             _parameters[4].Value = userId;
             return RunProcedure(_storedProcedure, _parameters, true);
+        }      
+        public DataSet GetAllVisitHistoyList(bool? isLocal,int? clinicId,int? doctorId,int? loginUserId,int? visitId,int? patientId)
+        {
+            _storedProcedure = "Dental_GetVisitHistory";
+            _parameters = new SqlParameter[6];
+            _parameters[0] = new SqlParameter("@IsLocal", SqlDbType.Bit);
+            _parameters[0].Value = isLocal;
+            _parameters[1] = new SqlParameter("@ClinicIdRef", SqlDbType.Int);
+            _parameters[1].Value = clinicId;
+            _parameters[2] = new SqlParameter("@DoctorIdRef", SqlDbType.BigInt);
+            _parameters[2].Value = doctorId;
+            _parameters[3] = new SqlParameter("@UserID", SqlDbType.Int);
+            _parameters[3].Value = loginUserId;
+            _parameters[4] = new SqlParameter("@VisitID", SqlDbType.BigInt);
+            _parameters[4].Value = visitId;
+            _parameters[5] = new SqlParameter("@PatientID", SqlDbType.BigInt);
+            _parameters[5].Value = patientId;
+            return RunProcedure(_storedProcedure, _parameters, true);
         }
 
 

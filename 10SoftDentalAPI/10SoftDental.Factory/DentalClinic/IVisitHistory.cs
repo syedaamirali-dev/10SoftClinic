@@ -12,6 +12,14 @@ namespace _10SoftDental.Factory.DentalClinic
         DateTime? VisitDate { get; set; }
         DateTime? IssueDate { get; set; }
         int? PatientId { get; set; }
-        int? DoctorId { get; set; }      
+        int? DoctorId { get; set; }    
+        
+        string BloodPressure { get; set; }
+
+        bool? IsPregnant { get; set; }
+
+        string Diabetes { get; set; }
+
+           
     }
 }
