@@ -264,6 +264,10 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.PatientNameEn = dataSet.Tables[0].Rows[0]["PatientName"].ToString();
                 patientBAL.PatientNameAr = dataSet.Tables[0].Rows[0]["PatientName"].ToString();
                 patientBAL.IssueDate = Convert.ToDateTime(dataSet.Tables[0].Rows[0]["IssueDate"].ToString());
+                patientBAL.ClinicId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["ClinicIdRef"]);
+                patientBAL.DocumentTypeId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DocumentTypeId"]);
+                patientBAL.visitRegisterId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VisitRegisterId"]);
+                patientBAL.DocumentBookId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DocumentBookId"]);
             }
                 if (dentalMainId > 0)
             {
@@ -278,6 +282,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.PatientNameEn = dataSet.Tables[0].Rows[0]["PatientName"].ToString();
                 patientBAL.PatientNameAr = dataSet.Tables[0].Rows[0]["PatientName"].ToString();
                 patientBAL.DocumentTypeId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DocumentTypeId"]);
+                patientBAL.DocumentBookId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DocumentBookId"]);
                 patientBAL.IssueDate = Convert.ToDateTime(dataSet.Tables[0].Rows[0]["IssueDate"].ToString());
                 patientBAL.DoctorAssignedTo = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DoctorAssignedTo"]);
                 patientBAL.Comments = dataSet.Tables[0].Rows[0]["Comments"].ToString();

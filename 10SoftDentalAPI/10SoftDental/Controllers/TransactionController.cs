@@ -207,6 +207,7 @@ namespace _10SoftDental.Controllers
                 dataSet.Tables[4].TableName = "DoctorTreatmentIllness";
                 dataSet.Tables[5].TableName = "DoctorTreatmentSymptom";
                 dataSet.Tables[6].TableName = "DoctorTreatmentPatientProblem";
+                dataSet.Tables[7].TableName = "DiagnosisList";
                 return Ok(dataSet);
             }
             catch (Exception ex)
