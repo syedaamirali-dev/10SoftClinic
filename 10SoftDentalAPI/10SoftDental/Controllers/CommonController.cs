@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace _10SoftDental.Controllers
@@ -39,9 +40,12 @@ namespace _10SoftDental.Controllers
             return Ok(result);
         }
         [HttpGet]
-        public IHttpActionResult GetAllVisitHistoyList(bool? isLocal, int? clinicId, int? doctorId, int? loginUserId, int? visitId, int? patientId)
+        public IHttpActionResult GetAllVisitHistoyList(bool? isLocal, int? visitId, int? patientId)
         {
-            var result = this.commonBAL.GetAllVisitHistoyList(isLocal, clinicId, doctorId, loginUserId, visitId, patientId);
+            var clinicId = HttpContext.Current.Request.Headers.GetValues("clinicId");
+            var doctorId = HttpContext.Current.Request.Headers.GetValues("doctorId");
+            var loginUserId = HttpContext.Current.Request.Headers.GetValues("userId");
+            var result = this.commonBAL.GetAllVisitHistoyList(isLocal, Convert.ToInt32(clinicId[0]), Convert.ToInt32(doctorId[0]), Convert.ToInt32(loginUserId[0]), visitId, patientId);
             if (result == null) return NotFound();
             return Ok(result);
         }

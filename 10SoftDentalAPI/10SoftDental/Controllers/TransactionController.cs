@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Web;
 using System.Web.Http;
 using _10SoftDental.BAL.Dental;
 
@@ -13,6 +14,7 @@ namespace _10SoftDental.Controllers
         AdultMainTreatment adultMainTreatmentBAL = null;
         DataSet dataSet = null;
         private List<PatientMedication> patientMedicationList = null;
+       
 
         [HttpPost]
         public IHttpActionResult SaveDentalAdultMain(PatientAdultMain adultMain)
@@ -46,12 +48,15 @@ namespace _10SoftDental.Controllers
 
         //http://localhost:55453/api/Transaction/GetAdultMainScreeningData?clinicId=3&patientId=15&Mobile=&doctorId=&DoctorTreatmentId=35&dentalMainId=1
         [HttpGet]
-        public IHttpActionResult GetAdultMainScreeningData(int? clinicId, long patientId,long? doctorId, long? DoctorTreatmentId, long? dentalMainId,bool? isLocal,int? visitId)
+        public IHttpActionResult GetAdultMainScreeningData(long patientId, long? DoctorTreatmentId, long? dentalMainId,bool? isLocal,int? visitId)
         {
             try
             {
+                var clinicId = HttpContext.Current.Request.Headers.GetValues("clinicId");
+                var doctorId = HttpContext.Current.Request.Headers.GetValues("doctorId");
+                var loginUserId = HttpContext.Current.Request.Headers.GetValues("userId");
                 patientBAL = new PatientAdultMain();
-                patientBAL = patientBAL.Dental_GetAdultMainScreeningData(clinicId, patientId,doctorId, DoctorTreatmentId, dentalMainId, isLocal, visitId);
+                patientBAL = patientBAL.Dental_GetAdultMainScreeningData(Convert.ToInt32(clinicId[0]), patientId, Convert.ToInt32(doctorId[0]), DoctorTreatmentId, dentalMainId, isLocal, visitId);
                 return Ok(patientBAL);
             }
             catch (Exception ex)
@@ -197,6 +202,9 @@ namespace _10SoftDental.Controllers
         {
             try
             {
+                var req = HttpContext.Current.Request.Headers.GetValues("clinicId");
+                var doctorId = HttpContext.Current.Request.Headers.GetValues("doctorId");
+                var req2 = Request.Headers.GetValues("userId");
                 adultMainTreatmentBAL = new AdultMainTreatment();
                 dataSet = new DataSet();
                 dataSet=adultMainTreatmentBAL.GetDentalAdultTreatmentDetails(DentalTreatmentId);
