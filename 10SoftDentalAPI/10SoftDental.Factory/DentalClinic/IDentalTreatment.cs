@@ -17,5 +17,6 @@ namespace _10SoftDental.Factory.DentalClinic
          DataTable DoctorTreatmentPatientProblemsDT { get; set; }
 
         void SaveDentalAdultTreatmentDiagnosis();
+        void SaveDentalTreatmentPlanning();
     }
 }

@@ -14,6 +14,7 @@ namespace _10SoftDental.Factory.Models
         public int DiagnosisIdRef { get; set; }
         public long Level { get; set; }
         public string Comment { get; set; }
+        public string TeethNumber { get; set; }
     }
 
     public class DoctorTreatmentIllness
@@ -24,6 +25,7 @@ namespace _10SoftDental.Factory.Models
         public int IllnessIdRef { get; set; }
         public long Level { get; set; }
         public string Comment { get; set; }
+        public string TeethNumber { get; set; }
     }
 
     public class DoctorTreatmentSympton
@@ -34,6 +36,7 @@ namespace _10SoftDental.Factory.Models
         public int SymptomIdRef { get; set; }
         public long Level { get; set; }
         public string Comment { get; set; }
+        public string TeethNumber { get; set; }
     }
 
     public class DoctorTreatmentPatientProblem
@@ -44,5 +47,6 @@ namespace _10SoftDental.Factory.Models
         public string Problem { get; set; }
         public long Level { get; set; }
         public string Comment { get; set; }
+        public string TeethNumber { get; set; }
     }
 }

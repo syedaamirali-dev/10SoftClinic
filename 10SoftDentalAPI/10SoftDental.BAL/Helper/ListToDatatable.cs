@@ -53,6 +53,7 @@ namespace _10SoftDental.BAL.Helper
             dataTable.Columns.Add("DiagnosisIdRef", typeof(int));
             dataTable.Columns.Add("Level", typeof(long));
             dataTable.Columns.Add("Comment", typeof(string));
+            dataTable.Columns.Add("TeethNumber", typeof(string));
 
             for (int i = 0; i < datalist.Count; i++)
             {
@@ -62,6 +63,7 @@ namespace _10SoftDental.BAL.Helper
                 row["DiagnosisIdRef"] = DataTypesUtilities.IntNZ(datalist[i].DiagnosisIdRef);
                 row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
                 row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
+                row["TeethNumber"] = DataTypesUtilities.StringNZ(datalist[i].TeethNumber);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
@@ -78,6 +80,7 @@ namespace _10SoftDental.BAL.Helper
             dataTable.Columns.Add("NoOfTimeInDay", typeof(int));
             dataTable.Columns.Add("Quantities", typeof(int));
             dataTable.Columns.Add("DentalAdultMainId", typeof(long));
+
 
             for (int i = 0; i < datalist.Count; i++)
             {
@@ -103,6 +106,7 @@ namespace _10SoftDental.BAL.Helper
             dataTable.Columns.Add("IllnessIdRef", typeof(int));
             dataTable.Columns.Add("Level", typeof(long));
             dataTable.Columns.Add("Comment", typeof(string));
+            dataTable.Columns.Add("TeethNumber", typeof(string));
 
             for (int i = 0; i < datalist.Count; i++)
             {
@@ -112,6 +116,7 @@ namespace _10SoftDental.BAL.Helper
                 row["IllnessIdRef"] = DataTypesUtilities.IntNZ(datalist[i].IllnessIdRef);
                 row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
                 row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
+                row["TeethNumber"] = DataTypesUtilities.StringNZ(datalist[i].TeethNumber);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
@@ -126,6 +131,7 @@ namespace _10SoftDental.BAL.Helper
             dataTable.Columns.Add("SymptomIdRef", typeof(int));
             dataTable.Columns.Add("Level", typeof(long));
             dataTable.Columns.Add("Comment", typeof(string));
+            dataTable.Columns.Add("TeethNumber", typeof(string));
 
             for (int i = 0; i < datalist.Count; i++)
             {
@@ -135,6 +141,7 @@ namespace _10SoftDental.BAL.Helper
                 row["SymptonIdRef"] = DataTypesUtilities.IntNZ(datalist[i].SymptomIdRef);
                 row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
                 row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
+                row["TeethNumber"] = DataTypesUtilities.StringNZ(datalist[i].TeethNumber);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
@@ -149,6 +156,7 @@ namespace _10SoftDental.BAL.Helper
             dataTable.Columns.Add("Problem", typeof(string));
             dataTable.Columns.Add("Level", typeof(long));
             dataTable.Columns.Add("Comment", typeof(string));
+            dataTable.Columns.Add("TeethNumber", typeof(string));
 
             for (int i = 0; i < datalist.Count; i++)
             {
@@ -158,6 +166,7 @@ namespace _10SoftDental.BAL.Helper
                 row["Problem"] = DataTypesUtilities.StringNZ(datalist[i].Problem);
                 row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
                 row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
+                row["TeethNumber"] = DataTypesUtilities.StringNZ(datalist[i].TeethNumber);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
