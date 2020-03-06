@@ -61,6 +61,7 @@ namespace _10SoftDental.Controllers
             }
         }
 
+        //Here goes 3 Grid Illness, Symptoms and Patient Problem
         [HttpPost]
         public IHttpActionResult SaveDentalAdultTreatmentDiagnosis(AdultMainTreatment adultMainTreatment)
         {
@@ -77,6 +78,7 @@ namespace _10SoftDental.Controllers
             }
         }
 
+        //Here goes 1 Grid Chief Complaint
         [HttpPost]
         public IHttpActionResult SaveDentalTreatmentPlanning(AdultMainTreatment adultMainTreatment)
         {
