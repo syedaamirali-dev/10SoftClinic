@@ -68,10 +68,11 @@ namespace _10SoftDental.BAL.Dental
         private string caseSheetComments;
         
         private long? patientClinicalExaminationId;
+        private bool? isTreatmentPlanSentForApproval;
+        private string treatmentPlanApprovedStatus;
+        private string treatmentPlanComments;
 
 
-
-        
         public long? DentalAdultMainId { get => dentalAdultMainId; set => dentalAdultMainId = value; }
         public long VisitRegisterId { get => visitRegisterId; set => visitRegisterId = value; }
         public long? DoctorTreatmentId { get => doctorTreatmentId; set => doctorTreatmentId = value; }
@@ -116,6 +117,9 @@ namespace _10SoftDental.BAL.Dental
         public long? PatientClinicalExaminationId { get => patientClinicalExaminationId; set => patientClinicalExaminationId = value; }
 
         public string CaseSheetComments { get => caseSheetComments; set => caseSheetComments = value; }
+        public bool? IsTreatmentPlanSentForApproval { get => isTreatmentPlanSentForApproval; set => isTreatmentPlanSentForApproval = value; }
+        public string TreatmentPlanApprovedStatus { get => treatmentPlanApprovedStatus; set => treatmentPlanApprovedStatus = value; }
+        public string TreatmentPlanComments { get => treatmentPlanComments; set => treatmentPlanComments = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -223,6 +227,20 @@ namespace _10SoftDental.BAL.Dental
                 return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
             }
         }
+        public ResponseModel SendTreatmentPlanningforApproval(long DentalAdultMainId, bool IsTreatmentPlanForApproval)
+        {
+            try
+            {
+                commonDAL = new CommonDAL();
+                dataSet = commonDAL.SendTreatmentPlanningforApproval(DentalAdultMainId, IsTreatmentPlanForApproval);
+                return CreateResponse(Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", dataSet.Tables[0].Rows[0]["Message"].ToString(), dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
+        }
+        
 
         public ResponseModel SendforCaseStudy()
         {
@@ -251,6 +269,21 @@ namespace _10SoftDental.BAL.Dental
                 return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
             }
         }
+
+        public ResponseModel ApproveTreatmentPlan()
+        {
+            try
+            {
+                commonDAL = new CommonDAL();
+                dataSet = commonDAL.Dental_ApproveTreatmentPlan(this);
+                return CreateResponse(Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", dataSet.Tables[0].Rows[0]["Message"].ToString(), dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
+        }
+        
         public PatientAdultMain Dental_GetAdultMainScreeningData(int? clinicId, long patientId, long? doctorId, long? DoctorTreatmentId, long? dentalMainId, bool? isLocal, int? visitId)
         {
             patientBAL = new PatientAdultMain();
@@ -310,6 +343,9 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.VRDoctorIdRef = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VRDoctorIdRef"]);
                 patientBAL.CaseSheetComments = Convert.ToString(dataSet.Tables[0].Rows[0]["CaseSheetComments"]);
                 patientBAL.PatientClinicalExaminationId= dataSet.Tables[0].Rows[0]["PatientClinicalExaminationId"].ToString()=="0"?(long?)null:Convert.ToInt64(dataSet.Tables[0].Rows[0]["PatientClinicalExaminationId"]);
+                patientBAL.IsTreatmentPlanSentForApproval = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsTreatmentPlanSentForApproval"]);
+                patientBAL.TreatmentPlanApprovedStatus= Convert.ToString(dataSet.Tables[0].Rows[0]["TreatmentPlanApprovedStatus"]);
+                patientBAL.TreatmentPlanComments= Convert.ToString(dataSet.Tables[0].Rows[0]["TreatmentPlanComments"]);
                 if (dataSet.Tables.Count > 1)
                 {
                     patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);

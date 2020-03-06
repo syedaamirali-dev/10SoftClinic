@@ -31,13 +31,19 @@ namespace _10SoftDental.BAL.Dental
         public void SaveDentalAdultTreatmentDiagnosis()
         {
             commonDAL = new CommonDAL();
-            this.DoctorTreatmentsDT = new ListToDatatable().ToDataTableChiefCompliant(this.doctorTreatmentsList);
+            //this.DoctorTreatmentsDT = new ListToDatatable().ToDataTableChiefCompliant(this.doctorTreatmentsList);
             this.DoctorTreatmentIllnessesDT = new ListToDatatable().ToDataTableIllness(this.doctorTreatmentIllnessesList);
             this.DoctorTreatmentSymptonsDT = new ListToDatatable().ToDataTableSympton(this.doctorTreatmentSymptonsList);
             this.DoctorTreatmentPatientProblemsDT = new ListToDatatable().ToDataTablePatientProblem(this.doctorTreatmentPatientProblemsList);
             commonDAL.SaveDentalAdultTreatmentDiagnosis(this);
         }
 
+        public void SaveDentalTreatmentPlanning()
+        {
+            commonDAL = new CommonDAL();
+            this.DoctorTreatmentsDT = new ListToDatatable().ToDataTableChiefCompliant(this.doctorTreatmentsList);
+            commonDAL.SaveDentalTreatmentPlanning(this);
+        }
         public DataSet GetDentalAdultTreatmentDetails(long? doctorTreatmentId)
         {
             commonDAL = new CommonDAL();

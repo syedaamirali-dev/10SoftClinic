@@ -183,19 +183,37 @@ namespace _10SoftDental.DAL.Common
             {
                 dataSet = new DataSet();
                 _storedProcedure = "SaveDentalAdultTreatmentDiagnosis";
-                _parameters = new SqlParameter[6];
+                _parameters = new SqlParameter[5];
+                //_parameters[0] = new SqlParameter("@DoctorTreatmentDiagnosisTypeTbl", SqlDbType.Structured);
+                //_parameters[0].Value = dentalTreatment.DoctorTreatmentsDT;
+                _parameters[0] = new SqlParameter("@DoctorTreatmentIllnessTypeTbl", SqlDbType.Structured);
+                _parameters[0].Value = dentalTreatment.DoctorTreatmentIllnessesDT;
+                _parameters[1] = new SqlParameter("@DoctorTreatmentSymptomTypeTbl", SqlDbType.Structured);
+                _parameters[1].Value = dentalTreatment.DoctorTreatmentSymptonsDT;
+                _parameters[2] = new SqlParameter("@DoctorTreatmentPatientProblemTypeTbl", SqlDbType.Structured);
+                _parameters[2].Value = dentalTreatment.DoctorTreatmentPatientProblemsDT;
+                _parameters[3] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
+                _parameters[3].Value = dentalTreatment.DoctorTreatmentId;
+                _parameters[4] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
+                _parameters[4].Value = dentalTreatment.VisitRegisterid;
+                dataSet = RunProcedure(_storedProcedure, _parameters, true);
+                return (dataSet.Tables[0].Rows[0][0].ToString());
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public string SaveDentalTreatmentPlanning(IDentalTreatment dentalTreatment)
+        {
+            try
+            {
+                dataSet = new DataSet();
+                _storedProcedure = "Dental_SaveTreatmentPlanning";
+                _parameters = new SqlParameter[1];
                 _parameters[0] = new SqlParameter("@DoctorTreatmentDiagnosisTypeTbl", SqlDbType.Structured);
                 _parameters[0].Value = dentalTreatment.DoctorTreatmentsDT;
-                _parameters[1] = new SqlParameter("@DoctorTreatmentIllnessTypeTbl", SqlDbType.Structured);
-                _parameters[1].Value = dentalTreatment.DoctorTreatmentIllnessesDT;
-                _parameters[2] = new SqlParameter("@DoctorTreatmentSymptomTypeTbl", SqlDbType.Structured);
-                _parameters[2].Value = dentalTreatment.DoctorTreatmentSymptonsDT;
-                _parameters[3] = new SqlParameter("@DoctorTreatmentPatientProblemTypeTbl", SqlDbType.Structured);
-                _parameters[3].Value = dentalTreatment.DoctorTreatmentPatientProblemsDT;
-                _parameters[4] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
-                _parameters[4].Value = dentalTreatment.DoctorTreatmentId;
-                _parameters[5] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
-                _parameters[5].Value = dentalTreatment.VisitRegisterid;
                 dataSet = RunProcedure(_storedProcedure, _parameters, true);
                 return (dataSet.Tables[0].Rows[0][0].ToString());
             }
@@ -265,6 +283,20 @@ namespace _10SoftDental.DAL.Common
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
+
+        public DataSet SendTreatmentPlanningforApproval(long dentalAdultMainId, bool IsTreatmentPlanForApproval)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_SendTreatmentPlanningforApproval";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[0].Value = dentalAdultMainId;
+            _parameters[1] = new SqlParameter("@Status", SqlDbType.Bit);
+            _parameters[1].Value = IsTreatmentPlanForApproval;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+        
         public DataSet Dental_SendforCaseStudy(IPatientAdultMainScreen patientAdultMainScreen)
         {
             dataSet = new DataSet();
@@ -279,7 +311,7 @@ namespace _10SoftDental.DAL.Common
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
-
+        
         public DataSet Dental_ApproveCaseStudy(IPatientAdultMainScreen patientAdultMainScreen)
         {
             dataSet = new DataSet();
@@ -294,7 +326,20 @@ namespace _10SoftDental.DAL.Common
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
-
+        public DataSet Dental_ApproveTreatmentPlan(IPatientAdultMainScreen patientAdultMainScreen)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_ApproveTreatmentPlan";
+            _parameters = new SqlParameter[3];
+            _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[0].Value = Convert.ToInt64(patientAdultMainScreen.DentalAdultMainId);
+            _parameters[1] = new SqlParameter("@ApprovedStatus", SqlDbType.NVarChar);
+            _parameters[1].Value = patientAdultMainScreen.TreatmentPlanApprovedStatus;
+            _parameters[2] = new SqlParameter("@TreatmentPlanComments", SqlDbType.NVarChar);
+            _parameters[2].Value = patientAdultMainScreen.TreatmentPlanComments;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
 
         public DataSet Dental_SavePatientCaseSheet(IPatientAdultMainScreen patientAdultMain)
         {

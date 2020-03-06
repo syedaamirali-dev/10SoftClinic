@@ -78,6 +78,22 @@ namespace _10SoftDental.Controllers
         }
 
         [HttpPost]
+        public IHttpActionResult SaveDentalTreatmentPlanning(AdultMainTreatment adultMainTreatment)
+        {
+            try
+            {
+                string result = "";
+                adultMainTreatment.SaveDentalTreatmentPlanning();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpPost]
         public IHttpActionResult SavePatientMedication(List<PatientMedication> patientMedicationList)
         {
             try
@@ -143,6 +159,8 @@ namespace _10SoftDental.Controllers
             }
         }
 
+
+
         [HttpPost]
         public IHttpActionResult ApproveCaseStudy(PatientAdultMain patientAdultMain)
         {
@@ -158,7 +176,38 @@ namespace _10SoftDental.Controllers
                 throw;
             }
         }
+        [HttpPost]
+        public IHttpActionResult ApproveTreatmentPlan(PatientAdultMain patientAdultMain)
+        {
+            try
+            {
+                patientBAL = new PatientAdultMain();
+                var result = patientAdultMain.ApproveTreatmentPlan();//Convert.ToInt64(patientAdultMain.DentalAdultMainId),Convert.ToBoolean(patientAdultMain.IsSentforCaseStudy)
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
+        [HttpPost]
+        public IHttpActionResult SendTreatmentPlanningforApproval(PatientAdultMain patientAdultMain)
+        {
+            try
+            {
+                patientBAL = new PatientAdultMain();
+                var result = patientAdultMain.SendTreatmentPlanningforApproval(Convert.ToInt64(patientAdultMain.DentalAdultMainId), Convert.ToBoolean(patientAdultMain.IsTreatmentPlanSentForApproval));
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
         [HttpPost]
         public IHttpActionResult SendforApproval(PatientAdultMain patientAdultMain)
         {
