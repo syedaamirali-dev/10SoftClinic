@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10SoftDental.Factory.Common;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -17,6 +18,6 @@ namespace _10SoftDental.Factory.DentalClinic
          DataTable DoctorTreatmentPatientProblemsDT { get; set; }
 
         void SaveDentalAdultTreatmentDiagnosis();
-        void SaveDentalTreatmentPlanning();
+        ResponseModel SaveDentalTreatmentPlanning();
     }
 }

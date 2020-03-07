@@ -205,7 +205,7 @@ namespace _10SoftDental.DAL.Common
             }
         }
 
-        public string SaveDentalTreatmentPlanning(IDentalTreatment dentalTreatment)
+        public DataSet SaveDentalTreatmentPlanning(IDentalTreatment dentalTreatment)
         {
             try
             {
@@ -215,7 +215,7 @@ namespace _10SoftDental.DAL.Common
                 _parameters[0] = new SqlParameter("@DoctorTreatmentDiagnosisTypeTbl", SqlDbType.Structured);
                 _parameters[0].Value = dentalTreatment.DoctorTreatmentsDT;
                 dataSet = RunProcedure(_storedProcedure, _parameters, true);
-                return (dataSet.Tables[0].Rows[0][0].ToString());
+                return dataSet;//(dataSet.Tables[0].Rows[0][0].ToString());
             }
             catch (System.Exception)
             {
