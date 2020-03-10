@@ -142,7 +142,7 @@ namespace _10SoftDental.DAL.Common
         {
             _storedProcedure = "Dental_SavePatientMedication";
             _parameters = new SqlParameter[1];
-            _parameters[0] = new SqlParameter("@Diagnosis", SqlDbType.Structured);
+            _parameters[0] = new SqlParameter("@PatientMedicationType", SqlDbType.Structured);
             _parameters[0].Value = patientMedicationDt;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
