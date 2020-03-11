@@ -146,7 +146,7 @@ namespace _10SoftDental.BAL.Dental
                 commonDAL = new CommonDAL();
                 dataTable = new DataTable();
                 dataTable = new ListToDatatable().ToDataTablePatientMedication(patientMedicationList);
-                dataSet = commonDAL.SaveDentalAdultMain(this);
+                dataSet = commonDAL.SavePatientMedication(dataTable);
                 return CreateResponse(Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", dataSet.Tables[0].Rows[0]["Message"].ToString(), dataSet);
             }
             catch (Exception ex)
