@@ -12,6 +12,7 @@ namespace _10SoftDental.Controllers
 
         PatientAdultMain patientBAL = null;
         AdultMainTreatment adultMainTreatmentBAL = null;
+        PatientOcclusion patientOcclusion = null;
         DataSet dataSet = null;
         private List<PatientMedication> patientMedicationList = null;
        
@@ -123,6 +124,23 @@ namespace _10SoftDental.Controllers
             {
                 patientBAL = new PatientAdultMain();
                 var result= patientAdultMain.SavePatientCaseSheet();
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        //http://localhost:55453/api/Transaction/SavePatientOcclusion
+        [HttpPost]
+        public IHttpActionResult SavePatientOcclusion(PatientOcclusion patientOcclusion)
+        {
+            try
+            {
+                var result = patientOcclusion.SavePatientOcclusion();
                 if (result == null) return NotFound();
                 return Ok(result);
             }
@@ -289,6 +307,23 @@ namespace _10SoftDental.Controllers
             catch (Exception ex)
             {
 
+                throw;
+            }
+        }
+
+        //http://localhost:55453/api/Transaction/GetPatientOcclusion?occlusionId=1
+        [HttpGet]
+        public IHttpActionResult GetPatientOcclusion(long occlusionId)
+        {
+            try
+            {
+                dataSet = new DataSet();
+                patientOcclusion = new PatientOcclusion();
+                dataSet = patientOcclusion.GetPatientOcclusion(occlusionId);
+                return Ok(dataSet);
+            }
+            catch (Exception ex)
+            {
                 throw;
             }
         }

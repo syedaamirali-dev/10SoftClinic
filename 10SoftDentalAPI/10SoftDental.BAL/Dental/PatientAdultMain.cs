@@ -71,6 +71,7 @@ namespace _10SoftDental.BAL.Dental
         private bool? isTreatmentPlanSentForApproval;
         private string treatmentPlanApprovedStatus;
         private string treatmentPlanComments;
+        private long? childOcclusionId;
 
 
         public long? DentalAdultMainId { get => dentalAdultMainId; set => dentalAdultMainId = value; }
@@ -120,6 +121,7 @@ namespace _10SoftDental.BAL.Dental
         public bool? IsTreatmentPlanSentForApproval { get => isTreatmentPlanSentForApproval; set => isTreatmentPlanSentForApproval = value; }
         public string TreatmentPlanApprovedStatus { get => treatmentPlanApprovedStatus; set => treatmentPlanApprovedStatus = value; }
         public string TreatmentPlanComments { get => treatmentPlanComments; set => treatmentPlanComments = value; }
+        public long? ChildOcclusionId { get => childOcclusionId; set => childOcclusionId = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -346,6 +348,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.IsTreatmentPlanSentForApproval = Convert.ToBoolean(dataSet.Tables[0].Rows[0]["IsTreatmentPlanSentForApproval"]);
                 patientBAL.TreatmentPlanApprovedStatus= Convert.ToString(dataSet.Tables[0].Rows[0]["TreatmentPlanApprovedStatus"]);
                 patientBAL.TreatmentPlanComments= Convert.ToString(dataSet.Tables[0].Rows[0]["TreatmentPlanComments"]);
+                patientBAL.ChildOcclusionId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["ChildOcclusionId"]);
                 if (dataSet.Tables.Count > 1)
                 {
                     patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
@@ -372,6 +375,8 @@ namespace _10SoftDental.BAL.Dental
             dataSet = new DAL.Common.CommonDAL().Dental_GetPatienDropdownData();
             return dataSet;
         }
+
+        
     }
 
 

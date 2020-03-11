@@ -49,6 +49,7 @@ namespace _10SoftDental.Factory.DentalClinic
         bool? IsTreatmentPlanSentForApproval { get; set; }
         string TreatmentPlanApprovedStatus { get; set; }
         string TreatmentPlanComments { get; set; }
+        long? ChildOcclusionId { get; set; }
         DataTable TeethSectionNotationMappingDT { get; set; }
     }
 }

@@ -223,22 +223,22 @@ namespace _10SoftDental.DAL.Common
             }
         }
 
-        public DataSet GetAdultMainScreeningData(int patientId, int? clinicId, string patientMobile, int? doctorTreatmentId, int? dentalMainId)
-        {
-            _storedProcedure = "GetAdultMainScreeningData";
-            _parameters = new SqlParameter[5];
-            _parameters[0] = new SqlParameter("@PatientId", SqlDbType.Int);
-            _parameters[0].Value = patientId;
-            _parameters[1] = new SqlParameter("@ClinicIdRef", SqlDbType.Int);
-            _parameters[1].Value = clinicId;
-            _parameters[2] = new SqlParameter("@PatientMobile", SqlDbType.NVarChar);
-            _parameters[2].Value = patientMobile;
-            _parameters[3] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
-            _parameters[3].Value = doctorTreatmentId;
-            _parameters[4] = new SqlParameter("@DentalMainId", SqlDbType.BigInt);
-            _parameters[4].Value = dentalMainId;
-            return RunProcedure(_storedProcedure, _parameters, true);
-        }
+        //public DataSet GetAdultMainScreeningData(int patientId, int? clinicId, string patientMobile, int? doctorTreatmentId, int? dentalMainId)
+        //{
+        //    _storedProcedure = "GetAdultMainScreeningData";
+        //    _parameters = new SqlParameter[5];
+        //    _parameters[0] = new SqlParameter("@PatientId", SqlDbType.Int);
+        //    _parameters[0].Value = patientId;
+        //    _parameters[1] = new SqlParameter("@ClinicIdRef", SqlDbType.Int);
+        //    _parameters[1].Value = clinicId;
+        //    _parameters[2] = new SqlParameter("@PatientMobile", SqlDbType.NVarChar);
+        //    _parameters[2].Value = patientMobile;
+        //    _parameters[3] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
+        //    _parameters[3].Value = doctorTreatmentId;
+        //    _parameters[4] = new SqlParameter("@DentalMainId", SqlDbType.BigInt);
+        //    _parameters[4].Value = dentalMainId;
+        //    return RunProcedure(_storedProcedure, _parameters, true);
+        //}
 
 
         public DataSet Dental_SavePatientHistory(IPatientAdultMainScreen patientAdultMain)
@@ -462,6 +462,69 @@ namespace _10SoftDental.DAL.Common
             _parameters = new SqlParameter[1];
             _parameters[0] = new SqlParameter("@ResourcesId", SqlDbType.Int);
             _parameters[0].Value = resourceId;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+
+         public DataSet GetPatientOcclusion(long? occlusionId)
+        {
+            _storedProcedure = "Dental_GetPatientOcclusion";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@OcclusionId", SqlDbType.BigInt);
+            _parameters[0].Value = occlusionId;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+        public DataSet SavePatientOcclusion(IPatientOcclusion patientOcclusion)
+        {
+            _storedProcedure = "Dental_SavePatientOcclusion";
+            _parameters = new SqlParameter[24];
+            _parameters[0] = new SqlParameter("@OcclusionId", SqlDbType.BigInt);
+            _parameters[0].Value = patientOcclusion.OcclusionId;
+            _parameters[1] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[1].Value = patientOcclusion.DentalAdultMainId;
+            _parameters[2] = new SqlParameter("@MidLine", SqlDbType.NVarChar);
+            _parameters[2].Value = patientOcclusion.MidLine;
+            _parameters[3] = new SqlParameter("@OverJet", SqlDbType.NVarChar);
+            _parameters[3].Value = patientOcclusion.OverJet;
+            _parameters[4] = new SqlParameter("@OverBite", SqlDbType.NVarChar);
+            _parameters[4].Value = patientOcclusion.OverBite;
+            _parameters[5] = new SqlParameter("@OpenBite", SqlDbType.NVarChar);
+            _parameters[5].Value = patientOcclusion.OpenBite;
+            _parameters[6] = new SqlParameter("@RightMolars_ClassI", SqlDbType.Bit);
+            _parameters[6].Value = patientOcclusion.RightMolars_ClassI;
+            _parameters[7] = new SqlParameter("@RightMolars_ClassII", SqlDbType.Bit);
+            _parameters[7].Value = patientOcclusion.RightMolars_ClassII;
+            _parameters[8] = new SqlParameter("@RightMolars_ClassIII", SqlDbType.Bit);
+            _parameters[8].Value = patientOcclusion.RightMolars_ClassIII;
+            _parameters[9] = new SqlParameter("@RightCanine_ClassI", SqlDbType.Bit);
+            _parameters[9].Value = patientOcclusion.RightCanine_ClassI;
+            _parameters[10] = new SqlParameter("@RightCanine_ClassII", SqlDbType.Bit);
+            _parameters[10].Value = patientOcclusion.RightCanine_ClassII;
+            _parameters[11] = new SqlParameter("@RightCanine_ClassIII", SqlDbType.Bit);
+            _parameters[11].Value = patientOcclusion.RightCanine_ClassIII;
+            _parameters[12] = new SqlParameter("@Physiological", SqlDbType.NVarChar);
+            _parameters[12].Value = patientOcclusion.Physiological;
+            _parameters[13] = new SqlParameter("@Primate", SqlDbType.NVarChar);
+            _parameters[13].Value = patientOcclusion.Primate;
+            _parameters[14] = new SqlParameter("@Crowding", SqlDbType.NVarChar);
+            _parameters[14].Value = patientOcclusion.Crowding;
+            _parameters[15] = new SqlParameter("@Congental_Missing_Tooth", SqlDbType.NVarChar);
+            _parameters[15].Value = patientOcclusion.Congental_Missing_Tooth;
+            _parameters[16] = new SqlParameter("@Crossbite_Anterior", SqlDbType.NVarChar);
+            _parameters[16].Value = patientOcclusion.Crossbite_Anterior;
+            _parameters[17] = new SqlParameter("@Posterior", SqlDbType.NVarChar);
+            _parameters[17].Value = patientOcclusion.Posterior;
+            _parameters[18] = new SqlParameter("@Describe", SqlDbType.NVarChar);
+            _parameters[18].Value = patientOcclusion.Describe;
+            _parameters[19] = new SqlParameter("@ThumbSucking", SqlDbType.NVarChar);
+            _parameters[19].Value = patientOcclusion.ThumbSucking;
+            _parameters[20] = new SqlParameter("@FingerSucking", SqlDbType.NVarChar);
+            _parameters[20].Value = patientOcclusion.FingerSucking;
+            _parameters[21] = new SqlParameter("@TongueThrusting", SqlDbType.NVarChar);
+            _parameters[21].Value = patientOcclusion.TongueThrusting;
+            _parameters[22] = new SqlParameter("@AnyOther", SqlDbType.NVarChar);
+            _parameters[22].Value = patientOcclusion.AnyOther;
+            _parameters[23] = new SqlParameter("@UpdatedBy", SqlDbType.BigInt);
+            _parameters[23].Value = patientOcclusion.UpdatedBy;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
     }

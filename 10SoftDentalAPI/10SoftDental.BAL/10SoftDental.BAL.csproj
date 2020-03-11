@@ -51,6 +51,7 @@
     <Compile Include="Dental\PatientAdultMain.cs" />
     <Compile Include="Dental\PatientClinicalExamination.cs" />
     <Compile Include="Dental\PatientMedication.cs" />
+    <Compile Include="Dental\PatientOcclusion.cs" />
     <Compile Include="Helper\DatatableToList.cs" />
     <Compile Include="Helper\ListToDatatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
