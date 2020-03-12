@@ -382,7 +382,7 @@ namespace _10SoftDental.Controllers
         {
             try
             {
-                labReport = new LabReport();
+                //labReport = new LabReport();
                 var result = labReport.SaveLabReport();
                 if (result == null) return NotFound();
                 return Ok(result);
