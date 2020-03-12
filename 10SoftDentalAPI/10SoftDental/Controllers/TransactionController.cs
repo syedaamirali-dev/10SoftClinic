@@ -15,6 +15,7 @@ namespace _10SoftDental.Controllers
         PatientOcclusion patientOcclusion = null;
         DataSet dataSet = null;
         private List<PatientMedication> patientMedicationList = null;
+        private LabReport labReport = null;
        
 
         [HttpPost]
@@ -358,6 +359,36 @@ namespace _10SoftDental.Controllers
             catch (Exception ex)
             {
 
+                throw;
+            }
+        }
+        [HttpGet]
+        public IHttpActionResult GetLabReports(long? doctorTreatmentId)
+        {
+            try
+            {
+                labReport = new LabReport();               
+                var result=labReport.GetLabReport(doctorTreatmentId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        [HttpPost]
+        public IHttpActionResult SaveLabReport(LabReport labReport)
+        {
+            try
+            {
+                labReport = new LabReport();
+                var result = labReport.SaveLabReport();
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
                 throw;
             }
         }

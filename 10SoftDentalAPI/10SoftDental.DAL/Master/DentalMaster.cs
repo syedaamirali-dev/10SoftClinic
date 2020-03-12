@@ -159,5 +159,35 @@ namespace _10SoftDental.DAL.Master
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
+        public DataSet Dental_SaveLabReport(ILabReport labReport)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_SaveTreatmentLabReport";
+            _parameters = new SqlParameter[6];
+            _parameters[0] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
+            _parameters[0].Value = labReport.DoctorTreatmentId;
+            _parameters[1] = new SqlParameter("@DoctorTreatmentLabReportRequestId", SqlDbType.BigInt);
+            _parameters[1].Value = labReport.DoctorTreatmentLabReportRequestId;
+            _parameters[2] = new SqlParameter("@MasterNumberId", SqlDbType.BigInt);
+            _parameters[2].Value = labReport.MasterNumberId;
+            _parameters[3] = new SqlParameter("@LabReportTypeId", SqlDbType.Int);
+            _parameters[3].Value = labReport.LabReportTypeId;
+            _parameters[4] = new SqlParameter("@PreferredLabId", SqlDbType.Int);
+            _parameters[4].Value = labReport.PreferredLabId;
+            _parameters[5] = new SqlParameter("@Comments", SqlDbType.NVarChar);
+            _parameters[5].Value = labReport.Comments;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+        public DataSet Dental_GetTreatmentLabReports(long? doctorTreatmentId)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_GetTreatmentLabReports";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@DoctorTreatmentId", SqlDbType.BigInt);
+            _parameters[0].Value = doctorTreatmentId;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
     }
 }
