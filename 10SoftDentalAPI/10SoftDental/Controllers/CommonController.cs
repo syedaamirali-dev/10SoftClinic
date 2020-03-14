@@ -56,5 +56,13 @@ namespace _10SoftDental.Controllers
             if (result == null) return NotFound();
             return Ok(result);
         }
+
+        [HttpPost]
+        public IHttpActionResult SaveDentalResources(List<DentalResources> dentalResourcesList)
+        {
+            var result = this.commonBAL.SaveDentalResources(dentalResourcesList);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
     }
 }

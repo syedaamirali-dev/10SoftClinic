@@ -147,6 +147,15 @@ namespace _10SoftDental.DAL.Common
             return RunProcedure(_storedProcedure, _parameters, true);
         }
 
+        public DataSet SaveDentalResources(DataTable dentalResource)
+        {
+            _storedProcedure = "Dental_SaveDentalResources";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@DentalResourcesTypeTbl", SqlDbType.Structured);
+            _parameters[0].Value = dentalResource;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+
         public DataSet GetDentalAdultDropdownMaster()
         {
             _storedProcedure = "GetDentalAdultDropdownMaster";

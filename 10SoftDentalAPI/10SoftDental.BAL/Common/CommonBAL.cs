@@ -1,4 +1,5 @@
-﻿using _10SoftDental.DAL.Common;
+﻿using _10SoftDental.BAL.Helper;
+using _10SoftDental.DAL.Common;
 using _10SoftDental.Factory.Common;
 using System;
 using System.Collections.Generic;
@@ -96,6 +97,23 @@ namespace _10SoftDental.BAL.Common
                 return this.commonResponseResult.CreateResponse(false, "Error", ex.Message.ToString(), "");
             }
 
+        }
+
+        public ResponseModel SaveDentalResources(List<DentalResources> dentalResourcesList)
+        {
+            try
+            {
+                commonDAL = new CommonDAL();
+                _dataTable = new DataTable();
+                _dataSet = new DataSet();
+                _dataTable = new ListToDatatable().ToDataTableDentalResources(dentalResourcesList);
+                _dataSet = commonDAL.SaveDentalResources(_dataTable);
+                return CreateResponse(Convert.ToInt32(_dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? true : false, Convert.ToInt32(_dataSet.Tables[0].Rows[0]["IsSuccess"]) == 1 ? "Success" : "Failed", _dataSet.Tables[0].Rows[0]["Message"].ToString(), _dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
         }
     }
 }

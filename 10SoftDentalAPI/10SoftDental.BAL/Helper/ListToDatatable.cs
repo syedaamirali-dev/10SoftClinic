@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using _10SoftDental.BAL.Common;
 using _10SoftDental.BAL.Dental;
 using _10SoftDental.Factory.Models;
 using ApplicationUtility;
@@ -167,6 +168,31 @@ namespace _10SoftDental.BAL.Helper
                 row["Level"] = DataTypesUtilities.LongNZ(datalist[i].Level);
                 row["Comment"] = DataTypesUtilities.StringNZ(datalist[i].Comment);
                 row["TeethNumber"] = DataTypesUtilities.StringNZ(datalist[i].TeethNumber);
+                dataTable.Rows.Add(row);
+            }
+            return dataTable;
+        }
+
+        public DataTable ToDataTableDentalResources(List<DentalResources> datalist)
+        {
+            dataTable = new DataTable();
+            DataRow row = null;
+            dataTable.Columns.Add("ResourceId", typeof(int));
+            dataTable.Columns.Add("ResourceLabel", typeof(string));
+            dataTable.Columns.Add("EnglishText", typeof(string));
+            dataTable.Columns.Add("ArabicText", typeof(string));
+            dataTable.Columns.Add("LanguageID", typeof(int));
+            dataTable.Columns.Add("ScreenID", typeof(int));
+
+            for (int i = 0; i < datalist.Count; i++)
+            {
+                row = dataTable.NewRow();
+                row["ResourceId"] = DataTypesUtilities.IntNZ(datalist[i].ResourceId);
+                row["ResourceLabel"] = DataTypesUtilities.StringNZ(datalist[i].ResourceLabel);
+                row["EnglishText"] = DataTypesUtilities.StringNZ(datalist[i].EnglishText);
+                row["ArabicText"] = DataTypesUtilities.StringNZ(datalist[i].ArabicText);
+                row["LanguageID"] = DataTypesUtilities.IntNZ(datalist[i].LanguageID);
+                row["ScreenID"] = DataTypesUtilities.IntNZ(datalist[i].ScreenID);
                 dataTable.Rows.Add(row);
             }
             return dataTable;
