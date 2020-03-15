@@ -199,6 +199,8 @@ namespace _10SoftDental.BAL.Dental
             }
         }
 
+        
+
         public List<PatientClinicalExamination> GetPatientClinicalExamination(long dentalAdultMainId, long? ClinicalExaminationId)
         {
             List<PatientClinicalExamination> patientClinical = new List<PatientClinicalExamination>();

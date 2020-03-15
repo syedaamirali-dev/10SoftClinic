@@ -115,5 +115,7 @@ namespace _10SoftDental.BAL.Common
                 return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
             }
         }
+
+      
     }
 }

@@ -161,6 +161,12 @@ namespace _10SoftDental.DAL.Common
             _storedProcedure = "GetDentalAdultDropdownMaster";
             return RunProcedure(_storedProcedure, true);
         }
+
+        public DataSet GetDummyData()
+        {
+            _storedProcedure = "GetDummyData";
+            return RunProcedure(_storedProcedure, true);
+        }
         public DataSet Dental_GetPatienDropdownData()
         {
             _storedProcedure = "Dental_GetPatienDropdownData";
@@ -182,6 +188,24 @@ namespace _10SoftDental.DAL.Common
             _parameters = new SqlParameter[1];
             _parameters[0] = new SqlParameter("@DentalTreatmentId", SqlDbType.BigInt);
             _parameters[0].Value = doctorTreatmentId;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+
+
+        public DataSet SavePeriodentalChart(IPeriodentalChart periodentalChart)
+        {
+            _storedProcedure = "Dental_SavePeriodentalChart";
+            _parameters = new SqlParameter[5];
+            _parameters[0] = new SqlParameter("@PeriodentalChartId", SqlDbType.Int);
+            _parameters[0].Value = periodentalChart.PeriodontalChartId;
+            _parameters[1] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[1].Value = periodentalChart.DentalAdultMainId ;
+            _parameters[2] = new SqlParameter("@PatientId", SqlDbType.BigInt);
+            _parameters[2].Value = periodentalChart.PatientId;
+            _parameters[3] = new SqlParameter("@JsonObject", SqlDbType.NVarChar);
+            _parameters[3].Value = periodentalChart.JsonObject;
+            _parameters[4] = new SqlParameter("@UpdatedBy", SqlDbType.BigInt);
+            _parameters[4].Value = periodentalChart.UpdatedBy;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
 
@@ -276,6 +300,19 @@ namespace _10SoftDental.DAL.Common
             _parameters = new SqlParameter[1];
             _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
             _parameters[0].Value = dentalAdultMainId;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
+
+        public DataSet GetPatientPeriodentalChart(int periodentalChartId,long dentalAdultMainId)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_GetPatientPeriodentalChart";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@PeriodentalChartId", SqlDbType.Int);
+            _parameters[0].Value = periodentalChartId;
+            _parameters[1] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
+            _parameters[1].Value = dentalAdultMainId;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }

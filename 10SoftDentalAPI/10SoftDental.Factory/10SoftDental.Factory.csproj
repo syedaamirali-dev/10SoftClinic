@@ -55,6 +55,7 @@
     <Compile Include="DentalClinic\IPatientClinicalExamination.cs" />
     <Compile Include="DentalClinic\IPatientOcclusion.cs" />
     <Compile Include="DentalClinic\IPatientScreeningSheet.cs" />
+    <Compile Include="DentalClinic\IPeriodentalChart.cs" />
     <Compile Include="DentalClinic\ITeethSectionNotationMapping.cs" />
     <Compile Include="DentalClinic\IVisitHistory.cs" />
     <Compile Include="DentalMaster\IDentalMaster.cs" />
