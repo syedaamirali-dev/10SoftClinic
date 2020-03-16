@@ -20,6 +20,7 @@ namespace _10SoftDental.Factory.DentalClinic
 
         string Diabetes { get; set; }
 
-           
+        bool? IsFreeVisit { get; set; }
+
     }
 }

@@ -80,7 +80,7 @@ namespace _10SoftDental.DAL.Master
         {
             dataSet = new DataSet();
             _storedProcedure = "Dental_SaveVisitRegister";
-            _parameters = new SqlParameter[8];
+            _parameters = new SqlParameter[9];
             _parameters[0] = new SqlParameter("@VisitRegisterId", SqlDbType.BigInt);
             _parameters[0].Value = visitHistory.VisitID;
             _parameters[1] = new SqlParameter("@IssueDate", SqlDbType.Date);
@@ -97,6 +97,8 @@ namespace _10SoftDental.DAL.Master
             _parameters[6].Value = visitHistory.IsPregnant;
             _parameters[7] = new SqlParameter("@Diabetes", SqlDbType.NVarChar);
             _parameters[7].Value = visitHistory.Diabetes;
+            _parameters[8] = new SqlParameter("@IsFreeVisit", SqlDbType.Bit);
+            _parameters[8].Value = visitHistory.IsFreeVisit;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
