@@ -379,6 +379,21 @@ namespace _10SoftDental.Controllers
                 throw;
             }
         }
+        [HttpGet]
+        public IHttpActionResult Dental_ShowTreatmentLabReport(long? labReportRequestId)
+        {
+            try
+            {
+                labReport = new LabReport();
+                var result = labReport.Dental_ShowTreatmentLabReport(labReportRequestId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
         [HttpPost]
         public IHttpActionResult SaveLabReport(LabReport labReport)
         {

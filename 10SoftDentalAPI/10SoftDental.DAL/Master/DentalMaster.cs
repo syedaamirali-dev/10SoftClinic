@@ -189,5 +189,16 @@ namespace _10SoftDental.DAL.Master
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
+
+        public DataSet Dental_ShowTreatmentLabReport(long? labReportRequestId)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_ShowLabReportDetails";
+            _parameters = new SqlParameter[1];
+            _parameters[0] = new SqlParameter("@LabreportRequestId", SqlDbType.BigInt);
+            _parameters[0].Value = labReportRequestId;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
     }
 }

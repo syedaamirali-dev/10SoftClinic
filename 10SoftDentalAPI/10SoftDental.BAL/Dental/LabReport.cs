@@ -66,5 +66,17 @@ namespace _10SoftDental.BAL.Dental
                 return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
             }
         }
+        public ResponseModel Dental_ShowTreatmentLabReport(long? labReportRequestId)
+        {
+            try
+            {
+                this.dataSet = this.dentalMaster.Dental_ShowTreatmentLabReport(labReportRequestId);
+                return CreateResponse(true, "Success" , "ShowTreatmentLabReports", dataSet);
+            }
+            catch (Exception ex)
+            {
+                return CreateResponse(false, "Error", ex.InnerException.ToString(), "");
+            }
+        }
     }
 }
