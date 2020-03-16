@@ -72,6 +72,7 @@ namespace _10SoftDental.BAL.Dental
         private string treatmentPlanApprovedStatus;
         private string treatmentPlanComments;
         private long? childOcclusionId;
+        private int? periodentalChartId;
 
 
         public long? DentalAdultMainId { get => dentalAdultMainId; set => dentalAdultMainId = value; }
@@ -122,6 +123,7 @@ namespace _10SoftDental.BAL.Dental
         public string TreatmentPlanApprovedStatus { get => treatmentPlanApprovedStatus; set => treatmentPlanApprovedStatus = value; }
         public string TreatmentPlanComments { get => treatmentPlanComments; set => treatmentPlanComments = value; }
         public long? ChildOcclusionId { get => childOcclusionId; set => childOcclusionId = value; }
+        public int? PeriodentalChartId { get => periodentalChartId; set => periodentalChartId = value; }
 
         private CommonDAL commonDAL = null;
 
@@ -306,7 +308,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.visitRegisterId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["VisitRegisterId"]);
                 patientBAL.DocumentBookId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DocumentBookId"]);
             }
-                if (dentalMainId > 0)
+          if (dentalMainId > 0)
             {
                 patientBAL.DentalAdultMainId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["DentalAdultMainId"]);
                 patientBAL.PatientId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["PatientIdRef"]);
@@ -351,6 +353,7 @@ namespace _10SoftDental.BAL.Dental
                 patientBAL.TreatmentPlanApprovedStatus= Convert.ToString(dataSet.Tables[0].Rows[0]["TreatmentPlanApprovedStatus"]);
                 patientBAL.TreatmentPlanComments= Convert.ToString(dataSet.Tables[0].Rows[0]["TreatmentPlanComments"]);
                 patientBAL.ChildOcclusionId = Convert.ToInt64(dataSet.Tables[0].Rows[0]["ChildOcclusionId"]);
+                patientBAL.PeriodentalChartId = Convert.ToInt32(dataSet.Tables[0].Rows[0]["PeriodentalChartId"]);
                 if (dataSet.Tables.Count > 1)
                 {
                     patientBAL.TeethSectionNotationMapping = new Helper.DatatableToList().TeethList(dataSet.Tables[1]);
@@ -377,8 +380,6 @@ namespace _10SoftDental.BAL.Dental
             dataSet = new DAL.Common.CommonDAL().Dental_GetPatienDropdownData();
             return dataSet;
         }
-
-        
     }
 
 

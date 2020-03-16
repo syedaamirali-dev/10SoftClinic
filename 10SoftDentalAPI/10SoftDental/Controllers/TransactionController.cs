@@ -4,6 +4,7 @@ using System.Data;
 using System.Web;
 using System.Web.Http;
 using _10SoftDental.BAL.Dental;
+using Newtonsoft.Json;
 
 namespace _10SoftDental.Controllers
 {
@@ -13,17 +14,18 @@ namespace _10SoftDental.Controllers
         PatientAdultMain patientBAL = null;
         AdultMainTreatment adultMainTreatmentBAL = null;
         PatientOcclusion patientOcclusion = null;
+        PatientPerioDentalChart perioDentalChart = null;
         DataSet dataSet = null;
         private List<PatientMedication> patientMedicationList = null;
         private LabReport labReport = null;
-       
+
 
         [HttpPost]
         public IHttpActionResult SaveDentalAdultMain(PatientAdultMain adultMain)
         {
             try
-            {                
-               var result=adultMain.SaveDentalAdultMain();
+            {
+                var result = adultMain.SaveDentalAdultMain();
                 if (result == null) return NotFound();
                 return Ok(result);
             }
@@ -50,7 +52,7 @@ namespace _10SoftDental.Controllers
 
         //http://localhost:55453/api/Transaction/GetAdultMainScreeningData?clinicId=3&patientId=15&Mobile=&doctorId=&DoctorTreatmentId=35&dentalMainId=1
         [HttpGet]
-        public IHttpActionResult GetAdultMainScreeningData(long patientId, long? DoctorTreatmentId, long? dentalMainId,bool? isLocal,int? visitId)
+        public IHttpActionResult GetAdultMainScreeningData(long patientId, long? DoctorTreatmentId, long? dentalMainId, bool? isLocal, int? visitId)
         {
             try
             {
@@ -124,7 +126,7 @@ namespace _10SoftDental.Controllers
             try
             {
                 patientBAL = new PatientAdultMain();
-                var result= patientAdultMain.SavePatientCaseSheet();
+                var result = patientAdultMain.SavePatientCaseSheet();
                 if (result == null) return NotFound();
                 return Ok(result);
             }
@@ -240,7 +242,7 @@ namespace _10SoftDental.Controllers
             try
             {
                 patientBAL = new PatientAdultMain();
-                var result = patientAdultMain.SendforApproval(Convert.ToInt64(patientAdultMain.DentalAdultMainId),Convert.ToBoolean(patientAdultMain.IsSentForApproval));
+                var result = patientAdultMain.SendforApproval(Convert.ToInt64(patientAdultMain.DentalAdultMainId), Convert.ToBoolean(patientAdultMain.IsSentForApproval));
                 if (result == null) return NotFound();
                 return Ok(result);
             }
@@ -277,7 +279,7 @@ namespace _10SoftDental.Controllers
                 var req2 = Request.Headers.GetValues("userId");
                 adultMainTreatmentBAL = new AdultMainTreatment();
                 dataSet = new DataSet();
-                dataSet=adultMainTreatmentBAL.GetDentalAdultTreatmentDetails(DentalTreatmentId);
+                dataSet = adultMainTreatmentBAL.GetDentalAdultTreatmentDetails(DentalTreatmentId);
                 dataSet.Tables[0].TableName = "LevelMaster";
                 dataSet.Tables[1].TableName = "IllnessMaster";
                 dataSet.Tables[2].TableName = "SymptomMaster";
@@ -367,8 +369,8 @@ namespace _10SoftDental.Controllers
         {
             try
             {
-                labReport = new LabReport();               
-                var result=labReport.GetLabReport(doctorTreatmentId);
+                labReport = new LabReport();
+                var result = labReport.GetLabReport(doctorTreatmentId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -389,6 +391,47 @@ namespace _10SoftDental.Controllers
             }
             catch (Exception ex)
             {
+                throw;
+            }
+        }
+
+        //http://localhost:55453/api/Transaction/SavePeriodentalChart
+        [HttpPost]
+        public IHttpActionResult SavePeriodentalChart(dynamic obj)
+        {
+            try
+            {
+                perioDentalChart = new PatientPerioDentalChart();
+                dynamic data = obj;
+                perioDentalChart.PeriodontalChartId = Convert.ToInt32(JsonConvert.DeserializeObject(data["PeriodentalChartId"].ToString()));//((Newtonsoft.Json.Linq.JObject)data).ChildrenTokens[0]
+                perioDentalChart.DentalAdultMainId = Convert.ToInt64(JsonConvert.DeserializeObject(data["DentalAdultMainId"].ToString()));
+                perioDentalChart.PatientId = JsonConvert.DeserializeObject(data["PatientId"].ToString()) == 0 ? null : Convert.ToInt64(JsonConvert.DeserializeObject(data["PatientId"].ToString()));
+                perioDentalChart.JsonObject = Convert.ToString(JsonConvert.DeserializeObject(data["JsonObject"].ToString()));
+                perioDentalChart.UpdatedBy = Convert.ToInt64(JsonConvert.DeserializeObject(data["UpdatedBy"].ToString()));
+                var result = perioDentalChart.SavePeriodentalChart();
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
+        //http://localhost:55453/api/Transaction/GetPatientPeriodentalChart?periodentalChartId=1&dentalAdultMainId=24
+        [HttpGet]
+        public IHttpActionResult GetPatientPeriodentalChart(int periodentalChartId, long dentalAdultMainId)
+        {
+            try
+            {
+                perioDentalChart = new PatientPerioDentalChart();
+                var result = perioDentalChart.GetPatientPeriodentalChart(periodentalChartId, dentalAdultMainId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
                 throw;
             }
         }
