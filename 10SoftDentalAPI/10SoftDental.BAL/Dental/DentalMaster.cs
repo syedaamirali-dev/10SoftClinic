@@ -30,6 +30,7 @@ namespace _10SoftDental.BAL.Dental
         private string bloodPressure;
         private bool? isPregnant;
         private string diabetes;
+        private bool? isFreeVisit;
 
         public DentalMaster()
         {            
@@ -62,6 +63,7 @@ namespace _10SoftDental.BAL.Dental
         public bool? IsPregnant { get => isPregnant; set => isPregnant = value; }
         public string BloodPressure { get => bloodPressure; set => bloodPressure = value; }
         public string Diabetes { get => diabetes; set => diabetes = value; }
+        public bool? IsFreeVisit { get => isFreeVisit; set => isFreeVisit = value; }
 
         public DataSet SaveDentalChartNotations()
         {

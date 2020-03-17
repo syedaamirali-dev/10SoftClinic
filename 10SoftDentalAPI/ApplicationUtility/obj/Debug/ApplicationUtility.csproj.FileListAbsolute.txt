@@ -20,3 +20,8 @@ D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\ApplicationUtility\obj\Deb
 D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.csproj.CoreCompileInputs.cache
 D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.dll
 D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.pdb
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\ApplicationUtility\bin\Debug\ApplicationUtility.dll
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\ApplicationUtility\bin\Debug\ApplicationUtility.pdb
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.csproj.CoreCompileInputs.cache
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.dll
+F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\ApplicationUtility\obj\Debug\ApplicationUtility.pdb
