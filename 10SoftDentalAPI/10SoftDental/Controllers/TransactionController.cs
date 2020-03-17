@@ -418,11 +418,11 @@ namespace _10SoftDental.Controllers
             {
                 perioDentalChart = new PatientPerioDentalChart();
                 dynamic data = obj;
-                perioDentalChart.PeriodontalChartId = Convert.ToInt32(JsonConvert.DeserializeObject(data["periodentalChartId"].ToString()));//((Newtonsoft.Json.Linq.JObject)data).ChildrenTokens[0]
-                perioDentalChart.DentalAdultMainId = Convert.ToInt64(JsonConvert.DeserializeObject(data["dentalAdultMainId"].ToString()));
-                perioDentalChart.PatientId = JsonConvert.DeserializeObject(data["patientId"].ToString()) == 0 ? null : Convert.ToInt64(JsonConvert.DeserializeObject(data["PatientId"].ToString()));
-                perioDentalChart.JsonObject = Convert.ToString(JsonConvert.DeserializeObject(data["jsonObject"].ToString()));
-                perioDentalChart.UpdatedBy = Convert.ToInt64(JsonConvert.DeserializeObject(data["updatedBy"].ToString()));
+                perioDentalChart.PeriodontalChartId = Convert.ToInt32(JsonConvert.DeserializeObject(data["PeriodentalChartId"].ToString()));//((Newtonsoft.Json.Linq.JObject)data).ChildrenTokens[0]
+                perioDentalChart.DentalAdultMainId = Convert.ToInt64(JsonConvert.DeserializeObject(data["DentalAdultMainId"].ToString()));
+                perioDentalChart.PatientId = JsonConvert.DeserializeObject(data["PatientId"].ToString()) == 0 ? null : Convert.ToInt64(JsonConvert.DeserializeObject(data["PatientId"].ToString()));
+                perioDentalChart.JsonObject = Convert.ToString(JsonConvert.DeserializeObject(data["JsonObject"].ToString()));
+                perioDentalChart.UpdatedBy = Convert.ToInt64(JsonConvert.DeserializeObject(data["UpdatedBy"].ToString()));
                 var result = perioDentalChart.SavePeriodentalChart();
                 if (result == null) return NotFound();
                 return Ok(result);

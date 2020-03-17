@@ -143,11 +143,10 @@ controllerContent = function (moduleName, componentName) {
 
     /** @ngInject */
     function ${componentName}Ctrl($scope, ${componentName}Service){
-        
+        activate();
+
         function activate(){
         }
-        
-        activate();
     }
 
 }());

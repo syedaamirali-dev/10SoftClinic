@@ -124,10 +124,13 @@
 
 <!-- begin::Body -->
 
-<body ng-app="10softdental"
+<body ng-app="10softdental" ng-class="{'overflow-hidden':!$root.isLayout}"
     class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
     <div class="main-loader-wrapper" ng-show="$root.pageLoading">
         <div class="lds lds-hourglass"></div>
+    </div>
+    <div class="vh-100" ng-if="!$root.isLayout">
+        <ui-view></ui-view>
     </div>
 
     <!-- begin:: Page -->
@@ -411,11 +414,10 @@
             </div>
 
             <!-- end:: Aside -->
-            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper"
-                ng-class="{'p-0':!$root.isLayout}">
+            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
 
                 <!-- begin:: Header -->
-                <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed" ng-show="$root.isLayout">
+                <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " ng-show="$root.isLayout">
 
                     <!-- begin:: Header Menu -->
 
@@ -1023,7 +1025,7 @@
                 </div>
 
                 <!-- end:: Header -->
-                <ui-view></ui-view>
+                <ui-view ng-if="$root.isLayout"></ui-view>
 
                 <!-- begin:: Footer -->
                 <div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer"
@@ -1356,11 +1358,6 @@
     <!-- Page - childLabReport -->
     <script src="./app/components/childLabReport/childLabReport.ctrl.js"></script>
     <script src="./app/components/childLabReport/childLabReport.factory.js"></script>
-
-
-    <!-- Page - visitRegister -->
-    <script src="./app/components/visitRegister/visitRegister.ctrl.js"></script>
-    <script src="./app/components/visitRegister/visitRegister.factory.js"></script>
 
 </body>
 

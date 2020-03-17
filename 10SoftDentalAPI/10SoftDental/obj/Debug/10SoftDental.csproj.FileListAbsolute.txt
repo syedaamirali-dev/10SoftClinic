@@ -685,4 +685,3 @@ F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental\bin\r
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental\bin\roslyn\System.Xml.XPath.XDocument.dll
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental\bin\roslyn\vbc.exe
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental\bin\roslyn\VBCSCompiler.exe
-D:\F Drive\10Soft\dental\10SoftClinic\10SoftDentalAPI\10SoftDental\bin\Newtonsoft.Json.dll
