@@ -420,7 +420,7 @@ namespace _10SoftDental.Controllers
                 dynamic data = obj;
                 perioDentalChart.PeriodontalChartId = Convert.ToInt32(JsonConvert.DeserializeObject(data["periodentalChartId"].ToString()));//((Newtonsoft.Json.Linq.JObject)data).ChildrenTokens[0]
                 perioDentalChart.DentalAdultMainId = Convert.ToInt64(JsonConvert.DeserializeObject(data["dentalAdultMainId"].ToString()));
-                perioDentalChart.PatientId = JsonConvert.DeserializeObject(data["patientId"].ToString()) == 0 ? null : Convert.ToInt64(JsonConvert.DeserializeObject(data["PatientId"].ToString()));
+                perioDentalChart.PatientId = JsonConvert.DeserializeObject(data["patientId"].ToString()) == 0 ? null : Convert.ToInt64(JsonConvert.DeserializeObject(data["patientId"].ToString()));
                 perioDentalChart.JsonObject = Convert.ToString(JsonConvert.DeserializeObject(data["jsonObject"].ToString()));
                 perioDentalChart.UpdatedBy = Convert.ToInt64(JsonConvert.DeserializeObject(data["updatedBy"].ToString()));
                 var result = perioDentalChart.SavePeriodentalChart();
