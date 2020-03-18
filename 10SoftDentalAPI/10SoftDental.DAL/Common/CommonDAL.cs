@@ -15,20 +15,20 @@ namespace _10SoftDental.DAL.Common
             base(ApplicationUtility.Utility.ConnectionString)
         {
         }
-        public DataSet GetAllWaitingList()
+        public DataSet GetAllWaitingList(int doctorId,int clinicId)
         {
             _storedProcedure = "VisitRegister_SelectByCriteria";
             _parameters = new SqlParameter[5];
             _parameters[0] = new SqlParameter("@IsLocal", SqlDbType.Bit);
             _parameters[0].Value = 0;
             _parameters[1] = new SqlParameter("@ClinicIdRef", SqlDbType.Int);
-            _parameters[1].Value = 3;
+            _parameters[1].Value = clinicId;
             _parameters[2] = new SqlParameter("@PageIndex", SqlDbType.Int);
             _parameters[2].Value = 1;
             _parameters[3] = new SqlParameter("@PageRecord", SqlDbType.Int);
-            _parameters[3].Value = 100;
+            _parameters[3].Value = 1000;
             _parameters[4] = new SqlParameter("@DoctorIdRef", SqlDbType.Int);
-            _parameters[4].Value = 13;
+            _parameters[4].Value = doctorId;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
         public DataSet GetAllVisitList()
@@ -304,15 +304,17 @@ namespace _10SoftDental.DAL.Common
             return dataSet;
         }
 
-        public DataSet GetPatientPeriodentalChart(int periodentalChartId,long dentalAdultMainId)
+        public DataSet GetPatientPeriodentalChart(int periodentalChartId,long dentalAdultMainId,long? patientId)
         {
             dataSet = new DataSet();
             _storedProcedure = "Dental_GetPatientPeriodentalChart";
-            _parameters = new SqlParameter[2];
+            _parameters = new SqlParameter[3];
             _parameters[0] = new SqlParameter("@PeriodentalChartId", SqlDbType.Int);
             _parameters[0].Value = periodentalChartId;
             _parameters[1] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
             _parameters[1].Value = dentalAdultMainId;
+            _parameters[2] = new SqlParameter("@PatientId", SqlDbType.BigInt);
+            _parameters[2].Value = patientId;
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }

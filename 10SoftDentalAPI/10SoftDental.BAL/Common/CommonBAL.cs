@@ -34,11 +34,11 @@ namespace _10SoftDental.BAL.Common
             return this.commonResponseResult.CreateResponse(status, messageCode, message, data);
         }
 
-        public ResponseModel GetAllWaitingList()
+        public ResponseModel GetAllWaitingList(int doctorId,int clinicId)
         {
             try
             {
-                _dataSet = this.commonDAL.GetAllWaitingList();
+                _dataSet = this.commonDAL.GetAllWaitingList(doctorId, clinicId);
                 return CreateResponse(true, "Success", "GetAllWaitingList", _dataSet);
             }
             catch (Exception ex)

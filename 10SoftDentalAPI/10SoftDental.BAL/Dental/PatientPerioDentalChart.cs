@@ -51,10 +51,10 @@ namespace _10SoftDental.BAL.Dental
             }
         }
 
-        public DataSet GetPatientPeriodentalChart(int periodentalChartId, long dentalAdultMainId)
+        public DataSet GetPatientPeriodentalChart(int periodentalChartId, long dentalAdultMainId,long? patientId)
         {
             dataSet = new DataSet();
-            dataSet = new DAL.Common.CommonDAL().GetPatientPeriodentalChart(periodentalChartId,dentalAdultMainId);
+            dataSet = new DAL.Common.CommonDAL().GetPatientPeriodentalChart(periodentalChartId,dentalAdultMainId, patientId);
             return dataSet;
         }
 
