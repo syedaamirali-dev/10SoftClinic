@@ -420,7 +420,7 @@ namespace _10SoftDental.Controllers
                 dynamic data = obj;
                 perioDentalChart.PeriodontalChartId = Convert.ToInt32(JsonConvert.DeserializeObject(data["periodentalChartId"].ToString()));//((Newtonsoft.Json.Linq.JObject)data).ChildrenTokens[0]
                 perioDentalChart.DentalAdultMainId = Convert.ToInt64(JsonConvert.DeserializeObject(data["dentalAdultMainId"].ToString()));
-                perioDentalChart.PatientId = JsonConvert.DeserializeObject(data["patientId"].ToString()) == 0 ? null : Convert.ToInt64(JsonConvert.DeserializeObject(data["PatientId"].ToString()));
+                perioDentalChart.PatientId = JsonConvert.DeserializeObject(data["patientId"].ToString()) == 0 ? null : Convert.ToInt64(JsonConvert.DeserializeObject(data["patientId"].ToString()));
                 perioDentalChart.JsonObject = Convert.ToString(JsonConvert.DeserializeObject(data["jsonObject"].ToString()));
                 perioDentalChart.UpdatedBy = Convert.ToInt64(JsonConvert.DeserializeObject(data["updatedBy"].ToString()));
                 var result = perioDentalChart.SavePeriodentalChart();
@@ -436,12 +436,12 @@ namespace _10SoftDental.Controllers
 
         //http://localhost:55453/api/Transaction/GetPatientPeriodentalChart?periodentalChartId=1&dentalAdultMainId=24
         [HttpGet]
-        public IHttpActionResult GetPatientPeriodentalChart(int periodentalChartId, long dentalAdultMainId)
+        public IHttpActionResult GetPatientPeriodentalChart(int periodentalChartId, long dentalAdultMainId,long? patientId)
         {
             try
             {
                 perioDentalChart = new PatientPerioDentalChart();
-                var result = perioDentalChart.GetPatientPeriodentalChart(periodentalChartId, dentalAdultMainId);
+                var result = perioDentalChart.GetPatientPeriodentalChart(periodentalChartId, dentalAdultMainId, patientId);
                 return Ok(result);
             }
             catch (Exception ex)

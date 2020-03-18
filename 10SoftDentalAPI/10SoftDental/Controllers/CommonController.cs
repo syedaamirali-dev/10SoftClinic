@@ -19,7 +19,9 @@ namespace _10SoftDental.Controllers
         [HttpGet]
         public IHttpActionResult GetAllWaitingList()
         {
-            var result = this.commonBAL.GetAllWaitingList();
+            var clinicId = HttpContext.Current.Request.Headers.GetValues("clinicId");
+            var doctorId = HttpContext.Current.Request.Headers.GetValues("doctorId");
+            var result = this.commonBAL.GetAllWaitingList(Convert.ToInt32(doctorId[0]), Convert.ToInt32(clinicId[0]));
             if (result == null) return NotFound();
             return Ok(result);
         }

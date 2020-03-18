@@ -16,4 +16,3 @@ F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.Facto
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.csproj.CopyComplete
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.dll
 F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.pdb
-F:\Projects\10Soft-Dental-Clinic\10SoftClinic\10SoftDentalAPI\10SoftDental.Factory\obj\Debug\10SoftDental.Factory.csprojAssemblyReference.cache
