@@ -172,14 +172,7 @@
                 controller: 'childLabReportCtrl',
                 templateUrl: 'app/components/childLabReport/childLabReport.html'
             })
-        // visitRegister
-            .state({
-                name: 'main.visitRegister',
-                url: '/visitRegister',
-                controller: 'visitRegisterCtrl',
-                templateUrl: 'app/components/visitRegister/visitRegister.html'
-            })
-            /** @RouteReplaceForGulp */
+        /** @RouteReplaceForGulp */
 
 
         $urlRouterProvider.otherwise("/dashboard");
