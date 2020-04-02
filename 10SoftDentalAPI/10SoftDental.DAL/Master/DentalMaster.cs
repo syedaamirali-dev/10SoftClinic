@@ -202,5 +202,18 @@ namespace _10SoftDental.DAL.Master
             dataSet = RunProcedure(_storedProcedure, _parameters, true);
             return dataSet;
         }
+
+        public DataSet GetUserAccessMenu(long userIdRef,long moduleIdRef)
+        {
+            dataSet = new DataSet();
+            _storedProcedure = "Dental_UserAccessMenu";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@UserIdRef", SqlDbType.BigInt);
+            _parameters[0].Value = userIdRef;
+            _parameters[1] = new SqlParameter("@ModuleIdRef", SqlDbType.BigInt);
+            _parameters[1].Value = moduleIdRef;
+            dataSet = RunProcedure(_storedProcedure, _parameters, true);
+            return dataSet;
+        }
     }
 }

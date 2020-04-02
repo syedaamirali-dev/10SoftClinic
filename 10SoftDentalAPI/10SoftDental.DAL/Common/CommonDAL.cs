@@ -100,7 +100,7 @@ namespace _10SoftDental.DAL.Common
         {
             try
             {
-                dataSet = new DataSet();
+                 dataSet = new DataSet();
                 _storedProcedure = "SaveDentalAdultMain";
                 _parameters = new SqlParameter[13];
                 _parameters[0] = new SqlParameter("@DentalAdultMainId", SqlDbType.BigInt);
@@ -573,6 +573,49 @@ namespace _10SoftDental.DAL.Common
             _parameters[22].Value = patientOcclusion.AnyOther;
             _parameters[23] = new SqlParameter("@UpdatedBy", SqlDbType.BigInt);
             _parameters[23].Value = patientOcclusion.UpdatedBy;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+
+
+        public DataSet GetEquipmentMaterial(long? equipmentMaterialId,long? doctorStudentId)
+        {
+            _storedProcedure = "Dental_GetEquipmentMaterial";
+            _parameters = new SqlParameter[2];
+            _parameters[0] = new SqlParameter("@EquipmentMaterialId", SqlDbType.BigInt);
+            _parameters[0].Value = equipmentMaterialId;
+            _parameters[1] = new SqlParameter("@Doctor_Student_Id", SqlDbType.BigInt);
+            _parameters[1].Value = doctorStudentId;
+            return RunProcedure(_storedProcedure, _parameters, true);
+        }
+
+        public DataSet SaveEquipmentMaterial(IEquipmentMaterial equipmentMaterial)
+        {
+            _storedProcedure = "Dental_SaveEquipmentMaterial";
+            _parameters = new SqlParameter[12];
+            _parameters[0] = new SqlParameter("@EquipmentMaterialId", SqlDbType.BigInt);
+            _parameters[0].Value = equipmentMaterial.EquipmentMaterialId;
+            _parameters[1] = new SqlParameter("@Doctor_Student_Id", SqlDbType.BigInt);
+            _parameters[1].Value = equipmentMaterial.DoctorStudentId;
+            _parameters[2] = new SqlParameter("@Year", SqlDbType.Int);
+            _parameters[2].Value = equipmentMaterial.Year;
+            _parameters[3] = new SqlParameter("@CheckInDate", SqlDbType.DateTime);
+            _parameters[3].Value = equipmentMaterial.CheckInDate;
+            _parameters[4] = new SqlParameter("@CheckOutDate", SqlDbType.DateTime);
+            _parameters[4].Value = equipmentMaterial.CheckOutDate;
+            _parameters[5] = new SqlParameter("@Session", SqlDbType.Bit);
+            _parameters[5].Value = equipmentMaterial.Session;
+            _parameters[6] = new SqlParameter("@Comments", SqlDbType.NVarChar);
+            _parameters[6].Value = equipmentMaterial.Comments;
+            _parameters[7] = new SqlParameter("@ApprovedBy", SqlDbType.BigInt);
+            _parameters[7].Value = equipmentMaterial.ApprovedBy;
+            _parameters[8] = new SqlParameter("@ApprovedDate", SqlDbType.DateTime);
+            _parameters[8].Value = equipmentMaterial.ApprovedDate;
+            _parameters[9] = new SqlParameter("@IsApproved", SqlDbType.Bit);
+            _parameters[9].Value = equipmentMaterial.IsApproved;
+            _parameters[10] = new SqlParameter("@JsonObjectData", SqlDbType.NVarChar);
+            _parameters[10].Value = equipmentMaterial.JsonObjectData;
+            _parameters[11] = new SqlParameter("@RequestType", SqlDbType.NVarChar);
+            _parameters[11].Value = equipmentMaterial.RequestType;
             return RunProcedure(_storedProcedure, _parameters, true);
         }
     }

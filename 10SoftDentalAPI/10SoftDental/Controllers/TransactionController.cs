@@ -450,5 +450,38 @@ namespace _10SoftDental.Controllers
                 throw;
             }
         }
+
+
+        //Equipment Material
+        [HttpPost]
+        public IHttpActionResult SaveEquipmentMaterial(EquipmentMaterial equipmentMaterial)
+        {
+            try
+            {
+                var result = equipmentMaterial.SaveEquipmentMaterial();
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetEquipmentMaterial(long? equipmentMaterialId, long? doctorStudentId)
+        {
+            try
+            {
+                EquipmentMaterial equipmentMateria = new EquipmentMaterial();
+                var result = equipmentMateria.GetEquipmentMaterial(equipmentMaterialId, doctorStudentId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

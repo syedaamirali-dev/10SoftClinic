@@ -49,6 +49,7 @@
     <Compile Include="Common\DentalResources.cs" />
     <Compile Include="Dental\AdultTreatmentMain.cs" />
     <Compile Include="Dental\DentalMaster.cs" />
+    <Compile Include="Dental\EquipmentMaterial.cs" />
     <Compile Include="Dental\LabReport.cs" />
     <Compile Include="Dental\PatientAdultMain.cs" />
     <Compile Include="Dental\PatientClinicalExamination.cs" />

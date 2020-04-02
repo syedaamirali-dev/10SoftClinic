@@ -84,6 +84,10 @@ namespace _10SoftDental.BAL.Dental
         {
             return new DAL.Master.DentalMaster().GetPatientInsurance(patientId);
         }
+        public DataSet GetUserAccessMenu(long userIdRef, long moduleIdRef)
+        {
+            return new DAL.Master.DentalMaster().GetUserAccessMenu(userIdRef, moduleIdRef);
+        }
 
 
         public ResponseModel SaveVisitRegister(DentalMaster dentalMaster)

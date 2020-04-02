@@ -49,6 +49,14 @@ namespace _10SoftDental.Controllers
             return Ok(result);
         }
 
+
+        public IHttpActionResult GetUserAccessMenu(long userIdRef, long moduleIdRef)
+        {
+            var result = this.dentalMassterBAL.GetUserAccessMenu(userIdRef, moduleIdRef);
+            if (result == null) return NotFound();
+            return Ok(result);
+        }
+
         [HttpPost]
         public async Task<IHttpActionResult> SaveDentalChartNotations()//DentalMaster dentalMaster
         {
